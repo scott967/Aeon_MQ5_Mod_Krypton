@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 / 6.1.2 -->
 <!-- Isengardmod 7.1.11/7/1/12 -->
 <!-- Jarvis 8.1.3 -->
+<!-- Krypton 9.1.15 -->
 
 <includes>
 	<!--##################################################################################   VISTA WIDE - 51   ##################################################################################-->
@@ -150,12 +151,12 @@
 							<label>$INFO[ListItem.Year]</label>
 							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(albums) | Container.Content(years)">Conditional</animation>
 						</control>
-						<control type="image">
+						<control type="label">
 							<posx>523</posx>
 							<posy>27</posy>
 							<width>65</width>
 							<height>13</height>
-							<info>ListItem.StarRating</info>
+							<label>ListItem.Rating</label>
 							<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>
@@ -209,12 +210,12 @@
 							<label>$INFO[ListItem.Year]</label>
 							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(albums) | Container.Content(years)">Conditional</animation>
 						</control>
-						<control type="image">
+						<control type="label">
 							<posx>523</posx>
 							<posy>27</posy>
 							<width>65</width>
 							<height>13</height>
-							<info>ListItem.StarRating</info>
+							<label>ListItem.Rating</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>
@@ -279,12 +280,12 @@
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
 						</control>
-						<control type="image">
+						<control type="label">
 							<posx>523</posx>
 							<posy>43</posy>
 							<width>65</width>
 							<height>13</height>
-							<info>ListItem.StarRating</info>
+							<label>ListItem.Rating</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>

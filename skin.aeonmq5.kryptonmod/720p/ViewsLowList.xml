@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.10/7.1.11/7.1.12 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.15 -->
 
 <includes>
 	<!--##################################################################################   VISTA LOW LIST - ID 55   ##################################################################################-->
@@ -382,13 +383,13 @@
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
 						</control>
-						<control type="image">
+						<control type="label">
 							<description>IMDB rating</description>
 							<posx>492</posx>
 							<posy>33</posy>
 							<width>65</width>
 							<height>13</height>
-							<info>ListItem.StarRating</info>
+							<label>ListItem.Rating</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | IsEmpty(ListItem.Title)]</visible>
 						</control>
