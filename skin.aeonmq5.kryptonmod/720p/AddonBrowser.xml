@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.4/6.1.6 -->
 <!-- Aeon MQ 5 Isengard 7.1.8 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.15 -->
 <window id="40">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
@@ -251,8 +252,8 @@
 				<control type="button" id ="5"><!-- Enable add-ons auto-updates -->
 					<label>31263</label>
 				</control>
-				<control type="radiobutton" id ="6"><!-- No notifications -->
-					<label>31264</label>
+				<control type="button" id ="6"><!-- No notifications -->
+					<label>10004</label>
 				</control>
 				<control type="radiobutton" id ="7"><!-- Language filter -->
 					<label>25001</label>
