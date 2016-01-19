@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.4 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.15 -->
 
 <window id="132">
 	<defaultcontrol always="true">20</defaultcontrol>
@@ -40,85 +41,7 @@
 				<texture>darkgrey.png</texture>
 				<colordiffuse>F0FFFFFF</colordiffuse>
 			</control>
-
-			<!-- Scraper List -->
-			<control type="list" id="21">
-				<posx>503</posx>
-				<posy>35</posy>
-				<width>180</width>
-				<height>246</height>
-				<onup>21</onup>
-				<ondown>21</ondown>
-				<onleft>20</onleft>
-				<onright>28</onright>
-				<scrolltime>200</scrolltime>
-				<itemlayout height="41">
-					<control type="image">
-						<posx>5</posx>
-						<posy>5</posy>
-						<width>35</width>
-						<height>30</height>
-						<texture background="true">$INFO[Listitem.Icon]</texture>
-					</control>
-					<control type="label">
-						<posx>45</posx>
-						<posy>-1</posy>
-						<width>122</width>
-						<height>41</height>
-						<textcolor>FFFFFAF0</textcolor>
-						<selectedcolor>FFFF8C00</selectedcolor>
-						<aligny>center</aligny>
-						<font>Font_15</font>
-						<align>left</align>
-						<info>ListItem.Label</info>
-					</control>
-				</itemlayout>
-				<focusedlayout height="41">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>180</width>
-						<height>41</height>
-						<texture>grey.png</texture>
-						<colordiffuse>90FFFFFF</colordiffuse>
-						<visible>Control.HasFocus(21)</visible>
-					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>5</posy>
-						<width>35</width>
-						<height>30</height>
-						<texture background="true">$INFO[Listitem.Icon]</texture>
-					</control>
-					<control type="label">
-						<posx>45</posx>
-						<posy>-1</posy>
-						<width>122</width>
-						<height>41</height>
-						<textcolor>FFbbbbbb</textcolor>
-						<selectedcolor>FFFF8C00</selectedcolor>
-						<aligny>center</aligny>
-						<font>Font_15</font>
-						<align>left</align>
-						<info>ListItem.Label</info>
-						<visible>!Control.HasFocus(21)</visible>
-					</control>
-					<control type="label">
-						<posx>45</posx>
-						<posy>-1</posy>
-						<width>122</width>
-						<height>41</height>
-						<textcolor>FF101010</textcolor>
-						<selectedcolor>FFFF8C00</selectedcolor>
-						<aligny>center</aligny>
-						<font>Font_15</font>
-						<align>left</align>
-						<info>ListItem.Label</info>
-						<visible>Control.HasFocus(21)</visible>
-					</control>
-				</focusedlayout>
-			</control>
-			<control type="image">
+						<control type="image">
 				<posx>-30</posx>
 				<posy>0</posy>
 				<width>30</width>
@@ -142,7 +65,6 @@
 				<texture>black.png</texture>
 				<colordiffuse>90FFFFFF</colordiffuse>
 			</control>
-
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -151,7 +73,7 @@
 				<texture>black.png</texture>
 				<colordiffuse>90FFFFFF</colordiffuse>
 			</control>
-			<control type="label" id="0"><!-- header -->
+			<control type="label" id="0"><!-- header set content-->
 				<posx>20</posx>
 				<posy>0</posy>
 				<width>480</width>
@@ -164,62 +86,57 @@
 			</control>
 
 			<!-- Content Button -->
-			<control type="spincontrolex" id="20">
+			<control type="button" id="20">
 				<posx>0</posx>
-				<posy>35</posy>
+				<posy>45</posy>
 				<width>499</width>
 				<height>41</height>
 				<font>Font_18A</font>
-				<focusedcolor>FF101010</focusedcolor>
-				<texturefocus>grey.png</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<pulseonselect>false</pulseonselect>
-				<spinposx>-4</spinposx>
-				<textoffsetx>-10</textoffsetx>
-				<onup>5</onup>
-				<ondown>5</ondown>
-				<onleft>28</onleft>
-				<onright>21</onright>
-				<aligny>center</aligny>
-				<subtype>text</subtype>
-			</control>
-			<control type="label" id="1">
-				<description>directory contains label</description>
-				<posx>20</posx>
-				<posy>35</posy>
-				<width>504</width>
-				<height>41</height>
-				<label>31260</label>
-				<font>Font_18A</font>
+				<textwidth>400</textwidth>
 				<textcolor>FFFFFAF0</textcolor>
+				<focusedcolor>FF101010</focusedcolor>
+				<pulseonselect>false</pulseonselect>
+				<textoffsetx>20</textoffsetx>
+				<onup>5</onup>
+				<ondown>21</ondown>
+				<onleft>28</onleft>
+				<onright>28</onright>
 				<aligny>center</aligny>
-				<visible>!Control.HasFocus(20)</visible>
 			</control>
-			<control type="label" id="1">
-				<description>directory contains label</description>
-				<posx>20</posx>
-				<posy>35</posy>
-				<width>504</width>
+
+			<!-- Scraper List -->
+			<control type="button" id="21">
+				<posx>0</posx>
+				<posy>90</posy>
 				<height>41</height>
-				<label>31260</label>
+				<width>499</width>
+				<height>41</height>
 				<font>Font_18A</font>
-				<textcolor>FF101010</textcolor>
-				<aligny>center</aligny>
-				<visible>Control.HasFocus(20)</visible>
+				<textwidth>400</textwidth>
+				<textcolor>FFFFFAF0</textcolor>
+				<focusedcolor>FF101010</focusedcolor>
+				<pulseonselect>false</pulseonselect>
+				<textoffsetx>20</textoffsetx>
+				<onleft>28</onleft>
+				<onright>28</onright>
+				<onup>20</onup>
+				<ondown>5</ondown>
+				<scrolltime>200</scrolltime>
 			</control>
+
 
 			<!-- Content List -->
 			<control type="grouplist" id="5">
 				<description>control area</description>
 				<posx>0</posx>
-				<posy>76</posy>
+				<posy>135</posy>
 				<width>499</width>
 				<height>205</height>
 				<itemgap>0</itemgap>
-				<onup>20</onup>
+				<onup>21</onup>
 				<ondown>20</ondown>
 				<onleft>28</onleft>
-				<onright>21</onright>
+				<onright>28</onright>
 			</control>
 			<control type="button" id="7">
 				<posx>0</posx>
