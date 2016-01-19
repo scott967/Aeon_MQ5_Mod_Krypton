@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-	<addon id="skin.aeonmq5" version="9.1.14" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
+	<addon id="skin.aeonmq5" version="9.1.15" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
 	<requires>
 	<import addon="xbmc.gui" version="5.11.0"/>
 	<import addon="script.aeonmq5.extrapack" version="1.0.1"/>
