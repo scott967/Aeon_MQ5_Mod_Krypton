@@ -389,7 +389,7 @@
 							<posy>33</posy>
 							<width>65</width>
 							<height>13</height>
-							<label>ListItem.Rating</label>
+							<label>$INFO[ListItem.Rating]</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | IsEmpty(ListItem.Title)]</visible>
 						</control>

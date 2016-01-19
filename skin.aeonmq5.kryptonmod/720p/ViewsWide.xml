@@ -154,9 +154,13 @@
 						<control type="label">
 							<posx>523</posx>
 							<posy>27</posy>
-							<width>65</width>
-							<height>13</height>
-							<label>ListItem.Rating</label>
+							<width>85</width>
+							<height>41</height>
+							<font>Font_18A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[ListItem.Rating]</label>
 							<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>
@@ -213,9 +217,13 @@
 						<control type="label">
 							<posx>523</posx>
 							<posy>27</posy>
-							<width>65</width>
-							<height>13</height>
-							<label>ListItem.Rating</label>
+							<width>85</width>
+							<height>41</height>
+							<font>Font_18A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[ListItem.Rating]</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>
@@ -283,9 +291,13 @@
 						<control type="label">
 							<posx>523</posx>
 							<posy>43</posy>
-							<width>65</width>
-							<height>13</height>
-							<label>ListItem.Rating</label>
+							<width>85</width>
+							<height>41</height>
+							<font>Font_18A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[ListItem.Rating]</label>
 							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | StringCompare(ListItem.Label,..)]</visible>
 						</control>
