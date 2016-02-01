@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<!-- Aeon MQ 5 Helix 6.1.9 -->
-	<!-- Isengard 7.1.10 -->
-<window id="100">
-	<defaultcontrol>10</defaultcontrol>
+<!-- Aeon MQ 5 Helix 6.1.9 -->
+<!-- Isengard 7.1.10 -->
+<!-- Krypton 9.1.15 -->
+<window>
+	<!-- <defaultcontrol>10</defaultcontrol> -->
 	<controls>
 		<control type="group">
 			<include>Animation_TopDialogPopup</include>
 			<include>Dialogs_DoubleBar</include>
 			<control type="label" id="1">
 				<include>Dialogs_Label1</include>
-				<label>$LOCALIZE[13406]</label>
+				<!-- <label>$LOCALIZE[13406]</label> -->
 			</control>
-<!-- 			<control type="label" id="2">
+			<control type="label" id="2">
 				<include>Dialogs_Label2</include>
 			</control>
 			<control type="label" id="3">
@@ -19,7 +20,7 @@
 			</control>
 			<control type="label" id="4">
 				<include>Dialogs_Label3</include>
-			</control> -->
+			</control>
 			<control type="textbox" id="9">
 				<include>DialogTextBox</include>
 				<label>-</label>
@@ -61,6 +62,22 @@
 				<onright>10</onright>
 				<onup>10</onup>
 				<ondown>10</ondown>
+			</control>
+			<control type="progress" id="404">
+				<posy>28</posy>
+				<include>Dialogs_Progress</include>
+				<info>System.Progressbar</info>
+			</control>
+			<control type="label">
+				<posx>640</posx>
+				<posy>4</posy>
+				<width>50</width>
+				<height>35</height>
+				<align>left</align>
+				<textcolor>$VAR[value_headercolor]</textcolor>
+				<font>Font_18A</font>
+				<scroll>true</scroll>
+				<label>$INFO[System.Progressbar,,%]</label>
 			</control>
 		</control>
 	</controls>

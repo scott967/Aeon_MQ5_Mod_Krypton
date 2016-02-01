@@ -1,6 +1,7 @@
 [B][COLOR=FFFF8C00]BUILD 9.1.15 - RELEASE DATE 02/11/2016[/COLOR][/B]
 Fixed:  ListItem(StarRating) is now ListItem(Rating)
 Fixed:  Dialog Select Content
+Fixed:  Compatability mods for Krypton 0129 nightly 
 
 [B][COLOR=FFFF8C00]BUILD 9.1.14 - RELEASE DATE 01/11/2016[/COLOR][/B]
 New:  Inital Krypton release
