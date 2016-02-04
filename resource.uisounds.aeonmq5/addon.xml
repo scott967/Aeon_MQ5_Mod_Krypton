@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="resource.uisounds.aeonmq5" version="9.1.15" name="Aeon MQ5 Krypton UI" provider-name="Marcos Qui">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0"/>
+  </requires>
+  <extension point="kodi.resource.uisounds"/>
+  <extension point="kodi.addon.metadata">
+    <summary lang="en">Aeon MQ5 Krypton GUI sounds</summary>
+    <description lang="en">Aeon MQ5 Krypton GUI sounds</description>
+    <platform>all</platform>
+  </extension>
+</addon>
