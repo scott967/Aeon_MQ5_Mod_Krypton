@@ -171,7 +171,7 @@
 					<height>240</height>
 					<textcolor>FFFFFAF0</textcolor>
 					<font>Font_18A</font>
-					<label>$INFO[ListItem.Property(Addon.Description)]</label>
+					<label>$INFO[ListItem.AddonDescription]</label>
 					<autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
