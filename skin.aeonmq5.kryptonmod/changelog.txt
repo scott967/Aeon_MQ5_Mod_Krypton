@@ -1,3 +1,16 @@
+[B][COLOR=FFFF8C00]BUILD 9.1.16 - RELEASE DATE 03/15/2016[/COLOR][/B]
+New:  Support for music and video genre icons / fanart from resource add-ons
+New:  Support for studio and record label icons from resource add-ons
+Improved:  Layout for massive font option
+Improved:  Rightlist view for now-playing video playlist
+Improved:  TVShow poster now is shown for Midlist view with episodes
+Improved:  New EPG TimeLine low view (thanks to RjSachse)
+Improved:  Now weather, studio, recordlabel, and genre icons/fnart are providee by resource add-ons
+Improved:  Studio and record Label icons used in the flags bar
+Improved:  Removed wrap option for EPGtimeline view (use <m>enu key instead)
+Improved:  Add reset skin button on skin settings
+Improved:  Show background in VideoPlaylist when not playing
+
 [B][COLOR=FFFF8C00]BUILD 9.1.15 - RELEASE DATE 02/11/2016[/COLOR][/B]
 Fixed:  ListItem(StarRating) is now ListItem(Rating)
 Fixed:  Dialog Select Content
