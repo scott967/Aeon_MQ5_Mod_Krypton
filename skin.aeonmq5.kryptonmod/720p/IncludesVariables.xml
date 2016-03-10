@@ -2,11 +2,11 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.2/6.1.3/6.1.4/6.1.5/6.1.6/6.1.7/6.1.8 -->
 <!-- Aeon MQ5 Isengard 7.1.8/7.1.9/7.1.10/7.1.11/7.1.12 -->
 <!-- Aeon MQ5 Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.14 -->
+<!-- Krypton 9.1.14/9.1.16 -->
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.1.14 Krypton[COLOR=80FFFFFF] | [/COLOR]01/12/2016</value>
+		<value>9.1.16 Krypton[COLOR=80FFFFFF] | [/COLOR]03/15/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -1174,6 +1174,14 @@
 		<value condition="SubString(Container(510).ListItem.Property(Mpaa),HU-18)">flags/mpaa/HU_18.png</value>
 	</variable>
 
+	<variable name="value_studiosicon">
+		<value condition="!IsEmpty(ListItem.Studio) + [Window.IsVisible(videolibrary) | Window.IsVisible(movieinformation)]">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
+		<value condition="Player.HasVideo + !IsEmpty(VideoPlayer.Studio) + Window.IsVisible(fullscreeninfo)">$INFO[Skin.String(custom_studios.path)]$INFO[VideoPlayer.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
+	</variable>
+	<variable name="value_recordlabelsicon">
+		<value condition="!IsEmpty(ListItem.Property(Album_Label)) + [Window.IsVisible(musiclibrary) | Window.IsVisible(musicinformation)]">$INFO[Skin.String(custom_recordlabels.path)]$INFO[ListItem.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
+		<value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Property(Album_Label)) + Window.IsVisible(visualisation)">$INFO[Skin.String(custom_redordlabels.path)]$INFO[MusicPlayer.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
+	</variable>
 	<variable name="value_musiccodec">
 		<value condition="SubString(ListItem.Filename,.aac)">flags/musiccodec/aac.png</value>
 		<value condition="SubString(ListItem.Filename,.ac3)">flags/musiccodec/ac3.png</value>
@@ -2288,6 +2296,7 @@
 		<value condition="Control.HasFocus(1162)">$LOCALIZE[31598]</value>
 		<value condition="Control.HasFocus(1163)">$LOCALIZE[31600]</value>
 		<value condition="Control.HasFocus(1164)">$LOCALIZE[31258]</value>
+		<value condition="Control.HasFocus(1165)">Use to force Kodi to write current skin settings[CR]to settings.xml file.  Use this prior to exporting settings.</value>
 	</variable>
 	<variable name="value_settingsstep">
 		<value condition="Control.HasFocus(900)">$VAR[SkinVersion][CR][CR]$LOCALIZE[31656][CR][COLOR=FFFF0000]$LOCALIZE[31830][/COLOR][CR]10%</value>
@@ -2341,10 +2350,11 @@
 		<value condition="Container.Content(seasons) + [SubString(skin.string(seasonsfanart),fanart) | SubString(skin.string(seasonsfanart),extra) + IsEmpty(Control.GetLabel(5021))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(seasons) + [SubString(skin.string(seasonsfanart),seasons) + IsEmpty(Control.GetLabel(5023))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(episodes) + [SubString(skin.string(episodesfanart),fanart) | SubString(skin.string(episodesfanart),extra) + IsEmpty(Control.GetLabel(5022))]">$INFO[ListItem.Art(fanart)]</value>
+		<!-- <value condition="Container.Content(episodes) + [SubString(skin.string(episodesfanart),fanart) | SubString(skin.string(episodesfanart),extra) + IsEmpty(Control.GetLabel(5022))+ IsEmpty(Control.GetLabel(5025))]">$INFO[ListItem.Art(fanart)]</value> -->
 		<value condition="Container.Content(episodes) + [SubString(skin.string(episodesfanart),seasons) + IsEmpty(Control.GetLabel(5024))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(sets) + [SubString(skin.string(setsfanart),fanart) | SubString(skin.string(setsfanart),extra) + IsEmpty(Control.GetLabel(5020))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + !Skin.HasSetting(externalvideogenrefanart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_videogenre/$INFO[ListItem.Label,,.jpg]</value>
-		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(CustomVideoGenreFanart)]$INFO[ListItem.Label,,.jpg]</value>
+		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(custom_moviegenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 	</variable>
 
@@ -2362,7 +2372,7 @@
 		<value condition="![Container.Content(songs) | Container.Content(playlists) | Container.Content(genres)] + [SubString(skin.string(musicfanart),fanart) | SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5032))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="[Container.Content(songs) | Container.Content(playlists)] + [SubString(skin.string(musicfanart),fanart) | SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5033))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + !Skin.HasSetting(externalmusicgenrefanart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_musicgenre/$INFO[ListItem.Label,,.jpg]</value>
-		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(CustomMusicGenreFanart)]$INFO[ListItem.Label,,.jpg]</value>
+		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(custom_musicgenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 	</variable>
 
@@ -2523,10 +2533,11 @@
 		<value condition="Control.HasFocus(1162)">FFFF4500</value>
 		<value condition="Control.HasFocus(1163)">FFB20000</value>
 		<value condition="Control.HasFocus(1164)">FF228B22</value>
+		<value condition="Control.HasFocus(1165)">FF228B22</value>
 	</variable>
 	<variable name="value_restoreimage">
 		<value condition="Control.HasFocus(9100) + Container(9100).HasFocus(32)">special://skin/backgrounds/extras/settings_skin.jpg</value>
-		<value condition="Control.HasFocus(1160) | Control.HasFocus(1161) | Control.HasFocus(1162) | Control.HasFocus(1163) | Control.HasFocus(1164)">resetalert.png</value>
+		<value condition="Control.HasFocus(1160) | Control.HasFocus(1161) | Control.HasFocus(1162) | Control.HasFocus(1163) | Control.HasFocus(1164) | Control.HasFocus(1165)">resetalert.png</value>
 	</variable>	
 	<variable name="value_virtualsublabel">
 		<value condition="Control.HasFocus(403) + Container(403).HasFocus(1)">$LOCALIZE[31280][CR]$LOCALIZE[31281]</value>
@@ -2906,66 +2917,81 @@
 	</variable>
 	<variable name="value_ground6_value">
 		<value condition="Window.IsActive(500) + Player.HasAudio">$LOCALIZE[31582]   $INFO[MusicPlayer.Artist]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$LOCALIZE[31582]   $INFO[VideoPlayer.Artist]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(Container.ListItemAbsolute(0).Year) + MusicPartyMode.Enabled">$INFO[Container.ListItemAbsolute(0).Year]</value> <!-- fixed for party mode -->
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Year]</value>
 		<value condition="!SubString(ListItem.Path,videodb://movies/sets,left) + ![Window.IsActive(500) + Player.HasAudio]" >$INFO[ListItem.Year]</value>
 		<value condition="SubString(ListItem.Path,videodb://movies/sets,left)">$INFO[Window(0).Property(Set.Movies.Years)]</value>
 	</variable>
 	<!--  music video changes from here  -->	
 	<variable name="value_ground11_label"><!-- Para vistas que sejam lista -->
-		<value condition="Container.Content(musicvideos) | [Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)]">$LOCALIZE[557]</value>
-		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(sets)">$LOCALIZE[21875]</value><!-- Pais -->
+		<value condition="Container.Content(musicvideos) | [Window.IsVisible(VideoPlaylist) + !IsEmpty(Container.ListItemAbsolute(Container.CurrentItem).Artist)]">$LOCALIZE[557]</value>
+		<value condition="[Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Episode)]">$LOCALIZE[31233]</value>
+		<value condition="[Window.IsVisible(VideoPlaylist) + IsEmpty(VideoPlayer.Episode) + IsEmpty(VideoPlayer.Artist)]">$LOCALIZE[21875]</value>
+		<value condition="Container.Content(movies) | Container.Content(sets)">$LOCALIZE[21875]</value><!-- Pais -->
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[31233]</value><!-- Estreou -->
 		<value condition="Container.Content(artists)">$LOCALIZE[176]</value><!-- Estilo Artistas -->
 		<value condition="Container.Content(albums)">$LOCALIZE[21895]</value><!-- Temas Albuns -->
-		<value condition="Container.Content(songs)">$LOCALIZE[554]</value><!-- Faixa -->
+		<value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$LOCALIZE[554]</value><!-- Faixa -->
 		<value condition="Window.IsActive(1) + !Container.Content(Addons)">$LOCALIZE[31772]</value><!-- Lancamento -->
 		<value condition="Window.IsActive(1) + Container.Content(Addons)">$LOCALIZE[24051]</value><!-- Versao-->
 	</variable>
 	<variable name="value_ground11_value">
 		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist) + MusicPartyMode.Enabled">$INFO[Container.ListItemAbsolute(0).Artist]</value>
-		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
+		<!-- <value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value> -->
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Artist]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Episode)">$INFO[VideoPlayer.Premiered]</value>
+		<value condition="[Window.IsVisible(VideoPlaylist) + IsEmpty(VideoPlayer.Episode) + IsEmpty(VideoPlayer.Artist)]">$INFO[VideoPlayer.Country]</value>
 		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist)">$INFO[ListItem.Country]$INFO[Window(0).Property(Set.Movies.Country)]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(0).Property(Set.Movies.Country)]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Style)]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Theme)]</value>
-		<value condition="Container.Content(songs)">$VAR[value_songinfo_track]</value>
+		<value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$VAR[value_songinfo_track]</value>
 		<value condition="Window.IsActive(1) + !Container.Content(Addons)">$INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsActive(1) + Container.Content(Addons)">$INFO[ListItem.Property(Addon.Version)]</value>
 	</variable>
 	<variable name="value_ground12_label"><!-- Para vistas que sejam lista -->
+		<value condition="[Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Episode)]">$LOCALIZE[20339]</value>
 		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">$LOCALIZE[515]</value><!-- Genero -->
 		<value condition="Container.Content(episodes)">$LOCALIZE[20339]</value><!-- Diretor -->
 		<value condition="Container.Content(artists)">$LOCALIZE[515]</value><!-- Genero Artistas -->
 		<value condition="Container.Content(albums)">$LOCALIZE[564]</value><!-- Tipo Albuns -->
-		<value condition="Container.Content(songs)">$LOCALIZE[180]</value><!-- Duracao -->
+		<value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$LOCALIZE[180]</value><!-- Duracao -->
 		<value condition="Window.IsActive(1) + !Container.Content(Addons)">$LOCALIZE[515]</value><!-- Genero -->
 		<value condition="Window.IsActive(1) + Container.Content(Addons)">$LOCALIZE[126]</value><!-- Estatus -->
 	</variable>
 	<variable name="value_ground12_value">
-		<value condition="Container.Content(movies) | [Window.IsVisible(VideoPlaylist) + !MusicPartyMode.Enabled] | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Genre]$INFO[Window(0).Property(Set.Movies.Genre)]</value>
+		<!-- <value condition="Container.Content(movies) | [Window.IsVisible(VideoPlaylist) + !MusicPartyMode.Enabled] | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Genre]$INFO[Window(0).Property(Set.Movies.Genre)]</value> -->
+		<value condition="Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Genre]$INFO[Window(0).Property(Set.Movies.Genre)]</value>
 		<value condition="Window.IsVisible(VideoPlaylist) + MusicPartyMode.Enabled">$INFO[Container.ListItemAbsolute(0).Genre]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Genre]</value>
+		<value condition="[Window.IsVisible(VideoPlaylist) + IsEmpty(VideoPlayer.Episode) + IsEmpty(VideoPlayer.Artist)]">$INFO[VideoPlayer.Genre]</value>
+		<value condition="[Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Episode)]">$INFO[VideoPlayer.Director]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(0).Property(Set.Movies.Genre)]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.director]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value><!-- Genero Artistas -->
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Type)]</value>
-		<value condition="Container.Content(songs)">$VAR[value_songinfo_duration]</value><!-- Duracao -->
+		<value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$VAR[value_songinfo_duration]</value><!-- Duracao -->
 		<value condition="Window.IsActive(1) + !Container.Content(Addons)">$INFO[ListItem.Genre]</value>
 		<value condition="Window.IsActive(1) + Container.Content(Addons)">$INFO[ListItem.Property(Addon.Status)]$INFO[ListItem.Property(Addon.Broken), | ]</value>
 	</variable>
 	<variable name="value_ground13_label"><!-- Para vistas que sejam lista -->
-		<value condition="Container.Content(songs)">$LOCALIZE[369]</value>
-		<value condition="Container.Content(musicvideos) | [Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)]">$LOCALIZE[558]</value>
+		<value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$LOCALIZE[369]</value>
+		<value condition="Container.Content(musicvideos) | [Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Artist)]">$LOCALIZE[558]</value>
 		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets)">$LOCALIZE[20388]</value><!-- Estudio -->
 		<value condition="Container.Content(artists) | Container.Content(albums)">$LOCALIZE[175]</value><!-- Moods Artistas/Albuns -->
 		<value condition="Window.IsActive(1) + !Container.Content(Addons)">$LOCALIZE[31788]</value><!-- Desenvolvedor -->
 		<value condition="Window.IsActive(1) + Container.Content(Addons)">$LOCALIZE[21863]</value><!-- Criador -->
 	</variable>
 	<variable name="value_ground13_value">
-	    <value condition="Container.Content(songs)">$VAR[value_songinfo_title]</value>
+	    <value condition="Container.Content(songs) | Container.Content(mixed) | Container.Content(files)">$VAR[value_songinfo_title]</value>
 		<value condition="Container.Content(musicvideos)">$INFO[ListItem.Album]</value>
 		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist) + MusicPartyMode.Enabled">$INFO[Container.ListItemAbsolute(0).Album]</value>
-		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Album]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Album]</value>
+		<!-- <value condition="Window.IsVisible(VideoPlaylist) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Album]</value> -->
+		<value condition="Window.IsVisible(VideoPlaylist)">$INFO[VideoPlayer.Studio]</value>
 		<value condition="Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Studio]$INFO[Window(0).Property(Set.Movies.Studio)]</value>
 		<value condition="Container.Content(sets)">$INFO[Window(0).Property(Set.Movies.Studio)]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Mood)]</value>
@@ -3051,11 +3077,19 @@
 		<value condition="![IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
 		<value condition="Window.IsActive(25) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_videogenre/$INFO[ListItem.Label].jpg</value>
-		<value condition="Window.IsActive(25) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(CustomVideoGenreIcon)]$INFO[ListItem.Label].jpg</value>
+		<value condition="Window.IsActive(25) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
 		<value condition="[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_musicgenre/$INFO[ListItem.Label].jpg</value>
-		<value condition="[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(CustomMusicGenreIcon)]$INFO[ListItem.Label].jpg</value>
+		<value condition="[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 	</variable>
-
+	<variable name="value_poster_midlist">
+		<value condition="![IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.poster)) + Container.Content(episodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
+		<value condition="Window.IsActive(25) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_videogenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="Window.IsActive(25) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<value condition="[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_musicgenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="[Window.IsActive(500) | Window.IsActive(502)] + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+	</variable>
 	<variable name="value_poster-11">
 		<value condition="!IsEmpty(ListItem(-11).Art(poster))">$INFO[ListItem(-11).Art(poster)]</value>
 		<value condition="IsEmpty(ListItem(-11).Art(poster))">$INFO[ListItem(-11).Icon]</value>
@@ -3162,6 +3196,9 @@
 	</variable>
 
 	<variable name="value_plot">
+		<value condition="Container.Content(files)">$INFO[ListItem.Plot]$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + MusicPartyMode.Enabled">$INFO[Container.ListItemAbsolute(0).Plot]</value>  <!-- fixed for party mode -->
+		<value condition="Window.IsVisible(VideoPlaylist)">$INFO[VideoPlayer.Plot]</value>
 		<value condition="![Container.Content(files) | Container.Content(addons) | Window.IsActive(pictures) | SubString(ListItem.Path,videodb://movies/sets,left) | Window.IsActive(500) | Window.IsActive(502) + [Container.Content(albums) | Container.Content(artists)]]">$INFO[ListItem.Plot]</value>
 		<!-- <value condition="SubString(ListItem.Path,videodb://movies/sets,left) + System.HasAddon(script.extendedinfo)">$INFO[Window(0).Property(Set.Movies.Plot)]</value>
 	<value condition="SubString(ListItem.Path,videodb://movies/sets,left) + !System.HasAddon(script.extendedinfo)">[COLOR=FFB20000]$LOCALIZE[20457] | $LOCALIZE[31435]:[/COLOR] ExtendedInfo Script</value> -->
@@ -3170,8 +3207,10 @@
 		<value condition="Container.Content(addons)">$INFO[ListItem.Property(Addon.Summary)][CR]$INFO[ListItem.Property(Addon.Description)]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Description)]</value>
-		<value condition="Container.Content(songs)">$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
-		<value condition="Container.Content(files)">$INFO[ListItem.Plot]$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Window.IsVisible(MusicPlaylist) + Player.HasAudio">$INFO[MusicPlayer.Property(Album_Description)]$INFO[MusicPlayer.Property(Artist_Description)]</value>
+		<value condition="Window.IsVisible(MusicPlaylist) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Plot]</value>  <!-- now playing MV in music playlist -->
+		<value condition="[Container.Content(songs) | Container.Content(mixed) | Container.Content(files)]  + !StringCompare(ListItem.DBType,MusicVideo) ">$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="[Container.Content(songs) | Container.Content(mixed) | Container.Content(files)]  + StringCompare(ListItem.DBType,MusicVideo)">$INFO[ListItem.Plot]</value>  <!-- MV in mixed music library  or music playlist-->
 	</variable>
 
 	<variable name="value_thumbmoviesets">
@@ -3340,8 +3379,10 @@
 		<value condition="Container.Content(episodes) + ![Window.IsActive(2000) | Skin.HasSetting(playlists)]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20360]:[/COLOR] $INFO[Window(0).Property(Episodes.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(0).Property(Episodes.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(0).Property(Episodes.UnWatched)]</value>
 		<value condition="Window.IsActive(500) + MusicPartyMode.Enabled + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[589] $LOCALIZE[31210]: [/COLOR]$INFO[MusicPartyMode.SongsPlayed] / $INFO[MusicPartyMode.MatchingSongs]</value>
 		<value condition="Window.IsActive(500) + !MusicPartyMode.Enabled + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[559] $LOCALIZE[31582]: [/COLOR]$INFO[Container.NumItems]</value>
-		<value condition="Container.Content(artists) + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]$INFO[Window(0).Property(Music.ArtistsCount)]</value>
+		<value condition="Container.Content(artists) + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[133]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(albums) + ![Window.IsActive(2000) | !IsEmpty(skin.string(playlists))]">$INFO[Container.NumItems] [COLOR=$VAR[value_headercolor]]$LOCALIZE[132][/COLOR]</value>
+		<value condition="Container.Content(mixed) + ![Window.IsActive(2000) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]$INFO[Container.NumItems]</value>
+		<value condition="Container.Content(songs) + SubString(Container.FolderPath,playlists) + ![Window.IsActive(2000) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(songs) + ![Window.IsActive(2000) | !IsEmpty(skin.string(playlists))]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[182]: [/COLOR]$INFO[Window(0).Property(Music.SongsCount)]</value>
 		<value condition="Container.Content(actors) + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[344]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(studios) + !Window.IsActive(2000)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20388]: [/COLOR]$INFO[Container.NumItems]</value>
@@ -3455,20 +3496,20 @@
 		<value condition="!IsEmpty(Skin.String(CustomMusicLogoPath))">$LOCALIZE[15311] $INFO[Skin.String(CustomMusicLogoPath)]</value>
 	</variable>
 	<variable name="value_musicgenreicon">
-		<value condition="IsEmpty(Skin.String(CustomMusicGenreIcon))"> - $LOCALIZE[15300]</value>
-		<value condition="!IsEmpty(Skin.String(CustomMusicGenreIcon))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[15311] $INFO[Skin.String(CustomMusicGenreIcon)][/COLOR]</value>
+		<value condition="IsEmpty(Skin.String(custom_musicgenreicons.name))"> - $LOCALIZE[31241]</value>
+		<value condition="!IsEmpty(Skin.String(custom_musicgenreicons.name))">[COLOR=$VAR[value_headercolor]]$INFO[Skin.String(custom_musicgenreicons.name)][/COLOR]</value>
 	</variable>
 	<variable name="value_musicgenrefanart">
-		<value condition="IsEmpty(Skin.String(CustomMusicGenreFanart))"> - $LOCALIZE[15300]</value>
-		<value condition="!IsEmpty(Skin.String(CustomMusicGenreFanart))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[15311] $INFO[Skin.String(CustomMusicGenreFanart)][/COLOR]</value>
+		<value condition="IsEmpty(Skin.String(custom_musicgenrefanart.name))"> - $LOCALIZE[31241]</value>
+		<value condition="!IsEmpty(Skin.String(custom_musicgenrefanart.name))">[COLOR=$VAR[value_headercolor]]$INFO[Skin.String(custom_musicgenrefanart.name)][/COLOR]</value>
 	</variable>
 	<variable name="value_videogenreicon">
-		<value condition="IsEmpty(Skin.String(CustomVideoGenreIcon))"> - $LOCALIZE[15300]</value>
-		<value condition="!IsEmpty(Skin.String(CustomVideoGenreIcon))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[15311] $INFO[Skin.String(CustomVideoGenreIcon)][/COLOR]</value>
+		<value condition="IsEmpty(Skin.String(custom_moviegenreicons.name))"> - $LOCALIZE[31241]</value>
+		<value condition="!IsEmpty(Skin.String(custom_moviegenreicons.name))">[COLOR=$VAR[value_headercolor]]$INFO[Skin.String(custom_moviegenreicons.name)][/COLOR]</value>
 	</variable>
 	<variable name="value_videogenrefanart">
-		<value condition="IsEmpty(Skin.String(CustomVideoGenreFanart))"> - $LOCALIZE[15300]</value>
-		<value condition="!IsEmpty(Skin.String(CustomVideoGenreFanart))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[15311] $INFO[Skin.String(CustomVideoGenreFanart)][/COLOR]</value>
+		<value condition="IsEmpty(Skin.String(custom_moviegenrefanart.name))"> - $LOCALIZE[31241]</value>
+		<value condition="!IsEmpty(Skin.String(custom_moviegenrefanart.name))">[COLOR=$VAR[value_headercolor]]$INFO[Skin.String(custom_moviegenrefanart.name)][/COLOR]</value>
 	</variable>
 
 	<variable name="value_fsdetails_1">
@@ -3633,15 +3674,21 @@
 	<variable name="value_music_title">
 		<value condition="Container.Content(artists) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(2001)]">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
-		<value condition="Container.Content(songs) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(135)]">$INFO[ListItem.Label]</value>
+		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(135)]">$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="value_music_subtitle">
 		<value condition="Container.Content(albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(2001)]">$INFO[ListItem.Label]</value>
-		<value condition="Container.Content(songs) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(135)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
+		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(135)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
 	</variable>
 	<variable name="value_songinfo_title">
-		<value condition="!Window.IsActive(500) | !Player.HasAudio">$INFO[ListItem.Label]</value>
+		<value condition="!Window.IsActive(500) | [!Player.HasAudio + IsEmpty(VideoPlayer.Artist)]">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.Title]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Title]</value>
+	</variable>
+		<variable name="value_songplaying_title">
+		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.Title]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Title]</value>
+		<value condition="Window.IsActive(500)">$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="value_songinfo_artist">
 		<value condition="!Player.HasAudio">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
@@ -3660,16 +3707,35 @@
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Genre]</value>
 	</variable>
 	<variable name="value_songinfo_track">
-		<value condition="!Window.IsActive(500) | !Player.HasAudio">$INFO[ListItem.TrackNumber]</value>
+		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.TrackNumber]</value>
+		<value condition="!Window.IsActive(500) | Window.IsVisible(songinformation)">$INFO[ListItem.TrackNumber]</value>
 		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.TrackNumber]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.TrackNumber]</value>
+		<value condition="Window.IsActive(500)">$INFO[ListItem.TrackNumber]</value>
+	</variable>
+	<variable name="value_songplaying_track">
+		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.TrackNumber]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.TrackNumber]</value>
+		<value condition="Window.IsActive(500)">$INFO[ListItem.TrackNumber]</value>
 	</variable>
 	<variable name="value_songinfo_duration">
-		<value condition="SubString(ListItem.Duration,min) + [!Window.IsActive(500) | [Window.IsActive(500) + !Player.HasAudio]]">$INFO[ListItem.Duration]</value>
-		<value condition="!SubString(ListItem.Duration,min) + [!Window.IsActive(500) | [Window.IsActive(500) + !Player.HasAudio]]">$INFO[ListItem.Duration] $LOCALIZE[31961]</value>
+		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</value>
+		<value condition="[!Window.IsActive(500) | Window.IsVisible(songinformation)] + SubString(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
+		<value condition="[!Window.IsActive(500) | Window.IsVisible(songinformation)] + !SubString(ListItem.Duration,min)">$INFO[ListItem.Duration,, $LOCALIZE[31961]]</value>
 		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</value>
+		<value condition="SubString(ListItem.Duration,min) + Window.IsActive(500)">$INFO[ListItem.Duration]</value>
+		<value condition="!SubString(ListItem.Duration,min) + Window.IsActive(500)">$INFO[ListItem.Duration] $LOCALIZE[31961]</value>
+	</variable>
+	<variable name="value_songplaying_duration">
+		<value condition="Window.IsActive(500) + Player.HasAudio">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</value>
+		<value condition="Window.IsActive(500) + !IsEmpty(VideoPlayer.Artist)">$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</value>
+		<value condition="SubString(ListItem.Duration,min) + Window.IsActive(500)">$INFO[ListItem.Duration]</value>
+		<value condition="!SubString(ListItem.Duration,min) + Window.IsActive(500)">$INFO[ListItem.Duration] $LOCALIZE[31961]</value>
 	</variable>
 	<variable name="value_songinfo_plot">
-		<value condition="!Player.HasAudio">$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Window.IsActive(songinformation) + StringCompare(ListItem.DBType,musicvideo)">$INFO[ListItem.Plot]</value>
+		<value condition="!Player.HasAudio | Window.IsActive(songinformation) + IsEmpty(VideoPlayer.Artist)">$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>
 		<value condition="Player.HasAudio + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31940]: [/COLOR]$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]$INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), - ]</value>
 		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
 	</variable>
@@ -3678,16 +3744,19 @@
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Property(Album.label),flags/music/recordlabel/,.png]</value>
 	</variable>
 	<variable name="value_songinfo_codec">
-		<value condition="!Player.HasAudio">$VAR[value_musiccodec]</value>
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Codec,flags/musiccodec/,.png]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]</value>
+		<value>$VAR[value_musiccodec]</value>
 	</variable>
 	<variable name="value_songinfo_channels">
-		<value condition="!Player.HasAudio">$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</value>
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.AudioChannels,flags/audiochannels/,ch.png]</value>
+		<value condition="Player.HasAudio">$INFO[MusicPlayer.Channels,flags/audiochannels/,ch.png]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,ch.png]</value>
+		<value>$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</value>  <!-- not defined -->
 	</variable>
 	<variable name="value_songinfo_thumb">
-		<value condition="!Player.HasAudio">$INFO[Listitem.Icon]</value>
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.Art(thumb)]</value>
+		<value>$INFO[Listitem.Icon]</value>
 	</variable>
 	<variable name="value_albumsong_items">
 		<value condition="Container.Content(artists)">$LOCALIZE[21888]: $INFO[Container(50).NumItems] $LOCALIZE[31040]</value>
@@ -3764,7 +3833,7 @@
 		<value condition="SubString(Container(9000).ListItem.Property(id),mymenu)">$VAR[value_menutheme_mymenu]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),vpl)">$VAR[value_menutheme_vplaylist]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),apl)">$VAR[value_menutheme_aplaylist]</value>
-		<value condition="SubString(Container(9000).ListItem.Property(id),vnode)">$VAR[value_menutheme_vnodes]</value>
+		<value condition="SubString(Container(9000).ListItem.Property(id),vnodes)">$VAR[value_menutheme_vnodes]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),addon)">$VAR[value_menutheme_addons]</value>
 	</variable>
 

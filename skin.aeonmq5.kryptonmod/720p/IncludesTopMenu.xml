@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.2/6.1.3 /6.1.4/6.1.5/6.1.6/6.1.8/6.1.9 wall audiocover-->
 <!-- Isengard 7.1.10 wall audiocover/7.1.11/MidList mod/7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15 -->
+<!-- Krypton 9.1.15/9.1.16 -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>21</posy>
@@ -1025,24 +1025,7 @@
 					<visible>!Skin.HasSetting(nopanelvideocase) + Control.IsVisible(62) + !Skin.HasSetting(noviewpanelposter) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)]</visible>
 				</control>
 				<control type="togglebutton" id="9292"> <!-- poster / no poster (clearart/logo) -->
-					<!-- <include>TopMenuButton</include> -->
-					<height>25</height>
-					<width>318</width>
-					<textwidth>297</textwidth>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>Font_15</font>
-					<textcolor>FF101010</textcolor>
-					<focusedcolor>FFFFFAF0</focusedcolor>
-					<disabledcolor>80505050</disabledcolor>
-					<textoffsetx>10</textoffsetx>
-					<texturenofocus>topmenu_button_nofocus.png</texturenofocus>
-					<texturefocus>topmenu_button_focus.png</texturefocus>
-					<alttexturenofocus>topmenu_button_nofocus.png</alttexturenofocus>
-					<alttexturefocus>topmenu_button_focus.png</alttexturefocus>
-					<pulseonselect>false</pulseonselect>
-					<include>Animation_Fade_Togglebutton</include>
-					<colordiffuse>FFFFFAF0</colordiffuse>
+					<include>TopMenuToggleButton</include>
 					<label>$LOCALIZE[31320]: $LOCALIZE[31408]</label>
 					<altlabel>$LOCALIZE[31320]: $LOCALIZE[31317]</altlabel>
 					<onclick>Skin.ToggleSetting(noviewpanelposter)</onclick>
@@ -1345,13 +1328,13 @@
 					<include>TopMenuRadioButton</include>
 					<label>$VAR[value_addon2]</label>
 					<onclick condition="System.HasAddon(script.tvtunes)">Skin.ToggleSetting(ontvtunes)</onclick>
-					<onclick condition="System.HasAddon(script.tvtunes) + !Skin.HasSetting(ontvtunes)">SetProperty("TvTunesBlocked", "true")</onclick>
-					<onclick condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)">ClearProperty("TvTunesBlocked")</onclick>
+					<onclick condition="System.HasAddon(script.tvtunes) + !Skin.HasSetting(ontvtunes)">SetProperty(TvTunesBlocked,true)</onclick>
+					<onclick condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)">ClearProperty(TvTunesBlocked)</onclick>
 					<onclick condition="!System.HasAddon(script.tvtunes)">ActivateWindow(Programs,Addons,return)</onclick>
 					<selected>System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				</control>
-				<include contition="Window.IsActive(28)">TopMenu_Playlist</include>
+				<include condition="Window.IsActive(28)">TopMenu_Playlist</include>
 			</control>
 
 			<control type="grouplist" id="9401"><!-- Artwork -->
@@ -1624,30 +1607,30 @@
 					<selected>SubString(skin.string(videogenrefanart),genre)</selected>
 					<visible>Container.Content(genres)</visible>
 				</control>
-				<control type="radiobutton" id="9454"><!-- Fanart de genero externo -->
+				<control type="radiobutton" id="9454"><!-- Movie Genre Fanart from resource -->
 					<include>TopMenuRadioButton</include>
 					<label>31674</label>
 					<onclick>Skin.ToggleSetting(externalvideogenrefanart)</onclick>
 					<selected>Skin.HasSetting(externalvideogenrefanart)</selected>
 					<visible>Container.Content(genres) + SubString(skin.string(videogenrefanart),genre)</visible>
 				</control>
-				<control type="button" id="9455"><!-- Fanart de genero externo - caminho -->
+				<control type="button" id="9455"><!-- Select movie genre fanart resource -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_videogenrefanart]</label>
-					<onclick>Skin.SetPath(CustomVideoGenreFanart)</onclick>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.moviegenrefanart&amp;property=custom_moviegenrefanart)</onclick>
 					<visible>Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + Skin.HasSetting(externalvideogenrefanart)</visible>
 				</control>
-				<control type="radiobutton" id="9457"><!-- Icones de genero externo -->
+				<control type="radiobutton" id="9457"><!-- Movie Genre Icons from resource -->
 					<include>TopMenuRadioButton</include>
 					<label>31509</label>
 					<onclick>Skin.ToggleSetting(externalvideogenreicon)</onclick>
 					<selected>Skin.HasSetting(externalvideogenreicon)</selected>
 					<visible>Container.Content(genres)</visible>
 				</control>
-				<control type="button" id="9458"><!-- Icones de genero externo - caminho -->
+				<control type="button" id="9458"><!-- Select movie genre icon resource -->
 					<include>TopMenuRadioButton</include>
 					<label>$VAR[value_videogenreicon]</label>
-					<onclick>Skin.SetPath(CustomVideoGenreIcon)</onclick>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.moviegenreicons&amp;property=custom_moviegenreicons)</onclick>
 					<visible>Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)</visible>
 				</control>
 			</control>
@@ -2189,30 +2172,30 @@
 					<selected>SubString(skin.string(musicgenrefanart),genre)</selected>
 					<visible>Container.Content(genres)</visible>
 				</control>
-				<control type="radiobutton" id="9454"><!-- Fanart de genero externo -->
+				<control type="radiobutton" id="9454"><!-- Fanart from music genre icon resource -->
 					<include>TopMenuRadioButton</include>
 					<label>31674</label>
 					<onclick>Skin.ToggleSetting(externalmusicgenrefanart)</onclick>
 					<selected>Skin.HasSetting(externalmusicgenrefanart)</selected>
 					<visible>Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre)</visible>
 				</control>
-				<control type="button" id="9455"><!-- Fanart de genero externo - caminho -->
+				<control type="button" id="9455"><!-- Select music genre fanart resource -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_musicgenrefanart]</label>
-					<onclick>Skin.SetPath(CustomMusicGenreFanart)</onclick>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.musicgenrefanart&amp;property=custom_musicgenrefanart)</onclick>
 					<visible>Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + Skin.HasSetting(externalmusicgenrefanart)</visible>
 				</control>
-				<control type="radiobutton" id="9457"><!-- Icones de genero externo -->
+				<control type="radiobutton" id="9457"><!-- Icons from music genre icon resource -->
 					<include>TopMenuRadioButton</include>
 					<label>31509</label>
 					<onclick>Skin.ToggleSetting(externalmusicgenreicon)</onclick>
 					<selected>Skin.HasSetting(externalmusicgenreicon)</selected>
 					<visible>Container.Content(genres)</visible>
 				</control>
-				<control type="button" id="9458"><!-- Icones de genero externo - caminho -->
+				<control type="button" id="9458"><!-- Select music genre icon resource -->
 					<include>TopMenuRadioButton</include>
 					<label>$VAR[value_musicgenreicon]</label>
-					<onclick>Skin.SetPath(CustomMusicGenreIcon)</onclick>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.musicgenreicons&amp;property=custom_musicgenreicons)</onclick>
 					<visible>Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)</visible>
 				</control>
 			</control>
@@ -3907,14 +3890,14 @@
 					<label>19023</label>
 					<ondown>50</ondown>
 				</control>
-				<control type="radiobutton" id="9211"><!-- EPG Grid Nav -->
+				<!-- <control type="radiobutton" id="9211"> EPG Grid Nav 
 					<include>TopMenuRadioButton</include>
 					<visible>Window.IsActive(tvguide) | Window.IsActive(tvchannels) | Window.IsActive(tvtimers)</visible>
 					<onclick>Skin.ToggleSetting(epggridwrap)</onclick>
 					<selected>Skin.HasSetting(epggridwrap)</selected>
 					<label>$LOCALIZE[19069] $LOCALIZE[31551]</label>
 					<ondown>50</ondown>
-				</control>
+				</control> -->
 				<control type="radiobutton" id="9209"><!-- PVR date 9313 -->
 					<include>TopMenuRadioButton</include>
 					<label>31250</label>

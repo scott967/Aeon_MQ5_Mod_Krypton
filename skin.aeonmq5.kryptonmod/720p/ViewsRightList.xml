@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.2 by lizard/6.1.6 -->
 <!-- Isengard 7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Kryptonn 9.1.16 -->
 
 <includes>
 	<!--##################################################################################   VISTA RIGHT LIST - ID 59   ##################################################################################-->
@@ -249,9 +250,9 @@
 					</itemlayout>
 					<focusedlayout condition="IsEmpty(Control.GetLabel(5902)) | [[Window.IsActive(25)  | Window.IsActive(28)]+ Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(slimrightlistmusic)]" height="30">
 						<control type="image">
-							<posx>50</posx>
+							<posx>20</posx>
 							<posy>0</posy>
-							<width>630</width>
+							<width>530</width>
 							<height>30</height>
 							<texture>settings_button_focus.png</texture>
 						</control>
@@ -370,7 +371,7 @@
 					<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					<include>Animation_Fade</include>
 					<animation effect="slide" start="0,0" end="9,0" time="200" condition="Control.HasFocus(80)">Conditional</animation>
-					<visible>!Control.HasFocus(9915)</visible>
+					<visible>Control.HasFocus(9915)</visible>
 				</control>
 				<control type="label" id="5901"><!-- Plot -->
 					<include>InvisibleButton</include>

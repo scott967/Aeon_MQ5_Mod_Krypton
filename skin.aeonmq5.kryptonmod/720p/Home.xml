@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.2 /6.1.3/6.1.8 -->
 <!-- Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.16 -->
 
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
@@ -9,7 +10,7 @@
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
 	<onload condition="!StringCompare(skin.string(defaultsettings),2)">SetFocus(900)</onload>
 	<onload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onload>
-	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,"true",0)</onload>
+	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onload>
 	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="System.HasAddon(script.favourites) + ![IsEmpty(skin.string(favouriteswidget)) | Skin.HasSetting(nofavouriteswidget)]">RunScript(script.favourites)</onload>
 	<onload condition="Skin.HasSetting(rcbgames)">RunScript(script.games.rom.collection.browser,limit=12)</onload>
@@ -171,7 +172,7 @@
 					<texture>pvr_isrecording.png</texture>
 					<visible>PVR.IsRecording</visible>
 				</control>
-				<control type="label">
+				<control type="textbox">
 					<posx>95</posx>
 					<posy>631</posy>
 					<width>370</width>
@@ -181,7 +182,9 @@
 					<font>Font_18A</font>
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$VAR[value_pvrstatushome]</label>
-					<scroll>true</scroll>
+					<autoscroll  time="1000" repeat="5000">true</autoscroll>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>200</scrolltime>
 				</control>
 				<control type="image">
 					<posx>6</posx>

@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.13 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.16 -->
 
 <window id="2003">
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -44,6 +45,10 @@
 				<include>InvisibleButton</include>
 				<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
 				<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),seasons)</visible>
+			</control>
+			<control type="image" id="9925"><!-- Studio icons -->
+				<include>InvisibleButton</include>
+				<texture>$VAR[value_studiosicon]</texture>
 			</control>
 			<include>LiveBG</include>
 			<control type="image">
@@ -357,7 +362,7 @@
 				<height>2</height>
 				<width>987</width>
 				<texture>separator.png</texture>
-				<visible>!Container.Content(episodes)</visible>
+				<visible>![Container.Content(episodes) | Container.Content(musicvideos) + !IsEmpty(ListItem.Art(poster))]</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -365,7 +370,7 @@
 				<height>2</height>
 				<width>719</width>
 				<texture>separator.png</texture>
-				<visible>Container.Content(episodes)</visible>
+				<visible>Container.Content(episodes) | Container.Content(musicvideos) + IsEmpty(ListItem.Art(poster))</visible>
 			</control>
 			<control type="textbox"><!-- Plot -->
 				<posx>30</posx>
@@ -377,7 +382,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
-				<visible>!Container.Content(episodes)</visible>
+				<visible>![Container.Content(episodes) | Container.Content(musicvideos) + !IsEmpty(ListItem.Art(poster))]</visible>
 			</control>
 			<control type="textbox"><!-- Plot -->
 				<posx>30</posx>
@@ -389,7 +394,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
-				<visible>Container.Content(episodes)</visible>
+				<visible>Container.Content(episodes) | Container.Content(musicvideos) + IsEmpty(ListItem.Art(poster))</visible>
 			</control>
 			<control type="image">
 				<posx>720</posx>
@@ -397,7 +402,7 @@
 				<width>2</width>
 				<height>230</height>
 				<texture>separator_v.png</texture>
-				<visible>!Container.Content(episodes)</visible>
+				<visible>![Container.Content(episodes) | Container.Content(musicvideos) + !IsEmpty(ListItem.Art(poster))]</visible>
 			</control>
 			<control type="image"><!-- Logo -->
 				<posx>755</posx>
@@ -411,7 +416,7 @@
 			<control type="image"><!-- ClearArt -->
 				<posx>755</posx>
 				<posy>174</posy>
-				<height>165</height>
+				<height>136</height>
 				<width>190</width>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(clearart)]</texture>
@@ -425,7 +430,7 @@
 				<aspectratio align="left">keep</aspectratio>
 				<texture background="true">$VAR[value_poster]</texture>
 				<bordertexture border="-2">black.png</bordertexture>
-				<animation effect="slide" end="-266,0" time="0" condition="Container.Content(episodes)">Conditional</animation>
+				<animation effect="slide" end="-266,0" time="0" condition="Container.Content(episodes) | Container.Content(musicvideos) + IsEmpty(ListItem.Art(poster))">Conditional</animation>
 			</control>
 			<control type="image">
 				<posx>986</posx>
@@ -433,7 +438,7 @@
 				<width>2</width>
 				<height>384</height>
 				<texture>separator_v.png</texture>
-				<animation effect="slide" end="-266,0" time="0" condition="Container.Content(episodes)">Conditional</animation>
+				<animation effect="slide" end="-266,0" time="0" condition="Container.Content(episodes) | Container.Content(musicvideos) + IsEmpty(ListItem.Art(poster))">Conditional</animation>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -468,6 +473,15 @@
 				<animation effect="slide" start="0,300" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,300" time="500" tween="sine" easing="in">Hidden</animation>
 				<visible>Control.HasFocus(149)</visible>
+				<control type="image"><!-- Codec -->
+					<include>FlagImage</include>
+							<texture>$VAR[value_studiosicon]</texture>
+							<visible>!IsEmpty(Control.GetLabel(9925))</visible>
+						</control>
+						<control type="image">
+							<include>FlagSeparator</include>
+							<visible>!IsEmpty(Control.GetLabel(9925))</visible>
+						</control>
 				<control type="image"><!-- Codec -->
 					<include>FlagImage</include>
 					<texture>$VAR[value_videocodec]</texture>

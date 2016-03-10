@@ -1,4 +1,7 @@
-	<!-- Aeon MQ 5 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Aeon MQ 5 -->
+<!-- Jarvis 8.1.15 -->
+<!-- Krypton 9.1.16 -->
 
 <window id="142">
 	<defaultcontrol>-</defaultcontrol>
@@ -9,6 +12,10 @@
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
 			<visible>![Skin.HasSetting(novideofurniture) | Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(123) | Window.IsActive(124)]</visible>
+			<control type="image" id="9924"><!-- Studio icons -->
+				<include>InvisibleButton</include>
+				<texture>$VAR[value_studiosicon]</texture>
+			</control>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -214,7 +221,7 @@
 				<posx>220</posx>
 				<posy>682</posy>
 				<height>31</height>
-				<width>620</width>
+				<width>720</width>
 				<colordiffuse>$VAR[value_flagsbar]</colordiffuse>
 				<texture>whitebar_h.png</texture>
 			</control>
@@ -223,6 +230,15 @@
 				<posy>672</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>13</itemgap>
+				<control type="image"><!-- studio -->
+					<include>FlagImage</include>
+					<texture>$VAR[value_studiosicon]</texture>
+					<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+				</control>
 				<control type="image"><!-- Flags -->
 					<include>FlagImage</include>
 					<texture background="true">$VAR[value_mpaa_fs]</texture>
@@ -342,7 +358,7 @@
 					<posx>880</posx>
 					<posy>480</posy>
 					<width>380</width>
-					<height>230</height>
+					<height>190</height>
 					<font>Font_18A</font>
 					<label>$INFO[VideoPlayer.CastAndRole]</label>
 					<textcolor>FFFFFAF0</textcolor>

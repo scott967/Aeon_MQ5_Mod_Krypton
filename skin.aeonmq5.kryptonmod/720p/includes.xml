@@ -2,7 +2,7 @@
 	<!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.4/6.1.5/6.1.9 Shelfcase Mod -->
 	<!-- Isengard 7.1.9 Shelfcase/7.1.10/7.1.11 MidList/7.1.12 -->
 	<!-- Jarvis 8.1.13/8.1.14 -->
-	<!-- Krypton 9.1.15 -->
+	<!-- Krypton 9.1.15/9.1.16 -->
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="IncludesVariables.xml"/>
@@ -1256,10 +1256,10 @@
 		<posy>0</posy>
 		<width>239</width>
 		<height>40</height>
-		<textoffsety>7</textoffsety>
+		<textoffsety>0</textoffsety>
 		<textoffsetx>20</textoffsetx>
 		<align>left</align>
-		<aligny>top</aligny>
+		<aligny>center</aligny>
 		<font>Font_24A</font>
 		<textcolor>E4101010</textcolor>
 		<selectedcolor>FFFFFAF0</selectedcolor>
@@ -1269,10 +1269,10 @@
 		<posy>0</posy>
 		<width>239</width>
 		<height>40</height>
-		<textoffsety>7</textoffsety>
+		<textoffsety>0</textoffsety>
 		<textoffsetx>20</textoffsetx>
 		<align>left</align>
-		<aligny>top</aligny>
+		<aligny>center</aligny>
 		<font>Font_24A</font>
 		<textcolor>FFFFFAF0</textcolor>
 		<selectedcolor>FFFFFAF0</selectedcolor>
@@ -1291,10 +1291,10 @@
 		<posy>0</posy>
 		<width>239</width>
 		<height>40</height>
-		<textoffsety>7</textoffsety>
+		<textoffsety>0</textoffsety>
 		<textoffsetx>20</textoffsetx>
 		<align>left</align>
-		<aligny>top</aligny>
+		<aligny>center</aligny>
 		<font>Font_24A</font>
 		<texture>settings_button.png</texture>
 		<texturefocus>settings_button.png</texturefocus>
@@ -2352,7 +2352,7 @@
 			<animation effect="slide" end="605,550" time="0" condition="Control.IsVisible(67)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="100">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="500" delay="200">Hidden</animation>
-			<visible>!Skin.HasSetting(noscrollletters) + Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]</visible>
+			<visible>!Window.IsVisible(MusicPlaylist) + [!Skin.HasSetting(noscrollletters) + Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>

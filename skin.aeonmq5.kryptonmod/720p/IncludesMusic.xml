@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Isengard 7.1.11 Mid List -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.16 -->
 
 <includes>
 	<!-- ######################################################################### Music Window #########################################################################-->
@@ -36,6 +37,10 @@
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
 				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra)</visible>
+			</control>
+			<control type="image" id="9924"><!-- record label control -->
+				<include>InvisibleButton</include>
+				<texture>$VAR[value_recordlabelsicon]</texture>
 			</control>
 			<control type="group"><!-- default group -->
 				<include>Animation_Window</include>
@@ -125,16 +130,25 @@
 						<texture diffuse="shadow_mask.png">shadow_spot.png</texture>
 						<animation effect="fade" end="75" condition="true">Conditional</animation>
 					</control>
-					<control type="group">
+					<control type="group">  <!-- music -->
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
 						<animation effect="slide" start="0,0" end="0,300"  time="500" tween="sine" easing="out">Hidden</animation>
-						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
+						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + !StringCompare(ListItem.DBType,MusicVideo)</visible>
 						<control type="grouplist"><!-- Etiquetas -->
 							<posx>20</posx>
 							<posy>645</posy>
 							<orientation>horizontal</orientation>
 							<itemgap>25</itemgap>
+							<control type="image"><!-- recordlabel -->
+								<include>FlagImage</include>
+								<texture>$VAR[value_recordlabelsicon]</texture>
+								<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+							</control>
 							<control type="label"><!-- Rating -->
 								<include>FlagLabel</include>
 								<label>$INFO[ListItem.Rating]</label>
@@ -199,6 +213,161 @@
 								<textcolor>$VAR[value_flagscolor]</textcolor>
 								<fadetime>FanartCrossFadeTime</fadetime>
 								<scroll>true</scroll>
+							</control>
+						</control>
+					</control>
+					<control type="group">  <!-- Music Video -->
+						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
+						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
+						<animation effect="slide" start="0,0" end="0,300"  time="500" tween="sine" easing="out">Hidden</animation>
+						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + StringCompare(ListItem.DBType,MusicVideo)</visible>
+						<control type="grouplist"><!-- Etiquetas/tags -->
+							<posx>20</posx>
+							<posy>645</posy>
+							<orientation>horizontal</orientation>
+							<itemgap>17</itemgap>
+							<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(621)">Conditional</animation>
+							<control type="image"><!-- studio -->
+								<include>FlagImage</include>
+								<texture>$VAR[value_studiosicon]</texture>
+								<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(Control.GetLabel(9924))</visible>
+							</control>
+							<control type="image"><!-- Mpaa -->
+								<include>FlagImage</include>
+								<texture>$VAR[value_mpaa]</texture>
+								<visible>!IsEmpty(ListItem.Mpaa)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.Mpaa)</visible>
+							</control>
+							<control type="group"><!-- Rating -->
+								<width>125</width>
+								<visible>!IsEmpty(ListItem.Title)</visible>
+								<control type="image">
+									<posx>5</posx>
+									<include>FlagImage</include>
+									<texture>flags/rating.png</texture>
+								</control>
+								<control type="label">
+									<posx>13</posx>
+									<posy>1.5</posy>
+									<width>89</width>
+									<height>50</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>Font_20B</font>
+									<textcolor>$VAR[value_flagscolor]</textcolor>
+									<fadetime>FanartCrossFadeTime</fadetime>
+									<label fallback="NR">$INFO[ListItem.Rating]</label>
+								</control>
+								<control type="image">
+									<posx>125</posx>
+									<include>FlagSeparator</include>
+								</control>
+							</control>
+							<control type="image"><!-- Codec -->
+								<include>FlagImage</include>
+								<texture>$VAR[value_videocodec]</texture>
+								<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+							</control>
+							<control type="image"><!-- Resolution -->
+								<include>FlagImage</include>
+								<texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+								<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+							</control>
+							<control type="image"><!-- Aspect -->
+								<include>FlagImage</include>
+								<texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+								<visible>!IsEmpty(ListItem.VideoAspect)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.VideoAspect)</visible>
+							</control>
+							<control type="image"><!-- Audio Codec -->
+								<include>FlagImage</include>
+								<texture>$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+								<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+							</control>
+							<control type="image"><!-- Channels -->
+								<include>FlagImage</include>
+								<texture>$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</texture>
+								<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+							</control>
+							<control type="group"><!-- Drive Externo -->
+								<width>125</width>
+								<visible>!IsEmpty(Control.GetLabel(556))</visible>
+								<control type="image">
+									<posx>5</posx>
+									<include>FlagImage</include>
+									<texture>flags/externaldrive.png</texture>
+								</control>
+								<control type="label">
+									<posx>13</posx>
+									<posy>1.5</posy>
+									<width>89</width>
+									<height>50</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>Font_20B</font>
+									<textcolor>$VAR[value_flagscolor]</textcolor>
+									<fadetime>FanartCrossFadeTime</fadetime>
+									<label>$VAR[value_drive]</label>
+								</control>
+								<control type="image">
+									<posx>125</posx>
+									<include>FlagSeparator</include>
+								</control>
+							</control>
+							<control type="image"><!-- Trailer -->
+								<include>FlagImage</include>
+								<texture>flags/trailer.png</texture>
+								<visible>!IsEmpty(ListItem.Trailer)</visible>
+							</control>
+							<control type="image">
+								<include>FlagSeparator</include>
+								<visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
+							</control>
+							<control type="group"><!-- % Played -->
+								<width>125</width>
+								<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
+								<control type="image">
+									<include>FlagImage</include>
+									<texture>flags/percentplayed.png</texture>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>1.5</posy>
+									<width>89</width>
+									<height>50</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>Font_20B</font>
+									<textcolor>$VAR[value_flagscolor]</textcolor>
+									<fadetime>FanartCrossFadeTime</fadetime>
+									<label>$INFO[ListItem.PercentPlayed]%</label>
+								</control>
 							</control>
 						</control>
 					</control>

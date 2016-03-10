@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.4/6.1.5 -->
+	<!-- Jarvis 8.1.15 RjSachse EPGTimeLineLow view -->
+	<!-- Krypton 9.1.16 -->
 
 <includes>
 	<include name="EPGMenu">
@@ -182,8 +185,9 @@
 				<height>430</height>
 				<onleft>9900</onleft>
 				<onright>9900</onright>
-				<onup condition="!Skin.HasSetting(epggridwrap)">9900</onup>
-				<onup condition="Skin.HasSetting(epggridwrap)">10</onup>
+<!-- 				<onup condition="!Skin.HasSetting(epggridwrap)">9900</onup>
+				<onup condition="Skin.HasSetting(epggridwrap)">10</onup> -->
+				<onup>10</onup>
 				<ondown>10</ondown>
 				<pagecontrol>10</pagecontrol>
 				<scrolltime>350</scrolltime>
@@ -974,4 +978,248 @@
 			<include>PVRCommonInfo</include>
 		</control>
 	</include>
+	<!-- Aeon MQ 6 Mod by RjSachse -->
+	<!--################################################################################​##   EPG Low   ###########################################################################​#######-->
+	<include name="ViewEPGTimelineLow">
+		<control type="group">
+			<visible>Control.IsVisible(10)</visible>
+			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
+			<control type="group">
+				<control type="image">
+					<left>0</left>
+					<top>540</top>
+					<width>1280</width>
+					<height>30</height>
+					<texture>shadow_h.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>240</left>
+					<top>570</top>
+					<width>1040</width>
+					<height>150</height>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<animation effect="fade" end="85" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>570</top>
+					<width>240</width>
+					<height>150</height>
+					<texture>grey.png</texture>
+					<colordiffuse>90FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>570</top>
+					<width>240</width>
+					<height>25</height>
+					<texture>grey.png</texture>
+					<colordiffuse>E4101010</colordiffuse>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>595</top>
+					<width>1280</width>
+					<height>30</height>
+					<texture flipy="true">shadow_h.png</texture>
+				</control>
+			</control>
+			<control type="epggrid" id="10">
+				<viewtype label="19032">list</viewtype>
+				<left>0</left>
+				<top>570</top>
+				<width>1280</width>
+				<height>150</height>
+				<onleft>9900</onleft>
+				<onright>9900</onright>
+				<onup>10</onup>
+				<ondown>10</ondown>
+				<pagecontrol>10</pagecontrol>
+				<scrolltime>350</scrolltime>
+				<timeblocks>40</timeblocks>
+				<rulerunit>6</rulerunit>
+				<progresstexture border="5">pvr_epgprogressindicator.png</progresstexture>
+				<rulerlayout height="30" width="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>154</width>
+						<height>25</height>
+						<texture>grey.png</texture>
+						<colordiffuse>50101010</colordiffuse>
+					</control>
+					<control type="label" id="2">
+						<left>20</left>
+						<top>-1</top>
+						<width>40</width>
+						<height>28</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Font_18A</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[value_headercolor]</textcolor>
+					</control>
+				</rulerlayout>
+				<channellayout height="40" width="240">
+					<control type="label" id="1">
+						<include>SettingsLabel</include>
+						<width>150</width>
+						<label>$INFO[ListItem.ChannelName]</label>
+					</control>
+					<control type="image">
+						<posx>155</posx>
+						<posy>2</posy>
+						<height>35</height>
+						<width>84</width>
+						<aspectratio align="left">keep</aspectratio>
+						<texture border="3">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>240</width>
+						<height>3</height>
+						<texture>divider.png</texture>
+						<colordiffuse>90FFFFFF</colordiffuse>
+					</control>
+				</channellayout>
+				<focusedchannellayout height="40" width="240">
+					<control type="image" id="1">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>238</width>
+						<height>40</height>
+						<texture>settings_button.png</texture>
+						<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(10)">conditional</animation>
+					</control>
+					<control type="label" id="1">
+						<include>SettingsLabelFocus</include>
+						<width>150</width>
+						<label>$INFO[ListItem.ChannelName]</label>
+					</control>    
+					<control type="image">
+						<posx>155</posx>
+						<posy>2</posy>
+						<height>35</height>
+						<width>84</width>
+						<aspectratio align="left" >keep</aspectratio>
+						<texture border="3">$INFO[ListItem.Icon]</texture>
+					</control>
+				</focusedchannellayout>
+				<itemlayout height="40" width="50">
+					<control type="image" id="14">
+						<left>0</left>
+						<top>1</top>
+						<width>48</width>
+						<height>38</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>50FFFAF0</colordiffuse>
+						<texture>settings_button_focus.png</texture>
+					</control>
+					<control type="image" id="2">
+						<left>0</left>
+						<top>1</top>
+						<width>48</width>
+						<height>38</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3">genres/pvr/$INFO[ListItem.Property(GenreType)].png</texture>
+						<colordiffuse>50FFFAF0</colordiffuse>    
+					</control>
+					<control type="label" id="1">
+						<left>6</left>
+						<top>1</top>
+						<width>42</width>
+						<height>38</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Font_18A</font>
+						<include>listcolor</include>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>1</top>
+						<width>9</width>
+						<height>9</height>
+						<texture>pvr_isrecording.png</texture>
+						<visible>ListItem.IsRecording</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>1</top>
+						<width>9</width>
+						<height>9</height>
+						<texture>pvr_hastimer.png</texture>
+						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40" width="50">
+					<control type="image" id="14">
+						<left>0</left>
+						<top>1</top>
+						<width>48</width>
+						<height>38</height>
+						<texture>settings_button_focus.png</texture>
+					</control>
+					<control type="image" id="2">
+						<left>0</left>
+						<top>1</top>
+						<width>48</width>
+						<height>38</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3">genres/pvr/$INFO[ListItem.Property(GenreType)].png</texture>
+						<colordiffuse>90FFFAF0</colordiffuse>    
+					</control>
+					<control type="label" id="1">
+						<left>6</left>
+						<top>1</top>
+						<width>42</width>
+						<height>38</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Font_18A</font>
+						<include>listcolorfocus</include>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>1</top>
+						<width>9</width>
+						<height>9</height>
+						<texture>pvr_isrecording.png</texture>
+						<visible>ListItem.IsRecording</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>1</top>
+						<width>9</width>
+						<height>9</height>
+						<texture>pvr_hastimer.png</texture>
+						<colordiffuse>E4101010</colordiffuse>
+						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<control type="image">
+					<left>0</left>
+					<top>570</top>
+					<width>250</width>
+					<height>150</height>
+					<texture>menu_glass.png</texture>
+					<colordiffuse>70FFFAF0</colordiffuse>
+				</control>
+				<control type="image">
+					<left>238</left>
+					<top>570</top>
+					<width>30</width>
+					<height>150</height>
+					<texture>shadow.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+			</control>
+		</control>
+	</include> 
 </includes>

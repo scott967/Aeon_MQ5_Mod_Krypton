@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 -->
 <!-- Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.16 -->
 
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
@@ -10,7 +11,7 @@
 	<onunload>Skin.Reset(resetmode)</onunload>
 	<onunload>Skin.Reset(fonte)</onunload>
 	<onunload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onunload>
-	<onunload condition="Skin.HasSetting(custom_wxicons.multi">SetProperty(current_wxicon_multi,"true",0)</onunload>
+	<onunload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onunload>
 	<controls>
 		<control type="multiimage">
 			<include>HomeBG</include>
@@ -607,6 +608,10 @@
 				<onright>80</onright>
 				<itemgap>0</itemgap>
 				<pagecontrol>-</pagecontrol>
+				<control type="button" id="1165"><!-- reload skin (writes skin settings to file) -->
+					<label>31335</label>
+					<onclick>ReloadSkin()</onclick>
+				</control>
 				<control type="button" id="1160"><!-- Exportar ajustes -->
 					<label>31622</label>
 					<onclick>RunScript(script.toolbox,info=exportskinsettings)</onclick>
@@ -2631,6 +2636,36 @@
 					<label>$LOCALIZE[31009] $LOCALIZE[536]</label>
 					<label2>$INFO[Skin.String(custom_wxicons.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=custom_wxicons)</onclick>
+				</control>
+				<control type="button" id="3502">
+					<label>$LOCALIZE[20338] ($LOCALIZE[157]) $LOCALIZE[515] $LOCALIZE[536]</label>
+					<label2>$INFO[Skin.String(custom_moviegenreicons.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.moviegenreicons&amp;property=custom_moviegenreicons)</onclick>
+				</control>
+				<control type="button" id="3503">
+					<label>$LOCALIZE[20338] ($LOCALIZE[157]) $LOCALIZE[515] $LOCALIZE[20445]</label>
+					<label2>$INFO[Skin.String(custom_moviegenrefanart.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.moviegenrefanart&amp;property=custom_moviegenrefanart)</onclick>
+				</control>
+				<control type="button" id="3504">
+					<label>$LOCALIZE[2] $LOCALIZE[515] $LOCALIZE[536]</label>
+					<label2>$INFO[Skin.String(custom_musicgenreicons.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.musicgenreicons&amp;property=custom_musicgenreicons)</onclick>
+				</control>
+				<control type="button" id="3505">
+					<label>$LOCALIZE[2] $LOCALIZE[515] $LOCALIZE[20445]</label>
+					<label2>$INFO[Skin.String(custom_musicgenrefanart.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.musicgenrefanart&amp;property=custom_musicgenrefanart)</onclick>
+				</control>
+				<control type="button" id="3506">
+					<label>$LOCALIZE[572] $LOCALIZE[536]</label>
+					<label2>$INFO[Skin.String(custom_studios.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.studios&amp;property=custom_studios)</onclick>
+				</control>
+				<control type="button" id="3507">
+					<label>$LOCALIZE[264] $LOCALIZE[21899] $LOCALIZE[536]</label>
+					<label2>$INFO[Skin.String(custom_recordlabels.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.recordlabels&amp;property=custom_recordlabels)</onclick>
 				</control>
 			</control>
 

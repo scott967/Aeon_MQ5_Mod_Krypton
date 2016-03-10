@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.4 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15 -->
+<!-- Krypton 9.1.15/9.1.16 -->
 
 <window id="132">
 	<defaultcontrol always="true">20</defaultcontrol>
@@ -129,7 +129,7 @@
 			<control type="grouplist" id="5">
 				<description>control area</description>
 				<posx>0</posx>
-				<posy>135</posy>
+				<posy>76</posy>
 				<width>499</width>
 				<height>205</height>
 				<itemgap>0</itemgap>
