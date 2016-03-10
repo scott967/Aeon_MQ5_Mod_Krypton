@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ 5 Helix 6.1.0/6.1.4 -->
-<!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15/9.1.16 -->
-
-<window id="132">
-	<defaultcontrol always="true">20</defaultcontrol>
-	<!-- <zorder>2</zorder> -->
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+<!-- Aeon MQ5 Krypton 9.1.16 -->
+<window>
 	<include>Animation_DialogPopup</include>
 	<controls>
 		<control type="group">
@@ -18,7 +8,6 @@
 			<posy>190</posy>
 			<width>869</width>
 			<height>317</height>
-			<visible>!Window.IsActive(addonsettings)</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -41,7 +30,7 @@
 				<texture>darkgrey.png</texture>
 				<colordiffuse>F0FFFFFF</colordiffuse>
 			</control>
-						<control type="image">
+			<control type="image">
 				<posx>-30</posx>
 				<posy>0</posy>
 				<width>30</width>
@@ -73,7 +62,7 @@
 				<texture>black.png</texture>
 				<colordiffuse>90FFFFFF</colordiffuse>
 			</control>
-			<control type="label" id="0"><!-- header set content-->
+			<control type="label" id="2"><!-- header set by Kodi-->
 				<posx>20</posx>
 				<posy>0</posy>
 				<width>480</width>
@@ -82,50 +71,10 @@
 				<aligny>center</aligny>
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<font>Font_18</font>
-				<label>20333</label>
+				<label>-</label>
 			</control>
 
-			<!-- Content Button -->
-			<control type="button" id="20">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>499</width>
-				<height>41</height>
-				<font>Font_18A</font>
-				<textwidth>400</textwidth>
-				<textcolor>FFFFFAF0</textcolor>
-				<focusedcolor>FF101010</focusedcolor>
-				<pulseonselect>false</pulseonselect>
-				<textoffsetx>20</textoffsetx>
-				<onup>5</onup>
-				<ondown>21</ondown>
-				<onleft>28</onleft>
-				<onright>28</onright>
-				<aligny>center</aligny>
-			</control>
-
-			<!-- Scraper List -->
-			<control type="button" id="21">
-				<posx>0</posx>
-				<posy>90</posy>
-				<height>41</height>
-				<width>499</width>
-				<height>41</height>
-				<font>Font_18A</font>
-				<textwidth>400</textwidth>
-				<textcolor>FFFFFAF0</textcolor>
-				<focusedcolor>FF101010</focusedcolor>
-				<pulseonselect>false</pulseonselect>
-				<textoffsetx>20</textoffsetx>
-				<onleft>28</onleft>
-				<onright>28</onright>
-				<onup>20</onup>
-				<ondown>5</ondown>
-				<scrolltime>200</scrolltime>
-			</control>
-
-
-			<!-- Content List -->
+			<!-- Content List defaults for Kodi  -->
 			<control type="grouplist" id="5">
 				<description>control area</description>
 				<posx>0</posx>
@@ -139,54 +88,21 @@
 				<onright>28</onright>
 			</control>
 			<control type="button" id="7">
-				<posx>0</posx>
-				<posy>0</posy>
-				<height>41</height>
-				<font>Font_18A</font>
-				<textoffsetx>10</textoffsetx>
 			</control>
 			<control type="radiobutton" id="8">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>499</width>
-				<height>41</height>
-				<textwidth>400</textwidth>
-				<font>Font_18A</font>
-				<textcolor>FFFFFAF0</textcolor>
-				<focusedcolor>FF101010</focusedcolor>
-				<pulseonselect>false</pulseonselect>
-				<radiowidth>94</radiowidth>
-				<radioposx>416</radioposx>
-				<radioheight>65</radioheight>
-				<textoffsetx>20</textoffsetx>
-				<aligny>center</aligny>
+				<radioposx>894</radioposx>
+			</control>
+			<control type="spincontrolex" id="9">
+				<spinposx>26</spinposx>
+			</control>
+			<control type="edit" id="12">
+				<texturefocus>settings_button_focus.png</texturefocus>
+			</control>
+			<control type="sliderex" id="13">
+			</control>
+			<control type="label" id="14">
 			</control>
 
-			<!-- Options -->
-			<control type="image">
-				<posx>653</posx>
-				<posy>0</posy>
-				<width>30</width>
-				<height>328</height>
-				<texture flipx="true">shadow.png</texture>
-				<colordiffuse>C3FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>846</posx>
-				<posy>0</posy>
-				<width>30</width>
-				<height>328</height>
-				<texture>shadow.png</texture>
-				<colordiffuse>C3FFFFFF</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>683</posx>
-				<posy>0</posy>
-				<width>163</width>
-				<height>328</height>
-				<texture>grey.png</texture>
-				<colordiffuse>90FFFFFF</colordiffuse>
-			</control>
 			<control type="grouplist" id="9000">
 				<posx>683</posx>
 				<posy>42</posy>
@@ -194,19 +110,19 @@
 				<onright>SetFocus(20)</onright>
 				<control type="button" id="28"><!-- OK -->
 					<include>SettingsDialogButton</include>
-					<label>186</label>
+					<label>-</label>
 					<onleft>SetFocus(20)</onleft>
 					<onright>SetFocus(20)</onright>
 				</control>
 				<control type="button" id="29"><!-- Cancel -->
 					<include>SettingsDialogButton</include>
-					<label>222</label>
+					<label>-</label>
 					<onleft>SetFocus(20)</onleft>
 					<onright>SetFocus(20)</onright>
 				</control>
-				<control type="button" id="22"><!-- Settings -->
+				<control type="button" id="30"><!-- Clear/Settings -->
 					<include>SettingsDialogButton</include>
-					<label>5</label>
+					<label>-</label>
 					<onleft>SetFocus(20)</onleft>
 					<onright>SetFocus(20)</onright>
 				</control>
