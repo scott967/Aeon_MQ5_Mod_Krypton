@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 Helix 6.1.0 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15 -->
+<!-- Krypton 9.1.15/9.1.16 -->
 
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
-	<onload condition="!Window.IsActive(songinformation)">ClearProperty(script.metadata.actors.isactive)</onload>
+	<onload condition="!Window.Is(songinformation)">ClearProperty(script.metadata.actors.isactive)</onload>
 	<controls>
 		<control type="group"><!-- default group -->
 			<include>Animation_Window</include>
 			<animation effect="slide" start="0" end="-1280" time="400" tween="cubic" easing="inout" condition="StringCompare(Window.Property(script.metadata.actors.isactive),1)">Conditional</animation>
-			<animation effect="slide" start="0" end="-1280" time="400" tween="cubic" easing="inout" condition="Window.IsActive(2006) + !Window.IsActive(songinformation)">Conditional</animation>
+			<animation effect="slide" start="0" end="-1280" time="400" tween="cubic" easing="inout" condition="Window.IsActive(2006) + !Window.Is(songinformation)">Conditional</animation>
 			<control type="multiimage"><!-- Multi Fanart -->
 				<include>WindowBG</include>
 				<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
@@ -137,7 +137,7 @@
 				<scrollout>false</scrollout>
 			</control>
 			<control type="group"> <!-- album and artist info -->
-				<visible>Window.IsActive(musicinformation)</visible>
+				<visible>Window.Is(musicinformation)</visible>
 				<control type="label"><!-- Mood -->
 					<left>0</left>
 					<posx>190</posx>
@@ -456,7 +456,7 @@
 				</control>
 			</control>
 			<control type="group"> <!-- song info -->
-				<visible>Window.IsActive(songinformation)</visible>
+				<visible>Window.Is(songinformation)</visible>
 				<control type="label"><!-- Track -->
 					<posx>190</posx>
 					<posy>140</posy>
@@ -934,7 +934,7 @@
 			<control type="group"><!-- Menu bar songinfo-->
 				<posx>0</posx>
 				<posy>465</posy>
-				<visible>Window.IsActive(songinformation</visible>
+				<visible>Window.Is(songinformation)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>-30</posy>

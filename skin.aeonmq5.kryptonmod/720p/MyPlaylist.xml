@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ 5 Krypton 9.1.15 -->
+<!-- Aeon MQ 5 Krypton 9.1.15/9.1.16 -->
 
 <window>
-	<include condiftion="Window.IsActve(musicplaylist)">MusicWindow</include>
-	<include condiftion="Window.IsActve(videoplaylist)">VideoWindow</include>
+	<include condiftion="Window.Is(musicplaylist)">MusicWindow</include>
+	<include condiftion="Window.Is(videoplaylist)">VideoWindow</include>
 </window>
