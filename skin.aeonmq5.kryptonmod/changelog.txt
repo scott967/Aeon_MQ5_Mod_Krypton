@@ -10,6 +10,8 @@ Improved:  Studio and record Label icons used in the flags bar
 Improved:  Removed wrap option for EPGtimeline view (use <m>enu key instead)
 Improved:  Add reset skin button on skin settings
 Improved:  Show background in VideoPlaylist when not playing
+Fixed:  Krypton cahnge ListItem.Property(Addon.*)
+Fixed:  Krypton DialogSettings
 
 [B][COLOR=FFFF8C00]BUILD 9.1.15 - RELEASE DATE 02/11/2016[/COLOR][/B]
 Fixed:  ListItem(StarRating) is now ListItem(Rating)
