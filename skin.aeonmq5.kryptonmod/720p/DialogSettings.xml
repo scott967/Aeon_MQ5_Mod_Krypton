@@ -63,7 +63,7 @@
 				<colordiffuse>90FFFFFF</colordiffuse>
 			</control>
 			<control type="label" id="2"><!-- header set by Kodi-->
-				<posx>0</posx>
+				<posx>30</posx>
 				<posy>0</posy>
 				<width>680</width>
 				<height>32</height>
@@ -94,12 +94,13 @@
 			<control type="radiobutton" id="8">
 				<width>580</width>
 				<textoffset>20</textoffset>
+				<textwidth>540</textwidth>
 				<radioposx>580</radioposx>
 			</control>
 			<control type="spincontrolex" id="9">
 				<width>580</width>
 				<textoffset>20</textoffset>
-				<spinposx>580</spinposx>
+				<spinposx>40</spinposx>
 			</control>
 			<control type="edit" id="12">
 				<width>680</width>
