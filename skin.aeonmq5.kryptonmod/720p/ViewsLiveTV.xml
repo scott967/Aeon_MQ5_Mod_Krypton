@@ -1124,7 +1124,7 @@
 						<width>48</width>
 						<height>38</height>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3">genres/pvr/$INFO[ListItem.Property(GenreType)].png</texture>
+						<texture border="3">genres/$INFO[ListItem.Property(GenreType)].png</texture>
 						<colordiffuse>50FFFAF0</colordiffuse>    
 					</control>
 					<control type="label" id="1">
@@ -1169,7 +1169,7 @@
 						<width>48</width>
 						<height>38</height>
 						<aspectratio>stretch</aspectratio>
-						<texture border="3">genres/pvr/$INFO[ListItem.Property(GenreType)].png</texture>
+						<texture border="3">genres/$INFO[ListItem.Property(GenreType)].png</texture>
 						<colordiffuse>90FFFAF0</colordiffuse>    
 					</control>
 					<control type="label" id="1">

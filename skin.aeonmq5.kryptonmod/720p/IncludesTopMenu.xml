@@ -3890,14 +3890,14 @@
 					<label>19023</label>
 					<ondown>50</ondown>
 				</control>
-				<!-- <control type="radiobutton" id="9211"> EPG Grid Nav 
+				<control type="radiobutton" id="9211"> EPG Grid low list
 					<include>TopMenuRadioButton</include>
 					<visible>Window.IsActive(tvguide) | Window.IsActive(tvchannels) | Window.IsActive(tvtimers)</visible>
-					<onclick>Skin.ToggleSetting(epggridwrap)</onclick>
-					<selected>Skin.HasSetting(epggridwrap)</selected>
-					<label>$LOCALIZE[19069] $LOCALIZE[31551]</label>
+					<onclick>Skin.ToggleSetting(noepggridlow)</onclick>
+					<selected>!Skin.HasSetting(noepggridlow)</selected>
+					<label>$LOCALIZE[19206] $LOCALIZE[31807]</label>
 					<ondown>50</ondown>
-				</control> -->
+				</control>
 				<control type="radiobutton" id="9209"><!-- PVR date 9313 -->
 					<include>TopMenuRadioButton</include>
 					<label>31250</label>

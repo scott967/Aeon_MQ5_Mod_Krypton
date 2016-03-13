@@ -130,8 +130,8 @@
 
 			<!-- ViewTypes -->
 			<control type="group" id="50">
-				<include condition="!Player.HasVideo">ViewEPGTimeline</include>  <!-- view 10 -->
-				<include condition="Player.HasVideo">ViewEPGTimelineLow</include>  <!-- view 10 -->
+				<include condition="!Player.HasVideo | Skin.HasSetting(noepggridlow)">ViewEPGTimeline</include>  <!-- view 10 -->
+				<include condition="Player.HasVideo + !Skin.HasSetting(noepggridlow)">ViewEPGTimelineLow</include>  <!-- view 10 -->
 				<include condition="Skin.HasSetting(viewnow_epg)">ViewLiveTVGuideNow</include> <!-- view 11 -->
 				<include condition="Skin.HasSetting(viewnext_epg)">ViewLiveTVGuideNext</include> <!-- view 12 -->
 				<include condition="Skin.HasSetting(viewchannel_epg)">ViewLiveTVGuideChannel</include> <!-- view 13 -->
