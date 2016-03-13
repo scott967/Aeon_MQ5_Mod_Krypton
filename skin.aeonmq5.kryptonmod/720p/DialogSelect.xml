@@ -336,8 +336,27 @@
 					<font>Font_OSDOptions</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<onleft>3</onleft>
+					<onleft>7</onleft>
 					<onright>3</onright>
+					<onup>3</onup>
+					<ondown>3</ondown>
+				</control>
+				<control type="button" id="7">
+					<description>Cancel Button</description>
+					<posx>390</posx>
+					<posy>630</posy>
+					<width>210</width>
+					<height>35</height>
+					<label>222</label>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<textcolor>FF505050</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<font>Font_OSDOptions</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<onleft>3</onleft>
+					<onright>5</onright>
 					<onup>3</onup>
 					<ondown>3</ondown>
 				</control>
