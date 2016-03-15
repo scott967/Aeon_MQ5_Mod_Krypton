@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
+<!-- Krypton 9.1.16 -->
 
 <window id="2005">
 	<controls>	
@@ -70,7 +71,7 @@
 
 		<!--  Addl Live TV data for CodecInfo -->
 		<control type="group">
-			<visible>Player.ShowCodec + VideoPlayer.Content(LiveTV) + system.getbool(pvrplayback.signalquality)</visible>
+			<visible>Skin.HasSetting(CodecInfo) + VideoPlayer.Content(LiveTV) + system.getbool(pvrplayback.signalquality)</visible>
 			<top>135</top>
 			<left>-50</left>
 			<control type="image">
