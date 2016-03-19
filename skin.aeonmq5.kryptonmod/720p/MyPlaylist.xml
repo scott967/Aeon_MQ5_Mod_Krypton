@@ -3,5 +3,5 @@
 
 <window>
 	<include condiftion="Window.Is(musicplaylist)">MusicWindow</include>
-	<include condiftion="Window.Is(videoplaylist)">VideoWindow</include>
+	<include condiftion="Window.Is(videoplaylist)">VideoPLWindow</include>
 </window>

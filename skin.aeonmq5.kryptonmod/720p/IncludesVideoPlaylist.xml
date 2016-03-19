@@ -2,7 +2,7 @@
 <!-- Aeon MQ5 Krypton 9.1.15 -->
 
 <includes>
-	<include name="VideoWindow">
+	<include name="VideoPLWindow">
 		<defaultcontrol always="true">51</defaultcontrol>
 		<menucontrol>9000</menucontrol>
 		<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
