@@ -480,7 +480,8 @@
 		<include condition="StringCompare(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
 		<include condition="StringCompare(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
 		<include condition="StringCompare(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
-		<timeperimage>$VAR[value_homebgdelay]</timeperimage>
+		<!-- <timeperimage>$VAR[value_homebgdelay]</timeperimage> -->
+		<timeperimage>$VAR[value_homebgseconds]</timeperimage>
 		<randomize>true</randomize>
 		<include condition="Skin.HasSetting(keepaspect)">KeepAspect</include>
 		<fadetime>FanartCrossFadeTime</fadetime>
@@ -503,7 +504,7 @@
 			<colordiffuse>C3FFFFFF</colordiffuse>
 			<include>Animation_Fade</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog)">conditional</animation>
-			<visible>Window.IsVisible(101) | Window.IsVisible(103) | Window.IsVisible(106) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(114) | Window.IsVisible(121) | Window.IsVisible(126) | Window.IsVisible(128) | Window.IsVisible(129) | Window.IsVisible(130) | Window.IsVisible(132) | Window.IsVisible(134) | Window.IsVisible(136) | Window.IsVisible(137) | Window.IsVisible(623) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(2000) | Window.IsVisible(2008)</visible>
+			<visible>Window.IsVisible(101) | Window.IsVisible(103) | Window.IsVisible(106) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(114) | Window.IsVisible(121) | Window.IsVisible(126) | Window.IsVisible(128) | Window.IsVisible(129) | Window.IsVisible(130) | Window.IsVisible(132) | Window.IsVisible(134) | Window.IsVisible(136) | Window.IsVisible(137) | Window.IsVisible(623) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(2000)</visible>
 		</control>
 		<include condition="!StringCompare(skin.string(defaultsettings),2)">DefaultSettings</include>
 	</include>
@@ -1449,7 +1450,7 @@
 		<height>28</height>
 		<aligny>center</aligny>
 		<align>right</align>
-		<font>Font_OSDSeek</font>
+		<font>Font_18A</font>
 		<textcolor>FF363636</textcolor>
 		<include>Animation_Fade</include>
 	</include>
@@ -1460,7 +1461,7 @@
 		<height>28</height>
 		<aligny>center</aligny>
 		<align>left</align>
-		<font>Font_OSDSeek</font>
+		<font>Font_18A</font>
 		<textcolor>FF363636</textcolor>
 		<include>Animation_Fade</include>
 	</include>
@@ -2128,7 +2129,7 @@
 			<animation effect="slide" start="0,-70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
 			<animation effect="slide" end="0,-70" time="500" tween="sine" easing="out" condition="Control.IsVisible(79)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(614) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -2161,7 +2162,7 @@
 			<animation effect="slide" start="0,-70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
 			<animation effect="slide" end="0,-70" time="500" tween="sine" easing="out" condition="Control.IsVisible(79)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(614) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103) | Window.IsActive(tvchannels) | Window.IsActive(radiochannels) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103) | Window.IsActive(tvchannels) | Window.IsActive(radiochannels) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 			<control type="image">
 				<posx>780</posx>

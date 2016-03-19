@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.16 -->
 
 <window>
 	<!-- <allowoverlay>yes</allowoverlay> -->
@@ -739,7 +740,7 @@
 					<align>left</align>
 					<label></label>
 					<textcolor>FFbec0c2</textcolor>
-					<font>Font_SettingsSectionTitle</font>
+					<font>Font_18A</font>
 					<scroll>true</scroll>
 				</control>
 			</control>

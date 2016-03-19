@@ -551,7 +551,6 @@
 						<aligny>center</aligny>
 						<font>Font_20B</font>
 						<textcolor>$VAR[value_flagscolor]</textcolor>
-						<fadetime>FanartCrossFadeTime</fadetime>
 						<label>$INFO[ListItem.PercentPlayed]%</label>
 					</control>
 				</control>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Jarivs 8.1.13 -->
+<!-- Krypton 9.1.16 -->
 
 <window id="3003">
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -614,7 +615,7 @@
 							<height>40</height>
 							<label>1036</label>
 							<font>-</font>
-							<aligny>-</aligny>
+							<aligny>center</aligny>
 							<onclick>ParentDir</onclick>
 							<onleft>25</onleft>
 							<onright>8</onright>
@@ -864,7 +865,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$VAR[value_actorinfo_zoomlabel]</label>
-					<font>Font_List</font>
+					<font>Font_18A</font>
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>

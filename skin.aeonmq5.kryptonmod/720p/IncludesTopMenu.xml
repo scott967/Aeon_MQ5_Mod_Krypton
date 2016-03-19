@@ -68,7 +68,7 @@
 		<width>318</width>
 		<align>left</align>
 		<aligny>center</aligny>
-		<textwidth>245</textwidth>
+		<!-- <textwidth>245</textwidth> -->
 		<font>Font_15</font>
 		<textcolor>FF101010</textcolor>
 		<focusedcolor>FFFFFAF0</focusedcolor>

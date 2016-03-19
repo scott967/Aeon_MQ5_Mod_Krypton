@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
+<!--  Krypton 9.1.16 -->
 
 <window id="2006">
 	<!-- <allowoverlay>no</allowoverlay> -->
@@ -164,7 +165,7 @@
 					<height>270</height>
 					<texture flipx="true">shadow_mask_v.png</texture>
 					<colordiffuse>95000000</colordiffuse>
-					<aspectratio align="left">strech</aspectratio>
+					<aspectratio align="left">stretch</aspectratio>
 				</control>
 				<control type="image">
 					<posx>890</posx>

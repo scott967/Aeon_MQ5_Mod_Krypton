@@ -73,7 +73,6 @@
 							<width>290</width>
 							<height>40</height>
 							<align>left</align>
-							<aligny>center</aligny>
 							<font>Font_20</font>
 							<textcolor>FFFFFAF0</textcolor>
 							<aligny>center</aligny>
@@ -109,7 +108,6 @@
 							<width>290</width>
 							<height>40</height>
 							<align>left</align>
-							<aligny>center</aligny>
 							<font>Font_20</font>
 							<textcolor>FF101010</textcolor>
 							<aligny>center</aligny>

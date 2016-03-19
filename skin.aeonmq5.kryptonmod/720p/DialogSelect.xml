@@ -333,7 +333,7 @@
 					<texturefocus>-</texturefocus>
 					<textcolor>FF505050</textcolor>
 					<focusedcolor>FFFFFFFF</focusedcolor>
-					<font>Font_OSDOptions</font>
+					<font>Font_18A</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<onleft>7</onleft>
@@ -352,7 +352,7 @@
 					<texturefocus>-</texturefocus>
 					<textcolor>FF505050</textcolor>
 					<focusedcolor>FFFFFFFF</focusedcolor>
-					<font>Font_OSDOptions</font>
+					<font>Font_18A</font>
 					<align>right</align>
 					<aligny>center</aligny>
 					<onleft>3</onleft>
