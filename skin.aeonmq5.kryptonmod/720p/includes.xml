@@ -481,7 +481,6 @@
 		<include condition="StringCompare(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
 		<include condition="StringCompare(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
 		<!-- <timeperimage>$VAR[value_homebgdelay]</timeperimage> -->
-		<timeperimage>$VAR[value_homebgseconds]</timeperimage>
 		<randomize>true</randomize>
 		<include condition="Skin.HasSetting(keepaspect)">KeepAspect</include>
 		<fadetime>FanartCrossFadeTime</fadetime>
