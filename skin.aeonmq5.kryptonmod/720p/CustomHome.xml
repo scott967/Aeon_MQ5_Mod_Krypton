@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 Helix 6.1.5 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.17 -->
 
 <window id="6000">
 	<defaultcontrol>-</defaultcontrol>
@@ -783,7 +784,7 @@
 						<textoffsetx>0</textoffsetx>
 						<align>center</align>
 						<label>31155</label>
-						<onclick>ActivateWindowAndFocus(AppearanceSettings, -99,0, -80,0)</onclick>
+						<onclick>ActivateWindowAndFocus(InterfaceSettings, -99,0, -80,0)</onclick>  <!-- appearancesettings -->
 					</control>
 					<control type="button" id="101"><!-- confirmar e continuar -->
 						<textoffsetx>0</textoffsetx>

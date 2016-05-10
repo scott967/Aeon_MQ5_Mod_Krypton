@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8/1/14 -->
+<!-- Krypton 9.1.17 -->
 
 <window id="4">
 	<defaultcontrol always="true">9000</defaultcontrol>
@@ -188,13 +189,13 @@
 				<onright condition="Container(9000).HasFocus(100)">ActivateWindow(AddonBrowser)</onright>
 				<onright condition="Container(9000).HasFocus(101)">ActivateWindow(SystemSettings)</onright>
 				<onright condition="Container(9000).HasFocus(102)">ActivateWindow(NetworkSettings)</onright>
-				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(34)</onright>
+				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(34)</onright>  <!-- profiles -->
 				<onright condition="Container(9000).HasFocus(104)">21</onright>
-				<onright condition="Container(9000).HasFocus(105)">ActivateWindow(AppearanceSettings)</onright>
-				<onright condition="Container(9000).HasFocus(106)">ActivateWindow(VideosSettings)</onright>
-				<onright condition="Container(9000).HasFocus(107)">ActivateWindow(MusicSettings)</onright>
-				<onright condition="Container(9000).HasFocus(108) + Skin.HasSetting(pvrmode)">ActivateWindow(TVSettings)</onright>
-				<onright condition="Container(9000).HasFocus(109)">ActivateWindow(PicturesSettings)</onright>
+				<onright condition="Container(9000).HasFocus(105)">ActivateWindow(InterfaceSettings)</onright>
+				<onright condition="Container(9000).HasFocus(106)">ActivateWindow(PlayerSettings)</onright>
+				<onright condition="Container(9000).HasFocus(107)">ActivateWindow(LibrarySettings)</onright>
+				<onright condition="Container(9000).HasFocus(108) + Skin.HasSetting(pvrmode)">ActivateWindow(PVRSettings)</onright>
+				<onright condition="Container(9000).HasFocus(109)">ActivateWindow(ServiceSettings)</onright>
 				<onright condition="Container(9000).HasFocus(110)">ActivateWindow(WeatherSettings)</onright>
 				<viewtype>list</viewtype>
 				<orientation>vertical</orientation>
@@ -271,54 +272,55 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<item id="105"><!-- Appearance -->
-						<label>31351</label>
+					<item id="105"><!-- Appearance / Interface -->
+						<label>14207</label>
 						<label2>31352</label2>
 						<property name="MainLabel">31376</property>
 						<property name="SubLabel">31377</property>
 						<icon>special://skin/backgrounds/extras/settings_appearance.jpg</icon>
-						<onclick>ActivateWindow(AppearanceSettings)</onclick>
+						<onclick>ActivateWindow(InterfaceSettings)</onclick>
 					</item>
-					<item id="106"><!-- Videos -->
-						<label>31353</label>
+					<item id="106"><!-- Videos / Player -->
+						<label>14201</label>
 						<label2>31354</label2>
 						<property name="MainLabel">31378</property>
 						<property name="SubLabel">31379</property>
 						<icon>special://skin/backgrounds/extras/settings_movies.jpg</icon>
-						<onclick>ActivateWindow(VideosSettings)</onclick>
+						<onclick>ActivateWindow(PlayerSettings)</onclick>
 					</item>
-					<item id="107"><!-- Music -->
-						<label>31355</label>
+					<item id="107"><!-- Music / Library -->
+						<label>14203</label>
 						<label2>31356</label2>
 						<property name="MainLabel">31380</property>
 						<property name="SubLabel">31381</property>
 						<icon>special://skin/backgrounds/extras/settings_music.jpg</icon>
-						<onclick>ActivateWindow(MusicSettings)</onclick>
+						<onclick>ActivateWindow(LibrarySettings)</onclick>
 					</item>
-					<item id="108"><!-- Live TV -->
+					<item id="108"><!-- Live TV  / PVR-->
 						<label>31357</label>
 						<label2>31358</label2>
 						<property name="MainLabel">31382</property>
 						<property name="SubLabel">31383</property>
 						<icon>special://skin/backgrounds/extras/settings_tv.jpg</icon>
-						<onclick>ActivateWindow(TVSettings)</onclick>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
 					</item>
-					<item id="109"><!-- Pictures -->
-						<label>31365</label>
+					<item id="109"><!-- Pictures / Service  -->
+						<label>14208</label>
 						<label2>31366</label2>
 						<property name="MainLabel">31384</property>
 						<property name="SubLabel">31385</property>
 						<icon>special://skin/backgrounds/extras/settings_pictures.jpg</icon>
-						<onclick>ActivateWindow(PicturesSettings)</onclick>
+						<onclick>ActivateWindow(ServiceSettings)</onclick>
 					</item>
-					<item id="110"><!-- Weather -->
+					<!-- Weather settings dead
+					<item id="110">
 						<label>31367</label>
 						<label2>31368</label2>
 						<property name="MainLabel">31386</property>
 						<property name="SubLabel">31387</property>
 						<icon>special://skin/backgrounds/extras/settings_weather.jpg</icon>
 						<onclick>ActivateWindow(WeatherSettings)</onclick>
-					</item>
+					</item> -->
 					<item id="100"><!-- Addons -->
 						<label>31363</label>
 						<label2>31364</label2>
@@ -327,7 +329,7 @@
 						<icon>special://skin/backgrounds/extras/settings_addons.jpg</icon>
 						<onclick>ActivateWindow(AddonBrowser)</onclick>
 					</item>
-					<item id="101"><!-- System -->
+					<item id="101"><!-- System / System -->
 						<label>31359</label>
 						<label2>31360</label2>
 						<property name="MainLabel">31390</property>
@@ -335,14 +337,15 @@
 						<icon>special://skin/backgrounds/extras/settings_system.jpg</icon>
 						<onclick>ActivateWindow(SystemSettings)</onclick>
 					</item>
-					<item id="102"><!-- Network -->
+					<!-- Network same as service
+					<item id="102">
 						<label>31361</label>
 						<label2>31362</label2>
 						<property name="MainLabel">31392</property>
 						<property name="SubLabel">31393</property>
 						<icon>special://skin/backgrounds/extras/settings_network.jpg</icon>
 						<onclick>ActivateWindow(NetworkSettings)</onclick>
-					</item>
+					</item> -->
 					<item id="103"><!-- Profile -->
 						<label>31369</label>
 						<label2>31370</label2>

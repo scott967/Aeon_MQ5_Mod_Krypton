@@ -2,7 +2,7 @@
 	<!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.4/6.1.5/6.1.9 Shelfcase Mod -->
 	<!-- Isengard 7.1.9 Shelfcase/7.1.10/7.1.11 MidList/7.1.12 -->
 	<!-- Jarvis 8.1.13/8.1.14 -->
-	<!-- Krypton 9.1.15/9.1.16 -->
+	<!-- Krypton 9.1.15/9.1.16/9.1.17 -->
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="IncludesVariables.xml"/>
@@ -1546,6 +1546,7 @@
 			<width>370</width>
 			<height>25</height>
 			<font>Font_18A</font>
+			<aligny>center</aligny>
 			<label>$INFO[Window(2003).Property(AudioLanguage.1)]$INFO[Window(2003).Property(AudioLanguage.2), / ]$INFO[Window(2003).Property(AudioLanguage.3), / ]$INFO[Window(2003).Property(AudioLanguage.4), / ]$INFO[Window(2003).Property(AudioLanguage.5), / ]$INFO[Window(2003).Property(AudioLanguage.6), / ]$INFO[Window(2003).Property(AudioLanguage.7), / ]$INFO[Window(2003).Property(AudioLanguage.8), / ]$INFO[Window(2003).Property(AudioLanguage.9), / ]$INFO[Window(2003).Property(AudioLanguage.10), / ]</label>
 			<textcolor>FFFFFAF0</textcolor>
 			<scroll>true</scroll>
@@ -1570,6 +1571,7 @@
 			<width>370</width>
 			<height>25</height>
 			<font>Font_18A</font>
+			<aligny>center</aligny>
 			<label>$INFO[Window(2003).Property(SubtitleLanguage.1)]$INFO[Window(2003).Property(SubtitleLanguage.2), / ]$INFO[Window(2003).Property(SubtitleLanguage.3), / ]$INFO[Window(2003).Property(SubtitleLanguage.4), / ]$INFO[Window(2003).Property(SubtitleLanguage.5), / ]$INFO[Window(2003).Property(SubtitleLanguage.6), / ]$INFO[Window(2003).Property(SubtitleLanguage.7), / ]$INFO[Window(2003).Property(SubtitleLanguage.8), / ]$INFO[Window(2003).Property(SubtitleLanguage.9), / ]$INFO[Window(2003).Property(SubtitleLanguage.10), / ]</label>
 			<textcolor>FFFFFAF0</textcolor>
 			<scroll>true</scroll>
@@ -3213,7 +3215,7 @@
 				<property name="condition">$INFO[skin.string(osd_audio_gsettings),disable)]</property>
 				<icon>osd_menu_gensettings.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">Close</onclick>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(musicsettings)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(playersettings)</onclick>  <!-- musicsettings -->
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_audio_gsettings),disable)">Skin.SetString(osd_audio_gsettings,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_audio_gsettings),disable)">Skin.Reset(osd_audio_gsettings,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_audio_gsettings),disable) | Skin.HasSetting(customosd)]</visible>

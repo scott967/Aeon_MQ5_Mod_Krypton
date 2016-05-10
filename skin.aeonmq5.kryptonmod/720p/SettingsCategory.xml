@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/Orby/6.1.4 -->
 <!-- Isengard 7.1.9 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.17 -->
 
 <window>
 	<defaultcontrol>3</defaultcontrol>
@@ -18,25 +19,25 @@
 			<visible>!Window.IsActive(PVRChannelManager)</visible>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>31351</label>
-				<visible>Window.IsActive(appearancesettings)</visible>
+				<label>14207</label>
+				<visible>Window.IsActive(interfacesettings)</visible> <!-- appearancesettings -->
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>31353</label>
-				<visible>Window.IsActive(videossettings)</visible>
+				<label>14201</label>
+				<visible>Window.IsActive(playersettings)</visible> <!-- videosettings -->
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>31355</label>
-				<visible>Window.IsActive(musicsettings)</visible>
+				<label>14203</label>
+				<visible>Window.IsActive(librarysettings)</visible> <!-- musicsettings -->
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>31357</label>
-				<visible>Window.IsActive(tvsettings) + System.HasPVR</visible>
+				<label>14205</label>
+				<visible>Window.IsActive(pvrsettings) + System.HasPVR</visible> <!-- tvsettings -->
 			</control>
-			<control type="label">
+			<!-- <control type="label">
 				<include>SettingsContentTitle</include>
 				<label>31365</label>
 				<visible>Window.IsActive(picturessettings)</visible>
@@ -45,7 +46,7 @@
 				<include>SettingsContentTitle</include>
 				<label>31367</label>
 				<visible>Window.IsActive(weathersettings)</visible>
-			</control>
+			</control> -->
 			<control type="label">
 				<include>SettingsContentTitle</include>
 				<label>31359</label>
@@ -53,7 +54,7 @@
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>31361</label>
+				<label>14208</label>
 				<visible>Window.IsActive(servicesettings)</visible>
 			</control>
 			<control type="image">
@@ -83,6 +84,11 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 			</control>
+			<!-- <control type="label" id="2">
+				<posx>240</posx>
+				<posy>95</posy>
+				<height>25</height>
+			</control> -->
 			<control type="grouplist" id="5">
 				<posx>240</posx>
 				<posy>120</posy>
@@ -114,6 +120,8 @@
 				<aligny>center</aligny>
 			</control>
 			<control type="label" id="14">
+			<height>30</height>
+			<align>center</align>
 			</control>
 			<include>RSS</include>
 			<control type="scrollbar" id="80">
