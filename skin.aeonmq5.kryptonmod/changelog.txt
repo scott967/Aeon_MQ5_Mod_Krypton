@@ -1,3 +1,9 @@
+[B][COLOR=FFFF8C00]BUILD 9.1.17 - RELEASE DATE 05/09/2016[/COLOR][/B]
+New:  Support for Music roles
+Improved:  Updated xbmc.gui to 5.12.0 (Krypton A2 builds)
+Improved:  Updated Settings window for new Krypton settings layout
+Fixed:  Recorded TV program start times now show
+
 [B][COLOR=FFFF8C00]BUILD 9.1.16 - RELEASE DATE 03/15/2016[/COLOR][/B]
 New:  Support for music and video genre icons / fanart from resource add-ons
 New:  Support for studio and record label icons from resource add-ons
@@ -10,7 +16,7 @@ Improved:  Studio and record Label icons used in the flags bar
 Improved:  Removed wrap option for EPGtimeline view (use <m>enu key instead)
 Improved:  Add reset skin button on skin settings
 Improved:  Show background in VideoPlaylist when not playing
-Fixed:  Krypton cahnge ListItem.Property(Addon.*)
+Fixed:  Krypton change ListItem.Property(Addon.*)
 Fixed:  Krypton DialogSettings
 
 [B][COLOR=FFFF8C00]BUILD 9.1.15 - RELEASE DATE 02/11/2016[/COLOR][/B]
