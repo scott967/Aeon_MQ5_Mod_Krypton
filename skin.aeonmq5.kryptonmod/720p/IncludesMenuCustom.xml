@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 / 6.1.4 /6.1.7/6.1.8 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.17 -->
 
 <includes>
 	<!-- ######################################################################### Presets para aplicar ######################################################################### -->
@@ -1928,6 +1929,14 @@
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicsongs)</onclick>
 					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,songs,return))</onclick>
+					<include>DefaultReset</include>
+				</item>
+				<item>
+					<label>$LOCALIZE[31002]-$LOCALIZE[29994]</label><!-- Music roles --><!-- 6083 -->
+					<label2>$LOCALIZE[31002]-$LOCALIZE[29994]</label2>
+					<property name="id">music</property>
+					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicroles)</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,"library://music/musicroles/",return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>

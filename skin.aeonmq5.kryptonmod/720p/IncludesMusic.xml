@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Isengard 7.1.11 Mid List -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.17 -->
 
 <includes>
 	<!-- ######################################################################### Music Window #########################################################################-->
@@ -16,17 +16,17 @@
 			<control type="multiimage"><!-- Multi Fanart -->
 				<include>WindowBG</include>
 				<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
-				<visible>!Container.Content(genres)</visible>
+				<visible>![Container.Content(genres) | Container.Content(roles)]</visible>
 			</control>
 			<control type="image"><!-- Single Fanart -->
 				<include>WindowBG</include>
 				<texture background="true">$VAR[value_defaultmusicfanart]</texture>
-				<visible>!Container.Content(genres)</visible>
+				<visible>![Container.Content(genres) | Container.Content(roles)]</visible>
 			</control>
 			<control type="image"><!-- Single Fanart Genre -->
 				<include>WindowBG</include>
 				<texture fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_defaultmusicfanart]</texture>
-				<visible>Container.Content(genres)</visible>
+				<visible>Container.Content(genres) | Container.Content(roles)</visible>
 			</control>
 			<control type="multiimage" id="5032"><!-- Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
@@ -213,6 +213,20 @@
 								<textcolor>$VAR[value_flagscolor]</textcolor>
 								<fadetime>FanartCrossFadeTime</fadetime>
 								<scroll>true</scroll>
+							</control>
+							<control type="label"><!-- Role -->
+								<posx>12</posx>
+								<posy>1.5</posy>
+								<width>300</width>
+								<height>50</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>Font_20B</font>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>$VAR[value_flagscolor]</textcolor>
+								<fadetime>FanartCrossFadeTime</fadetime>
+								<scroll>true</scroll>
+								<visible>String.IsEqual(Container.FolderName,Roles)</visible>
 							</control>
 						</control>
 					</control>
