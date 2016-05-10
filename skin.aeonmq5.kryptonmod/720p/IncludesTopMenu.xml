@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.2/6.1.3 /6.1.4/6.1.5/6.1.6/6.1.8/6.1.9 wall audiocover-->
 <!-- Isengard 7.1.10 wall audiocover/7.1.11/MidList mod/7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15/9.1.16 -->
+<!-- Krypton 9.1.15/9.1.16/9.1.17 -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>21</posy>
@@ -68,13 +68,13 @@
 		<width>318</width>
 		<align>left</align>
 		<aligny>center</aligny>
-		<!-- <textwidth>245</textwidth> -->
+		<textwidth>245</textwidth>
 		<font>Font_15</font>
 		<textcolor>FF101010</textcolor>
 		<focusedcolor>FFFFFAF0</focusedcolor>
 		<disabledcolor>FF505050</disabledcolor>
 		<textoffsetx>10</textoffsetx>
-		<textwidth>200</textwidth>
+		<!-- <textwidth>200</textwidth> -->
 		<texturenofocus>topmenu_button_nofocus.png</texturenofocus>
 		<texturefocus>topmenu_button_focus.png</texturefocus>
 		<alttexturenofocus>topmenu_button_nofocus.png</alttexturenofocus>
@@ -464,9 +464,16 @@
 				</control>
 				<control type="button" id="9115">
 					<include>TopMenuButton</include>
-					<label>31488</label>
+					<label>$LOCALIZE[291] $LOCALIZE[14203]</label>
 					<onclick>SetFocus(51)</onclick>
-					<onclick>ActivateWindow(videossettings)</onclick>
+					<onclick>ActivateWindow(librarysettings)</onclick>  <!-- videosettings -->
+					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
+				</control>
+				<control type="button" id="9117">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[291] $LOCALIZE[14201]</label>
+					<onclick>SetFocus(51)</onclick>
+					<onclick>ActivateWindow(playersettings)</onclick>  <!-- videosettings -->
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 				<control type="button" id="9116">
@@ -1835,9 +1842,16 @@
 				</control>
 				<control type="button" id="9115">
 					<include>TopMenuButton</include>
-					<label>31313</label>
+					<label>$LOCALIZE[2] $LOCALIZE[14203]</label>
 					<onclick>SetFocus(51)</onclick>
-					<onclick>ActivateWindow(musicsettings)</onclick>
+					<onclick>ActivateWindow(librarysettings)</onclick> <!-- musicsettings -->
+					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
+				</control>
+				<control type="button" id="9117">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[2] $LOCALIZE[14201]</label>
+					<onclick>SetFocus(51)</onclick>
+					<onclick>ActivateWindow(playersettings)</onclick> <!-- musicsettings -->
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 				<control type="button" id="9116">
@@ -2090,14 +2104,14 @@
 					<include>TopMenuButton</include>
 					<label>$VAR[value_musiclogopath]</label>
 					<onclick>Skin.SetPath(CustomMusicLogoPath)</onclick>
-					<visible>[Skin.HasSetting(musiclogo) | SubString(skin.string(musicfanart),extra)] + !Container.Content(Genres)</visible>
+					<visible>[Skin.HasSetting(musiclogo) | SubString(skin.string(musicfanart),extra)] + ![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<control type="radiobutton" id="9365">
 					<include>TopMenuRadioButton</include>
 					<label>31557</label>
 					<onclick>Skin.ToggleSetting(musiclogo)</onclick>
 					<selected>Skin.HasSetting(musiclogo)</selected>
-					<visible>!Container.Content(Genres)</visible>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<include condition="Window.IsActive(musicplaylist)">TopMenu_Playlist</include>
 				<include condition="Window.IsActive(musicplaylisteditor)">TopMenu_PlaylistEditor</include>
@@ -2128,34 +2142,34 @@
 					<label>31497</label>
 					<onclick>Skin.SetString(musicfanart,fanart)</onclick>
 					<selected>SubString(skin.string(musicfanart),fanart)</selected>
-					<visible>!Container.Content(Genres)</visible>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<control type="radiobutton" id="9407"><!-- Curtains -->
 					<include>TopMenuRadioButton</include>
 					<label>31501</label>
 					<onclick>Skin.SetString(musicfanart,musiccurtains)</onclick>
 					<selected>SubString(skin.string(musicfanart),musiccurtains)</selected>
-					<visible>!Container.Content(Genres)</visible>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<control type="radiobutton" id="9408"><!-- Fanart - Fallback -->
 					<include>TopMenuRadioButton</include>
 					<label>31500</label>
 					<onclick>Skin.SetString(musicfanart,fallback)</onclick>
 					<selected>SubString(skin.string(musicfanart),fallback)</selected>
-					<visible>!Container.Content(Genres)</visible>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<control type="button" id="9409"><!-- Music Image Fallback -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_fallbackmusicbg]</label>
 					<onclick>Skin.SetImage(CustomFallbackMusicBG)</onclick>
-					<visible>SubString(skin.string(musicfanart),fallback) + !Container.Content(Genres)</visible>
+					<visible>SubString(skin.string(musicfanart),fallback) + ![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<control type="radiobutton" id="9410"><!-- Extra Fanart Music -->
 					<include>TopMenuRadioButton</include>
 					<label>31498</label>
 					<onclick>Skin.SetString(musicfanart,extra)</onclick>
 					<selected>SubString(skin.string(musicfanart),extra)</selected>
-					<visible>!Container.Content(Genres)</visible>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<!-- Genero Fanart -->
 				<control type="radiobutton" id="9451"><!-- Curtains -->
