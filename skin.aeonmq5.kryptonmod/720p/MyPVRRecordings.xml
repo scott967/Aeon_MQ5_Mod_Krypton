@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.3 Lizard-king/6.1.4/6.1.5/6.1.8 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.17 -->
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<menucontrol>9000</menucontrol>
@@ -288,11 +289,11 @@
 					<visible>!IsEmpty(Window(2003).Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
-						<posy>58</posy>
+						<posy>48</posy>
 						<width>750</width>
 						<height>40</height>
 						<font>Font_40</font>
-						<label>$VAR[value_videotitle]</label>
+						<label>$VAR[value_videotitle] - $INFO[ListItem.StartDate]/$INFO[ListItem.StartTime]</label>
 						<textcolor>FFFFFAF0</textcolor>
 						<scroll>true</scroll>
 						<scrollout>false</scrollout>
@@ -301,7 +302,7 @@
 					</control>
 					<control type="image"><!-- clearlogo -->
 						<posx>30</posx>
-						<posy>58</posy>
+						<posy>48</posy>
 						<width>300</width>
 						<height>45</height>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
@@ -315,7 +316,7 @@
 						<width>750</width>
 						<height>25</height>
 						<font>Font_21</font>
-						<label>$INFO[ListItem.Date]</label>
+						<label>$INFO[ListItem.StartDate]/$INFO[ListItem.StartTime]</label>
 						<textcolor>90FFFFFF</textcolor>
 						<scroll>true</scroll>
 						<scrollout>false</scrollout>
@@ -326,7 +327,7 @@
 					<visible>IsEmpty(Window(2003).Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
-						<posy>58</posy>
+						<posy>48</posy>
 						<width>1100</width>
 						<height>40</height>
 						<font>Font_40</font>
@@ -339,7 +340,7 @@
 					</control>
 					<control type="image"><!-- clearlogo -->
 						<posx>30</posx>
-						<posy>58</posy>
+						<posy>48</posy>
 						<width>300</width>
 						<height>45</height>
 						<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
@@ -353,7 +354,7 @@
 						<width>750</width>
 						<height>25</height>
 						<font>Font_21</font>
-						<label>$INFO[ListItem.Date]</label>
+						<label>$INFO[ListItem.StartDate]</label>
 						<textcolor>90FFFFFF</textcolor>
 						<scroll>true</scroll>
 						<scrollout>false</scrollout>
