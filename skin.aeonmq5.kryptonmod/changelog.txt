@@ -1,3 +1,7 @@
+[B][COLOR=FFFF8C00]BUILD 9.1.18 - RELEASE DATE 05/31/2016[/COLOR][/B]
+Fixed:  Lower textbox in right list view
+New:  Default sliderex orientation is horizontal (new Krypton setting)
+
 [B][COLOR=FFFF8C00]BUILD 9.1.17 - RELEASE DATE 05/09/2016[/COLOR][/B]
 New:  Support for Music roles
 Improved:  Updated xbmc.gui to 5.12.0 (Krypton A2 builds)
