@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.13 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.18 -->
 
 <window id="2003">
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -382,7 +382,7 @@
 				<label>$INFO[ListItem.Plot]</label>
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
-				<visible>![Container.Content(episodes) | Container.Content(musicvideos) + !IsEmpty(ListItem.Art(poster))]</visible>
+				<visible>![Container.Content(episodes) | Container.Content(musicvideos) + IsEmpty(ListItem.Art(poster))]</visible>
 			</control>
 			<control type="textbox"><!-- Plot -->
 				<posx>30</posx>
