@@ -199,7 +199,6 @@
 		<disabledcolor>FF505050</disabledcolor>
 		<textoffsetx>50</textoffsetx>
 		<aligny>center</aligny>
-		<orientation>horizontal</orientation>
 	</default>
 	<default type="checkmark">
 		<posx>208</posx>
@@ -233,6 +232,7 @@
 	<default type="slider">
 		<controloffsetx>75</controloffsetx>
 		<controloffsety>0</controloffsety>
+		<orientation>horizontal</orientation>
 	</default>
 	<default type="mover">
 		<pulseonselect>false</pulseonselect>
