@@ -1,8 +1,9 @@
-[B][COLOR=FFFF8C00]BUILD 9.1.18 - RELEASE DATE 05/31/2016[/COLOR][/B]
+[B][COLOR=FFFF8C00]BUILD 9.1.18 - RELEASE DATE 06/30/2016[/COLOR][/B]
 Fixed:  Lower textbox in right list view
 Fixed:  Musicinformation dialog
 Fixed:  Doubled plot in musicinformation for music videos
 New:  Default slider orientation is horizontal (new Krypton setting)
+New:  AudioDSP labels
 
 [B][COLOR=FFFF8C00]BUILD 9.1.17 - RELEASE DATE 05/09/2016[/COLOR][/B]
 New:  Support for Music roles
