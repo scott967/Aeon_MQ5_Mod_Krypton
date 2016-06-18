@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Jarvis 8.1.14 -->
+<!-- Krypton 9.1.18 -->
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<controls>
@@ -201,9 +202,9 @@
 							<top>8</top>
 							<width>30</width>
 							<height>30</height>
-							<texture>$INFO[ListItem.Property(Icon)]</texture>
+							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio aligny="center" align="left">keep</aspectratio>
-							<visible>!StringCompare(ListItem.Property(Icon),"")</visible>
+							<visible>!StringCompare(ListItem.Icon,"")</visible>
 						</control>
 						<control type="label">
 							<posx>48</posx>
@@ -212,7 +213,7 @@
 							<aligny>center</aligny>
 							<font>Font_18</font>
 							<textcolor>$VAR[value_headercolor]</textcolor>
-							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<label>$INFO[ListItem.Label2]: $INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="400" height="40">
@@ -221,7 +222,7 @@
 							<top>8</top>
 							<width>30</width>
 							<height>30</height>
-							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio aligny="center" align="left">keep</aspectratio>
 						</control>
 						<control type="image">
@@ -240,7 +241,7 @@
 							<font>Font_18</font>
 							<textcolor>$VAR[value_headercolor]</textcolor>
 							<selectedcolor>FFFF8C00</selectedcolor>
-							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<label>$INFO[ListItem.Label2]: $INFO[ListItem.Label]</label>
 						</control>
 					</focusedlayout>
 				</control>
@@ -283,7 +284,7 @@
 							<posy>5</posy>
 							<width>70</width>
 							<height>70</height>
-							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
 						<control type="textbox">
@@ -294,7 +295,7 @@
 							<font>Font_18</font>
 							<textcolor>$VAR[value_headercolor]</textcolor>
 							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<label>$INFO[ListItem.Label2]: $INFO[ListItem.Label]</label>
 						</control>
 						<control type="textbox">
 							<posx>80</posx>
@@ -320,7 +321,7 @@
 							<posy>5</posy>
 							<width>70</width>
 							<height>70</height>
-							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Property(Icon)]</texture>
+							<texture fallback="DefaultAudioDSP.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
 						<control type="textbox">
@@ -331,7 +332,7 @@
 							<font>Font_18</font>
 							<textcolor>$VAR[value_headercolor]</textcolor>
 							<selectedcolor>blue</selectedcolor>
-							<label>$INFO[ListItem.Property(AddonName)]: $INFO[ListItem.Property(Name)]</label>
+							<label>$INFO[ListItem.Label2]: $INFO[ListItem.Label]</label>
 						</control>
 						<control type="textbox">
 							<posx>80</posx>
