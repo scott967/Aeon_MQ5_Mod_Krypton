@@ -38,7 +38,7 @@
 				<texture flipy="true">shadow_mask.png</texture>
 				<colordiffuse>75000000</colordiffuse>
 			</control>
-			<control type="label"><!-- Artist -->
+			<control type="label"><!-- Artist (album or artist) Title (song) -->
 				<posx>30</posx>
 				<posy>8</posy>
 				<width>1100</width>
@@ -55,7 +55,7 @@
 				<width>1100</width>
 				<height>25</height>
 				<font>Font_21</font>
-				<label>$VAR[value_music_subtitle]</label>
+				<label>$VAR[value_music_subtitle]</label> <!-- Title (album or artist) Artist-album (song) -->
 				<textcolor>90FFFFFF</textcolor>
 				<scroll>true</scroll>
 				<scrollout>false</scrollout>
@@ -79,7 +79,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>Font_18A</font>
-				<label>[B]$INFO[ListItem.Rating][/B]</label>
+				<label>[B]$INFO[ListItem.Rating][/B]</label>  <!-- scraped rating -->
 				<textcolor>FF101010</textcolor>
 			</control>
 			<control type="image">
@@ -136,6 +136,9 @@
 				<scroll>true</scroll>
 				<scrollout>false</scrollout>
 			</control>
+			
+			<!--   Info panel for artists and albums (musicinformation 2001) -->
+			
 			<control type="group"> <!-- album and artist info -->
 				<visible>Window.Is(musicinformation)</visible>
 				<control type="label"><!-- Mood -->
@@ -238,7 +241,7 @@
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
 				</control>
-				<control type="label"><!-- Born/Die - Record/Albums -->
+				<control type="label"><!-- Born/Die/Artists - Record/Albums -->
 					<left>0</left>
 					<posx>190</posx>
 					<posy>220</posy>
@@ -270,7 +273,7 @@
 					<width>686</width>
 					<texture>separator.png</texture>
 				</control>
-				<control type="textbox"><!-- Plot -->
+				<control type="textbox"><!-- Review /Album Bio/Artist -->
 					<posx>30</posx>
 					<posy>280</posy>
 					<width>635</width>
@@ -290,7 +293,7 @@
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 					<visible>!IsEmpty(ListItem.Thumb)</visible>
 				</control>
-				<control type="multiimage"><!-- Artist -->
+				<control type="multiimage"><!-- Artist fanarts from AS-->
 					<posx>687</posx>
 					<posy>80</posy>
 					<height>386</height>
@@ -336,7 +339,7 @@
 					<textcolor>$VAR[value_flagscolor]</textcolor>
 					<visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !IsEmpty(Window.Property(ArtistSlideshowRunning))</visible>
 				</control>
-				<control type="label">
+				<control type="label">  <!-- number of items -->
 					<posx>30</posx>
 					<posy>680</posy>
 					<width>400</width>
@@ -396,7 +399,7 @@
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 					<include>Animation_DefaultGlass2</include>
 				</control>
-				<control type="list" id="50">
+				<control type="list" id="50">  <!-- items set by Kodi -->
 					<viewtype label="List">List Info</viewtype>
 					<posx>52</posx>
 					<posy>492</posy>
@@ -454,7 +457,10 @@
 					</focusedlayout>
 					<include condition="Player.HasAudio + system.hasaddon(script.artistslideshow)">AlbumContent</include>
 				</control>
-			</control>  <!-- end of old albuminfo (musicinformation -->)
+			</control>  <!-- end of old albuminfo (musicinformation) -->
+						
+			<!--   Info panel for songs (songinformation 135) -->
+			
 			<control type="group"> <!-- song information -->
 				<visible>Window.Is(songinformation)</visible>
 				<control type="label"><!-- Track -->
@@ -571,7 +577,7 @@
 					<width>686</width>
 					<texture>separator.png</texture>
 				</control>
-				<control type="textbox"><!-- Plot -->
+				<control type="textbox"><!-- Plot/Bio -->
 					<posx>30</posx>
 					<posy>280</posy>
 					<width>635</width>
@@ -591,7 +597,7 @@
 					<texture background="true">$VAR[value_songinfo_thumb]</texture>
 					<visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | SubString(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
 				</control>
-				<control type="multiimage"><!-- Artist -->
+				<control type="multiimage"><!-- Artist fanart AS -->
 					<posx>687</posx>
 					<posy>80</posy>
 					<height>386</height>
@@ -601,7 +607,7 @@
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="left">keep</aspectratio>
 					<imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-					<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + !SubStringWindow(Visualisation).Property(ArtistSlideshow),transparent)</visible>
+					<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + ![String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),transparent) | String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),black)]</visible>
 				</control>
 				<control type="image">
 					<posx>686</posx>
@@ -736,7 +742,7 @@
 				</control>
 				<control type="group">
 					<visible>Player.HasAudio + system.hasaddon(script.artistslideshow)</visible>
-					<control type="list" id="50">
+					<control type="list" id="50">  <!-- items supplied by Kodi -->
 						<viewtype label="List">List Info</viewtype>
 						<posx>52</posx>
 						<posy>492</posy>
@@ -799,7 +805,7 @@
 				</control>
 			</control>  <!-- end of songinformation -->
 			
-			<control type="group"><!-- Menu bar album info (musicinformation) -->
+			<control type="group"><!-- Menu bar album/artist info (musicinformation) -->
 				<posx>0</posx>
 				<posy>465</posy>
 				<visible>Window.Is(musicinformation)</visible>
@@ -833,6 +839,8 @@
 					<posy>3</posy>
 					<width>1280</width>
 					<height>25</height>
+					<onup condition="Container(149).HasFocus(4)">IncreaseRating</onup>
+					<ondown condition="Container(149).HasFocus(4)">DecreaseRating</ondown>
 					<ondown>50</ondown>
 					<orientation>horizontal</orientation>
 					<pagecontrol>-</pagecontrol>
@@ -857,155 +865,6 @@
 							<font>Font_18</font>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<textcolor>B6FFFFFF</textcolor>
-						</control>
-					</itemlayout>
-					<focusedlayout height="25" width="182">
-						<control type="image">
-							<posx>0</posx>
-							<posy>-1</posy>
-							<width>182</width>
-							<height>27</height>
-							<texture>settings_button_focus.png</texture>
-							<visible>Control.Hasfocus(149)</visible>
-						</control>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>1</width>
-							<height>25</height>
-							<texture>separator_v.png</texture>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<posx>91</posx>
-							<posy>0</posy>
-							<height>25</height>
-							<width>162</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Font_18</font>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<textcolor>FF101010</textcolor>
-							<visible>Control.Hasfocus(149)</visible>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<posx>91</posx>
-							<posy>0</posy>
-							<height>25</height>
-							<width>162</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Font_18</font>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<textcolor>B6FFFFFF</textcolor>
-							<visible>!Control.Hasfocus(149)</visible>
-						</control>
-					</focusedlayout>
-					<content>
-						<item id="1"><!-- Refresh -->
-							<description>Refresh</description>
-							<label>31695</label>
-							<onclick>SendClick(2001,6)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
-						</item>
-						<item id="2"><!-- Get Thumb -->
-							<label>13405</label>
-							<onclick>SendClick(2001,10)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
-						</item>
-						<item id="3"><!-- Get Fanart -->
-							<label>20413</label>
-							<onclick>SendClick(2001,12)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
-						</item>
-						<item id="4"><!-- Artist Info -->
-							<label>31885</label>
-							<onclick>RunScript(script.metadata.actors,$INFO[Listitem.Artist])</onclick>
-							<visible>System.HasAddon(script.metadata.actors)</visible>
-						</item>
-						<item id="5"><!-- Artist Zoom -->
-							<label>31944</label>
-							<onclick>Skin.Reset(coverzoom)</onclick>
-							<onclick>Skin.SetBool(artistzoom)</onclick>
-							<onclick>SetFocus(160)</onclick>
-						</item>
-						<item id="6"><!-- Video Clips -->
-							<label>31950</label>
-							<onclick>Dialog.Close(2001)</onclick>
-							<onclick>Skin.SetBool(musictrailers)</onclick>
-							<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Artist],return)</onclick>
-						</item>
-						<item id="7"><!-- Song Video Clip -->
-							<label>31951</label>
-							<onclick>Dialog.Close(2001)</onclick>
-							<onclick>Skin.SetBool(musictrailers)</onclick>
-							<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Title],return)</onclick>
-						</item>
-					</content>
-				</control>
-			</control> <!-- end of album info (musicinformation) -->
-			
-			<control type="group"><!-- Menu bar songinformation-->
-				<posx>0</posx>
-				<posy>465</posy>
-				<visible>Window.Is(songinformation)</visible>
-				<control type="image">
-					<posx>0</posx>
-					<posy>-30</posy>
-					<width>1280</width>
-					<height>30</height>
-					<texture>shadow_h.png</texture>
-					<colordiffuse>C3FFFFFF</colordiffuse>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>29</posy>
-					<width>1280</width>
-					<height>30</height>
-					<texture flipy="true">shadow_h.png</texture>
-					<colordiffuse>C3FFFFFF</colordiffuse>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>1280</width>
-					<height>30</height>
-					<texture>darkgrey.png</texture>
-					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-					<include>Animation_DefaultGlass2</include>
-				</control>
-				<control type="list" id="149">
-					<posx>0</posx>
-					<posy>3</posy>
-					<width>1280</width>
-					<height>25</height>
-					<onup condition="Container(149).HasFocus(4)">IncreaseRating</onup>
-					<ondown condition="Container(149).HasFocus(4)">DecreaseRating</ondown>
-					<ondown condition="![Container(149).HasFocus(4) | IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName))]">50</ondown>
-					<orientation>horizontal</orientation>
-					<pagecontrol>-</pagecontrol>
-					<scrolltime>300</scrolltime>
-					<focusposition>3</focusposition>
-					<itemlayout height="25" width="182">
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>1</width>
-							<height>25</height>
-							<texture>separator_v.png</texture>
-						</control>
-						<control type="label">
-							<left>0</left>
-							<posx>91</posx>
-							<posy>0</posy>
-							<height>25</height>
-							<width>162</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<font>Font_18</font>
-							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<textcolor>80FFFAF0</textcolor>
 						</control>
 					</itemlayout>
 					<focusedlayout height="25" width="182">
@@ -1070,25 +929,198 @@
 						</control>
 					</focusedlayout>
 					<content>
-						<item id="1"><!-- Get Thumb -->
+						<item id="1"><!-- Refresh -->
+							<description>Refresh</description>
+							<label>31695</label>
+							<onclick>SendClick(2001,6)</onclick>
+							<visible>!Skin.HasSetting(kioskininfo)</visible>
+						</item>
+						<item id="2"><!-- Get Thumb -->
 							<label>13405</label>
-							<onclick>SendClick(13)</onclick>
+							<onclick>SendClick(2001,10)</onclick>
 							<visible>!Skin.HasSetting(kioskininfo)</visible>
 						</item>
-						<item id="2"><!-- Get Fanart -->
-							<label>10523</label>
-							<onclick>SendClick(12)</onclick>
+						<item id="3"><!-- Get Fanart -->
+							<label>20413</label>
+							<onclick>SendClick(2001,12)</onclick>
 							<visible>!Skin.HasSetting(kioskininfo)</visible>
 						</item>
-						<item id="3"><!-- Artist Info -->
+						<item id="4"><!-- UserRating -->
+							<label>31936</label>
+							<onclick>SendClick(2001,7)</onclick>
+							<visible>!Skin.HasSetting(kioskininfo)</visible>
+						</item>
+						<item id="5"><!-- Artist Info -->
 							<label>31885</label>
 							<onclick>RunScript(script.metadata.actors,$INFO[Listitem.Artist])</onclick>
 							<visible>System.HasAddon(script.metadata.actors)</visible>
 						</item>
-						<item id="4"><!-- Rating -->
-							<label>31936</label>
-							<onclick>SendClick(10)</onclick>
+						<item id="18"><!-- Artist Zoom -->
+							<label>31944</label>
+							<onclick>Skin.Reset(coverzoom)</onclick>
+							<onclick>Skin.SetBool(artistzoom)</onclick>
+							<onclick>SetFocus(160)</onclick>
+						</item>
+						<item id="19"><!-- Artist Video Clips -->
+							<label>31950</label>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>Skin.SetBool(musictrailers)</onclick>
+							<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Artist],return)</onclick>
+						</item>
+						<item id="8"><!-- Song Video Clip -->
+							<label>31951</label>
+							<onclick>Dialog.Close(2001)</onclick>
+							<onclick>Skin.SetBool(musictrailers)</onclick>
+							<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Title],return)</onclick>
+						</item>
+					</content>
+				</control>
+			</control> <!-- end of album info (musicinformation) -->
+			
+			<!--  Songinfo dialog -->
+			<control type="group"><!-- Menu bar songinformation-->
+				<posx>0</posx>
+				<posy>465</posy>
+				<visible>Window.Is(songinformation)</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>-30</posy>
+					<width>1280</width>
+					<height>30</height>
+					<texture>shadow_h.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>29</posy>
+					<width>1280</width>
+					<height>30</height>
+					<texture flipy="true">shadow_h.png</texture>
+					<colordiffuse>C3FFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1280</width>
+					<height>30</height>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<include>Animation_DefaultGlass2</include>
+				</control>
+				<control type="list" id="149">
+					<posx>0</posx>
+					<posy>3</posy>
+					<width>1280</width>
+					<height>25</height>
+					<onup condition="Container(149).HasFocus(14)">IncreaseRating</onup>
+					<ondown condition="Container(149).HasFocus(14)">DecreaseRating</ondown>
+					<ondown condition="![Container(149).HasFocus(14) | IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName))]">50</ondown>
+					<orientation>horizontal</orientation>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime>300</scrolltime>
+					<focusposition>3</focusposition>
+					<itemlayout height="25" width="182">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1</width>
+							<height>25</height>
+							<texture>separator_v.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<posx>91</posx>
+							<posy>0</posy>
+							<height>25</height>
+							<width>162</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18</font>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textcolor>80FFFAF0</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="25" width="182">
+						<control type="image">
+							<posx>0</posx>
+							<posy>-1</posy>
+							<width>182</width>
+							<height>27</height>
+							<texture>settings_button_focus.png</texture>
+							<visible>Control.Hasfocus(149)</visible>
+						</control>
+						<control type="image">
+							<posx>6</posx>
+							<posy>3</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>arrow_down.png</texture>
+							<colordiffuse>FF101010</colordiffuse>
+							<visible>Container(149).HasFocus(3)</visible>
+						</control>
+						<control type="image">
+							<posx>156</posx>
+							<posy>3</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>arrow_up.png</texture>
+							<colordiffuse>FF101010</colordiffuse>
+							<visible>Container(149).HasFocus(3)</visible>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1</width>
+							<height>25</height>
+							<texture>separator_v.png</texture>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<posx>91</posx>
+							<posy>0</posy>
+							<height>25</height>
+							<width>162</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18</font>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textcolor>FF101010</textcolor>
+							<visible>Control.Hasfocus(149)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<posx>91</posx>
+							<posy>0</posy>
+							<height>25</height>
+							<width>162</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18</font>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textcolor>B6FFFFFF</textcolor>
+							<visible>!Control.Hasfocus(149)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1"><!-- Get Thumb -->
+							<label>13405</label>
+							<onclick>SendClick(135,10)</onclick>
 							<visible>!Skin.HasSetting(kioskininfo)</visible>
+						</item>
+						<item id="2"><!-- Album info-->
+							<label>10523</label>
+							<onclick>SendClick(135,12)</onclick>
+							<visible>!Skin.HasSetting(kioskininfo)</visible>
+						</item>
+						<item id="3"><!-- UserRating -->
+							<label>31936</label>
+							<onclick>SendClick(135,7)</onclick>
+							<visible>!Skin.HasSetting(kioskininfo)</visible>
+						</item>
+						<item id="4"><!-- Artist Info -->
+							<label>31885</label>
+							<onclick>RunScript(script.metadata.actors,$INFO[Listitem.Artist])</onclick>
+							<visible>System.HasAddon(script.metadata.actors)</visible>
 						</item>
 						<item id="5"><!-- Artist Zoom -->
 							<label>31944</label>
@@ -1096,13 +1128,13 @@
 							<onclick>Skin.SetBool(artistzoom)</onclick>
 							<onclick>SetFocus(160)</onclick>
 						</item>
-						<item id="6"><!-- Video Clips -->
+						<item id="16"><!-- Video Clips -->
 							<label>31949</label>
 							<onclick>Dialog.Close(135)</onclick>
 							<onclick>Skin.SetBool(musictrailers)</onclick>
 							<onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Artist],return)</onclick>
 						</item>
-						<item id="7"><!-- Song Video Clip -->
+						<item id="17"><!-- Song Video Clip -->
 							<label>31951</label>
 							<onclick>Dialog.Close(135)</onclick>
 							<onclick>Skin.SetBool(musictrailers)</onclick>
