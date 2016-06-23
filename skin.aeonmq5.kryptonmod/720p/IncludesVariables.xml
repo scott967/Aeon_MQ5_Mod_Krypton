@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.1.18 Krypton[COLOR=80FFFFFF] | [/COLOR]06/15/2016</value>
+		<value>9.1.18 Krypton[COLOR=80FFFFFF] | [/COLOR]06/30/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="StringCompare(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -1176,11 +1176,11 @@
 	</variable>
 
 	<variable name="value_studiosicon">
-		<value condition="!IsEmpty(ListItem.Studio) + [Window.IsVisible(videolibrary) | Window.IsVisible(movieinformation)]">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
+		<value condition="!IsEmpty(ListItem.Studio) + [Window.IsVisible(Videos) | Window.IsVisible(movieinformation)]">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
 		<value condition="Player.HasVideo + !IsEmpty(VideoPlayer.Studio) + Window.IsVisible(fullscreeninfo)">$INFO[Skin.String(custom_studios.path)]$INFO[VideoPlayer.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
 	</variable>
 	<variable name="value_recordlabelsicon">
-		<value condition="!IsEmpty(ListItem.Property(Album_Label)) + [Window.IsVisible(musiclibrary) | Window.IsVisible(musicinformation)]">$INFO[Skin.String(custom_recordlabels.path)]$INFO[ListItem.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Album_Label)) + [Window.IsVisible(music) | Window.IsVisible(musicinformation)]">$INFO[Skin.String(custom_recordlabels.path)]$INFO[ListItem.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
 		<value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Property(Album_Label)) + Window.IsVisible(visualisation)">$INFO[Skin.String(custom_redordlabels.path)]$INFO[MusicPlayer.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
 	</variable>
 	<variable name="value_musiccodec">
@@ -3674,13 +3674,14 @@
 	</variable>
 
 	<variable name="value_music_title">
+		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value> 
 		<value condition="Container.Content(artists) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(2001)]">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(135)]">$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="value_music_subtitle">
 		<value condition="Container.Content(albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(2001)]">$INFO[ListItem.Label]</value>
-		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(135)]">$INFO[ListItem.Artist]$INFO[ListItem.Album, | ]</value>
+		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(135)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
 	</variable>
 	<variable name="value_songinfo_title">
 		<value condition="!Window.IsActive(500) | [!Player.HasAudio + IsEmpty(VideoPlayer.Artist)]">$INFO[ListItem.Label]</value>
@@ -3707,6 +3708,10 @@
 	<variable name="value_songinfo_genre">
 		<value condition="!Player.HasAudio">$INFO[ListItem.Genre]</value>
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Genre]</value>
+	</variable>
+	<variable name="value_songinfo_filepath">
+		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[Player.FileNameAndPath]</value>
+		<value>$INFO[ListItem.FileNameAndPath]</value>
 	</variable>
 	<variable name="value_songinfo_track">
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.TrackNumber]</value>

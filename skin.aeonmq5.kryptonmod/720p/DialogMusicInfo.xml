@@ -528,7 +528,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Font_18A</font>
-					<label>$INFO[ListItem.FileNameAndPath]</label>
+					<label>$VAR[value_songinfo_filepath]</label>
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
 				</control>
