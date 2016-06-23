@@ -2,7 +2,7 @@
 	<!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.4/6.1.5/6.1.9 Shelfcase Mod -->
 	<!-- Isengard 7.1.9 Shelfcase/7.1.10/7.1.11 MidList/7.1.12 -->
 	<!-- Jarvis 8.1.13/8.1.14 -->
-	<!-- Krypton 9.1.15/9.1.16/9.1.17 -->
+	<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18 -->
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="IncludesVariables.xml"/>
@@ -799,29 +799,29 @@
 				<include>InvisibleButton</include>
 				<onclick>noop</onclick>
 				<onfocus>Skin.SetString(menu0401.master,musicrecentlyplayed)</onfocus><!-- Musica recem tocada -->
-				<onfocus>Skin.SetString(menu0401.action,ActivateWindow(musiclibrary,recentlyplayedalbums,return))</onfocus>
+				<onfocus>Skin.SetString(menu0401.action,ActivateWindow(music,recentlyplayedalbums,return))</onfocus>
 				<onfocus>Skin.SetString(menu0402.master,musicrecently)</onfocus><!-- Musica recentes -->
-				<onfocus>Skin.SetString(menu0402.action,ActivateWindow(musiclibrary,recentlyaddedalbums,return))</onfocus>
+				<onfocus>Skin.SetString(menu0402.action,ActivateWindow(music,recentlyaddedalbums,return))</onfocus>
 				<onfocus>Skin.SetString(menu0403.master,musicvideoclips)</onfocus><!-- Musica video clipes -->
 				<onfocus>Skin.SetString(menu0403.action,ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[MusicPlayer.Artist],return))</onfocus>
 				<onfocus>Skin.SetString(menu0404.master,musicgenres)</onfocus><!-- Musica generos -->
-				<onfocus>Skin.SetString(menu0404.action,ActivateWindow(musiclibrary,genres,return))</onfocus>
+				<onfocus>Skin.SetString(menu0404.action,ActivateWindow(music,genres,return))</onfocus>
 				<onfocus>Skin.SetString(menu0405.master,musicplaylists)</onfocus><!-- Musica playlists -->
-				<onfocus>Skin.SetString(menu0405.action,ActivateWindow(musiclibrary,playlists,return))</onfocus>
+				<onfocus>Skin.SetString(menu0405.action,ActivateWindow(music,playlists,return))</onfocus>
 				<onfocus>Skin.SetString(menu0406.master,musicartists)</onfocus><!-- Musica artistas -->
-				<onfocus>Skin.SetString(menu0406.action,ActivateWindow(musiclibrary,artists,return))</onfocus>
+				<onfocus>Skin.SetString(menu0406.action,ActivateWindow(music,artists,return))</onfocus>
 				<onfocus>Skin.SetString(menu0407.master,musicalbums)</onfocus><!-- Musica albuns -->
-				<onfocus>Skin.SetString(menu0407.action,ActivateWindow(musiclibrary,albums,return))</onfocus>
+				<onfocus>Skin.SetString(menu0407.action,ActivateWindow(music,albums,return))</onfocus>
 				<onfocus>Skin.SetString(menu0408.master,musicsongs)</onfocus><!-- Musica faixas -->
-				<onfocus>Skin.SetString(menu0408.action,ActivateWindow(musiclibrary,songs,return))</onfocus>
+				<onfocus>Skin.SetString(menu0408.action,ActivateWindow(music,songs,return))</onfocus>
 				<onfocus>Skin.SetString(menu0409.master,musicfiles)</onfocus><!-- Musica arquivos -->
 				<onfocus>Skin.SetString(menu0409.action,ActivateWindow(music,files,return))</onfocus>
 				<onfocus>Skin.SetString(menu0410.master,musicpartymode)</onfocus><!-- Musica modo festa -->
 				<onfocus>Skin.SetString(menu0410.action,PlayerControl(Partymode(music)))</onfocus>
 				<onfocus>Skin.SetString(menu0411.master,musiccompilations)</onfocus><!-- Musica compilacoes -->
-				<onfocus>Skin.SetString(menu0411.action,ActivateWindow(musiclibrary,compilations,return))</onfocus>
+				<onfocus>Skin.SetString(menu0411.action,ActivateWindow(music,compilations,return))</onfocus>
 				<onfocus>Skin.SetString(menu0412.master,musictop100)</onfocus><!-- Musica top100 -->
-				<onfocus>Skin.SetString(menu0412.action,ActivateWindow(musiclibrary,top100,return))</onfocus>
+				<onfocus>Skin.SetString(menu0412.action,ActivateWindow(music,top100,return))</onfocus>
 				<onfocus>Skin.SetString(menu0413.master,musiccleanlibrary)</onfocus><!-- Musica limpar colecao -->
 				<onfocus>Skin.SetString(menu0413.action,CleanLibrary(music))</onfocus>
 				<onfocus>Skin.SetString(menu0414.master,musicupdatelibrary)</onfocus><!-- Musica atualizar colecao -->
@@ -2454,7 +2454,7 @@
 		<control type="radiobutton" id="16"><!-- PartyMode -->
 			<include>TopMenuRadioButton</include>
 			<label>589</label>
-			<visible>Window.IsActive(musiclibrary)</visible>
+			<visible>Window.IsActive(music)</visible>
 		</control>
 	</include>
 	<include name="TopMenu_Playlist">

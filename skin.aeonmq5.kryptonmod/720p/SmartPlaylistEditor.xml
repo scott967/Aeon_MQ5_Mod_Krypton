@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/Orby -->
 <!-- Isengard 7.1.9 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.18 -->
 
 <window id="136">
 	<defaultcontrol always="true">22</defaultcontrol>
@@ -130,7 +131,7 @@
 							<info>ListItem.Label</info>
 							<font>Font_18</font>
 							<textcolor>FFFFFAF0</textcolor>
-							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) + ![Container.Content(movies) + !Container.Content(musicvideos)]">Conditional</animation>
+							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(music) | Window.IsActive(Videos) + ![Container.Content(movies) + !Container.Content(musicvideos)]">Conditional</animation>
 						</control>
 					</itemlayout>
 					<focusedlayout height="40" width="711">
@@ -162,7 +163,7 @@
 							<font>Font_18</font>
 							<textcolor>FFFFFAF0</textcolor>
 							<disabledcolor>FF505050</disabledcolor>
-							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) + ![Container.Content(movies) | Container.Content(musicvideos)]">Conditional</animation>
+							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(music) | Window.IsActive(Videos) + ![Container.Content(movies) | Container.Content(musicvideos)]">Conditional</animation>
 							<visible>![Control.HasFocus(10) | Control.HasFocus(13) | Control.HasFocus(14) | Control.HasFocus(15)]</visible>
 						</control>
 						<control type="label">
@@ -175,7 +176,7 @@
 							<font>Font_18</font>
 							<textcolor>FF101010</textcolor>
 							<disabledcolor>FF505050</disabledcolor>
-							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) + ![Container.Content(movies) | Container.Content(musicvideos)]">Conditional</animation>
+							<animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(music) | Window.IsActive(Videos) + ![Container.Content(movies) | Container.Content(musicvideos)]">Conditional</animation>
 							<visible>Control.HasFocus(10) | Control.HasFocus(13) | Control.HasFocus(14) | Control.HasFocus(15)</visible>
 						</control>
 					</focusedlayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.5/6.1.7/6.1.8  Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.18 -->
 
 <includes>
 	<!-- ######################################################################### Widgets dos Recentes ######################################################################### -->
@@ -2955,7 +2955,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.1.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.1.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.1.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.1.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.1.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.1.Title))</visible>
 					</item>
@@ -2965,7 +2965,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.2.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.2.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.2.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.2.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.2.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.2.Title))</visible>
 					</item>
@@ -2975,7 +2975,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.3.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.3.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.3.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.3.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.3.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.3.Title))</visible>
 					</item>
@@ -2985,7 +2985,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.4.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.4.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.4.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.4.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.4.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.4.Title))</visible>
 					</item>
@@ -2995,7 +2995,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.5.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.5.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.5.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.5.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.5.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.5.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -3005,7 +3005,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.6.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.6.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.6.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.6.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.6.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.6.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -3015,7 +3015,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.7.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.7.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.7.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.7.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.7.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.7.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -3025,7 +3025,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.8.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.8.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.8.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.8.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.8.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.8.Title)) + [SubString(skin.string(widgetsnumber),8) | SubString(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -3035,7 +3035,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.9.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.9.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.9.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.9.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.9.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.9.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -3045,7 +3045,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.10.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.10.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.10.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.10.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.10.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.10.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -3055,7 +3055,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.11.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.11.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.11.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.11.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.11.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.11.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -3065,7 +3065,7 @@
 						<property name="Fanart">$INFO[Window(0).Property(RandomArtist.12.Fanart)]</property>
 						<property name="Genre">$INFO[Window(0).Property(RandomArtist.12.Genre)]</property>
 						<property name="Plot">$INFO[Window(0).Property(RandomArtist.12.Description)]</property>
-						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(0).Property(RandomArtist.12.LibraryPath)])</onclick>
+						<onclick>ActivateWindow(music,$INFO[Window(0).Property(RandomArtist.12.LibraryPath)])</onclick>
 						<onclick condition="!Skin.HasSetting(novisartistslideshow) + System.HasAddon(script.artistslideshow)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
 						<visible>!IsEmpty(Window(0).Property(RandomArtist.12.Title)) + SubString(skin.string(widgetsnumber),12)</visible>
 					</item>

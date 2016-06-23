@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 / 6.1.4 /6.1.7/6.1.8 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.17 -->
+<!-- Krypton 9.1.17/9.1.18 -->
 
 <includes>
 	<!-- ######################################################################### Presets para aplicar ######################################################################### -->
@@ -1872,7 +1872,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31043]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicrecentlyplayed)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,recentlyplayedalbums,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,recentlyplayedalbums,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1880,7 +1880,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31583]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicrecently)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,recentlyaddedalbums,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,recentlyaddedalbums,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1896,7 +1896,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31091]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicgenres)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,genres,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,genres,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1904,7 +1904,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31092]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicplaylists)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,playlists,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,playlists,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1912,7 +1912,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31037]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicartists)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,artists,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,artists,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1920,7 +1920,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31040]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicalbums)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,albums,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,albums,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1928,7 +1928,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31340]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicsongs)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,songs,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,songs,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1936,7 +1936,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[29994]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musicroles)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,"library://music/musicroles/",return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,"library://music/musicroles/",return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1960,7 +1960,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31041]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musiccompilations)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,compilations,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,compilations,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -1968,7 +1968,7 @@
 					<label2>$LOCALIZE[31002]-$LOCALIZE[31042]</label2>
 					<property name="id">music</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],musictop100)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(musiclibrary,top100,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(music,top100,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>

@@ -525,7 +525,7 @@
 						<label>$INFO[Player.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(PlayingBackgroundMedia),TRUE)</visible>
+						<visible>Player.HasMedia + !SubString(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 					<control type="label">
 						<width>245</width>
@@ -537,7 +537,7 @@
 						<label>($INFO[Player.Time] / $INFO[Player.Duration,])</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(PlayingBackgroundMedia),TRUE)</visible>
+						<visible>Player.HasMedia + !SubString(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 				</control>
 
