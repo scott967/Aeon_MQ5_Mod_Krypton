@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.18 -->
 
 <window id="146">
 	<defaultcontrol always="true">9000</defaultcontrol>
@@ -162,10 +162,31 @@
 					<posx>-80</posx>
 					<posy>195</posy>
 					<width>940</width>
-					<height>350</height>
+					<height>70</height>
 					<align>justify</align>
 					<font>Font_18A</font>
 					<label>$INFO[ListItem.AddonDescription]</label>
+					<autoscroll delay="20000" time="3000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				</control>
+				<control type="label"><!-- What's new -->
+					<posx>-80</posx>
+					<posy>295</posy>
+					<width>300</width>
+					<height>25</height>
+					<label>$LOCALIZE[24054]:</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_18</font>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+				</control><control type="textbox" id="402">
+					<description>Description</description>
+					<posx>-80</posx>
+					<posy>315</posy>
+					<width>940</width>
+					<height>70</height>
+					<align>justify</align>
+					<font>Font_18A</font>
+					<label>$INFO[ListItem.AddonNews]</label>
 					<autoscroll delay="20000" time="3000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
@@ -201,10 +222,6 @@
 				</control>
 				<control type="button" id="8"><!-- Update -->
 					<label>24069</label>
-					<include>SettingsButton</include>
-				</control>
-				<control type="button" id="10"><!-- Changelog -->
-					<label>24036</label>
 					<include>SettingsButton</include>
 				</control>
 			</control>
