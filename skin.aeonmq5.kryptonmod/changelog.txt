@@ -4,6 +4,7 @@ Fixed:  Musicinformation dialog
 Fixed:  Doubled plot in musicinformation for music videos
 New:  Default slider orientation is horizontal (new Krypton setting)
 New:  AudioDSP labels
+New:  Addon "What's New" display on Addon Info
 
 [B][COLOR=FFFF8C00]BUILD 9.1.17 - RELEASE DATE 05/09/2016[/COLOR][/B]
 New:  Support for Music roles
