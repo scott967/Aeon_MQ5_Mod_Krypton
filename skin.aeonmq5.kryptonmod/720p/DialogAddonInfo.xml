@@ -101,13 +101,13 @@
 					<font>Font_18</font>
 					<scroll>true</scroll>
 				</control>
-				<!-- Addon StarRating doesn't exist -->
-				<!-- 				<control type="label">
+<!-- working on desired label
+				<control type="label">
 					<posx>250</posx>
 					<posy>90</posy>
 					<width>140</width>
 					<height>25</height>
-					<label>$LOCALIZE[563]:</label>
+					<label>$LOCALIZE[24056]:</label>
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>Font_18</font>
@@ -116,12 +116,11 @@
 				<control type="image">
 					<posx>235</posx>
 					<posy>88</posy>
-					<width>160</width>
+					<width>550</width>
 					<height>25</height>
-					<aspectratio>keep</aspectratio>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texture>$INFO[ListItem.Property(Addon.StarRating)]</texture>
+					<label fallback="416">$INFO[ListItem.AddonLastUpdated]</label>
 				</control> -->
 				<control type="label"><!-- Summary -->
 					<posx>250</posx>
@@ -181,9 +180,9 @@
 				</control><control type="textbox" id="402">
 					<description>Description</description>
 					<posx>-80</posx>
-					<posy>315</posy>
+					<posy>330</posy>
 					<width>940</width>
-					<height>70</height>
+					<height>100</height>
 					<align>justify</align>
 					<font>Font_18A</font>
 					<label>$INFO[ListItem.AddonNews]</label>
