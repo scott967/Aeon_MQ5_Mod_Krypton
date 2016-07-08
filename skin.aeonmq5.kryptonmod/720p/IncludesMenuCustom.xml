@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 / 6.1.4 /6.1.7/6.1.8 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.17/9.1.18 -->
+<!-- Krypton 9.1.17/9.1.18/9.1.19 -->
 
 <includes>
 	<!-- ######################################################################### Presets para aplicar ######################################################################### -->
@@ -2265,7 +2265,7 @@
 					<label2>31024</label2>
 					<property name="id">settings</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],settingsaddonsvideo)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(video,addons,return))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ActivateWindow(videos,addons,return))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
