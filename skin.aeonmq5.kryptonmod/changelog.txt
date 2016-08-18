@@ -1,6 +1,8 @@
 [B][COLOR=FFFF8C00]BUILD 9.1.19 - RELEASE DATE 07/30/2016[/COLOR][/B]
 Fixed:  Top Menu and Main menu for Video Add-ons now works
 Fixed:  Obsolete System.GetBool(PVRManager.enabled) removed (use PVR.HasTVChannels)
+New:  InfoLabel Addonsummary is now Label2
+New:  Media settings
 
 [B][COLOR=FFFF8C00]BUILD 9.1.18 - RELEASE DATE 06/30/2016[/COLOR][/B]
 Fixed:  Lower textbox in right list view
