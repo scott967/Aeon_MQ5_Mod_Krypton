@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.6 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.18/9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA ShowCase - ID 66   ##################################################################################-->
@@ -175,8 +176,8 @@
 		<height>350</height>
 		<onleft>66</onleft>
 		<onright>66</onright>
-		<onup condition="StringCompare(skin.string(showcasevideopanel),manual) + !StringCompare(ListItem.Label,..)">9966</onup>
-		<onup condition="![StringCompare(skin.string(showcasevideopanel),manual) + !StringCompare(ListItem.Label,..)]">9900</onup>
+		<onup condition="String.IsEqual(skin.string(showcasevideopanel),manual) + !String.IsEqual(ListItem.Label,..)">9966</onup>
+		<onup condition="![String.IsEqual(skin.string(showcasevideopanel),manual) + !String.IsEqual(ListItem.Label,..)]">9900</onup>
 		<ondown>80</ondown>
 		<pagecontrol>80</pagecontrol>
 		<orientation>horizontal</orientation>
@@ -199,7 +200,7 @@
 				</control>
 				<control type="image">
 					<include>WatchedShowCase</include>
-					<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -221,7 +222,7 @@
 				</control>
 				<control type="image">
 					<include>WatchedShowCaseCase</include>
-					<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Estojo -->
 					<include>ShowCaseThumbCaseFlat</include>
@@ -238,7 +239,7 @@
 		<focusedlayout height="380" width="196" condition="Window.IsActive(25) + !Container.Content(episodes) | Window.IsActive(1)">
 			<control type="group">
 				<animation effect="zoom" start="100" end="110" center="135,205" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-				<animation effect="zoom" start="110" end="100" center="135,205" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(1)] | !Window.IsActive(videolibrary) + !Window.IsActive(videofiles) + Skin.HasSetting(flattenshowcasemusic)]">Unfocus</animation>
+				<animation effect="zoom" start="110" end="100" center="135,205" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(1)] | !Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]">Unfocus</animation>
 				<control type="group">
 					<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
 					<control type="image"><!-- Poster reflexo -->
@@ -253,7 +254,7 @@
 					</control>
 					<control type="image">
 						<include>WatchedShowCase</include>
-						<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -275,7 +276,7 @@
 					</control>
 					<control type="image">
 						<include>WatchedShowCaseCase</include>
-						<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Estojo -->
 						<include>ShowCaseThumbCaseFlat</include>
@@ -315,18 +316,18 @@
 				<height>50</height>
 				<texture>$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-				<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
+				<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout height="350" width="250" condition="[Container.Content(episodes) + Skin.HasSetting(flattenshowcase)]">
 			<control type="group">
 				<animation effect="zoom" start="100" end="140" center="-35,180" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-				<animation effect="zoom" start="140" end="100" center="-35,180" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [[[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [!Window.IsActive(videolibrary) + !Window.IsActive(videofiles) + Skin.HasSetting(flattenshowcasemusic)]]]">Unfocus</animation>
+				<animation effect="zoom" start="140" end="100" center="-35,180" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [[[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [!Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]]]">Unfocus</animation>
 				<control type="image">
 					<include>EpisodeShowCaseThumbDimensions</include>
 					<texture diffuse="thumb_tvmask.png" background="true">$VAR[value_poster]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] | !Window.IsActive(videolibrary) + !Window.IsActive(videofiles) + Skin.HasSetting(flattenshowcasemusic)]</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] | !Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]</visible>
 				</control>
 				<control type="image">
 					<include>EpisodeShowCaseThumbDimensions</include>
@@ -337,7 +338,7 @@
 				<control type="image">
 					<include>EpisodeShowCaseThumbReflection</include>
 					<texture diffuse="thumb_tvmask.png" background="true">$VAR[value_poster]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] | !Window.IsActive(videolibrary) + !Window.IsActive(videofiles) + Skin.HasSetting(flattenshowcasemusic)]</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] | !Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]</visible>
 				</control>
 				<control type="image">
 					<posx>37</posx>
@@ -346,7 +347,7 @@
 					<height>50</height>
 					<texture>$VAR[value_watchedstyle]</texture>
 					<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-					<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
 				</control>
 			</control>
 		</focusedlayout>
@@ -357,7 +358,7 @@
 			<control type="group" id="6001">
 				<posy>360</posy>
 				<camera x="640" y="540"/>
-				<visible>Container.OnNext + !StringCompare(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
+				<visible>Container.OnNext + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
 				<animation effect="slide" end="-90,0" time="210" reversible="false">Hidden</animation>
 				<control type="group"><!-- -7 -->
 					<posx>10</posx>
@@ -529,7 +530,7 @@
 			<control type="group" id="6002">
 				<posy>360</posy>
 				<camera x="640" y="540"/>
-				<visible>Container.OnPrevious + !StringCompare(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
+				<visible>Container.OnPrevious + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
 				<animation effect="slide" end="90,0" time="210" reversible="false">Hidden</animation>
 				<control type="group"><!-- 7 -->
 					<posx>1000</posx>
@@ -663,7 +664,7 @@
 				<posy>360</posy>
 				<animation effect="fade" time="500">WindowOpen</animation>
 				<animation effect="fade" time="200">WindowClose</animation>
-				<visible>[[!Control.IsVisible(6001) + !Control.IsVisible(6002) | StringCompare(container(66).numitems,1)]] + Control.IsVisible(960)</visible>
+				<visible>[[!Control.IsVisible(6001) + !Control.IsVisible(6002) | String.IsEqual(container(66).numitems,1)]] + Control.IsVisible(960)</visible>
 				<camera x="640" y="540"/>
 				<control type="group"><!-- -6 -->
 					<posx>10</posx>
@@ -806,7 +807,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -826,7 +827,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(0).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -852,7 +853,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(1).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -872,7 +873,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(1).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(1).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -898,7 +899,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(2).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -918,7 +919,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(2).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(2).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -944,7 +945,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(3).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -964,7 +965,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(3).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(3).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -990,7 +991,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(4).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1010,7 +1011,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(4).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(4).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1036,7 +1037,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(5).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(5).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1056,7 +1057,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(5).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(5).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1082,7 +1083,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(6).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(6).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1102,7 +1103,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(6).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(6).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1128,7 +1129,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(7).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(7).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1148,7 +1149,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(7).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(7).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1174,7 +1175,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-1).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-1).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1194,7 +1195,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-1).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-1).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1220,7 +1221,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-2).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-2).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1240,7 +1241,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-2).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-2).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1266,7 +1267,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-3).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-3).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1286,7 +1287,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-3).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-3).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1312,7 +1313,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-4).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-4).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1332,7 +1333,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-4).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-4).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1358,7 +1359,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-5).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-5).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1378,7 +1379,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-5).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-5).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1404,7 +1405,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-6).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-6).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1424,7 +1425,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-6).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-6).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1450,7 +1451,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCase</include>
-				<visible>StringCompare(ListItem(-7).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-7).Overlay,OverlayWatched.png)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -1470,7 +1471,7 @@
 			</control>
 			<control type="image">
 				<include>WatchedShowCaseCase</include>
-				<visible>StringCompare(ListItem(-7).Overlay,OverlayWatched.png)</visible>
+				<visible>String.IsEqual(ListItem(-7).Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image"><!-- Estojo -->
 				<include>ShowCaseThumbCase</include>
@@ -1496,7 +1497,7 @@
 			<control type="group"><!-- painel de info fanart layout -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9966) | StringCompare(skin.string(showcasevideopanel),alwayson) | StringCompare(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + SubString(skin.string(showcaselayout),fanart) + ![StringCompare(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
+				<visible>[Control.HasFocus(9966) | String.IsEqual(skin.string(showcasevideopanel),alwayson) | String.IsEqual(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + SubString(skin.string(showcaselayout),fanart) + ![String.IsEqual(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>
@@ -1594,7 +1595,7 @@
 			<control type="group"><!-- painel de info extrathumbs layout -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9966) | StringCompare(skin.string(showcasevideopanel),alwayson) | StringCompare(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921)] + SubString(skin.string(showcaselayout),extrathumbs) + ![StringCompare(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
+				<visible>[Control.HasFocus(9966) | String.IsEqual(skin.string(showcasevideopanel),alwayson) | String.IsEqual(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921)] + SubString(skin.string(showcaselayout),extrathumbs) + ![String.IsEqual(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>

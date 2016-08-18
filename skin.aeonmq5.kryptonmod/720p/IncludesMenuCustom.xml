@@ -1287,7 +1287,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50FFFAF0</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),clean)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),clean)</visible>
 				</control>
 				<control type="image"><!-- salmao -->
 					<posx>0</posx>
@@ -1296,7 +1296,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50E9967A</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),custom)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),custom)</visible>
 				</control>
 				<control type="image"><!-- roxo claro -->
 					<posx>0</posx>
@@ -1305,7 +1305,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>509370DB</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),movies)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),movies)</visible>
 				</control>
 				<control type="image"><!-- agua -->
 					<posx>0</posx>
@@ -1314,7 +1314,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>507FFFD4</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),tvshows)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),tvshows)</visible>
 				</control>
 				<control type="image"><!-- bege -->
 					<posx>0</posx>
@@ -1323,7 +1323,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50FFE4C4</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),concerts)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),concerts)</visible>
 				</control>
 				<control type="image"><!-- violeta -->
 					<posx>0</posx>
@@ -1332,7 +1332,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>508A2BE2</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),music)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),music)</visible>
 				</control>
 				<control type="image"><!-- azul escuro -->
 					<posx>0</posx>
@@ -1341,7 +1341,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>505F9EA0</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),livetv)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),livetv)</visible>
 				</control>
 				<control type="image"><!-- chocolate -->
 					<posx>0</posx>
@@ -1350,7 +1350,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50D2691E</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),various)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),various)</visible>
 				</control>
 				<control type="image"><!-- vermelho escuro -->
 					<posx>0</posx>
@@ -1359,7 +1359,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50DC143C</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),weather)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),weather)</visible>
 				</control>
 				<control type="image"><!-- ciano -->
 					<posx>0</posx>
@@ -1368,7 +1368,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>5000FFFF</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),settings)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),settings)</visible>
 				</control>
 				<control type="image"><!-- dourado -->
 					<posx>0</posx>
@@ -1377,7 +1377,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50B8860B</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),shutdown)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),shutdown)</visible>
 				</control>
 				<control type="image"><!-- verde -->
 					<posx>0</posx>
@@ -1386,7 +1386,7 @@
 					<height>30</height>
 					<texture>grey.png</texture>
 					<colordiffuse>50008000</colordiffuse>
-					<visible>StringCompare(ListItem.Property(id),video)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),video)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -1417,7 +1417,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFFFFAF0</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),clean)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),clean)</visible>
 				</control>
 				<control type="image"><!-- salmao -->
 					<posx>0</posx>
@@ -1427,7 +1427,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFE9967A</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),custom)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),custom)</visible>
 				</control>
 				<control type="image"><!-- roxo claro -->
 					<posx>0</posx>
@@ -1437,7 +1437,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF9370DB</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),movies)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),movies)</visible>
 				</control>
 				<control type="image"><!-- agua -->
 					<posx>0</posx>
@@ -1447,7 +1447,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF7FFFD4</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),tvshows)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),tvshows)</visible>
 				</control>
 				<control type="image"><!-- bege -->
 					<posx>0</posx>
@@ -1457,7 +1457,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFFFE4C4</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),concerts)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),concerts)</visible>
 				</control>
 				<control type="image"><!-- violeta -->
 					<posx>0</posx>
@@ -1467,7 +1467,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF8A2BE2</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),music)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),music)</visible>
 				</control>
 				<control type="image"><!-- azul escuro -->
 					<posx>0</posx>
@@ -1477,7 +1477,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF5F9EA0</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),livetv)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),livetv)</visible>
 				</control>
 				<control type="image"><!-- chocolate -->
 					<posx>0</posx>
@@ -1487,7 +1487,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFD2691E</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),various)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),various)</visible>
 				</control>
 				<control type="image"><!-- vermelho escuro -->
 					<posx>0</posx>
@@ -1497,7 +1497,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFDC143C</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),weather)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),weather)</visible>
 				</control>
 				<control type="image"><!-- ciano -->
 					<posx>0</posx>
@@ -1507,7 +1507,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF00FFFF</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),settings)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),settings)</visible>
 				</control>
 				<control type="image"><!-- dourado -->
 					<posx>0</posx>
@@ -1517,7 +1517,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FFB8860B</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),shutdown)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),shutdown)</visible>
 				</control>
 				<control type="image"><!-- verde -->
 					<posx>0</posx>
@@ -1527,7 +1527,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>FF008000</colordiffuse>
 					<animation effect="fade" start="100" end="50" time="0" condition="!Control.Hasfocus(452)">conditional</animation>
-					<visible>StringCompare(ListItem.Property(id),video)</visible>
+					<visible>String.IsEqual(ListItem.Property(id),video)</visible>
 				</control>
 				<control type="label">
 					<posx>20</posx>
@@ -2521,102 +2521,102 @@
 				<item>
 					<label>$VAR[value_menu1.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu1.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu1.master)) | SubString(skin.string(menu1.visible),off) | StringCompare(skin.string(menu1.master),movies) | StringCompare(skin.string(menu1.master),tvshows) | StringCompare(skin.string(menu1.master),concerts) | StringCompare(skin.string(menu1.master),music) | !IsEmpty(skin.string(menu1.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu1.master)) | SubString(skin.string(menu1.visible),off) | String.IsEqual(skin.string(menu1.master),movies) | String.IsEqual(skin.string(menu1.master),tvshows) | String.IsEqual(skin.string(menu1.master),concerts) | String.IsEqual(skin.string(menu1.master),music) | !IsEmpty(skin.string(menu1.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu2.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu2.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu2.master)) | SubString(skin.string(menu2.visible),off) | StringCompare(skin.string(menu2.master),movies) | StringCompare(skin.string(menu2.master),tvshows) | StringCompare(skin.string(menu2.master),concerts) | StringCompare(skin.string(menu2.master),music) | !IsEmpty(skin.string(menu2.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu2.master)) | SubString(skin.string(menu2.visible),off) | String.IsEqual(skin.string(menu2.master),movies) | String.IsEqual(skin.string(menu2.master),tvshows) | String.IsEqual(skin.string(menu2.master),concerts) | String.IsEqual(skin.string(menu2.master),music) | !IsEmpty(skin.string(menu2.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu3.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu3.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu3.master)) | SubString(skin.string(menu3.visible),off) | StringCompare(skin.string(menu3.master),movies) | StringCompare(skin.string(menu3.master),tvshows) | StringCompare(skin.string(menu3.master),concerts) | StringCompare(skin.string(menu3.master),music) | !IsEmpty(skin.string(menu3.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu3.master)) | SubString(skin.string(menu3.visible),off) | String.IsEqual(skin.string(menu3.master),movies) | String.IsEqual(skin.string(menu3.master),tvshows) | String.IsEqual(skin.string(menu3.master),concerts) | String.IsEqual(skin.string(menu3.master),music) | !IsEmpty(skin.string(menu3.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu4.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu4.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu4.master)) | SubString(skin.string(menu4.visible),off) | StringCompare(skin.string(menu4.master),movies) | StringCompare(skin.string(menu4.master),tvshows) | StringCompare(skin.string(menu4.master),concerts) | StringCompare(skin.string(menu4.master),music) | !IsEmpty(skin.string(menu4.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu4.master)) | SubString(skin.string(menu4.visible),off) | String.IsEqual(skin.string(menu4.master),movies) | String.IsEqual(skin.string(menu4.master),tvshows) | String.IsEqual(skin.string(menu4.master),concerts) | String.IsEqual(skin.string(menu4.master),music) | !IsEmpty(skin.string(menu4.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu5.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu5.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu5.master)) | SubString(skin.string(menu5.visible),off) | StringCompare(skin.string(menu5.master),movies) | StringCompare(skin.string(menu5.master),tvshows) | StringCompare(skin.string(menu5.master),concerts) | StringCompare(skin.string(menu5.master),music) | !IsEmpty(skin.string(menu5.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu5.master)) | SubString(skin.string(menu5.visible),off) | String.IsEqual(skin.string(menu5.master),movies) | String.IsEqual(skin.string(menu5.master),tvshows) | String.IsEqual(skin.string(menu5.master),concerts) | String.IsEqual(skin.string(menu5.master),music) | !IsEmpty(skin.string(menu5.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu6.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu6.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu6.master)) | SubString(skin.string(menu6.visible),off) | StringCompare(skin.string(menu6.master),movies) | StringCompare(skin.string(menu6.master),tvshows) | StringCompare(skin.string(menu6.master),concerts) | StringCompare(skin.string(menu6.master),music) | !IsEmpty(skin.string(menu6.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu6.master)) | SubString(skin.string(menu6.visible),off) | String.IsEqual(skin.string(menu6.master),movies) | String.IsEqual(skin.string(menu6.master),tvshows) | String.IsEqual(skin.string(menu6.master),concerts) | String.IsEqual(skin.string(menu6.master),music) | !IsEmpty(skin.string(menu6.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu7.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu7.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu7.master)) | SubString(skin.string(menu7.visible),off) | StringCompare(skin.string(menu7.master),movies) | StringCompare(skin.string(menu7.master),tvshows) | StringCompare(skin.string(menu7.master),concerts) | StringCompare(skin.string(menu7.master),music) | !IsEmpty(skin.string(menu7.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu7.master)) | SubString(skin.string(menu7.visible),off) | String.IsEqual(skin.string(menu7.master),movies) | String.IsEqual(skin.string(menu7.master),tvshows) | String.IsEqual(skin.string(menu7.master),concerts) | String.IsEqual(skin.string(menu7.master),music) | !IsEmpty(skin.string(menu7.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu8.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu8.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu8.master)) | SubString(skin.string(menu8.visible),off) | StringCompare(skin.string(menu8.master),movies) | StringCompare(skin.string(menu8.master),tvshows) | StringCompare(skin.string(menu8.master),concerts) | StringCompare(skin.string(menu8.master),music) | !IsEmpty(skin.string(menu8.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu8.master)) | SubString(skin.string(menu8.visible),off) | String.IsEqual(skin.string(menu8.master),movies) | String.IsEqual(skin.string(menu8.master),tvshows) | String.IsEqual(skin.string(menu8.master),concerts) | String.IsEqual(skin.string(menu8.master),music) | !IsEmpty(skin.string(menu8.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu9.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu9.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu9.master)) | SubString(skin.string(menu9.visible),off) | StringCompare(skin.string(menu9.master),movies) | StringCompare(skin.string(menu9.master),tvshows) | StringCompare(skin.string(menu9.master),concerts) | StringCompare(skin.string(menu9.master),music) | !IsEmpty(skin.string(menu9.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu9.master)) | SubString(skin.string(menu9.visible),off) | String.IsEqual(skin.string(menu9.master),movies) | String.IsEqual(skin.string(menu9.master),tvshows) | String.IsEqual(skin.string(menu9.master),concerts) | String.IsEqual(skin.string(menu9.master),music) | !IsEmpty(skin.string(menu9.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu10.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu10.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu10.master)) | SubString(skin.string(menu10.visible),off) | StringCompare(skin.string(menu10.master),movies) | StringCompare(skin.string(menu10.master),tvshows) | StringCompare(skin.string(menu10.master),concerts) | StringCompare(skin.string(menu10.master),music) | !IsEmpty(skin.string(menu10.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu10.master)) | SubString(skin.string(menu10.visible),off) | String.IsEqual(skin.string(menu10.master),movies) | String.IsEqual(skin.string(menu10.master),tvshows) | String.IsEqual(skin.string(menu10.master),concerts) | String.IsEqual(skin.string(menu10.master),music) | !IsEmpty(skin.string(menu10.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu11.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu11.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu11.master)) | SubString(skin.string(menu11.visible),off) | StringCompare(skin.string(menu11.master),movies) | StringCompare(skin.string(menu11.master),tvshows) | StringCompare(skin.string(menu11.master),concerts) | StringCompare(skin.string(menu11.master),music) | !IsEmpty(skin.string(menu11.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu11.master)) | SubString(skin.string(menu11.visible),off) | String.IsEqual(skin.string(menu11.master),movies) | String.IsEqual(skin.string(menu11.master),tvshows) | String.IsEqual(skin.string(menu11.master),concerts) | String.IsEqual(skin.string(menu11.master),music) | !IsEmpty(skin.string(menu11.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu12.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu12.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu12.master)) | SubString(skin.string(menu12.visible),off) | StringCompare(skin.string(menu12.master),movies) | StringCompare(skin.string(menu12.master),tvshows) | StringCompare(skin.string(menu12.master),concerts) | StringCompare(skin.string(menu12.master),music) | !IsEmpty(skin.string(menu12.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu12.master)) | SubString(skin.string(menu12.visible),off) | String.IsEqual(skin.string(menu12.master),movies) | String.IsEqual(skin.string(menu12.master),tvshows) | String.IsEqual(skin.string(menu12.master),concerts) | String.IsEqual(skin.string(menu12.master),music) | !IsEmpty(skin.string(menu12.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu13.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu13.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu13.master)) | SubString(skin.string(menu13.visible),off) | StringCompare(skin.string(menu13.master),movies) | StringCompare(skin.string(menu13.master),tvshows) | StringCompare(skin.string(menu13.master),concerts) | StringCompare(skin.string(menu13.master),music) | !IsEmpty(skin.string(menu13.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu13.master)) | SubString(skin.string(menu13.visible),off) | String.IsEqual(skin.string(menu13.master),movies) | String.IsEqual(skin.string(menu13.master),tvshows) | String.IsEqual(skin.string(menu13.master),concerts) | String.IsEqual(skin.string(menu13.master),music) | !IsEmpty(skin.string(menu13.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu14.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu14.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu14.master)) | SubString(skin.string(menu14.visible),off) | StringCompare(skin.string(menu14.master),movies) | StringCompare(skin.string(menu14.master),tvshows) | StringCompare(skin.string(menu14.master),concerts) | StringCompare(skin.string(menu14.master),music) | !IsEmpty(skin.string(menu14.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu14.master)) | SubString(skin.string(menu14.visible),off) | String.IsEqual(skin.string(menu14.master),movies) | String.IsEqual(skin.string(menu14.master),tvshows) | String.IsEqual(skin.string(menu14.master),concerts) | String.IsEqual(skin.string(menu14.master),music) | !IsEmpty(skin.string(menu14.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu15.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu15.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu15.master)) | SubString(skin.string(menu15.visible),off) | StringCompare(skin.string(menu15.master),movies) | StringCompare(skin.string(menu15.master),tvshows) | StringCompare(skin.string(menu15.master),concerts) | StringCompare(skin.string(menu15.master),music) | !IsEmpty(skin.string(menu15.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu15.master)) | SubString(skin.string(menu15.visible),off) | String.IsEqual(skin.string(menu15.master),movies) | String.IsEqual(skin.string(menu15.master),tvshows) | String.IsEqual(skin.string(menu15.master),concerts) | String.IsEqual(skin.string(menu15.master),music) | !IsEmpty(skin.string(menu15.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu16.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu16.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu16.master)) | SubString(skin.string(menu16.visible),off) | StringCompare(skin.string(menu16.master),movies) | StringCompare(skin.string(menu16.master),tvshows) | StringCompare(skin.string(menu16.master),concerts) | StringCompare(skin.string(menu16.master),music) | !IsEmpty(skin.string(menu16.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu16.master)) | SubString(skin.string(menu16.visible),off) | String.IsEqual(skin.string(menu16.master),movies) | String.IsEqual(skin.string(menu16.master),tvshows) | String.IsEqual(skin.string(menu16.master),concerts) | String.IsEqual(skin.string(menu16.master),music) | !IsEmpty(skin.string(menu16.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu17.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu17.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu17.master)) | SubString(skin.string(menu17.visible),off) | StringCompare(skin.string(menu17.master),movies) | StringCompare(skin.string(menu17.master),tvshows) | StringCompare(skin.string(menu17.master),concerts) | StringCompare(skin.string(menu17.master),music) | !IsEmpty(skin.string(menu17.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu17.master)) | SubString(skin.string(menu17.visible),off) | String.IsEqual(skin.string(menu17.master),movies) | String.IsEqual(skin.string(menu17.master),tvshows) | String.IsEqual(skin.string(menu17.master),concerts) | String.IsEqual(skin.string(menu17.master),music) | !IsEmpty(skin.string(menu17.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu18.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu18.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu18.master)) | SubString(skin.string(menu18.visible),off) | StringCompare(skin.string(menu18.master),movies) | StringCompare(skin.string(menu18.master),tvshows) | StringCompare(skin.string(menu18.master),concerts) | StringCompare(skin.string(menu18.master),music) | !IsEmpty(skin.string(menu18.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu18.master)) | SubString(skin.string(menu18.visible),off) | String.IsEqual(skin.string(menu18.master),movies) | String.IsEqual(skin.string(menu18.master),tvshows) | String.IsEqual(skin.string(menu18.master),concerts) | String.IsEqual(skin.string(menu18.master),music) | !IsEmpty(skin.string(menu18.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu19.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu19.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu19.master)) | SubString(skin.string(menu19.visible),off) | StringCompare(skin.string(menu19.master),movies) | StringCompare(skin.string(menu19.master),tvshows) | StringCompare(skin.string(menu19.master),concerts) | StringCompare(skin.string(menu19.master),music) | !IsEmpty(skin.string(menu19.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu19.master)) | SubString(skin.string(menu19.visible),off) | String.IsEqual(skin.string(menu19.master),movies) | String.IsEqual(skin.string(menu19.master),tvshows) | String.IsEqual(skin.string(menu19.master),concerts) | String.IsEqual(skin.string(menu19.master),music) | !IsEmpty(skin.string(menu19.subid))]</visible>
 				</item>
 				<item>
 					<label>$VAR[value_menu20.label]</label>
 					<onclick>Skin.SetString($INFO[skin.string(custom_subid)],$VAR[value_menu20.id])</onclick>
-					<visible>![IsEmpty(skin.string(menu20.master)) | SubString(skin.string(menu20.visible),off) | StringCompare(skin.string(menu20.master),movies) | StringCompare(skin.string(menu20.master),tvshows) | StringCompare(skin.string(menu20.master),concerts) | StringCompare(skin.string(menu20.master),music) | !IsEmpty(skin.string(menu20.subid))]</visible>
+					<visible>![IsEmpty(skin.string(menu20.master)) | SubString(skin.string(menu20.visible),off) | String.IsEqual(skin.string(menu20.master),movies) | String.IsEqual(skin.string(menu20.master),tvshows) | String.IsEqual(skin.string(menu20.master),concerts) | String.IsEqual(skin.string(menu20.master),music) | !IsEmpty(skin.string(menu20.subid))]</visible>
 				</item>
 			</content>
 		</control>
@@ -4589,21 +4589,21 @@
 				<onclick condition="!IsEmpty(Container(9000).ListItem.Property(condition))">Skin.Reset($INFO[skin.string(custom_on)])</onclick>
 				<selected>IsEmpty(Container(9000).ListItem.Property(condition))</selected>
 				<enable>!IsEmpty(Container(9000).ListItem.Property(id))</enable>
-				<visible>!StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="113"><!-- Alterar/definir Acao -->
 				<include>CustomMenuButton</include>
 				<label>31158</label>
 				<onclick>SetFocus(452)</onclick>
 				<onright>SetFocus(452)</onright>
-				<visible>!StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="114"><!-- Clonar submenu -->
 				<include>CustomMenuButton</include>
 				<label>31159</label>
 				<onclick>SetFocus(453)</onclick>
 				<onright>SetFocus(453)</onright>
-				<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),mymenu1) | StringCompare(Container(9000).ListItem.Property(id),mymenu2) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
+				<visible>![Skin.HasSetting(submode) | String.IsEqual(Container(9000).ListItem.Property(id),mymenu1) | String.IsEqual(Container(9000).ListItem.Property(id),mymenu2) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)]</visible>
 			</control>
 			<control type="button" id="115"><!-- Copiar propriedades -->
 				<include>CustomMenuButton</include>
@@ -4611,7 +4611,7 @@
 				<onclick>SetFocus(454)</onclick>
 				<onright>SetFocus(454)</onright>
 				<enable>![SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl)]</enable>
-				<visible>!StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="116"><!-- Aplicar propriedades -->
 				<include>CustomMenuButton</include>
@@ -4619,75 +4619,75 @@
 				<onclick>SetFocus(455)</onclick>
 				<onright>SetFocus(455)</onright>
 				<enable>![SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl)]</enable>
-				<visible>!StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="118"><!-- Pre definicoes - criar -->
 				<include>CustomMenuButton</include>
 				<label>31166</label>
 				<onclick>SetFocus(456)</onclick>
 				<onright>SetFocus(456)</onright>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),settingspresets) | StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),settingspresets) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="119"><!-- Pre definicoes - aplicar -->
 				<include>CustomMenuButton</include>
 				<label>31167</label>
 				<onclick>SetFocus(457)</onclick>
 				<onright>SetFocus(457)</onright>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),settingspresets) | StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),settingspresets) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="button" id="117"><!-- Renomear titulo -->
 				<include>CustomMenuButton</include>
 				<label>31211</label>
 				<onleft>9000</onleft>
 				<onclick>Skin.SetString($INFO[skin.string(custom_label)])</onclick>
-				<visible>!StringCompare(Container(9000).ListItem.Property(id),virtual)</visible>
+				<visible>!String.IsEqual(Container(9000).ListItem.Property(id),virtual)</visible>
 			</control>
 			<control type="radiobutton" id="122"><!-- Fundo da Colecao Filmes -->
 				<include>CustomMenuRadioButton</include>
 				<label>$LOCALIZE[31537]</label>
 				<onclick>Skin.ToggleSetting(randommoviebg)</onclick>
 				<selected>Skin.HasSetting(randommoviebg)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),movies)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
 			</control>
 			<control type="radiobutton" id="123"><!-- Fundo da Colecao -->
 				<include>CustomMenuRadioButton</include>
 				<label>$LOCALIZE[31537]</label>
 				<onclick>Skin.ToggleSetting(randomtvshowbg)</onclick>
 				<selected>Skin.HasSetting(randomtvshowbg)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),tvshows)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 			</control>
 			<control type="radiobutton" id="124"><!-- Fundo da Colecao -->
 				<include>CustomMenuRadioButton</include>
 				<label>$LOCALIZE[31537]</label>
 				<onclick>Skin.ToggleSetting(randomconcertbg)</onclick>
 				<selected>Skin.HasSetting(randomconcertbg)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),concerts)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),concerts)</visible>
 			</control>
 			<control type="radiobutton" id="125"><!-- Fundo da Colecao -->
 				<include>CustomMenuRadioButton</include>
 				<label>$LOCALIZE[31537]</label>
 				<onclick>Skin.ToggleSetting(randommusicbg)</onclick>
 				<selected>Skin.HasSetting(randommusicbg)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),music)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 			</control>
 			<control type="button" id="126"><!-- Criar ou atualizar Colecao -->
 				<include>CustomMenuButton</include>
 				<label>$VAR[value_addon4]</label>
 				<onclick condition="!System.HasAddon(script.artworkorganizer)">ActivateWindow(Programs,Addons,return)</onclick>
 				<onclick condition="System.HasAddon(script.artworkorganizer)">RunScript(script.artworkorganizer)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | StringCompare(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | StringCompare(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | StringCompare(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)</visible>
 			</control>
 			<control type="button" id="127"><!-- Pacote extra normal -->
 				<label>$VAR[value_addon14]</label>
 				<onclick condition="!System.HasAddon(script.aeonmq5.extrapack)">ActivateWindow(AddonBrowser)</onclick>
 				<onclick condition="System.HasAddon(script.aeonmq5.extrapack)">RunScript(script.aeonmq5.extrapack,mode=default)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 				<enable>Skin.HasSetting(custom_wxicons.multi) | SubString(skin.string(weatherconditionbg),weathercondition)</enable>
 			</control>
 			<control type="button" id="128"><!-- Pacote extra forcado -->
 				<label>31923</label>
 				<onclick>RunScript(script.aeonmq5.extrapack,mode=forcerefresh)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + System.HasAddon(script.aeonmq5.extrapack)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + System.HasAddon(script.aeonmq5.extrapack)</visible>
 				<enable>Skin.HasSetting(custom_wxicons.multi) | SubString(skin.string(weatherconditionbg),weathercondition)</enable>
 			</control>
 			<control type="radiobutton" id="129"><!-- Icones Clima Animados --><!-- nao trocar id -->
@@ -4696,26 +4696,26 @@
 				<label>$LOCALIZE[31543]</label>
 				<onclick>ActivateWindowAndFocus(skinsettings,9100,35)</onclick>
 				<selected>Skin.HasSetting(custom_wxicons.multi)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 			</control>
 			<control type="radiobutton" id="130"><!-- Icones Clima Externo --><!-- nao trocar id -->
 				<include>CustomMenuRadioButton</include>
 				<label>31903</label>
 				<onclick>Skin.ToggleSetting(weathericons_external)</onclick>
 				<selected>Skin.HasSetting(weathericons_external)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(custom_wxicons.multi)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(custom_wxicons.multi)</visible>
 			</control>
 			<control type="button" id="131"><!-- Icones Clima/Pasta --><!-- nao trocar id -->
 				<include>CustomMenuButton</include>
 				<label>$VAR[value_weathericonsfolder]</label>
 				<onclick>Skin.ToggleSetting(weathericons_folder)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(custom_wxicons.multi) + Skin.HasSetting(weathericons_external)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Skin.HasSetting(custom_wxicons.multi) + Skin.HasSetting(weathericons_external)</visible>
 			</control>
 			<control type="button" id="132"><!-- Fundo Clima/Condicional -->
 				<include>CustomMenuButton</include>
 				<label>$VAR[value_weathercondition] ($LOCALIZE[31181])</label>
 				<onclick>SetFocus(4094)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 				<enable>IsEmpty(skin.string(weather.bg))</enable>
 			</control>
 			<control type="radiobutton" id="133"><!-- Fundo Clima Externo -->
@@ -4723,54 +4723,54 @@
 				<label>31901</label>
 				<onclick>Skin.ToggleSetting(weathercondition_external)</onclick>
 				<selected>Skin.HasSetting(weathercondition_external)</selected>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + SubString(skin.string(weatherconditionbg),weathercondition)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + SubString(skin.string(weatherconditionbg),weathercondition)</visible>
 				<enable>IsEmpty(skin.string(weather.bg))</enable>
 			</control>
 			<control type="button" id="134"><!-- Fundo Clima/Pasta -->
 				<include>CustomMenuButton</include>
 				<label>$VAR[value_weatherconditionfolder]</label>
 				<onclick>Skin.SetPath(CustomWeatherConditionFolder)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + SubString(skin.string(weatherconditionbg),weathercondition) + Skin.HasSetting(weathercondition_external)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + SubString(skin.string(weatherconditionbg),weathercondition) + Skin.HasSetting(weathercondition_external)</visible>
 				<enable>IsEmpty(skin.string(weather.bg))</enable>
 			</control>
 			<control type="button" id="136"><!-- Ajustes de desligamento -->
 				<include>CustomMenuButton</include>
 				<label> - $LOCALIZE[13008]</label>
 				<onclick>ActivateWindowAndFocus(SystemSettings, -96,0, -78,0)</onclick>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),shutdown)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),shutdown)</visible>
 			</control>
 			<control type="button" id="143"><!-- Fundo unico -->
 				<include>CustomMenuButton</include>
 				<label>31217</label>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>	
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>	
 				<onclick>Skin.SetImage($INFO[skin.string(custom_bg)])</onclick>
-				<enable>![StringCompare(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | StringCompare(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | StringCompare(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | StringCompare(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
-				<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
+				<enable>![String.IsEqual(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
+				<visible>![Skin.HasSetting(submode) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)]</visible>
 			</control>
 			<control type="button" id="144"><!-- Fundos Multiplos -->
 				<include>CustomMenuButton</include>
 				<label>31218</label>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>
 				<onclick>Skin.SetPath($INFO[skin.string(custom_bg)])</onclick>
-				<enable>![StringCompare(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | StringCompare(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | StringCompare(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | StringCompare(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
-				<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
+				<enable>![String.IsEqual(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
+				<visible>![Skin.HasSetting(submode) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)]</visible>
 			</control>
 			<control type="button" id="146"><!-- Resetar Fundo -->
 				<include>CustomMenuButton</include>
 				<label>31220</label>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
-				<onclick condition="StringCompare(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),movies)">Skin.Reset(randommoviebg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),tvshows)">Skin.Reset(randomtvshowbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),concerts)">Skin.Reset(randomconcertbg)</onclick>
+				<onclick condition="String.IsEqual(Container(9000).ListItem.Property(id),music)">Skin.Reset(randommusicbg)</onclick>
 				<onclick>Skin.Reset($INFO[skin.string(custom_bg)])</onclick>
-				<enable>![StringCompare(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | StringCompare(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | StringCompare(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | StringCompare(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
-				<visible>![Skin.HasSetting(submode) | StringCompare(Container(9000).ListItem.Property(id),virtual)]</visible>
+				<enable>![String.IsEqual(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)]</enable>
+				<visible>![Skin.HasSetting(submode) | String.IsEqual(Container(9000).ListItem.Property(id),virtual)]</visible>
 			</control>
 			<control type="button" id="147"><!-- Definir miniatura -->
 				<include>CustomMenuButton</include>

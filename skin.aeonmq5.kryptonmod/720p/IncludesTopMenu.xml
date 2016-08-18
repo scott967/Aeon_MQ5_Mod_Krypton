@@ -430,7 +430,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9109"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -1808,7 +1808,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -2382,7 +2382,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -2595,7 +2595,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -2820,7 +2820,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -3178,7 +3178,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -3478,7 +3478,7 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Container.Content(LiveTV) + System.GetBool(pvrmanager.enabled)</visible>
+					<visible>!Container.Content(LiveTV) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>
@@ -3800,13 +3800,13 @@
 					<include>TopMenuButton</include>
 					<label>31006</label>
 					<onclick>ActivateWindow(tvchannels)</onclick>
-					<visible>!Window.IsActive(tvchannels) + System.GetBool(pvrmanager.enabled) + Pvr.HasTVChannels</visible>
+					<visible>!Window.IsActive(tvchannels) + Pvr.HasTVChannels</visible>
 				</control>
 				<control type="button" id="9110"><!-- Radio -->
 					<include>TopMenuButton</include>
 					<label>[UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</label>
 					<onclick>ActivateWindow(radiochannels)</onclick>
-					<visible>!Window.IsActive(radiochannels) + System.GetBool(pvrmanager.enabled) + Pvr.HasRadioChannels</visible>
+					<visible>!Window.IsActive(radiochannels) + Pvr.HasRadioChannels</visible>
 				</control>
 				<control type="button" id="9108"><!-- Music Videos -->
 					<include>TopMenuButton</include>

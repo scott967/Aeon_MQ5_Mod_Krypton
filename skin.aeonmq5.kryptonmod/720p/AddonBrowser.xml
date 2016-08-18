@@ -2,12 +2,12 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.4/6.1.6 -->
 <!-- Aeon MQ 5 Isengard 7.1.8 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15/9.1.16 -->
+<!-- Krypton 9.1.15/9.1.16/9.1.19 -->
 <window id="40">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
-	<onload condition="StringCompare(skin.string(defaultsettings),2)">AlarmClock(firstfocus,SetFocus(9000),0:01,true)</onload>
-	<onload condition="!StringCompare(skin.string(defaultsettings),2)">AlarmClock(firstfocus,SetFocus(900),0:01,true)</onload>
+	<onload condition="String.IsEqual(skin.string(defaultsettings),2)">AlarmClock(firstfocus,SetFocus(9000),0:01,true)</onload>
+	<onload condition="!String.IsEqual(skin.string(defaultsettings),2)">AlarmClock(firstfocus,SetFocus(900),0:01,true)</onload>
 	<controls>
 		<control type="multiimage">
 			<include>WindowBG</include>

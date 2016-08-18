@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.19 -->
 
 <window id="2">
 	<defaultcontrol>51</defaultcontrol>
@@ -131,7 +132,7 @@
 					<scrollout>false</scrollout>
 					<shadowcolor>grey</shadowcolor>
 					<animation effect="slide" start="0,0" end="0,-30" condition="IsEmpty(ListItem.Tagline) | Skin.HasSetting(nomoviestagline)">Conditional</animation>
-					<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + ![StringCompare(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + ![String.IsEqual(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
 				</control>
 			</control>
 

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.6 -->
+	<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA SHOWART- ID 60   ##################################################################################-->
@@ -31,8 +33,8 @@
 		<width>1160</width>
 		<height>300</height>
 		<pagecontrol>80</pagecontrol>
-		<onup condition="StringCompare(skin.string(showartvideopanel),manual) + !StringCompare(ListItem.Label,..)">9960</onup>
-		<onup condition="![StringCompare(skin.string(showartvideopanel),manual) + !StringCompare(ListItem.Label,..)]">9900</onup>
+		<onup condition="String.IsEqual(skin.string(showartvideopanel),manual) + !String.IsEqual(ListItem.Label,..)">9960</onup>
+		<onup condition="![String.IsEqual(skin.string(showartvideopanel),manual) + !String.IsEqual(ListItem.Label,..)]">9900</onup>
 		<ondown>80</ondown>
 		<orientation>horizontal</orientation>
 		<focusposition>2</focusposition>
@@ -66,7 +68,7 @@
 				<texture>$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image">
 				<posx>152</posx>
@@ -76,7 +78,7 @@
 				<texture flipy="true">$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout width="240" height="300">
@@ -107,7 +109,7 @@
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation effect="zoom" start="100" end="125" center="100,115" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			</control>
 			<control type="image">
 				<posx>172</posx>
@@ -118,7 +120,7 @@
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation effect="zoom" start="100" end="125" center="100,115" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
 			</control>	
 		</focusedlayout>
 	</include>	
@@ -136,7 +138,7 @@
 			<control type="group"><!-- painel de info -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9960) | StringCompare(skin.string(showartvideopanel),alwayson) | StringCompare(skin.string(showartvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + !StringCompare(ListItem.Label,..)</visible>
+				<visible>[Control.HasFocus(9960) | String.IsEqual(skin.string(showartvideopanel),alwayson) | String.IsEqual(skin.string(showartvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + !String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>

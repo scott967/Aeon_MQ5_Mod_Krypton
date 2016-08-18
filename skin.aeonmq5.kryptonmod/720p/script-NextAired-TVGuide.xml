@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.1.19 -->
 
 <window>
 	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
@@ -28,7 +29,7 @@
 				<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
-				<visible>![StringCompare(ListItem.Label,..) | Control.HasFocus(9920)]</visible>
+				<visible>![String.IsEqual(ListItem.Label,..) | Control.HasFocus(9920)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -355,14 +356,14 @@
 							<onleft>SetProperty(TVGuide.MondayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -375,13 +376,13 @@
 									<visible>Control.HasFocus(200)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -392,14 +393,14 @@
 									<visible>Control.HasFocus(200)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -436,14 +437,14 @@
 							<onleft>SetProperty(TVGuide.TuesdayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -456,13 +457,13 @@
 									<visible>Control.HasFocus(201)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -473,14 +474,14 @@
 									<visible>Control.HasFocus(201)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -517,14 +518,14 @@
 							<onleft>SetProperty(TVGuide.WednesdayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -537,13 +538,13 @@
 									<visible>Control.HasFocus(202)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -554,14 +555,14 @@
 									<visible>Control.HasFocus(202)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -598,14 +599,14 @@
 							<onleft>SetProperty(TVGuide.ThursdayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -618,13 +619,13 @@
 									<visible>Control.HasFocus(203)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -635,14 +636,14 @@
 									<visible>Control.HasFocus(203)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -679,14 +680,14 @@
 							<onleft>SetProperty(TVGuide.FridayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -699,13 +700,13 @@
 									<visible>Control.HasFocus(204)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -716,14 +717,14 @@
 									<visible>Control.HasFocus(204)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -760,14 +761,14 @@
 							<onleft>SetProperty(TVGuide.SaturdayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -780,13 +781,13 @@
 									<visible>Control.HasFocus(205)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -797,14 +798,14 @@
 									<visible>Control.HasFocus(205)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -841,14 +842,14 @@
 							<onleft>SetProperty(TVGuide.SundayList,1,Home)</onleft>
 							<itemgap>0</itemgap>
 							<scrolltime>300</scrolltime>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100"><!-- Poster -->
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),0)" height="160" width="100">
 								<control type="image">
 									<include>NextAiredThumb</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -861,13 +862,13 @@
 									<visible>Control.HasFocus(206)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
+							<itemlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150"><!-- Logo -->
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),2)" height="160" width="150">
 								<control type="image">
 									<include>NextAiredThumbLogo</include>
 									<colordiffuse>FF909090</colordiffuse>
@@ -878,14 +879,14 @@
 									<visible>Control.HasFocus(206)</visible>
 								</control>
 							</focusedlayout>
-							<itemlayout  condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
+							<itemlayout  condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380"><!-- Banner -->
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>
 									<bordertexture border="-2">black.png</bordertexture>
 								</control>
 							</itemlayout>
-							<focusedlayout condition="StringCompare(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
+							<focusedlayout condition="String.IsEqual(Window(Home).Property(TVGuide.ThumbType),1)" height="160" width="380">
 								<control type="image">
 									<include>NextAiredThumbBanner</include>
 									<colordiffuse>FF909090</colordiffuse>

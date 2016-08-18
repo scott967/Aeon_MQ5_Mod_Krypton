@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
+<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA WIDE ID 50   #############################################################################-->
@@ -123,7 +124,7 @@
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
 							<label>[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[31770]: [/COLOR]$INFO[ListItem.Property(console)] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[515]: [/COLOR]$INFO[ListItem.Property(genre)]</label>
-							<visible>!StringCompare(ListItem.Label,..)</visible>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<posx>585</posx>
@@ -739,7 +740,7 @@
 					<font>Font_18A</font>
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>	
 				<control type="textbox">
 					<posx>10</posx>
@@ -780,7 +781,7 @@
 			<control type="group"><!-- painel de info fanart layout -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9953) | StringCompare(skin.string(multiplexgamespanel),alwayson) | StringCompare(skin.string(multiplexgamespanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + IsEmpty(ListItem.Property(gameinfoupperleft)) + !StringCompare(ListItem.Label,..)</visible>
+				<visible>[Control.HasFocus(9953) | String.IsEqual(skin.string(multiplexgamespanel),alwayson) | String.IsEqual(skin.string(multiplexgamespanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + IsEmpty(ListItem.Property(gameinfoupperleft)) + !String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>
@@ -989,7 +990,7 @@
 			<control type="group"><!-- painel de info extrathumbs layout -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9953) | StringCompare(skin.string(multiplexgamespanel),alwayson) | StringCompare(skin.string(multiplexgamespanel),auto) + Control.IsVisible(9921)] + !IsEmpty(ListItem.Property(gameinfoupperleft)) + !StringCompare(ListItem.Label,..)</visible>
+				<visible>[Control.HasFocus(9953) | String.IsEqual(skin.string(multiplexgamespanel),alwayson) | String.IsEqual(skin.string(multiplexgamespanel),auto) + Control.IsVisible(9921)] + !IsEmpty(ListItem.Property(gameinfoupperleft)) + !String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>
@@ -1229,8 +1230,8 @@
 				<height>360</height>
 				<onleft>53</onleft>
 				<onright>53</onright>
-				<onup condition="StringCompare(skin.string(multiplexgamespanel),manual) + !StringCompare(ListItem.Label,..)">9953</onup>
-				<onup condition="![StringCompare(skin.string(multiplexgamespanel),manual) + !StringCompare(ListItem.Label,..)]">9900</onup>
+				<onup condition="String.IsEqual(skin.string(multiplexgamespanel),manual) + !String.IsEqual(ListItem.Label,..)">9953</onup>
+				<onup condition="![String.IsEqual(skin.string(multiplexgamespanel),manual) + !String.IsEqual(ListItem.Label,..)]">9900</onup>
 				<ondown>60</ondown>
 				<orientation>horizontal</orientation>
 				<focusposition>4</focusposition>
@@ -1308,13 +1309,13 @@
 						<animation effect="fade" start="100" end="100" time="0" delay="5000" condition="SubString(skin.string(panel_seconds),5)">Focus</animation>
 						<onfocus condition="!Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)],1)</onfocus>
 						<onfocus condition="Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)])</onfocus>
-						<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))] + StringCompare(skin.string(multiplexgamespanel),auto)</visible>
+						<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))] + String.IsEqual(skin.string(multiplexgamespanel),auto)</visible>
 					</control>
 					<control type="button">
 						<include>InvisibleButton</include>
 						<animation effect="fade" start="100" end="100" time="150" delay="500" condition="true">Focus</animation>
 						<onfocus>PlayMedia($ESCINFO[ListItem.Property(gameplaymain)],1)</onfocus>
-						<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))] + StringCompare(skin.string(multiplexgamespanel),alwayson)</visible>
+						<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))] + String.IsEqual(skin.string(multiplexgamespanel),alwayson)</visible>
 					</control>
 				</focusedlayout>
 			</control>

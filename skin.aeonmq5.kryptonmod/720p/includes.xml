@@ -161,24 +161,24 @@
 		<animation effect="fade" time="400">Hidden</animation>
 	</include>
 	<include name="Animation_Window">
-		<animation type="WindowOpen" reversible="false" condition="StringCompare(skin.string(animationwindow),zoom)">
+		<animation type="WindowOpen" reversible="false" condition="String.IsEqual(skin.string(animationwindow),zoom)">
 			<effect type="zoom" start="150" end="100" center="640,360" time="500" tween="cubic" easing="out"/>
 			<effect type="fade" start="0" end="100" time="500"/>
 		</animation>
-		<animation type="WindowClose" reversible="false" condition="StringCompare(skin.string(animationwindow),zoom)">
+		<animation type="WindowClose" reversible="false" condition="String.IsEqual(skin.string(animationwindow),zoom)">
 			<effect type="fade" start="100" end="0" time="300"/>
 			<effect type="zoom" start="100" end="130" center="640,360" time="300" tween="cubic" easing="in"/>
 		</animation>
-		<animation type="WindowOpen" reversible="false" condition="StringCompare(skin.string(animationwindow),slowzoom)">
+		<animation type="WindowOpen" reversible="false" condition="String.IsEqual(skin.string(animationwindow),slowzoom)">
 			<effect type="zoom" start="150" end="100" center="640,360" time="800" tween="cubic" easing="out"/>
 			<effect type="fade" start="0" end="100" time="800"/>
 		</animation>
-		<animation type="WindowClose" reversible="false" condition="StringCompare(skin.string(animationwindow),slowzoom)">
+		<animation type="WindowClose" reversible="false" condition="String.IsEqual(skin.string(animationwindow),slowzoom)">
 			<effect type="fade" start="100" end="0" time="500"/>
 			<effect type="zoom" start="100" end="130" center="640,360" time="500" tween="cubic" easing="in"/>
 		</animation>
-		<animation effect="fade" time="350" condition="StringCompare(skin.string(animationwindow),fade)">WindowOpen</animation>
-		<animation effect="fade" time="300" condition="StringCompare(skin.string(animationwindow),fade)">WindowClose</animation>
+		<animation effect="fade" time="350" condition="String.IsEqual(skin.string(animationwindow),fade)">WindowOpen</animation>
+		<animation effect="fade" time="300" condition="String.IsEqual(skin.string(animationwindow),fade)">WindowClose</animation>
 		<animation effect="fade" time="350">Visible</animation>
 		<animation effect="fade" time="300">Hidden</animation>
 		<animation effect="slide" start="0,0" end="0,-1000" time="300" condition="Window.IsVisible(114)">Conditional</animation>
@@ -314,18 +314,18 @@
 		<timeperimage>3600000</timeperimage>
 	</include>
 	<include name="Animation_CDart">
-		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused + StringCompare(skin.string(cdart_seconds),2000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused + StringCompare(skin.string(cdart_seconds),4000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused + StringCompare(skin.string(cdart_seconds),8000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="!Player.Paused + StringCompare(skin.string(cdart_seconds),16000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="!Player.Paused + StringCompare(skin.string(cdart_seconds),20000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),2000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),4000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),8000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),16000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),20000)">Conditional</animation>
 	</include>
 	<include name="Animation_ViewsCDart">
-		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + StringCompare(skin.string(cdart_seconds),2000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + StringCompare(skin.string(cdart_seconds),4000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + StringCompare(skin.string(cdart_seconds),8000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + StringCompare(skin.string(cdart_seconds),16000)">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + StringCompare(skin.string(cdart_seconds),20000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + String.IsEqual(skin.string(cdart_seconds),2000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + String.IsEqual(skin.string(cdart_seconds),4000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + String.IsEqual(skin.string(cdart_seconds),8000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + String.IsEqual(skin.string(cdart_seconds),16000)">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="[Player.HasVideo + !Player.Paused] + String.IsEqual(skin.string(cdart_seconds),20000)">Conditional</animation>
 	</include>
 
 	<!-- ######################################################################### Fontes do menu principal ######################################################################### -->
@@ -449,7 +449,7 @@
 		<animation effect="zoom" start="0" end="100" center="auto" easing="out" tween="sine" time="700" delay="1000">Visible</animation>
 		<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">WindowClose</animation>
 		<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">Hidden</animation>
-		<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
+		<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
 		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
 		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
 		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(2006)">Conditional</animation>
@@ -474,12 +474,12 @@
 		<posy>0</posy>
 		<width>1280</width>
 		<height>720</height>
-		<include condition="StringCompare(skin.string(homebg_seconds),5000)">Animation_Timer1</include>
-		<include condition="StringCompare(skin.string(homebg_seconds),10000)">Animation_Timer2</include>
-		<include condition="StringCompare(skin.string(homebg_seconds),30000)">Animation_Timer3</include>
-		<include condition="StringCompare(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
-		<include condition="StringCompare(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
-		<include condition="StringCompare(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),5000)">Animation_Timer1</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),10000)">Animation_Timer2</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),30000)">Animation_Timer3</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),60000)">Animation_Timer4</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),600000)">Animation_Timer5</include>
+		<include condition="String.IsEqual(skin.string(homebg_seconds),3600000)">Animation_Timer6</include>
 		<!-- <timeperimage>$VAR[value_homebgdelay]</timeperimage> -->
 		<randomize>true</randomize>
 		<include condition="Skin.HasSetting(keepaspect)">KeepAspect</include>
@@ -505,7 +505,7 @@
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog)">conditional</animation>
 			<visible>Window.IsVisible(101) | Window.IsVisible(103) | Window.IsVisible(106) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(114) | Window.IsVisible(121) | Window.IsVisible(126) | Window.IsVisible(128) | Window.IsVisible(129) | Window.IsVisible(130) | Window.IsVisible(132) | Window.IsVisible(134) | Window.IsVisible(136) | Window.IsVisible(137) | Window.IsVisible(623) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(2000)</visible>
 		</control>
-		<include condition="!StringCompare(skin.string(defaultsettings),2)">DefaultSettings</include>
+		<include condition="!String.IsEqual(skin.string(defaultsettings),2)">DefaultSettings</include>
 	</include>
 	<include name="DefaultSettings">
 		<control type="image">
@@ -514,12 +514,12 @@
 			<width>1280</width>
 			<height>720</height>
 			<texture>black.png</texture>
-			<visible>!StringCompare(skin.string(defaultsettings),2)</visible>
+			<visible>!String.IsEqual(skin.string(defaultsettings),2)</visible>
 		</control>
 		<control type="group">
 			<animation effect="fade" time="800">Visible</animation>
 			<animation effect="fade" time="500">Hidden</animation>
-			<visible>!StringCompare(skin.string(defaultsettings),2)</visible>
+			<visible>!String.IsEqual(skin.string(defaultsettings),2)</visible>
 			<control type="button" id="900">
 				<include>InvisibleButton</include>
 				<onclick>noop</onclick>
@@ -1884,7 +1884,7 @@
 			<aspectratio>stretch</aspectratio>
 			<texture background="true">$VAR[value_mainmenu_style]</texture>
 			<colordiffuse>$VAR[value_mainmenu_styleglass]</colordiffuse>
-			<visible>!StringCompare(skin.string(style),mystyle)</visible>
+			<visible>!String.IsEqual(skin.string(style),mystyle)</visible>
 		</control>
 		<control type="multiimage">
 			<posx>240</posx>
@@ -1897,7 +1897,7 @@
 			<fadetime>FanartCrossFadeTime</fadetime>
 			<imagepath background="true">$VAR[value_mainmenu_style]</imagepath>
 			<colordiffuse>$VAR[value_mainmenu_styleglass]</colordiffuse>
-			<visible>StringCompare(skin.string(style),mystyle)</visible>
+			<visible>String.IsEqual(skin.string(style),mystyle)</visible>
 		</control>
 	</include>
 
@@ -1921,7 +1921,7 @@
 					<font>Font_50</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font1) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font1) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font1) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font1) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1933,7 +1933,7 @@
 					<font>Font_50a</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font2) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font2) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font2) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font2) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1945,7 +1945,7 @@
 					<font>Font_50b</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font3) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font3) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font3) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font3) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1957,7 +1957,7 @@
 					<font>Font_50c</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font4) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font4) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font4) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font4) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1969,7 +1969,7 @@
 					<font>Font_50d</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font5) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font5) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font5) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font5) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1981,7 +1981,7 @@
 					<font>Font_50e</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font6) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font6) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font6) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font6) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -1993,7 +1993,7 @@
 					<font>Font_50f</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font7) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font7) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font7) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font7) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2005,7 +2005,7 @@
 					<font>Font_50g</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabel]</textcolor>
-					<visible>StringCompare(skin.string(font),font8) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font8) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font8) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font8) + Skin.HasSetting(fonte)</visible>
 				</control>
 			</itemlayout>
 			<focusedlayout width="346" height="48">
@@ -2019,7 +2019,7 @@
 					<font>Font_50</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font1) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font1) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font1) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font1) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2031,7 +2031,7 @@
 					<font>Font_50a</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font2) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font2) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font2) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font2) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2043,7 +2043,7 @@
 					<font>Font_50b</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font3) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font3) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font3) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font3) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2055,7 +2055,7 @@
 					<font>Font_50c</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font4) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font4) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font4) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font4) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2067,7 +2067,7 @@
 					<font>Font_50d</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font5) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font5) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font5) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font5) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2079,7 +2079,7 @@
 					<font>Font_50e</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font6) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font6) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font6) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font6) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2091,7 +2091,7 @@
 					<font>Font_50f</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font7) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font7) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font7) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font7) + Skin.HasSetting(fonte)</visible>
 				</control>
 				<control type="label">
 					<posx>173</posx>
@@ -2103,7 +2103,7 @@
 					<font>Font_50g</font>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>$VAR[value_menucolorlabelfocus]</textcolor>
-					<visible>StringCompare(skin.string(font),font8) + !Skin.HasSetting(fonte) | StringCompare(skin.string(tempfont),font8) + Skin.HasSetting(fonte)</visible>
+					<visible>String.IsEqual(skin.string(font),font8) + !Skin.HasSetting(fonte) | String.IsEqual(skin.string(tempfont),font8) + Skin.HasSetting(fonte)</visible>
 				</control>
 			</focusedlayout>
 			<content>
@@ -2354,7 +2354,7 @@
 			<animation effect="slide" end="605,550" time="0" condition="Control.IsVisible(67)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="100">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="500" delay="200">Hidden</animation>
-			<visible>!Window.IsVisible(MusicPlaylist) + [!Skin.HasSetting(noscrollletters) + Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]]</visible>
+			<visible>!Window.IsVisible(MusicPlaylist) + [!Skin.HasSetting(noscrollletters) + Container.Scrolling + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -2389,7 +2389,7 @@
 			<animation effect="slide" end="605,550" time="0" condition="Control.IsVisible(53)">Conditional</animation>
 			<animation effect="fade" start="100" end="100" time="0">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="500" delay="200">Hidden</animation>
-			<visible>!Skin.HasSetting(noscrollletters) + Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]</visible>
+			<visible>!Skin.HasSetting(noscrollletters) + Container.Scrolling + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -2507,7 +2507,7 @@
 		<control type="radiobutton" id="14"><!-- Watched Toggle -->
 			<include>TopMenuRadioButton</include>
 			<label>31491</label>
-			<visible>[[Container.Content(movies) + !Skin.HasSetting(trailers)] + !Window.IsActive(videofiles) + !Skin.HasSetting(nomenumoviewatched)] | [Container.Content(musicvideos) + !Window.IsActive(videofiles) + !Skin.HasSetting(nomenumoviewatched)] | [[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Window.IsActive(videofiles) + !Skin.HasSetting(nomenutvwatched)]</visible>
+			<visible>[[Container.Content(movies) + !Skin.HasSetting(trailers)] + !Skin.HasSetting(nomenumoviewatched)] | [Container.Content(musicvideos) + !Skin.HasSetting(nomenumoviewatched)] | [[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(nomenutvwatched)]</visible>
 		</control>
 		<control type="button" id="8"><!-- Search -->
 			<include>TopMenuButton</include>

@@ -2,13 +2,13 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.2 /6.1.3/6.1.8 -->
 <!-- Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.19 -->
 
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
-	<onload condition="!StringCompare(skin.string(defaultsettings),2)">SetFocus(900)</onload>
+	<onload condition="!String.IsEqual(skin.string(defaultsettings),2)">SetFocus(900)</onload>
 	<onload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onload>
 	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onload>
 	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
@@ -145,7 +145,7 @@
 				<animation effect="slide" start="-500,0" end="0,0" time="1000" delay="3000" tween="cubic" easing="inout">Visible</animation>
 				<animation effect="slide" start="0,0" end="-500,0" time="400" tween="cubic" easing="inout">WindowClose</animation>
 				<animation effect="slide" start="0,0" end="-500,0" time="400" tween="cubic" easing="inout">Hidden</animation>
-				<visible>[StringCompare(Container(9000).ListItem.Property(id),livetv) |  StringCompare(Container(9000).ListItem.Property(id),livetvepg) |  StringCompare(Container(9000).ListItem.Property(id),livetvrecords)] + !Skin.HasSetting(submode) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
+				<visible>[String.IsEqual(Container(9000).ListItem.Property(id),livetv) |  String.IsEqual(Container(9000).ListItem.Property(id),livetvepg) |  String.IsEqual(Container(9000).ListItem.Property(id),livetvrecords)] + !Skin.HasSetting(submode) + [PVR.IsRecording | PVR.HasNonRecordingTimer]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>630</posy>
@@ -204,7 +204,7 @@
 				<include condition="Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)">Animation_Widgets</include>
 				<animation effect="slide" start="0,0" end="0,220" condition="Skin.HasSetting(higherwidgets) + !Skin.HasSetting(highermainmenu)">Conditional</animation>	
 				<animation effect="slide" start="0,0" end="0,385" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>
-				<visible>Player.HasMedia + ![Control.HasFocus(510) | Control.HasFocus(5100) | StringCompare(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(noweatherwidget) | StringCompare(Container(9000).ListItem.Property(id),settings) + !Skin.HasSetting(nosystemwidget) | Skin.HasSetting(nonowplayingpanel) | Skin.HasSetting(highermainmenu) + Skin.HasSetting(submode)]</visible>
+				<visible>Player.HasMedia + ![Control.HasFocus(510) | Control.HasFocus(5100) | String.IsEqual(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(noweatherwidget) | String.IsEqual(Container(9000).ListItem.Property(id),settings) + !Skin.HasSetting(nosystemwidget) | Skin.HasSetting(nonowplayingpanel) | Skin.HasSetting(highermainmenu) + Skin.HasSetting(submode)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>385</posy>
@@ -518,7 +518,7 @@
 				<include condition="Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)">Animation_Widgets</include>
 				<animation effect="slide" start="0,0" end="0,470" condition="Skin.HasSetting(higherwidgets) + !Skin.HasSetting(highermainmenu)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,640" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>		
-				<visible>Control.HasFocus(510) + ![StringCompare(Container(9000).ListItem.Property(id),favourites) | SubString(Container(9000).ListItem.Property(id),mymenu) | Skin.HasSetting(nodetailspanel)]</visible>
+				<visible>Control.HasFocus(510) + ![String.IsEqual(Container(9000).ListItem.Property(id),favourites) | SubString(Container(9000).ListItem.Property(id),mymenu) | Skin.HasSetting(nodetailspanel)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>385</posy>
@@ -557,7 +557,7 @@
 					<texture fallback="DefaultVideoPoster.png" background="true">$INFO[Container(510).ListItem.Icon]</texture>
 					<bordertexture border="-29">posterframe.png</bordertexture>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>IsEmpty(Container(510).ListItem.Property(Thumbnail)) + ![StringCompare(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)]</visible>
+					<visible>IsEmpty(Container(510).ListItem.Property(Thumbnail)) + ![String.IsEqual(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)]</visible>
 				</control>
 				<control type="image"><!-- Thumb audio -->
 					<posx>40</posx>
@@ -568,7 +568,7 @@
 					<texture fallback="DefaultAudioCover.png" background="true">$INFO[Container(510).ListItem.Icon]</texture>
 					<bordertexture border="-29">musicframe.png</bordertexture>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>IsEmpty(Container(510).ListItem.Property(Thumbnail)) + [StringCompare(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)]</visible>
+					<visible>IsEmpty(Container(510).ListItem.Property(Thumbnail)) + [String.IsEqual(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)]</visible>
 				</control>
 				<control type="group"><!-- Miniatura do episodio -->
 					<control type="image">
@@ -594,7 +594,7 @@
 				</control>
 				<control type="group">
 					<posx>240</posx>
-					<animation effect="slide" end="75,0" condition="StringCompare(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)">Conditional</animation>
+					<animation effect="slide" end="75,0" condition="String.IsEqual(Container(9000).ListItem.Property(id),music) | SubString(Container(9000).ListItem.Property(id),apl)">Conditional</animation>
 					<animation effect="slide" end="270,0" condition="!IsEmpty(Container(510).ListItem.Property(Thumbnail))">Conditional</animation>
 					<control type="grouplist"><!-- Etiquetas -->
 						<posx>0</posx>
@@ -760,9 +760,9 @@
 			</control>
 
 			<control type="group" id="602"><!-- Widgets -->
-				<animation effect="slide" start="0,0" end="0,-320" condition="Skin.HasSetting(higherwidgets) + ![Skin.HasSetting(highermainmenu) | StringCompare(Container(9000).ListItem.Property(id),settings) | StringCompare(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-110" condition="Skin.HasSetting(higherwidgets) + Skin.HasSetting(highermainmenu) + ![StringCompare(Container(9000).ListItem.Property(id),settings) | StringCompare(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-210" condition="Skin.HasSetting(highermainmenu) + ![StringCompare(Container(9000).ListItem.Property(id),settings) | StringCompare(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-320" condition="Skin.HasSetting(higherwidgets) + ![Skin.HasSetting(highermainmenu) | String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-110" condition="Skin.HasSetting(higherwidgets) + Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-210" condition="Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" easing="out" tween="sine" condition="[SubString(skin.string(widgetsmode),manual) | SubString(skin.string(widgetsmode),auto) + !Control.IsVisible(9931) | Player.HasMedia + System.IdleTime(8)] + ![Control.HasFocus(510) | Control.HasFocus(520) | Control.HasFocus(5100)]">Conditional</animation>
 				<include condition="Library.HasContent(Movies) + ![IsEmpty(skin.string(movieswidget)) | Skin.HasSetting(nomovieswidget)]">mf_contentmovies</include>
 				<include condition="Library.HasContent(TVShows) + ![IsEmpty(skin.string(tvshowswidget)) | Skin.HasSetting(notvshowswidget)]">mf_contenttvshows</include>
@@ -825,7 +825,7 @@
 				<animation effect="slide" start="0,0" end="0,-605" condition="Skin.HasSetting(highertotals) + !Skin.HasSetting(highermainmenu)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-395" condition="Skin.HasSetting(highertotals) + Skin.HasSetting(highermainmenu)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-210" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>
-				<visible>[StringCompare(Container(9000).ListItem.Property(id),movies) + Library.HasContent(Movies) | StringCompare(Container(9000).ListItem.Property(id),tvshows) + Library.HasContent(TVShows) | StringCompare(Container(9000).ListItem.Property(id),concerts) + Library.HasContent(MusicVideos) | StringCompare(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) | StringCompare(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name)) | SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl)] + ![Player.HasMedia + System.IdleTime(8) | Skin.HasSetting(nohometotals) | Control.HasFocus(510) | Skin.HasSetting(highertotals) + [Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151)]]</visible> <!-- 151 was 614 extendedprogress -->
+				<visible>[String.IsEqual(Container(9000).ListItem.Property(id),movies) + Library.HasContent(Movies) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Library.HasContent(TVShows) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Library.HasContent(MusicVideos) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Library.HasContent(Music) | String.IsEqual(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name)) | SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl)] + ![Player.HasMedia + System.IdleTime(8) | Skin.HasSetting(nohometotals) | Control.HasFocus(510) | Skin.HasSetting(highertotals) + [Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151)]]</visible> <!-- 151 was 614 extendedprogress -->
 				<control type="image">
 					<posx>0</posx>
 					<posy>605</posy>
@@ -885,7 +885,7 @@
 					<label>$VAR[value_weather_date]</label>
 					<scroll>true</scroll>
 					<animation effect="fade" start="100" end="90" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
-					<animation effect="slide" start="0,0" end="-75,0" condition="![StringCompare(Weather.Plugin,weather.openweathermap.extended) | StringCompare(Weather.Plugin,weather.ozweather) | StringCompare(Weather.Plugin,weather.worldweatheronline) | StringCompare(Weather.Plugin,weather.wunderground) | StringCompare(Weather.Plugin,weather.yahoo)]">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-75,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo)]">Conditional</animation>
 				</control>
 			</control>
 
@@ -1069,7 +1069,7 @@
 			<!-- Menu Principal -->
 			<control type="group">
 				<animation effect="slide" start="0,0" end="0,-210" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>
-				<visible>StringCompare(skin.string(defaultsettings),2)</visible>
+				<visible>String.IsEqual(skin.string(defaultsettings),2)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>545</posy>
@@ -1143,28 +1143,28 @@
 					<height>70</height> <!-- was 65 -->
 					<itemgap>0</itemgap>
 					<control type="label">
-						<include condition="StringCompare(skin.string(font),font1)">Font1</include>
-						<include condition="StringCompare(skin.string(font),font2)">Font2</include>
-						<include condition="StringCompare(skin.string(font),font3)">Font3</include>
-						<include condition="StringCompare(skin.string(font),font4)">Font4</include>
-						<include condition="StringCompare(skin.string(font),font5)">Font5</include>
-						<include condition="StringCompare(skin.string(font),font6)">Font6</include>
-						<include condition="StringCompare(skin.string(font),font7)">Font7</include>
-						<include condition="StringCompare(skin.string(font),font8)">Font8</include>
+						<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
+						<include condition="String.IsEqual(skin.string(font),font2)">Font2</include>
+						<include condition="String.IsEqual(skin.string(font),font3)">Font3</include>
+						<include condition="String.IsEqual(skin.string(font),font4)">Font4</include>
+						<include condition="String.IsEqual(skin.string(font),font5)">Font5</include>
+						<include condition="String.IsEqual(skin.string(font),font6)">Font6</include>
+						<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
+						<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
 						<aligny>center</aligny>
 						<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
 						<animation effect="fade" start="0" end="100" time="750" condition="Player.HasMedia + System.IdleTime(8)">Conditional</animation>
 						<visible>Player.HasMedia + System.IdleTime(8)</visible>
 					</control>
 					<control type="label"><!-- Titulo dos widgets -->
-						<include condition="StringCompare(skin.string(font),font1)">Font1</include>
-						<include condition="StringCompare(skin.string(font),font2)">Font2</include>
-						<include condition="StringCompare(skin.string(font),font3)">Font3</include>
-						<include condition="StringCompare(skin.string(font),font4)">Font4</include>
-						<include condition="StringCompare(skin.string(font),font5)">Font5</include>
-						<include condition="StringCompare(skin.string(font),font6)">Font6</include>
-						<include condition="StringCompare(skin.string(font),font7)">Font7</include>
-						<include condition="StringCompare(skin.string(font),font8)">Font8</include>
+						<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
+						<include condition="String.IsEqual(skin.string(font),font2)">Font2</include>
+						<include condition="String.IsEqual(skin.string(font),font3)">Font3</include>
+						<include condition="String.IsEqual(skin.string(font),font4)">Font4</include>
+						<include condition="String.IsEqual(skin.string(font),font5)">Font5</include>
+						<include condition="String.IsEqual(skin.string(font),font6)">Font6</include>
+						<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
+						<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
 						<aligny>center</aligny>
 						<label>$INFO[Container(510).ListItem.Label]</label>
 						<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
@@ -1172,14 +1172,14 @@
 						<visible>Control.HasFocus(510)</visible>
 					</control>
 					<control type="label"><!-- Titulo dos controles -->
-						<include condition="StringCompare(skin.string(font),font1)">Font1</include>
-						<include condition="StringCompare(skin.string(font),font2)">Font2</include>
-						<include condition="StringCompare(skin.string(font),font3)">Font3</include>
-						<include condition="StringCompare(skin.string(font),font4)">Font4</include>
-						<include condition="StringCompare(skin.string(font),font5)">Font5</include>
-						<include condition="StringCompare(skin.string(font),font6)">Font6</include>
-						<include condition="StringCompare(skin.string(font),font7)">Font7</include>
-						<include condition="StringCompare(skin.string(font),font8)">Font8</include>
+						<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
+						<include condition="String.IsEqual(skin.string(font),font2)">Font2</include>
+						<include condition="String.IsEqual(skin.string(font),font3)">Font3</include>
+						<include condition="String.IsEqual(skin.string(font),font4)">Font4</include>
+						<include condition="String.IsEqual(skin.string(font),font5)">Font5</include>
+						<include condition="String.IsEqual(skin.string(font),font6)">Font6</include>
+						<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
+						<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
 						<aligny>center</aligny>
 						<label>$VAR[value_playercontrols]</label>
 						<animation effect="fade" reversible="true" time="300">VisibleChange</animation>

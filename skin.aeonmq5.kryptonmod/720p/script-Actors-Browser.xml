@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
+	<!-- Krypton 9.1.19 -->
 
 	<window id="3002">
 	<defaultcontrol always="true">450</defaultcontrol>
@@ -130,7 +132,7 @@
 	<visible>false</visible>
 	</control>
 	<control type="list" id="450">
-	<enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
+	<enable>!String.IsEqual(Window.Property(dialogprogress),1)</enable>
 	<viewtype label="31801">list</viewtype>
 	<posx>0</posx>
 	<posy>158</posy>
@@ -184,7 +186,7 @@
 	</focusedlayout>
 	</control>
 	<control type="panel" id="451">
-	<enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
+	<enable>!String.IsEqual(Window.Property(dialogprogress),1)</enable>
 	<posx>0</posx>
 	<posy>158</posy>
 	<width>855</width>
@@ -264,7 +266,7 @@
 	<animation effect="slide" start="0,70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 	<animation effect="slide" start="0,0" end="0,70" time="300" easing="inout" tween="cubic">WindowClose</animation>
 	<animation effect="slide" start="0,0" end="0,70" time="300" easing="inout" tween="cubic">Hidden</animation>
-	<enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
+	<enable>!String.IsEqual(Window.Property(dialogprogress),1)</enable>
 	<control type="image">
 	<posx>0</posx>
 	<posy>651</posy>

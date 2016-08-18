@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.2 by lizard/6.1.6 -->
 <!-- Isengard 7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.17/9.1.18 -->
+<!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA RIGHT LIST - ID 59   ##################################################################################-->
@@ -245,7 +245,7 @@
 							<height>24</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout condition="IsEmpty(Control.GetLabel(5902)) | [[Window.IsActive(25)  | Window.IsActive(28)]+ Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(slimrightlistmusic)]" height="30">
@@ -288,7 +288,7 @@
 							<height>30</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="!IsEmpty(Control.GetLabel(5902)) + [[Window.IsActive(25) | Window.IsActive(28)] + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + !Skin.HasSetting(slimrightlistmusic)]" height="50">
@@ -336,7 +336,7 @@
 							<include>subcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$VAR[value_listinfofocus]</label>
-							<visible>!StringCompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+							<visible>!String.IsEqual(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
 							<posx>20</posx>
@@ -348,7 +348,7 @@
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
 							<label>$VAR[value_listinfofocus]</label>
-							<visible>!StringCompare(ListItem.Label,..) + !ListItem.IsPlaying</visible>
+							<visible>!String.IsEqual(ListItem.Label,..) + !ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
 							<posx>510</posx>
@@ -357,7 +357,7 @@
 							<height>30</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 				</control>

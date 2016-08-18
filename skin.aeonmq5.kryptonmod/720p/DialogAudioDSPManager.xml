@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Jarvis 8.1.14 -->
-<!-- Krypton 9.1.18 -->
+<!-- Krypton 9.1.18/9.1.19 -->
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<controls>
@@ -204,7 +204,7 @@
 							<height>30</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 							<aspectratio aligny="center" align="left">keep</aspectratio>
-							<visible>!StringCompare(ListItem.Icon,"")</visible>
+							<visible>!String.IsEqual(ListItem.Icon,"")</visible>
 						</control>
 						<control type="label">
 							<posx>48</posx>

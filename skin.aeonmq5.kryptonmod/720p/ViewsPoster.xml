@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.6 -->
 <!-- Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA POSTER - ID 54   #############################################################################-->
@@ -62,7 +63,7 @@
 				<texture>$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
 			</control>
 			<control type="image">
 				<posx>211</posx>
@@ -72,7 +73,7 @@
 				<texture flipy="true">$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>
 		</itemlayout>
 		<itemlayout condition="Window.IsActive(500) | Window.IsActive(502)" width="298" height="360">
@@ -93,7 +94,7 @@
 				<texture>$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
 			</control>
 			<control type="image">
 				<posx>211</posx>
@@ -103,7 +104,7 @@
 				<texture flipy="true">$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout condition="![Window.IsActive(500) | Window.IsActive(502)]" width="298" height="360">
@@ -127,7 +128,7 @@
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation reversible="false" effect="slide" start="0,0" end="24,36" center="auto" time="200">Focus</animation>
 				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
 			</control>
 			<control type="image">
 				<posx>211</posx>
@@ -139,7 +140,7 @@
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation reversible="false" effect="slide" start="0,0" end="24,36" center="auto" time="200">Focus</animation>
 				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>	
 		</focusedlayout>
 		<focusedlayout condition="Window.IsActive(500) | Window.IsActive(502)" width="298" height="360">
@@ -163,7 +164,7 @@
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation reversible="false" effect="slide" start="0,0" end="24,36" center="auto" time="200">Focus</animation>
 				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
+				<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + Control.HasFocus(54)</visible>
 			</control>
 			<control type="image">
 				<posx>211</posx>
@@ -175,7 +176,7 @@
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation reversible="false" effect="slide" start="0,0" end="24,36" center="auto" time="200">Focus</animation>
 				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
-				<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>	
 		</focusedlayout>
 	</include>

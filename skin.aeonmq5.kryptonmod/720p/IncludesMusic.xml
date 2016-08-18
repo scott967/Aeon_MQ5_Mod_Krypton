@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Isengard 7.1.11 Mid List -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.17 -->
+<!-- Krypton 9.1.16/9.1.17/9.1.19 -->
 
 <includes>
 	<!-- ######################################################################### Music Window #########################################################################-->
@@ -134,7 +134,7 @@
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
 						<animation effect="slide" start="0,0" end="0,300"  time="500" tween="sine" easing="out">Hidden</animation>
-						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + !StringCompare(ListItem.DBType,MusicVideo)</visible>
+						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + !String.IsEqual(ListItem.DBType,MusicVideo)</visible>
 						<control type="grouplist"><!-- Etiquetas -->
 							<posx>20</posx>
 							<posy>645</posy>
@@ -234,7 +234,7 @@
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
 						<animation effect="slide" start="0,0" end="0,300"  time="500" tween="sine" easing="out">Hidden</animation>
-						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + StringCompare(ListItem.DBType,MusicVideo)</visible>
+						<visible>[SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)] + String.IsEqual(ListItem.DBType,MusicVideo)</visible>
 						<control type="grouplist"><!-- Etiquetas/tags -->
 							<posx>20</posx>
 							<posy>645</posy>
@@ -361,11 +361,11 @@
 							</control>
 							<control type="image">
 								<include>FlagSeparator</include>
-								<visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
+								<visible>!IsEmpty(ListItem.Trailer) + !String.IsEqual(ListItem.PercentPlayed,0)</visible>
 							</control>
 							<control type="group"><!-- % Played -->
 								<width>125</width>
-								<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
+								<visible>!String.IsEqual(ListItem.PercentPlayed,0)</visible>
 								<control type="image">
 									<include>FlagImage</include>
 									<texture>flags/percentplayed.png</texture>

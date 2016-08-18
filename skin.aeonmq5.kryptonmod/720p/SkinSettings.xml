@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 -->
 <!-- Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.19 -->
 
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
@@ -123,17 +123,17 @@
 				<control type="radiobutton" id="1023">
 					<label>31174</label>
 					<onclick>Skin.SetString(animationwindow,zoom)</onclick>
-					<selected>StringCompare(skin.string(animationwindow),zoom)</selected>
+					<selected>String.IsEqual(skin.string(animationwindow),zoom)</selected>
 				</control>
 				<control type="radiobutton" id="1024">
 					<label>31175</label>
 					<onclick>Skin.SetString(animationwindow,slowzoom)</onclick>
-					<selected>StringCompare(skin.string(animationwindow),slowzoom)</selected>
+					<selected>String.IsEqual(skin.string(animationwindow),slowzoom)</selected>
 				</control>
 				<control type="radiobutton" id="1025">
 					<label>31176</label>
 					<onclick>Skin.SetString(animationwindow,fade)</onclick>
-					<selected>StringCompare(skin.string(animationwindow),fade)</selected>
+					<selected>String.IsEqual(skin.string(animationwindow),fade)</selected>
 				</control>
 				<control type="button" id="1026">
 					<label>$LOCALIZE[31177] - $LOCALIZE[31143]</label>
@@ -241,21 +241,21 @@
 			<control type="button" id="4199">
 				<include>InvisibleButton</include>
 				<onfocus>SetFocus(1054)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),5000)">Skin.SetString(homebg_seconds,10000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),10000)">Skin.SetString(homebg_seconds,30000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),30000)">Skin.SetString(homebg_seconds,60000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),60000)">Skin.SetString(homebg_seconds,600000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),600000)">Skin.SetString(homebg_seconds,3600000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(homebg_seconds),3600000)">Skin.SetString(homebg_seconds,5000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),5000)">Skin.SetString(homebg_seconds,10000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),10000)">Skin.SetString(homebg_seconds,30000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),30000)">Skin.SetString(homebg_seconds,60000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),60000)">Skin.SetString(homebg_seconds,600000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),600000)">Skin.SetString(homebg_seconds,3600000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(homebg_seconds),3600000)">Skin.SetString(homebg_seconds,5000)</onfocus>
 			</control>
 			<control type="button" id="4200">
 				<include>InvisibleButton</include>
 				<onfocus>SetFocus(1250)</onfocus>
-				<onfocus condition="StringCompare(skin.string(cdart_seconds),2000)">Skin.SetString(cdart_seconds,20000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(cdart_seconds),20000)">Skin.SetString(cdart_seconds,16000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(cdart_seconds),16000)">Skin.SetString(cdart_seconds,8000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(cdart_seconds),8000)">Skin.SetString(cdart_seconds,4000)</onfocus>
-				<onfocus condition="StringCompare(skin.string(cdart_seconds),4000)">Skin.SetString(cdart_seconds,2000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),2000)">Skin.SetString(cdart_seconds,20000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),20000)">Skin.SetString(cdart_seconds,16000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),16000)">Skin.SetString(cdart_seconds,8000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),8000)">Skin.SetString(cdart_seconds,4000)</onfocus>
+				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),4000)">Skin.SetString(cdart_seconds,2000)</onfocus>
 			</control>
 			<!--<control type="button" id="4201">
 	<include>InvisibleButton</include>
@@ -2295,30 +2295,30 @@
 				<control type="radiobutton" id="1085"><!-- Estilo padrao  -->
 					<label>$LOCALIZE[31131] ($LOCALIZE[31277])</label>
 					<onclick>Skin.SetString(style,graphite)</onclick>
-					<selected>StringCompare(skin.string(style),graphite)</selected>
+					<selected>String.IsEqual(skin.string(style),graphite)</selected>
 				</control>
 				<control type="radiobutton" id="1086"><!-- Estilo by extrapack -->
 					<label>31614</label>
 					<onclick>Skin.SetString(style,extrapack)</onclick>
 					<onclick>Skin.SetString(extrapackstyle,special://userdata/addon_data/skin.aeonmq5.extrapack/styles/)</onclick>
 					<onclick>Skin.SetImage(extrapackstyle,,special://userdata/addon_data/skin.aeonmq5.extrapack/styles/)</onclick>
-					<selected>StringCompare(skin.string(style),extrapack)</selected>
+					<selected>String.IsEqual(skin.string(style),extrapack)</selected>
 					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
 				</control>
 				<control type="radiobutton" id="1087"><!-- Meu estilo -->
 					<label>$LOCALIZE[31615]  ($LOCALIZE[31206])</label>
 					<onclick>Skin.SetString(style,mystyle)</onclick>
-					<selected>StringCompare(skin.string(style),mystyle)</selected>
+					<selected>String.IsEqual(skin.string(style),mystyle)</selected>
 				</control>
 				<control type="button" id="1088"><!-- Fundo unico -->
 					<label>31504</label>
 					<onclick>Skin.SetImage(CustomMyStyle)</onclick>
-					<visible>StringCompare(skin.string(style),mystyle)</visible>
+					<visible>String.IsEqual(skin.string(style),mystyle)</visible>
 				</control>
 				<control type="button" id="1089"><!-- Fundo multiplo -->
 					<label>31505</label>
 					<onclick>Skin.SetPath(CustomMyStyle)</onclick>
-					<visible>StringCompare(skin.string(style),mystyle)</visible>
+					<visible>String.IsEqual(skin.string(style),mystyle)</visible>
 				</control>
 			</control>
 			<control type="group"><!-- Estilos -->
@@ -2573,49 +2573,49 @@
 					<label>$LOCALIZE[31138] 1 ($LOCALIZE[31277])</label>
 					<onclick>Skin.SetString(font,font1)</onclick>
 					<onfocus>Skin.SetString(tempfont,font1)</onfocus>
-					<selected>StringCompare(skin.string(font),font1)</selected>
+					<selected>String.IsEqual(skin.string(font),font1)</selected>
 				</control>
 				<control type="radiobutton" id="1201"><!-- Fonte 2 -->
 					<label>$LOCALIZE[31138] 2</label>
 					<onclick>Skin.SetString(font,font2)</onclick>
 					<onfocus>Skin.SetString(tempfont,font2)</onfocus>
-					<selected>StringCompare(skin.string(font),font2)</selected>
+					<selected>String.IsEqual(skin.string(font),font2)</selected>
 				</control>
 				<control type="radiobutton" id="1202"><!-- Fonte 3 -->
 					<label>$LOCALIZE[31138] 3</label>
 					<onclick>Skin.SetString(font,font3)</onclick>
 					<onfocus>Skin.SetString(tempfont,font3)</onfocus>
-					<selected>StringCompare(skin.string(font),font3)</selected>
+					<selected>String.IsEqual(skin.string(font),font3)</selected>
 				</control>
 				<control type="radiobutton" id="1203"><!-- Fonte 4 -->
 					<label>$LOCALIZE[31138] 4</label>
 					<onclick>Skin.SetString(font,font4)</onclick>
 					<onfocus>Skin.SetString(tempfont,font4)</onfocus>
-					<selected>StringCompare(skin.string(font),font4)</selected>
+					<selected>String.IsEqual(skin.string(font),font4)</selected>
 				</control>
 				<control type="radiobutton" id="1205"><!-- Fonte 5 -->
 					<label>$LOCALIZE[31138] 5</label>
 					<onclick>Skin.SetString(font,font5)</onclick>
 					<onfocus>Skin.SetString(tempfont,font5)</onfocus>
-					<selected>StringCompare(skin.string(font),font5)</selected>
+					<selected>String.IsEqual(skin.string(font),font5)</selected>
 				</control>
 				<control type="radiobutton" id="1206"><!-- Fonte 6 -->
 					<label>$LOCALIZE[31138] 6</label>
 					<onclick>Skin.SetString(font,font6)</onclick>
 					<onfocus>Skin.SetString(tempfont,font6)</onfocus>
-					<selected>StringCompare(skin.string(font),font6)</selected>
+					<selected>String.IsEqual(skin.string(font),font6)</selected>
 				</control>
 				<control type="radiobutton" id="1207"><!-- Fonte 7 -->
 					<label>$LOCALIZE[31138] 7</label>
 					<onclick>Skin.SetString(font,font7)</onclick>
 					<onfocus>Skin.SetString(tempfont,font7)</onfocus>
-					<selected>StringCompare(skin.string(font),font7)</selected>
+					<selected>String.IsEqual(skin.string(font),font7)</selected>
 				</control>
 				<control type="radiobutton" id="1208"><!-- Fonte 8 -->
 					<label>$LOCALIZE[31138] 8</label>
 					<onclick>Skin.SetString(font,font8)</onclick>
 					<onfocus>Skin.SetString(tempfont,font8)</onfocus>
-					<selected>StringCompare(skin.string(font),font8)</selected>
+					<selected>String.IsEqual(skin.string(font),font8)</selected>
 				</control>
 			</control>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA 3DWALL - ID 67  ##################################################################################-->
@@ -663,7 +664,7 @@
 					<animation type="Visible">
 						<effect type="fade" start="0" end="100" time="500" delay="100"/>
 					</animation>
-					<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 				</control>
 				<control type="image">
 					<posx>410</posx>
@@ -673,7 +674,7 @@
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="thumb_3dwall_mask2.png" background="true">$VAR[value_poster-1]</texture>
 					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(7013)">Conditional</animation>
-					<visible>Control.IsVisible(7013) + !StringCompare(ListItem(-1).Label,..)</visible>
+					<visible>Control.IsVisible(7013) + !String.IsEqual(ListItem(-1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<posx>410</posx>
@@ -683,7 +684,7 @@
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="thumb_3dwall_mask2.png" background="true">$VAR[value_poster1]</texture>
 					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(7014)">Conditional</animation>
-					<visible>Control.IsVisible(7014) + !StringCompare(ListItem(1).Label,..)</visible>
+					<visible>Control.IsVisible(7014) + !String.IsEqual(ListItem(1).Label,..)</visible>
 				</control>
 				<control type="scrollbar" id="80">
 					<include>ScrollBar_Horizontal</include>
@@ -711,7 +712,7 @@
 					<label>$VAR[value_glasslistinfofocus]</label>
 					<font>Font_18A</font>
 					<scroll>true</scroll>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -1277,7 +1278,7 @@
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="thumb_3dwall_mask2.png">$VAR[value_poster-1]</texture>
 					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(7027)">Conditional</animation>
-					<visible>Control.IsVisible(7027) + !StringCompare(ListItem(-1).Label,..)</visible>
+					<visible>Control.IsVisible(7027) + !String.IsEqual(ListItem(-1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<posx>395</posx>
@@ -1287,7 +1288,7 @@
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 					<texture background="true" diffuse="thumb_3dwall_mask2.png">$VAR[value_poster1]</texture>
 					<animation effect="fade" start="100" end="0" time="200" delay="200" condition="Control.IsVisible(7028)">Conditional</animation>
-					<visible>Control.IsVisible(7028) + !StringCompare(ListItem(1).Label,..)</visible>
+					<visible>Control.IsVisible(7028) + !String.IsEqual(ListItem(1).Label,..)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1315,7 +1316,7 @@
 					<label>$VAR[value_glasslistinfofocus]</label>
 					<font>Font_18A</font>
 					<scroll>true</scroll>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>

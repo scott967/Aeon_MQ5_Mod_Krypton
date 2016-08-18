@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
+	<!-- Krypton 9.1.19 -->
 
 	<includes>
 	<!--##################################################################################   VISTA BANNER - ID 53   ##################################################################################-->
@@ -134,7 +136,7 @@
 	<height>27</height>
 	<texture>$VAR[value_watchedstyle]</texture>
 	<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-	<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+	<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 	</control>
 	<control type="image"><!-- Dimmer -->
 	<width>357</width>
@@ -177,7 +179,7 @@
 	<texture>$VAR[value_watchedstyle]</texture>
 	<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
 	<animation effect="zoom" center="178,40" start="90" end="110" time="600" tween="back" easing="out" reversible="false" condition="Skin.HasSetting(bannerinfozoom)">Focus</animation>
-	<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+	<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 	</control>
 	</focusedlayout>
 	</control>

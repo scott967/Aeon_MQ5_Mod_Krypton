@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
-
+<!-- Krypton 9.1.19 -->
 	<includes>
 	<!--##################################################################################   VISTA BANNER - ID 52   ##################################################################################-->
 	<include name="Banner_Dimmer">
@@ -72,7 +73,7 @@
 	<height>40</height>
 	<texture>$VAR[value_watchedstyle]</texture>
 	<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-	<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+	<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 	</control>
 	</control>
 	</itemlayout>
@@ -107,7 +108,7 @@
 	<texture>$VAR[value_watchedstyle]</texture>
 	<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 	<animation effect="zoom" center="290,60" start="90" end="110" time="600" tween="back" easing="out" reversible="false" condition="Skin.HasSetting(bannerzoom)">Focus</animation>
-	<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+	<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 	</control>
 	</focusedlayout>
 	</control>
@@ -121,7 +122,7 @@
 	<animation effect="slide" start="0,0" end="0,361" time="0" condition="Container(52).Row(2)">Conditional</animation>
 	<animation effect="slide" start="0,0" end="0,499" time="0" condition="Container(52).Row(3)">Conditional</animation>
 	<include>Banner_Plot</include>
-	<visible>!StringCompare(ListItem.Label,..)</visible>
+	<visible>!String.IsEqual(ListItem.Label,..)</visible>
 	<control type="image">
 	<posx>0</posx>
 	<posy>10</posy>
@@ -139,7 +140,7 @@
 	<label>$VAR[value_glasslistinfofocus]</label>
 	<font>Font_18A</font>
 	<scroll>true</scroll>
-	<visible>!StringCompare(ListItem.Label,..)</visible>
+	<visible>!String.IsEqual(ListItem.Label,..)</visible>
 	</control>
 	<control type="image">
 	<posx>0</posx>

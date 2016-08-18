@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ5 Krypton 9.1.15/9.1.17 -->
+<!-- Aeon MQ5 Krypton 9.1.15/9.1.17/9.1.19 -->
 
 <includes>
 	<include name="VideoPLWindow">
@@ -115,7 +115,7 @@
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(55)">Conditional</animation>
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | StringCompare(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(2003)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(2003)]</visible>
 				<posx>810</posx>
 				<posy>15</posy>
 				<include>AudioandSub</include>
@@ -128,7 +128,7 @@
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(55)">Conditional</animation>
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | StringCompare(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(2003)] + Skin.HasSetting(vplaylistinfobar)</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(2003)] + Skin.HasSetting(vplaylistinfobar)</visible>
 				<posx>810</posx>
 				<posy>35</posy>
 				<include>AudioandSub</include>
@@ -224,12 +224,12 @@
 						</control>
 						<control type="image">
 							<include>FlagSeparator</include>
-							<visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
+							<visible>!IsEmpty(ListItem.Trailer) + !String.IsEqual(ListItem.PercentPlayed,0)</visible>
 						</control>
 						<control type="label"><!-- % Played -->
 							<include>FlagLabel</include>
 							<label>$INFO[ListItem.PercentPlayed]%</label>
-							<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
+							<visible>!String.IsEqual(ListItem.PercentPlayed,0)</visible>
 						</control>
 					</control>
 					<control type="image">

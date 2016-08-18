@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<!-- Aeon MQ 5 Helix 6.1.5 -->
 	<!-- Isengard 7.1.9/7.1.10/7.1.11 -->
+	<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA PANEL - ID 62   ##################################################################################-->
@@ -55,7 +56,7 @@
 							<height>25</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -81,7 +82,7 @@
 							<height>25</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -108,7 +109,7 @@
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<posx>206</posx>
@@ -118,7 +119,7 @@
 							<texture flipy="true">$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+							<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -163,7 +164,7 @@
 							<height>25</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -188,7 +189,7 @@
 							<height>25</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
 					<itemlayout condition="!Window.IsActive(25)" width="120" height="120">
@@ -208,7 +209,7 @@
 							<height>25</height>
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -240,7 +241,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="Container.Content(musicvideos) + Skin.HasSetting(nopanelbigicon)" width="180" height="150"><!-- music video big icons -->
@@ -267,7 +268,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="Container.Content(episodes)" width="240" height="180"><!-- EPISODIOS -->
@@ -297,7 +298,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>![Skin.HasSetting(nooverlays) | SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="image">
 							<posx>207</posx>
@@ -311,7 +312,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>[!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
+							<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="Window.IsActive(25) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) + !Skin.HasSetting(nopanelvideocase)  | !Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)]" width="120" height="172"><!-- ESTOJO -->
@@ -366,7 +367,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="Window.IsActive(25) + [Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(noviewpanelposter)" width="120" height="120">
@@ -393,7 +394,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 					<focusedlayout condition="!Window.IsActive(25)" width="120" height="120">
@@ -420,7 +421,7 @@
 								<effect type="zoom" center="60,60" start="80" end="100" time="400" tween="back" easing="out" />
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
-							<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
 				</control>
@@ -460,7 +461,7 @@
 					<label>$VAR[value_glasslistinfofocus]</label>
 					<font>Font_18A</font>
 					<scroll>true</scroll>
-					<visible>!StringCompare(ListItem.Label,..)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<posx>10</posx>

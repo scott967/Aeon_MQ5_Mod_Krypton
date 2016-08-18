@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.5/6.1.7/6.1.8  Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.18 -->
+<!-- Krypton 9.1.16/9.1.18/9.1.19 -->
 
 <includes>
 	<!-- ######################################################################### Widgets dos Recentes ######################################################################### -->
@@ -19,8 +19,8 @@
 		<orientation>vertical</orientation>
 		<pagecontrol>-</pagecontrol>
 		<include>Animation_Widgets</include>
-		<animation effect="slide" start="0,0" end="400,0" condition="SubString(skin.string(widgetsnumber),4) + ![StringCompare(Container(9000).ListItem.Property(id),mymenu1) | StringCompare(Container(9000).ListItem.Property(id),mymenu2)]">Conditional</animation>
-		<animation effect="slide" start="0,0" end="200,0" condition="SubString(skin.string(widgetsnumber),8) + ![StringCompare(Container(9000).ListItem.Property(id),mymenu1) | StringCompare(Container(9000).ListItem.Property(id),mymenu2)]">Conditional</animation>	
+		<animation effect="slide" start="0,0" end="400,0" condition="SubString(skin.string(widgetsnumber),4) + ![String.IsEqual(Container(9000).ListItem.Property(id),mymenu1) | String.IsEqual(Container(9000).ListItem.Property(id),mymenu2)]">Conditional</animation>
+		<animation effect="slide" start="0,0" end="200,0" condition="SubString(skin.string(widgetsnumber),8) + ![String.IsEqual(Container(9000).ListItem.Property(id),mymenu1) | String.IsEqual(Container(9000).ListItem.Property(id),mymenu2)]">Conditional</animation>	
 		<itemlayout width="101" height="157">
 			<control type="image"><!-- reflexo video -->
 				<posx>4</posx>
@@ -38,7 +38,7 @@
 				<height>5</height>
 				<aspectratio>stretch</aspectratio>
 				<info>ListItem.Property(Percent)</info>
-				<visible>StringCompare(ListItem.Property(Progress),inprogress) + IntegerGreaterThan(ListItem.Property(Percent),0)</visible>
+				<visible>String.IsEqual(ListItem.Property(Progress),inprogress) + IntegerGreaterThan(ListItem.Property(Percent),0)</visible>
 			</control>
 			<control type="image"><!-- poster -->
 				<posx>4</posx>
@@ -70,7 +70,7 @@
 				<height>5</height>
 				<aspectratio>stretch</aspectratio>
 				<info>ListItem.Property(Percent)</info>
-				<visible>StringCompare(ListItem.Property(Progress),inprogress) + IntegerGreaterThan(ListItem.Property(Percent),0)</visible>
+				<visible>String.IsEqual(ListItem.Property(Progress),inprogress) + IntegerGreaterThan(ListItem.Property(Percent),0)</visible>
 			</control>
 			<control type="image"><!-- poster -->
 				<posx>4</posx>
@@ -3249,14 +3249,14 @@
 	<include name="mf_contentmymenu1">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu1)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),mymenu1)</visible>
 		</control>
 		<control type="group">
 			<posx>30</posx>
 			<posy>360</posy>
 			<control type="panel" id="510"><!-- Meu Menu 1 -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu1)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),mymenu1)</visible>
 				<content>
 					<item>
 						<label fallback="31014">$VAR[value_menu2101.label]</label>
@@ -3338,14 +3338,14 @@
 	<include name="mf_contentmymenu2">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),mymenu2)</visible>
 		</control>
 		<control type="group">
 			<posx>30</posx>
 			<posy>360</posy>
 			<control type="panel" id="510"><!-- Meu Menu 2 -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),mymenu2)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),mymenu2)</visible>
 				<content>
 					<item>
 						<label fallback="31014">$VAR[value_menu2201.label]</label>
@@ -3427,11 +3427,11 @@
 	<include name="mf_contentgames">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
 			<control type="button" id="5100">
 				<onclick>noop</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -3445,7 +3445,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510">
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),games) + !IsEmpty(Window(0).Property(MostPlayedROM.1.Title))</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(MostPlayedROM.1.Title)]</label>
@@ -3786,14 +3786,14 @@
 	<include name="mf_contentfavourites">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name))</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name))</visible>
 		</control>
 		<control type="group">
 			<posx>30</posx>
 			<posy>360</posy>
 			<control type="panel" id="510">
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name))</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),favourites) + !IsEmpty(Window(0).Property(Favourite.1.Name))</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(Favourite.1.Name)]</label>
@@ -3881,7 +3881,7 @@
 			<animation effect="slide" start="0,-350" end="0,0" time="300" delay="700" easing="out" tween="sine">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-350" time="200" easing="in" tween="sine">Hidden</animation>
 			<animation effect="slide" start="0,0" end="0,-380" time="300" easing="out" tween="sine" condition="[SubString(skin.string(widgetsmode),manual) | SubString(skin.string(widgetsmode),auto) + !Control.IsVisible(9931)] + !Control.HasFocus(520)">Conditional</animation>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),settings) + !Skin.HasSetting(custommode)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),settings) + !Skin.HasSetting(custommode)</visible>
 			<control type="button" id="520"><!-- panel focus -->
 				<include>InvisibleButton</include>
 				<onleft>SetFocus(9000)</onleft>
@@ -3920,7 +3920,7 @@
 				<posx>360</posx>
 				<posy>40</posy>
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),settings)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),settings)</visible>
 				<control type="label">
 					<posx>270</posx>
 					<posy>20</posy>
@@ -3950,11 +3950,11 @@
 	<include name="mf_contentvpl1">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl1)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl1)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl1)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl1)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5201)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -3978,7 +3978,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl1.1.Title)]</label>
@@ -4397,7 +4397,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl1.1.Title)]</label>
@@ -4816,7 +4816,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl1) + SubString(skin.string(mfvpl1_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl1.1.Title)]</label>
@@ -5287,11 +5287,11 @@
 	<include name="mf_contentvpl2">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl2)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl2)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl2)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl2)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5202)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -5315,7 +5315,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl2.1.Title)]</label>
@@ -5734,7 +5734,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl2.1.Title)]</label>
@@ -6153,7 +6153,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl2) + SubString(skin.string(mfvpl2_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl2.1.Title)]</label>
@@ -6624,11 +6624,11 @@
 	<include name="mf_contentvpl3">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl3)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl3)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl3)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl3)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5203)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -6652,7 +6652,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl3.1.Title)]</label>
@@ -7071,7 +7071,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl3.1.Title)]</label>
@@ -7490,7 +7490,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl3) + SubString(skin.string(mfvpl3_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl3.1.Title)]</label>
@@ -7961,11 +7961,11 @@
 	<include name="mf_contentvpl4">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl4)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl4)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl4)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl4)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5204)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -7989,7 +7989,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl4.1.Title)]</label>
@@ -8408,7 +8408,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl4.1.Title)]</label>
@@ -8827,7 +8827,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl4) + SubString(skin.string(mfvpl4_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl4.1.Title)]</label>
@@ -9298,11 +9298,11 @@
 	<include name="mf_contentvpl5">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl5)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl5)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl5)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl5)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5205)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -9326,7 +9326,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl5.1.Title)]</label>
@@ -9745,7 +9745,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl5.1.Title)]</label>
@@ -10164,7 +10164,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl5) + SubString(skin.string(mfvpl5_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl5.1.Title)]</label>
@@ -10635,11 +10635,11 @@
 	<include name="mf_contentvpl6">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl6)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl6)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl6)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl6)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5206)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -10663,7 +10663,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl6.1.Title)]</label>
@@ -11082,7 +11082,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl6.1.Title)]</label>
@@ -11501,7 +11501,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl6) + SubString(skin.string(mfvpl6_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl6.1.Title)]</label>
@@ -11972,11 +11972,11 @@
 	<include name="mf_contentvpl7">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl7)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl7)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl7)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl7)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5207)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -12000,7 +12000,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl7.1.Title)]</label>
@@ -12419,7 +12419,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl7.1.Title)]</label>
@@ -12838,7 +12838,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl7) + SubString(skin.string(mfvpl7_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl7.1.Title)]</label>
@@ -13309,11 +13309,11 @@
 	<include name="mf_contentvpl8">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl8)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl8)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl8)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl8)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5208)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -13337,7 +13337,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl8.1.Title)]</label>
@@ -13756,7 +13756,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl8.1.Title)]</label>
@@ -14175,7 +14175,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl8) + SubString(skin.string(mfvpl8_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl8.1.Title)]</label>
@@ -14646,11 +14646,11 @@
 	<include name="mf_contentvpl9">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl9)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl9)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl9)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl9)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5209)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -14674,7 +14674,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl9.1.Title)]</label>
@@ -15093,7 +15093,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl9.1.Title)]</label>
@@ -15512,7 +15512,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl9) + SubString(skin.string(mfvpl9_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl9.1.Title)]</label>
@@ -15983,11 +15983,11 @@
 	<include name="mf_contentvpl10">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl10)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl10)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl10)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl10)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5210)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -16011,7 +16011,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl10.1.Title)]</label>
@@ -16430,7 +16430,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl10.1.Title)]</label>
@@ -16849,7 +16849,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl10) + SubString(skin.string(mfvpl10_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl10.1.Title)]</label>
@@ -17320,11 +17320,11 @@
 	<include name="mf_contentvpl11">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl11)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl11)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5211)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -17348,7 +17348,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl11.1.Title)]</label>
@@ -17767,7 +17767,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl11.1.Title)]</label>
@@ -18186,7 +18186,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl11) + SubString(skin.string(mfvpl11_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl11.1.Title)]</label>
@@ -18657,11 +18657,11 @@
 	<include name="mf_contentvpl12">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl12)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl12)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl12)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl12)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5212)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -18685,7 +18685,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl12.1.Title)]</label>
@@ -19104,7 +19104,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl12.1.Title)]</label>
@@ -19523,7 +19523,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl12) + SubString(skin.string(mfvpl12_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl12.1.Title)]</label>
@@ -19994,11 +19994,11 @@
 	<include name="mf_contentvpl13">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl13)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl13)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl13)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl13)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5213)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -20022,7 +20022,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl13.1.Title)]</label>
@@ -20441,7 +20441,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl13.1.Title)]</label>
@@ -20860,7 +20860,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl13) + SubString(skin.string(mfvpl13_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl13.1.Title)]</label>
@@ -21331,11 +21331,11 @@
 	<include name="mf_contentvpl14">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl14)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl14)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl14)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl14)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5214)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -21359,7 +21359,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl14.1.Title)]</label>
@@ -21778,7 +21778,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl14.1.Title)]</label>
@@ -22197,7 +22197,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl14) + SubString(skin.string(mfvpl14_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl14.1.Title)]</label>
@@ -22668,11 +22668,11 @@
 	<include name="mf_contentvpl15">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl15)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl15)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl15)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl15)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5215)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -22696,7 +22696,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl15.1.Title)]</label>
@@ -23115,7 +23115,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl15.1.Title)]</label>
@@ -23534,7 +23534,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl15) + SubString(skin.string(mfvpl15_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl15.1.Title)]</label>
@@ -24005,11 +24005,11 @@
 	<include name="mf_contentvpl16">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl16)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl16)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl16)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl16)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5216)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -24033,7 +24033,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl16.1.Title)]</label>
@@ -24452,7 +24452,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl16.1.Title)]</label>
@@ -24871,7 +24871,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl16) + SubString(skin.string(mfvpl16_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl16.1.Title)]</label>
@@ -25342,11 +25342,11 @@
 	<include name="mf_contentvpl17">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl17)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl17)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl17)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl17)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5217)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -25370,7 +25370,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl17.1.Title)]</label>
@@ -25789,7 +25789,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl17.1.Title)]</label>
@@ -26208,7 +26208,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl17) + SubString(skin.string(mfvpl17_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl17.1.Title)]</label>
@@ -26679,11 +26679,11 @@
 	<include name="mf_contentvpl18">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl18)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl18)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl18)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl18)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5218)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -26707,7 +26707,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl18.1.Title)]</label>
@@ -27126,7 +27126,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl18.1.Title)]</label>
@@ -27545,7 +27545,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl18) + SubString(skin.string(mfvpl18_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl18.1.Title)]</label>
@@ -28016,11 +28016,11 @@
 	<include name="mf_contentvpl19">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl19)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl19)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl19)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl19)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5219)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -28044,7 +28044,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl19.1.Title)]</label>
@@ -28463,7 +28463,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl19.1.Title)]</label>
@@ -28882,7 +28882,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl19) + SubString(skin.string(mfvpl19_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl19.1.Title)]</label>
@@ -29353,11 +29353,11 @@
 	<include name="mf_contentvpl20">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl20)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl20)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),vpl20)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl20)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5220)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -29381,7 +29381,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl20.1.Title)]</label>
@@ -29800,7 +29800,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMovievpl20.1.Title)]</label>
@@ -30219,7 +30219,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Em Progresso -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),inprogress)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),vpl20) + SubString(skin.string(mfvpl20_list),inprogress)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMovievpl20.1.Title)]</label>
@@ -30691,11 +30691,11 @@
 	<include name="mf_contentapl1">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl1)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl1)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl1)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl1)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5301)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -30717,7 +30717,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl1) + SubString(skin.string(mfapl1_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl1) + SubString(skin.string(mfapl1_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl1.1.Title)]</label>
@@ -30884,7 +30884,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl1) + SubString(skin.string(mfapl1_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl1) + SubString(skin.string(mfapl1_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl1.1.Title)]</label>
@@ -31055,11 +31055,11 @@
 	<include name="mf_contentapl2">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl2)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl2)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl2)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl2)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5302)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -31081,7 +31081,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl2) + SubString(skin.string(mfapl2_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl2) + SubString(skin.string(mfapl2_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl2.1.Title)]</label>
@@ -31248,7 +31248,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl2) + SubString(skin.string(mfapl2_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl2) + SubString(skin.string(mfapl2_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl2.1.Title)]</label>
@@ -31419,11 +31419,11 @@
 	<include name="mf_contentapl3">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl3)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl3)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl3)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl3)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5303)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -31445,7 +31445,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl3) + SubString(skin.string(mfapl3_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl3) + SubString(skin.string(mfapl3_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl3.1.Title)]</label>
@@ -31612,7 +31612,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl3) + SubString(skin.string(mfapl3_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl3) + SubString(skin.string(mfapl3_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl3.1.Title)]</label>
@@ -31783,11 +31783,11 @@
 	<include name="mf_contentapl4">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl4)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl4)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl4)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl4)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5304)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -31809,7 +31809,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl4) + SubString(skin.string(mfapl4_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl4) + SubString(skin.string(mfapl4_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl4.1.Title)]</label>
@@ -31976,7 +31976,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl4) + SubString(skin.string(mfapl4_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl4) + SubString(skin.string(mfapl4_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl4.1.Title)]</label>
@@ -32147,11 +32147,11 @@
 	<include name="mf_contentapl5">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl5)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl5)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl5)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl5)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5305)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -32173,7 +32173,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl5) + SubString(skin.string(mfapl5_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl5) + SubString(skin.string(mfapl5_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl5.1.Title)]</label>
@@ -32340,7 +32340,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl5) + SubString(skin.string(mfapl5_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl5) + SubString(skin.string(mfapl5_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl5.1.Title)]</label>
@@ -32511,11 +32511,11 @@
 	<include name="mf_contentapl6">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl6)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl6)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl6)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl6)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5306)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -32537,7 +32537,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl6) + SubString(skin.string(mfapl6_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl6) + SubString(skin.string(mfapl6_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl6.1.Title)]</label>
@@ -32704,7 +32704,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl6) + SubString(skin.string(mfapl6_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl6) + SubString(skin.string(mfapl6_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl6.1.Title)]</label>
@@ -32875,11 +32875,11 @@
 	<include name="mf_contentapl7">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl7)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl7)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl7)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl7)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5307)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -32901,7 +32901,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl7) + SubString(skin.string(mfapl7_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl7) + SubString(skin.string(mfapl7_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl7.1.Title)]</label>
@@ -33068,7 +33068,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl7) + SubString(skin.string(mfapl7_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl7) + SubString(skin.string(mfapl7_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl7.1.Title)]</label>
@@ -33239,11 +33239,11 @@
 	<include name="mf_contentapl8">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl8)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl8)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl8)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl8)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5308)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -33265,7 +33265,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl8) + SubString(skin.string(mfapl8_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl8) + SubString(skin.string(mfapl8_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl8.1.Title)]</label>
@@ -33432,7 +33432,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl8) + SubString(skin.string(mfapl8_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl8) + SubString(skin.string(mfapl8_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl8.1.Title)]</label>
@@ -33603,11 +33603,11 @@
 	<include name="mf_contentapl9">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl9)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl9)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl9)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl9)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5309)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -33629,7 +33629,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl9) + SubString(skin.string(mfapl9_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl9) + SubString(skin.string(mfapl9_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl9.1.Title)]</label>
@@ -33796,7 +33796,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl9) + SubString(skin.string(mfapl9_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl9) + SubString(skin.string(mfapl9_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl9.1.Title)]</label>
@@ -33967,11 +33967,11 @@
 	<include name="mf_contentapl10">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl10)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl10)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl10)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl10)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5310)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -33993,7 +33993,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl10) + SubString(skin.string(mfapl10_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl10) + SubString(skin.string(mfapl10_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl10.1.Title)]</label>
@@ -34160,7 +34160,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl10) + SubString(skin.string(mfapl10_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl10) + SubString(skin.string(mfapl10_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl10.1.Title)]</label>
@@ -34331,11 +34331,11 @@
 	<include name="mf_contentapl11">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl11)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl11)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl11)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl11)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5311)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -34357,7 +34357,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl11) + SubString(skin.string(mfapl11_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl11) + SubString(skin.string(mfapl11_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl11.1.Title)]</label>
@@ -34524,7 +34524,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl11) + SubString(skin.string(mfapl11_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl11) + SubString(skin.string(mfapl11_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl11.1.Title)]</label>
@@ -34695,11 +34695,11 @@
 	<include name="mf_contentapl12">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl12)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl12)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl12)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl12)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5312)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -34721,7 +34721,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl12) + SubString(skin.string(mfapl12_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl12) + SubString(skin.string(mfapl12_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl12.1.Title)]</label>
@@ -34888,7 +34888,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl12) + SubString(skin.string(mfapl12_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl12) + SubString(skin.string(mfapl12_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl12.1.Title)]</label>
@@ -35059,11 +35059,11 @@
 	<include name="mf_contentapl13">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl13)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl13)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl13)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl13)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5313)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -35085,7 +35085,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl13) + SubString(skin.string(mfapl13_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl13) + SubString(skin.string(mfapl13_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl13.1.Title)]</label>
@@ -35252,7 +35252,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl13) + SubString(skin.string(mfapl13_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl13) + SubString(skin.string(mfapl13_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl13.1.Title)]</label>
@@ -35423,11 +35423,11 @@
 	<include name="mf_contentapl14">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl14)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl14)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl14)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl14)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5314)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -35449,7 +35449,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl14) + SubString(skin.string(mfapl14_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl14) + SubString(skin.string(mfapl14_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl14.1.Title)]</label>
@@ -35616,7 +35616,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl14) + SubString(skin.string(mfapl14_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl14) + SubString(skin.string(mfapl14_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl14.1.Title)]</label>
@@ -35787,11 +35787,11 @@
 	<include name="mf_contentapl15">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl15)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl15)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl15)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl15)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5315)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -35813,7 +35813,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl15) + SubString(skin.string(mfapl15_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl15) + SubString(skin.string(mfapl15_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl15.1.Title)]</label>
@@ -35980,7 +35980,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl15) + SubString(skin.string(mfapl15_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl15) + SubString(skin.string(mfapl15_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl15.1.Title)]</label>
@@ -36151,11 +36151,11 @@
 	<include name="mf_contentapl16">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl16)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl16)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl16)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl16)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5316)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -36177,7 +36177,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl16) + SubString(skin.string(mfapl16_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl16) + SubString(skin.string(mfapl16_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl16.1.Title)]</label>
@@ -36344,7 +36344,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl16) + SubString(skin.string(mfapl16_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl16) + SubString(skin.string(mfapl16_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl16.1.Title)]</label>
@@ -36515,11 +36515,11 @@
 	<include name="mf_contentapl17">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl17)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl17)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl17)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl17)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5317)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -36541,7 +36541,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl17) + SubString(skin.string(mfapl17_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl17) + SubString(skin.string(mfapl17_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl17.1.Title)]</label>
@@ -36708,7 +36708,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl17) + SubString(skin.string(mfapl17_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl17) + SubString(skin.string(mfapl17_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl17.1.Title)]</label>
@@ -36879,11 +36879,11 @@
 	<include name="mf_contentapl18">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl18)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl18)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl18)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl18)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5318)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -36905,7 +36905,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl18) + SubString(skin.string(mfapl18_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl18) + SubString(skin.string(mfapl18_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl18.1.Title)]</label>
@@ -37072,7 +37072,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl18) + SubString(skin.string(mfapl18_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl18) + SubString(skin.string(mfapl18_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl18.1.Title)]</label>
@@ -37243,11 +37243,11 @@
 	<include name="mf_contentapl19">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl19)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl19)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl19)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl19)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5319)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -37269,7 +37269,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl19) + SubString(skin.string(mfapl19_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl19) + SubString(skin.string(mfapl19_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl19.1.Title)]</label>
@@ -37436,7 +37436,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl19) + SubString(skin.string(mfapl19_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl19) + SubString(skin.string(mfapl19_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl19.1.Title)]</label>
@@ -37607,11 +37607,11 @@
 	<include name="mf_contentapl20">
 		<control type="image"><!-- Fundo -->
 			<include>widgets_back</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl20)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl20)</visible>
 		</control>
 		<control type="group"><!-- Seletor de lista -->
 			<include>Animation_Widgets</include>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),apl20)</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl20)</visible>
 			<control type="button" id="5100">
 				<onclick>SetFocus(5320)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
@@ -37633,7 +37633,7 @@
 			<posy>360</posy>
 			<control type="panel" id="510"><!--- Recentes -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl20) + SubString(skin.string(mfapl20_list),latest)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl20) + SubString(skin.string(mfapl20_list),latest)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistLastMusicapl20.1.Title)]</label>
@@ -37800,7 +37800,7 @@
 			</control>
 			<control type="panel" id="510"><!--- Random -->
 				<include>panel_layout</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(id),apl20) + SubString(skin.string(mfapl20_list),random)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),apl20) + SubString(skin.string(mfapl20_list),random)</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(0).Property(PlaylistRandomMusicapl20.1.Title)]</label>
@@ -37980,7 +37980,7 @@
 		<textcolor>FFFFFAF0</textcolor>
 		<scroll>true</scroll>
 		<include>Animation_Widgets</include>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 	</include>
 	<include name="Widget_WeatherSubtitle7Day">
 		<posx>10</posx>
@@ -38011,7 +38011,7 @@
 		<textcolor>FFFFFAF0</textcolor>
 		<scroll>true</scroll>
 		<include>Animation_Widgets</include>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 	</include>
 	<include name="Widget_WeatherIconWeekend">
 		<posx>0</posx>
@@ -38033,7 +38033,7 @@
 		<textcolor>FFFFFAF0</textcolor>
 		<scroll>true</scroll>
 		<include>Animation_Widgets</include>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 	</include>
 	<include name="Widget_WeatherTemp36hour">
 		<posx>10</posx>
@@ -38120,17 +38120,17 @@
 	</include>
 	<include name="Widget_Weather7Day">
 		<width>123</width>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
 		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>
 	<include name="Widget_WeatherWeekend">
 		<width>150</width>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
 		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>
 	<include name="Widget_Weather36hour">
 		<width>300</width>
-		<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
+		<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode)</visible>
 		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>
 
@@ -38144,7 +38144,7 @@
 			<animation effect="slide" start="0,-350" end="0,0" time="300" delay="700" easing="out" tween="sine">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-350" time="200" easing="in" tween="sine">Hidden</animation>
 			<animation effect="slide" start="0,0" end="0,-380" time="300" easing="out" tween="sine" condition="[SubString(skin.string(widgetsmode),manual) | SubString(skin.string(widgetsmode),auto) + !Control.IsVisible(9931)] + !Control.HasFocus(520)">Conditional</animation>
-			<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + Window.IsVisible(Home) + [StringCompare(Weather.Plugin,weather.openweathermap.extended) | StringCompare(Weather.Plugin,weather.ozweather) | StringCompare(Weather.Plugin,weather.worldweatheronline) | StringCompare(Weather.Plugin,weather.wunderground) | StringCompare(Weather.Plugin,weather.yahoo)]</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Window.IsVisible(Home) + [String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo)]</visible>
 			<control type="button" id="520"><!-- panel focus -->
 				<include>InvisibleButton</include>
 				<onleft>SetFocus(9000)</onleft>
@@ -38275,7 +38275,7 @@
 				<font>Font_18A</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Daily.1.ChancePrecipitation)]</label>
-				<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
@@ -38288,7 +38288,7 @@
 				<font>Font_18A</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Daily.1.Precipitation)]</label>
-				<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 				<scroll>true</scroll>
 			</control>
 			<control type="image"><!-- Maxima prevista -->
@@ -38310,7 +38310,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.AvgHighTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>![StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -38323,7 +38323,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.HighTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -38357,7 +38357,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.AvgLowTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>![StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -38370,7 +38370,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.LowTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			</control>
 			<control type="label">
 				<posx>75</posx>
@@ -38420,7 +38420,7 @@
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<label>$LOCALIZE[403]</label>
 				<scroll>true</scroll>
-				<visible>![StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
 			</control>
 			<control type="label">
 				<posx>330</posx>
@@ -38433,7 +38433,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Current.UVIndex)]</label>
 				<scroll>true</scroll>
-				<visible>![StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
 			</control>
 			<control type="label"><!-- Pt Orvalho -->
 				<posx>330</posx>
@@ -39191,12 +39191,12 @@
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.1.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.1.Precipitation)][/COLOR]</label>
-						<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="image">
 						<include>Widget_WeatherIcon36hour</include>
@@ -39229,12 +39229,12 @@
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.2.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.2.Precipitation)][/COLOR]</label>
-						<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="image">
 						<include>Widget_WeatherIcon36hour</include>
@@ -39267,12 +39267,12 @@
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.3.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.3.Precipitation)][/COLOR]</label>
-						<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="image">
 						<include>Widget_WeatherIcon36hour</include>
@@ -39310,7 +39310,7 @@
 					<!-- <control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.1.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control> -->
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
@@ -39347,12 +39347,12 @@
 					<!-- <control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.2.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.2.Precipitation)][/COLOR]</label>
-						<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control> -->
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
@@ -39393,12 +39393,12 @@
 					<!-- <control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.3.ChancePrecipitation)][/COLOR]</label>
-						<visible>!StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 					<control type="label">
 						<include>Widget_WeatherPrecipitation36hour</include>
 						<label>$LOCALIZE[376]: [COLOR=FFFFFAF0]$INFO[Window(Weather).Property(36Hour.3.Precipitation)][/COLOR]</label>
-						<visible>StringCompare(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control> -->
 					<control type="image">
 						<include>Widget_WeatherIcon36hour</include>
@@ -39420,9 +39420,9 @@
 			<control type="group">
 				<posx>360</posx>
 				<posy>100</posy>
-				<visible>[!IsEmpty(Window(Weather).Property(Alerts)) + IsEmpty(Window(Home).Property(WeatherOverride))] | StringCompare(Window(Home).Property(WeatherOverride),alerts)</visible>
+				<visible>[!IsEmpty(Window(Weather).Property(Alerts)) + IsEmpty(Window(Home).Property(WeatherOverride))] | String.IsEqual(Window(Home).Property(WeatherOverride),alerts)</visible>
 				<control type="textbox">
-					<visible>StringCompare(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode) </visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + !Skin.HasSetting(custommode) </visible>
 					<posx>10</posx>
 					<posy>10</posy>
 					<width>880</width>

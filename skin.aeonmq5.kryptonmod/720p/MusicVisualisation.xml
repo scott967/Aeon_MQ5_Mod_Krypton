@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
-<!--  Krypton 9.1.16 -->
+<!--  Krypton 9.1.16/9.1.19 -->
 
 <window id="2006">
 	<!-- <allowoverlay>no</allowoverlay> -->
@@ -23,25 +23,25 @@
 			<height>720</height>
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-			<visible>StringCompare(skin.string(vis_bg),fanartmix) | StringCompare(skin.string(vis_bg),slideshowmix) | StringCompare(skin.string(vis_bg),slideshowmosaicmix) | StringCompare(skin.string(vis_bg),vis)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)</visible>
 		</control>
 		<control type="image"><!-- Fanart -->
 			<include>WindowBG</include>
 			<texture background="true">$INFO[MusicPlayer.Property(fanart_image)]</texture>
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),fanartmix)">Conditional</animation>
-			<visible>[StringCompare(skin.string(vis_bg),fanart) | StringCompare(skin.string(vis_bg),fanartmix)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) | [StringCompare(skin.string(vis_bg),slideshow) | StringCompare(skin.string(vis_bg),slideshowmix)] + IsEmpty(Control.GetLabel(5045)) | [StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)] + IsEmpty(Control.GetLabel(5046)) + IsEmpty(Control.GetLabel(5047)) + IsEmpty(Control.GetLabel(5048)) + IsEmpty(Control.GetLabel(5049)) + IsEmpty(Control.GetLabel(5050)) + IsEmpty(Control.GetLabel(5051))</visible>
+			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
+			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) | [String.IsEqual(skin.string(vis_bg),slideshow) | String.IsEqual(skin.string(vis_bg),slideshowmix)] + IsEmpty(Control.GetLabel(5045)) | [String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)] + IsEmpty(Control.GetLabel(5046)) + IsEmpty(Control.GetLabel(5047)) + IsEmpty(Control.GetLabel(5048)) + IsEmpty(Control.GetLabel(5049)) + IsEmpty(Control.GetLabel(5050)) + IsEmpty(Control.GetLabel(5051))</visible>
 		</control>
 		<control type="multiimage" id="5043"><!-- Extra Fanart Song -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),fanartmix)">Conditional</animation>
-			<visible>[StringCompare(skin.string(vis_bg),fanart) | StringCompare(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra)</visible>
+			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
+			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra)</visible>
 		</control>
 		<control type="multiimage" id="5044"><!-- Extra Fanart Artist -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),fanartmix)">Conditional</animation>
-			<visible>[StringCompare(skin.string(vis_bg),fanart) | StringCompare(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5043))</visible>
+			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
+			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5043))</visible>
 		</control>
 		<control type="multiimage" id="5045"><!-- Artist SlideShow -->
 			<aspectratio>keep</aspectratio>
@@ -51,50 +51,50 @@
 			<animation effect="zoom" start="0" end="100" center="auto" easing="out" tween="sine" time="700" delay="1000">Visible</animation>
 			<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">WindowClose</animation>
 			<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">Hidden</animation>
-			<animation effect="fade" start="100" end="50" time="400" condition="StringCompare(skin.string(vis_bg),slideshowmix)">Conditional</animation>
-			<visible>StringCompare(skin.string(vis_bg),slideshow) | StringCompare(skin.string(vis_bg),slideshowmix)</visible>
+			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),slideshowmix)">Conditional</animation>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshow) | String.IsEqual(skin.string(vis_bg),slideshowmix)</visible>
 		</control>
 		<control type="multiimage" id="5046"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>0</posx>
 			<posy>0</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage" id="5047"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>426.5</posx>
 			<posy>0</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage" id="5048"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>853</posx>
 			<posy>0</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage" id="5049"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>0</posx>
 			<posy>360</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage" id="5050"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>426.5</posx>
 			<posy>360</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage" id="5051"><!-- Artist SlideShow Mosaico -->
 			<include>MosaicBG</include>
 			<posx>853</posx>
 			<posy>360</posy>
-			<visible>StringCompare(skin.string(vis_bg),slideshowmosaic) | StringCompare(skin.string(vis_bg),slideshowmosaicmix)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)</visible>
 		</control>
 		<control type="multiimage"><!-- Pasta pessoal  home folder -->
 			<aspectratio>keep</aspectratio>
 			<include>WindowBG</include>
 			<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[skin.string(musicviz.bg)]</imagepath>
-			<visible>StringCompare(skin.string(vis_bg),custom)</visible>
+			<visible>String.IsEqual(skin.string(vis_bg),custom)</visible>
 		</control>
 		<control type="group"><!-- default group -->
 			<include>Animation_Fade</include>
@@ -108,7 +108,7 @@
 				<animation effect="slide" start="0,0" end="-900,0" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(furniture_cdart)">Conditional</animation>
 				<animation effect="slide" start="0,720" end="0,-300" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
 				<animation effect="slide" start="0,-300" end="0,0" time="400" tween="cubic" easing="in" delay="400">WindowClose</animation>
-				<visible>StringCompare(skin.string(vis_layout),default)</visible>
+				<visible>String.IsEqual(skin.string(vis_layout),default)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>-52</posy>

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
+	<!-- Krypton 9.1.19 -->
 
 	<includes>
 	<!--##################################################################################   VISTA SETS - ID 65   ##################################################################################-->
@@ -58,7 +60,7 @@
 	<animation effect="fade" end="85" condition="true">Conditional</animation>
 	</control>
 	<control type="group">
-	<visible>!StringCompare(ListItem.Label,..)</visible>
+	<visible>!String.IsEqual(ListItem.Label,..)</visible>
 	<control type="label">
 	<include>SetsLabel</include>
 	<posx>30</posx>

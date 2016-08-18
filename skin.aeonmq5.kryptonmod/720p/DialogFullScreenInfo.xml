@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.15 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.19 -->
 
 <window id="142">
 	<defaultcontrol>-</defaultcontrol>
@@ -291,11 +291,11 @@
 				<include>Animation_DefaultGlass</include>
 			</control>
 			<control type="image">
-				<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="StringCompare(skin.string(cdart_seconds),2000)">Conditional</animation>
-				<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="StringCompare(skin.string(cdart_seconds),4000)">Conditional</animation>
-				<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="StringCompare(skin.string(cdart_seconds),8000)">Conditional</animation>
-				<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="StringCompare(skin.string(cdart_seconds),16000)">Conditional</animation>
-				<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="StringCompare(skin.string(cdart_seconds),20000)">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="String.IsEqual(skin.string(cdart_seconds),2000)">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="4000" loop="true" reversible="false" condition="String.IsEqual(skin.string(cdart_seconds),4000)">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="8000" loop="true" reversible="false" condition="String.IsEqual(skin.string(cdart_seconds),8000)">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="16000" loop="true" reversible="false" condition="String.IsEqual(skin.string(cdart_seconds),16000)">Conditional</animation>
+				<animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="String.IsEqual(skin.string(cdart_seconds),20000)">Conditional</animation>
 				<posx>20</posx>
 				<posy>360</posy>
 				<width>180</width>

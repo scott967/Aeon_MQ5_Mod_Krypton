@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.13 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16/9.1.18 -->
+<!-- Krypton 9.1.16/9.1.18/9.1.19 -->
 
 <window id="2003">
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -12,7 +12,7 @@
 	<controls>
 		<control type="group"><!-- default group -->
 			<include>Animation_Window</include>
-			<animation effect="fade" start="100" end="0" time="300" condition="StringCompare(Window.Property(script.metadata.actors.isactive),1)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(script.metadata.actors.isactive),1)">Conditional</animation>
 			<control type="multiimage"><!-- Multi Fanart -->
 				<include>WindowBG</include>
 				<imagepath background="true">$VAR[value_videofanart]</imagepath>
@@ -534,10 +534,10 @@
 				</control>
 				<control type="image">
 					<include>FlagSeparator</include>
-					<visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
+					<visible>!IsEmpty(ListItem.Trailer) + !String.IsEqual(ListItem.PercentPlayed,0)</visible>
 				</control>
 				<control type="group"><!-- % Played -->
-					<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
+					<visible>!String.IsEqual(ListItem.PercentPlayed,0)</visible>
 					<control type="image">
 						<include>FlagImage</include>
 						<texture>flags/percentplayed.png</texture>

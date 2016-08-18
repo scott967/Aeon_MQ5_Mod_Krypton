@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
+	<!-- Krypton 9.1.19 -->
 
 	<window id="5099" type="dialog"><!-- SubMenu Smart - 99 -->
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="!StringCompare(Container(9000).numitems,0)">SetFocus(9000)</onload>
-	<onload condition="StringCompare(Container(9000).numitems,0)">SetFocus(9101)</onload>
+	<onload condition="!String.IsEqual(Container(9000).numitems,0)">SetFocus(9000)</onload>
+	<onload condition="String.IsEqual(Container(9000).numitems,0)">SetFocus(9101)</onload>
 	<onunload>Skin.Reset(submode)</onunload>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
 	<controls>

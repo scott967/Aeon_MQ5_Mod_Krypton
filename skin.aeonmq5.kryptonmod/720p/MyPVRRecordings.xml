@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.3 Lizard-king/6.1.4/6.1.5/6.1.8 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.17 -->
+<!-- Krypton 9.1.17/9.1.19 -->
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<menucontrol>9000</menucontrol>
@@ -237,10 +237,10 @@
 						</control>
 						<control type="image">
 							<include>FlagSeparator</include>
-							<visible>!IsEmpty(ListItem.Trailer) + !StringCompare(ListItem.PercentPlayed,0)</visible>
+							<visible>!IsEmpty(ListItem.Trailer) + !String.IsEqual(ListItem.PercentPlayed,0)</visible>
 						</control>
 						<control type="group"><!-- % Played -->
-							<visible>!StringCompare(ListItem.PercentPlayed,0)</visible>
+							<visible>!String.IsEqual(ListItem.PercentPlayed,0)</visible>
 							<control type="image">
 								<include>FlagImage</include>
 								<texture>flags/percentplayed.png</texture>
@@ -371,7 +371,7 @@
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | StringCompare(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(2003)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(2003)]</visible>
 				<posx>810</posx>
 				<posy>35</posy>
 				<include>AudioandSub</include>
@@ -474,7 +474,7 @@
 								<height>37</height>
 								<texture>$VAR[value_watchedstyle]</texture>
 								<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-								<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 						</itemlayout>
 						<focusedlayout height="40">
@@ -514,7 +514,7 @@
 								<height>37</height>
 								<texture>$VAR[value_watchedstyle]</texture>
 								<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-								<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 						</focusedlayout>
 					</control>

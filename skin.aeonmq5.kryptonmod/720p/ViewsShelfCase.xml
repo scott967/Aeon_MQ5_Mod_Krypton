@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Aeon MQ 5 Isengard 7.1.9 ShelfCase/7.1.10 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!--##################################################################################   VISTA SHELFCASE - ID 69   ##################################################################################-->
@@ -96,7 +97,7 @@
 								<height>40</height>
 								<texture>$VAR[value_watchedstyle]</texture>
 								<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-								<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 						</control>
 					</itemlayout>
@@ -182,7 +183,7 @@
 								<animation type="Focus" reversible="false">
 									<effect type="zoom" center="60,238" start="80" end="100" time="600" tween="cubic" easing="out" />
 								</animation>
-								<visible>!Skin.HasSetting(nooverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 						</control>
 					</focusedlayout>

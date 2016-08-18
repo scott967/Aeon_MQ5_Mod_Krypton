@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5  Helix 6.1.0/6.1.7 -->
 	<!-- Jarvis 8.1.14 -->
+	<!-- Krypton 9.1.19 -->
 
 <includes>
 	<!-- ######################################################################### Current #########################################################################-->
@@ -103,7 +104,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),current)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),current)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="group">
 				<posx>-30</posx>
@@ -211,7 +212,7 @@
 					<description>current UV Index label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[403] :</label>
-					<visible>![StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind label</description>
@@ -234,7 +235,7 @@
 					<description>visibility</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[31860] :</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise label</description>
@@ -269,7 +270,7 @@
 					<description>current UV Index Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.HeatIndex)]</label>
-					<visible>![StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind Value</description>
@@ -280,13 +281,13 @@
 					<description>current Precip Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(36Hour.1.ChancePrecipitation)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + ![StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + ![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Precip Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Precipitation)]</label>
-					<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+					<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 				</control>	
 				<control type="label">
 					<description>current Pressure Value</description>
@@ -298,7 +299,7 @@
 					<description>current Visibilty Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Visibility)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise Value</description>
@@ -332,12 +333,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -385,12 +386,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -439,12 +440,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -492,12 +493,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -545,12 +546,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -598,12 +599,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -651,12 +652,12 @@
 					<control type="image">
 						<description>weekday image</description>
 						<include>TWC.Current.DailyWeekdayBG</include>
-						<visible>!StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+						<visible>!String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="image">
 						<description>weekend image</description>
 						<include>TWC.Current.DailyWeekendBG</include>
-						<visible>StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+						<visible>String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 					</control>
 					<control type="label">
 						<description>Day label</description>
@@ -1262,7 +1263,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),10days)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),10days)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
@@ -1285,12 +1286,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1324,13 +1325,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.1.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.1.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1350,12 +1351,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1389,13 +1390,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.2.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.2.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1415,12 +1416,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1454,13 +1455,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.3.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.3.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1480,12 +1481,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1519,13 +1520,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.4.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.4.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1545,12 +1546,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1584,13 +1585,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.5.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.5.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1622,12 +1623,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1661,13 +1662,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.6.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.6.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1687,12 +1688,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1726,13 +1727,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.7.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.7.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1752,12 +1753,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1791,13 +1792,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.8.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.8.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1817,12 +1818,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1856,13 +1857,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.9.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.9.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1883,12 +1884,12 @@
 						<control type="image">
 							<description>weekday image</description>
 							<include>TWC.Daily.DailyWeekdayBG</include>
-							<visible>!StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<description>weekend image</description>
 							<include>TWC.Daily.DailyWeekendBG</include>
-							<visible>StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<description>Day label</description>
@@ -1922,13 +1923,13 @@
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.10.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.10.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -2013,11 +2014,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2037,48 +2038,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.1.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.1.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.1.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.1.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.1.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.1.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.1.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.1.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.1.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.1.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.1.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.1.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.1.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.1.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[11]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2097,11 +2098,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2121,48 +2122,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.2.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.2.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.2.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.2.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.2.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.2.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.2.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.2.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.2.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.2.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.2.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2181,11 +2182,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2205,48 +2206,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.3.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.3.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.3.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.3.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.3.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.3.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.3.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.3.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.3.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.3.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.3.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2265,11 +2266,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2289,48 +2290,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.4.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.4.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.4.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.4.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.4.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.4.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.4.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.4.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.4.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.4.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.4.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2349,11 +2350,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2373,48 +2374,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.5.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.5.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.5.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.5.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.5.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.5.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.5.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.5.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.5.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.5.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.5.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2433,11 +2434,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2457,48 +2458,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.6.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.6.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.6.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.6.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.6.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.6.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.6.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.6.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.6.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.6.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.6.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2517,11 +2518,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2541,48 +2542,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.7.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.7.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.7.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.7.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.7.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.7.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.7.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.7.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.7.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.7.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.7.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2601,11 +2602,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2625,48 +2626,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.8.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.8.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.8.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.8.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.8.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.8.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.8.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.8.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.8.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.8.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.8.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2685,11 +2686,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2709,48 +2710,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.9.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.9.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.9.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.9.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.9.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.9.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.9.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.9.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.9.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.9.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.9.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2769,11 +2770,11 @@
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListConditionWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListOutlookIcon</include>
@@ -2793,48 +2794,48 @@
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.10.HighTemperature)][/B]</label>
-							<visible>!StringCompare(Window.Property(Daily.10.HighTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.HighTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListHighTemp</include>
 							<label>[B]$INFO[Window.Property(Daily.10.HighTemperature)][/B]</label>
-							<visible>StringCompare(Window.Property(Daily.10.HighTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.HighTemperature),n/a)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListLowTempWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.10.LowTemperature)]</label>
-							<visible>!StringCompare(Window.Property(Daily.10.LowTemperature),n/a)</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListLowTemp</include>
 							<label>$INFO[Window.Property(Daily.10.LowTemperature)]</label>
-							<visible>StringCompare(Window.Property(Daily.10.LowTemperature),n/a)</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.LowTemperature),n/a)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.10.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Daily.10.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindTexture</include>
-							<visible>!StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>!String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) + !String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="image">
 							<include>TWC.Daily.ListWindWeekendTexture</include>
-							<visible>StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | StringCompare(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
+							<visible>String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[16]) | String.IsEqual(Window.Property(Daily.10.LongDay),$LOCALIZE[17])</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Daily.ListWind</include>
@@ -2977,7 +2978,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),hourly)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),hourly)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
@@ -3078,12 +3079,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.1.ChancePrecipitation)]</label>
-							<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.1.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3129,12 +3130,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.2.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.2.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3180,12 +3181,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.3.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.3.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3231,12 +3232,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.4.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.4.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3282,12 +3283,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.5.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.5.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3333,12 +3334,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.6.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.6.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3384,12 +3385,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.7.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.7.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3435,12 +3436,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.8.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.8.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3486,12 +3487,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.9.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.9.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3537,12 +3538,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.10.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.10.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3588,12 +3589,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.11.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.11.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3639,12 +3640,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.12.ChancePrecipitation)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.12.Precipitation)]</label>
-							<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3735,7 +3736,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<label>[B]$LOCALIZE[31847][/B]</label>
-			<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			<include>TWC.36Hour.PeriodLabelsCommon</include>
 		</control>
 	</include>
@@ -3768,7 +3769,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),36hour) + !SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + !SubString(Window.Property(WeatherProvider),Yahoo)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
@@ -3823,26 +3824,26 @@
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.1.ChancePrecipitation)</info>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.1.Precipitation)</info>
-						<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<include>TWC.36Hour.PeriodForecastHeadingCommon</include>
 					<control type="textbox">
 						<description>forecast label</description>
 						<include>TWC.36Hour.PeriodForecastCommon</include>
 						<info>Window.Property(36Hour.1.Forecast)</info>
-						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>daylight</description>
 						<include>TWC.36Hour.PeriodDaylightCommon</include>
 						<label>$INFO[Window.Property(36Hour.1.DaylightTitle)] $INFO[Window.Property(36Hour.1.DaylightTime)]</label>
-					<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+					<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<include>TWC.36Hour.PeriodSeparator</include>
 
@@ -3888,26 +3889,26 @@
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.2.ChancePrecipitation)</info>
-				<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.1.Precipitation)</info>
-						<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<include>TWC.36Hour.PeriodForecastHeadingCommon</include>
 					<control type="textbox">
 						<description>forecast label</description>
 						<include>TWC.36Hour.PeriodForecastCommon</include>
 						<info>Window.Property(36Hour.2.Forecast)</info>
-						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>daylight</description>
 						<include>TWC.36Hour.PeriodDaylightCommon</include>
 						<label>$INFO[Window.Property(36Hour.2.DaylightTitle)] $INFO[Window.Property(36Hour.2.DaylightTime)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<include>TWC.36Hour.PeriodSeparator</include>
 				</control>
@@ -3952,26 +3953,26 @@
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.3.ChancePrecipitation)</info>
-					<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+					<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>precip</description>
 						<include>TWC.36Hour.PeriodPrecipitationCommon</include>
 						<info>Window.Property(36Hour.1.Precipitation)</info>
-						<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<include>TWC.36Hour.PeriodForecastHeadingCommon</include>
 					<control type="textbox">
 						<description>forecast label</description>
 						<include>TWC.36Hour.PeriodForecastCommon</include>
 						<info>Window.Property(36Hour.3.Forecast)</info>
-						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) +  !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 					<control type="label">
 						<description>daylight</description>
 						<include>TWC.36Hour.PeriodDaylightCommon</include>
 						<label>$INFO[Window.Property(36Hour.3.DaylightTitle)] $INFO[Window.Property(36Hour.3.DaylightTime)]</label>
-						<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+						<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 					</control>
 				</control>
 			</control>
@@ -3980,7 +3981,7 @@
 		<control type="group">  <!-- Yahoo -->
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),36hour) + SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + SubString(Window.Property(WeatherProvider),Yahoo)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="grouplist">
 				<posx>0</posx>
@@ -4240,12 +4241,12 @@
 		<control type="label">
 			<include>TWC.Weekend.DetailsLabelsCommon</include>
 			<label>$LOCALIZE[403]:</label>
-			<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 		</control>
 		<control type="label">
 			<include>TWC.Weekend.DetailsLabelsCommon</include>
 			<label>$LOCALIZE[387]:</label>
-			<visible>StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 		</control>
 		<control type="label">
 			<include>TWC.Weekend.DetailsLabelsCommon</include>
@@ -4258,12 +4259,12 @@
 		<control type="label">
 			<include>TWC.Weekend.DetailsLabelsCommon</include>
 			<label>$LOCALIZE[33027]:</label>
-			<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 		</control>
 		<control type="label">
 			<include>TWC.Weekend.DetailsLabelsCommon</include>
 			<label>$LOCALIZE[33028]:</label>
-			<visible>!StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 		</control>
 	</include>
 	<include name="TWC.Weekend.ObservedLabels">
@@ -4310,7 +4311,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),weekend) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),weekend) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
@@ -4492,7 +4493,7 @@
 							<description>forecast</description>
 							<include>TWC.Weekend.ForecastCommon</include>
 							<info>Window.Property(Weekend.1.Forecast)</info>
-							<visible>!IsEmpty(Window.Property(Weekend.IsFetched)) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!IsEmpty(Window.Property(Weekend.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 					</control>
 					<!-- forecast w/ details-->
@@ -4509,7 +4510,7 @@
 							<height>236</height>
 							<include>TWC.Weekend.ForecastCommon</include>
 							<info>Window.Property(Weekend.1.Forecast)</info>
-							<visible>!IsEmpty(Window.Property(Weekend.IsFetched)) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!IsEmpty(Window.Property(Weekend.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 						</control>
 						<control type="label">
 							<description>precip</description>
@@ -4923,7 +4924,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),weekend) + StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),weekend) + String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
@@ -5346,7 +5347,7 @@
 		<include>InvisibleButton</include>
 		<onfocus>SetFocus(98)</onfocus>
 		<onfocus>Skin.SetString(TWC.DefaultMap,$INFO[Window.Property(Weather.CurrentMap)])</onfocus>
-		<visible>!StringCompare(Window.Property(Weather.CurrentMap),Skin.String(TWC.DefaultMap))</visible>
+		<visible>!String.IsEqual(Window.Property(Weather.CurrentMap),Skin.String(TWC.DefaultMap))</visible>
 	</control>
 	<include name="TWC.Maps.ListCommon">
 		<posx>-80</posx>
@@ -5394,7 +5395,7 @@
 			<posx>290</posx>
 			<posy>60</posy>
 			<onright>5200</onright>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),maps) + !StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),maps) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<!-- Category buttons and other controls -->
 			<control type="group" id="5200">
@@ -5418,7 +5419,7 @@
 					<ondown>5100</ondown>
 					<visible>!IsEmpty(Window.Property(MapList.1.ShortTitle))</visible>
 					<onfocus>SetProperty(CurrentMapList,1)</onfocus>
-					<selected>StringCompare(Window.Property(CurrentMapList),1)</selected>
+					<selected>String.IsEqual(Window.Property(CurrentMapList),1)</selected>
 				</control>
 				<control type="radiobutton" id="5202">
 					<description>Map List Button</description>
@@ -5431,7 +5432,7 @@
 					<ondown>5100</ondown>
 					<visible>!IsEmpty(Window.Property(MapList.2.ShortTitle))</visible>
 					<onfocus>SetProperty(CurrentMapList,2)</onfocus>
-					<selected>StringCompare(Window.Property(CurrentMapList),2)</selected>
+					<selected>String.IsEqual(Window.Property(CurrentMapList),2)</selected>
 				</control>
 				<control type="radiobutton" id="5203">
 					<description>Map List Button</description>
@@ -5444,7 +5445,7 @@
 					<ondown>5100</ondown>
 					<visible>!IsEmpty(Window.Property(MapList.3.ShortTitle))</visible>
 					<onfocus>SetProperty(CurrentMapList,3)</onfocus>
-					<selected>StringCompare(Window.Property(CurrentMapList),3)</selected>
+					<selected>String.IsEqual(Window.Property(CurrentMapList),3)</selected>
 				</control>
 				<control type="multiimage">
 					<description>maps multiimage</description>
@@ -5485,7 +5486,7 @@
 				<visible>Control.HasFocus(5201) | Control.HasFocus(5202) | Control.HasFocus(5203) | ControlGroup(5100).HasFocus</visible>
 				<!-- Maps List #1 -->
 				<control type="group">
-					<visible>StringCompare(Window.Property(CurrentMapList),1)</visible>
+					<visible>String.IsEqual(Window.Property(CurrentMapList),1)</visible>
 					<control type="label">
 						<include>TWC.Maps.ListTitleCommon</include>
 						<label>$INFO[Container(501).ListItem.Label]</label>
@@ -5507,7 +5508,7 @@
 				</control>
 				<!-- Maps List #2 -->
 				<control type="group">
-					<visible>StringCompare(Window.Property(CurrentMapList),2)</visible>
+					<visible>String.IsEqual(Window.Property(CurrentMapList),2)</visible>
 					<control type="label">
 						<include>TWC.Maps.ListTitleCommon</include>
 						<label>$INFO[Container(502).ListItem.Label]</label>
@@ -5529,7 +5530,7 @@
 				</control>
 				<!-- Maps List #3 -->
 				<control type="group">
-					<visible>StringCompare(Window.Property(CurrentMapList),3)</visible>
+					<visible>String.IsEqual(Window.Property(CurrentMapList),3)</visible>
 					<control type="label">
 						<include>TWC.Maps.ListTitleCommon</include>
 						<label>$INFO[Container(503).ListItem.Label]</label>
@@ -5556,7 +5557,7 @@
 			<posx>290</posx>
 			<posy>60</posy>
 			<!-- <onright>5200</onright>  -->
-			<visible>StringCompare(Window.Property(Weather.CurrentView),maps) + StringCompare(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),maps) + String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 						<control type="label">
 				<description>header label</description>
@@ -5621,7 +5622,7 @@
 				<scrolltime>200</scrolltime>
 				<orientation>horizontal</orientation>
 				<!-- <include>VisibleFadeEffect</include>  -->
-				<!-- <visible>StringCompare(Window.Property(Weather.CurrentView),map) + !IsEmpty(Window.Property(Map.IsFetched))</visible> -->
+				<!-- <visible>String.IsEqual(Window.Property(Weather.CurrentView),map) + !IsEmpty(Window.Property(Map.IsFetched))</visible> -->
 				<itemlayout height="470" width="590">
 					<control type="image">
 						<description>area image</description>
@@ -6571,7 +6572,7 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),video)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),video)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="image">
 				<description>Border</description>
@@ -6604,7 +6605,7 @@
 			<posx>290</posx>
 			<posy>60</posy>
 			<onright>8001</onright>
-			<visible>StringCompare(Window.Property(Weather.CurrentView),alerts)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),alerts)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="textbox" id="800">
 				<description>alert text</description>
