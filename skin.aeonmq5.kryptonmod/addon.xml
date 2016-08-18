@@ -58,7 +58,8 @@
 		<description lang="th">จากแบบตั้งเดิมของ Aeon MQ ได้มาถึงรุ่นที่ห้า.[CR]ได้ถูกยกเครื่องใหม่, ง่ายต่อการใช้งาน, ด้วยคำสั่งใหม่ ที่นำมาซึ่ง สกินที่เบาและและมีประสิทธิภาพ.[CR]Aeon MQ 5 ประกอบด้วยคุณสมบัติใหม่ ๆ เช่น การแทนที่ ซึ่งนำระดับการปรับแต่งเมนูหลัก ไปสู่บางสิ่งที่ไม่เคยพบมาก่อน.[CR]Aeon MQ 5, คุณคงไม่เคยเห็นสกินที่ดีเช่นนี้.</description>
 		<platform>all</platform>	
 		<news>[B][COLOR=FFFF8C00]BUILD 9.1.19 - RELEASE DATE 07/30/2016[/COLOR][/B]
-Fixed:  Top Menu and Main menu for Video Add-ons now works 
+Fixed:  Top Menu and Main menu for Video Add-ons now works
+Fixed:  Obsolete System.GetBool(PVRManager.enabled) removed
 
 		</news>
 	</extension>

@@ -454,7 +454,7 @@
 					<include>TopMenuButton</include>
 					<label>31024</label>
 					<onclick>ActivateWindow(videos,addons,return)</onclick>
-					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)] + [Window.IsActive(Videos) | Window.IsActive(videofiles) | Window.IsActive(videoplaylist)]</visible>
+					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)] + [Window.IsActive(Videos) | Window.IsActive(videoplaylist)]</visible>
 				</control>
 				<control type="button" id="9113"><!-- Programs addons -->
 					<include>TopMenuButton</include>

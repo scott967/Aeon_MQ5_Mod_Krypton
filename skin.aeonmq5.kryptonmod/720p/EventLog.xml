@@ -74,7 +74,7 @@
 							<height>78</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$INFO[ListItem.Icon]</texture>
-							<!-- <animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) + ![Container.Content(movies) + !Container.Content(musicvideos)]">Conditional</animation> -->
+							<!-- <animation effect="slide" start="60,0" end="60,0" time="0" condition="Window.IsActive(musicplaylist) | Window.IsActive(music) | Window.IsActive(videos) + ![Container.Content(movies) + !Container.Content(musicvideos)]">Conditional</animation> -->
 						</control>
 						<control type="label">
 							<left>90</left>
