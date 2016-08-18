@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8/1/14 -->
-<!-- Krypton 9.1.17 -->
+<!-- Krypton 9.1.17/9.1.19 -->
 
 <window id="4">
 	<defaultcontrol always="true">9000</defaultcontrol>
@@ -188,12 +188,12 @@
 				<onleft condition="Window.Previous(25)">ActivateWindow(25)</onleft>
 				<onright condition="Container(9000).HasFocus(100)">ActivateWindow(AddonBrowser)</onright>
 				<onright condition="Container(9000).HasFocus(101)">ActivateWindow(SystemSettings)</onright>
-				<onright condition="Container(9000).HasFocus(102)">ActivateWindow(NetworkSettings)</onright>
+				<!-- <onright condition="Container(9000).HasFocus(102)">ActivateWindow(NetworkSettings)</onright> -->
 				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(34)</onright>  <!-- profiles -->
 				<onright condition="Container(9000).HasFocus(104)">21</onright>
 				<onright condition="Container(9000).HasFocus(105)">ActivateWindow(InterfaceSettings)</onright>
 				<onright condition="Container(9000).HasFocus(106)">ActivateWindow(PlayerSettings)</onright>
-				<onright condition="Container(9000).HasFocus(107)">ActivateWindow(LibrarySettings)</onright>
+				<onright condition="Container(9000).HasFocus(107)">ActivateWindow(MediaSettings)</onright>
 				<onright condition="Container(9000).HasFocus(108) + Skin.HasSetting(pvrmode)">ActivateWindow(PVRSettings)</onright>
 				<onright condition="Container(9000).HasFocus(109)">ActivateWindow(ServiceSettings)</onright>
 				<onright condition="Container(9000).HasFocus(110)">ActivateWindow(WeatherSettings)</onright>
@@ -282,19 +282,19 @@
 					</item>
 					<item id="106"><!-- Videos / Player -->
 						<label>14201</label>
-						<label2>31354</label2>
+						<label2>$LOCALIZE[31002] AND $LOCALIZE[31001]</label2>
 						<property name="MainLabel">31378</property>
 						<property name="SubLabel">31379</property>
 						<icon>special://skin/backgrounds/extras/settings_movies.jpg</icon>
 						<onclick>ActivateWindow(PlayerSettings)</onclick>
 					</item>
-					<item id="107"><!-- Music / Library -->
-						<label>14203</label>
-						<label2>31356</label2>
+					<item id="107"><!-- Media  -->
+						<label>14212</label>
+						<label2>$LOCALIZE[31002] AND $LOCALIZE[31001]</label2>
 						<property name="MainLabel">31380</property>
 						<property name="SubLabel">31381</property>
 						<icon>special://skin/backgrounds/extras/settings_music.jpg</icon>
-						<onclick>ActivateWindow(LibrarySettings)</onclick>
+						<onclick>ActivateWindow(MediaSettings)</onclick>
 					</item>
 					<item id="108"><!-- Live TV  / PVR-->
 						<label>31357</label>
