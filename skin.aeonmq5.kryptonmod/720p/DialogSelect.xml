@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16 -->
+<!-- Krypton 9.1.16/9.1.19 -->
 
 <window type="dialog" id="2000">
 	<defaultcontrol>3</defaultcontrol>
@@ -236,7 +236,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<include>subcolor</include>
-							<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[24051][/COLOR] $INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[21863]:[/COLOR] $INFO[ListItem.AddonCreator] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[20037]:[/COLOR] $INFO[ListItem.AddonSummary]</label>
+							<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[24051][/COLOR] $INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[21863]:[/COLOR] $INFO[ListItem.AddonCreator] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[20037]:[/COLOR] $INFO[ListItem.Label2]</label>
 							<visible>!IsEmpty(ListItem.AddonCreator) + IsEmpty(ListItem.Property(extension))</visible>
 						</control>
 						<control type="label">
@@ -292,7 +292,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
-							<label>[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051][/COLOR] $INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21863]:[/COLOR] $INFO[ListItem.AddonCreator] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20037]:[/COLOR] $INFO[ListItem.AddonSummary]</label>
+							<label>[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051][/COLOR] $INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21863]:[/COLOR] $INFO[ListItem.AddonCreator] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20037]:[/COLOR] $INFO[ListItem.Label2]</label>
 							<visible>!IsEmpty(ListItem.AddonCreator) + IsEmpty(ListItem.Property(extension))</visible>
 						</control>
 						<control type="label">
