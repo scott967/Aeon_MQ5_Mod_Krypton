@@ -54,6 +54,29 @@
 			</control>
 		</control>
 
+		<control type="group">
+			<posx>0</posx>
+			<posy>693</posy>
+			<width>499</width>
+			<height>28</height>
+			<!-- <visible>Player.IsTempo </visible> -->
+			<!-- <animation type="Visible">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" delay="2000" time="200"/>
+				</animation> -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>499</width>
+				<height>28</height>
+				<texture flipy="true">osd_button_reverse.png</texture>
+			</control>
+			<control type="label">
+				<include>Objects_OSDSeekForward</include>
+				<label>$VAR[value_seekforward]</label>
+			</control>
+		</control>
+
 		<!-- Buffering Dialog -->
 		<control type="label" id="24">
 			<description>buffering label</description>

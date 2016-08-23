@@ -3601,6 +3601,10 @@
 		<value condition="Container(100).HasFocus(26) + Skin.HasSetting(videoosdfixedlist)">$LOCALIZE[31235]</value>
 		<value condition="Container(100).HasFocus(27)">$LOCALIZE[22006]</value>
 		<value condition="Container(100).HasFocus(28)">$LOCALIZE[31251]</value>
+		<value condition="Container(100).HasFocus(31) + Player.TempoEnabled + !Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] +</value>  <!-- player tempoup -->
+		<value condition="Container(100).HasFocus(31) + Player.TempoEnabled + Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] +$INFO[Player.Playspeed, (,)]</value>
+		<value condition="Container(100).HasFocus(32) + Player.TempoEnabled + !Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] -</value>  <!-- player tempodown -->
+		<value condition="Container(100).HasFocus(32) + Player.TempoEnabled + Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] -$INFO[Player.Playspeed, (,)]</value>
 	</variable>
 
 	<variable name="value_osdmusic_title">
@@ -3663,6 +3667,7 @@
 		<value condition="Player.Forwarding8x">$LOCALIZE[31302] 8X</value>
 		<value condition="Player.Forwarding16x">$LOCALIZE[31302] 16X</value>
 		<value condition="Player.Forwarding32x">$LOCALIZE[31302] 32X</value>
+		<value condition="Player.IsTempo">$LOCALIZE[31302] $INFO[Player.Playspeed]</value>
 	</variable>
 
 	<variable name="value_seekreverse">

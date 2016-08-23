@@ -4,14 +4,14 @@
 
 <window>
 	<defaultcontrol>23</defaultcontrol>
-	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(123) | Window.IsActive(124) | Window.IsActive(SubtitleSearch)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(123) | Window.IsActive(124) | Window.IsActive(SubtitleSearch)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo]</visible>
 	<controls>
 		<control type="group">
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
-			<visible>![SubString(skin.string(videofurniture),hide) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels)]</visible>
+			<visible>![SubString(skin.string(videofurniture),hide) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Player.IsTempo]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -70,7 +70,7 @@
 		<control type="group">
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic">WindowClose</animation>
-			<visible>!SubString(skin.string(videofurniture),hide)</visible>
+			<visible>![SubString(skin.string(videofurniture),hide) | Player.IsTempo]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>550</posy>
@@ -354,7 +354,7 @@
 			</control>
 		</control>
 
-		<!-- Seek Widget -->
+		<!-- Seek Widget + support for player tempo-->
 		<control type="group">
 			<animation type="WindowOpen" condition="true">
 				<effect type="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic"/>
@@ -372,6 +372,10 @@
 				<animation effect="slide" end="350,0" time="200" condition="Player.Forwarding8x">Conditional</animation>
 				<animation effect="slide" end="425,0" time="200" condition="Player.Forwarding16x">Conditional</animation>
 				<animation effect="slide" end="499,0" time="200" condition="Player.Forwarding32x">Conditional</animation>
+				<animation type="Conditional" condition="Player.IsTempo">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" delay="2000" time="200"/>
+				</animation>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>

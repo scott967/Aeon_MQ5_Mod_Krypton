@@ -2970,6 +2970,24 @@
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_epg),disable)">Skin.Reset(osd_video_epg,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_epg),disable) | Skin.HasSetting(customosd)] + VideoPlayer.Content(LiveTV)</visible>
 			</item>
+			<item id="31"><!-- player tempoup -->
+				<label>-</label>
+				<property name="condition">$INFO[skin.string(osd_menu_tempoup),disable)]</property>
+				<icon>osd_menu_tempoup.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(tempoup)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_menu_tempoup),disable)">Skin.SetString(osd_menu_tempoup,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_menu_tempoup),disable)">Skin.Reset(osd_menu_tempoup,disable)</onclick>
+				<visible>[!SubString(skin.string(osd_menu_tempoup),disable) | Skin.HasSetting(customosd)] + Player.TempoEnabled</visible>
+			</item>
+			<item id="32"><!-- player tempodown -->
+				<label>-</label>
+				<property name="condition">$INFO[skin.string(osd_menu_tempodown),disable)]</property>
+				<icon>osd_menu_tempodown.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(tempodown)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_menu_tempodown),disable)">Skin.SetString(osd_menu_tempodown,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_menu_tempodown),disable)">Skin.Reset(osd_menu_tempodown,disable)</onclick>
+				<visible>[!SubString(skin.string(osd_menu_tempodown),disable) | Skin.HasSetting(customosd)] + Player.TempoEnabled</visible>
+			</item>
 		</content>
 	</include>
 
