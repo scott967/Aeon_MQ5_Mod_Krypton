@@ -25,12 +25,12 @@
 			<control type="label">
 				<include>SettingsContentTitle</include>
 				<label>14201</label>
-				<visible>Window.IsActive(playersettings)</visible> <!-- videosettings -->
+				<visible>Window.IsActive(playersettings)</visible> <!-- video and music settings -->
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
-				<label>14203</label>
-				<visible>Window.IsActive(librarysettings)</visible> <!-- musicsettings -->
+				<label>14212</label>
+				<visible>Window.IsActive(mediasettings)</visible> <!-- music and video library settings -->
 			</control>
 			<control type="label">
 				<include>SettingsContentTitle</include>
