@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5" version="9.1.19" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
+<addon id="skin.aeonmq5" version="9.2.0" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="script.aeonmq5.extrapack" version="1.0.1"/>
@@ -61,13 +61,12 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.1.19 - RELEASE DATE 08/30/2016[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.0 - RELEASE DATE 08/30/2016 for Kodi KRYPTON BETA1[/COLOR][/B]
 Fixed:  Top Menu and Main menu for Video Add-ons now works
 Fixed:  Obsolete System.GetBool(PVRManager.enabled) removed
 New:  Various Krypton compliance changes
 New:  DialogPlayerProgressInfo (key O in video/live tv)
 New:  Support for video speedup
-
 		</news>
 	</extension>
 
