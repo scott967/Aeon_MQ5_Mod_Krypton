@@ -109,6 +109,11 @@
 				<width>150</width>
 				<!-- <textoffset>20</textoffset> -->
 			</control>
+			<control type="label" id="8">
+				<width>150</width>
+				<height>30</height>
+				<textcolor>$VAR[value_headercolor]</textcolor>
+			</control>
 			<control type="gamecontroller" id="31">
 				<posx>155</posx>
 				<posy>120</posy>
