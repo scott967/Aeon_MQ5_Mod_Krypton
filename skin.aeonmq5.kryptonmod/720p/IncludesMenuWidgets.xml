@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.5/6.1.7/6.1.8  Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.18/9.1.19 -->
+<!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 -->
 
 <includes>
 	<!-- ######################################################################### Widgets dos Recentes ######################################################################### -->
@@ -37995,9 +37995,9 @@
 	</include>
 	<include name="Widget_WeatherIcon7Day">
 		<posy>100</posy>
-		<!-- <height>80</height> -->
+		<height>80</height>
 		<width>130</width>
-		<height>287</height>
+		<!-- <height>287</height> -->
 		<aspectratio>keep</aspectratio>
 	</include>
 	<include name="Widget_WeatherTitleWeekend">
