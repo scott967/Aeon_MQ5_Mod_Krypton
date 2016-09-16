@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ5 Krypton 9.1.16 -->
+<!-- Aeon MQ5 Krypton 9.1.16/9.2.1 -->
 <window>
 	<include>Animation_DialogPopup</include>
 	<defaultcontrol>3</defaultcontrol>
@@ -149,7 +149,7 @@
 				<width>320</width>
 				<height>40</height>
 				<aligny>center</aligny>
-				<textoffset>20</textoffset>
+				<!-- <textoffset>20</textoffset> -->
 				<textcolor>$VAR[value_headercolor]</textcolor>
 			</control>
 			<control type="image">

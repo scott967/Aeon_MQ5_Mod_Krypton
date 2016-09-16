@@ -72,10 +72,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>10000</onup>
 			<ondown>8001</ondown>
 			<onleft>8000</onleft>
@@ -153,10 +153,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8000</onup>
 			<ondown>8002</ondown>
 			<onleft>8001</onleft>
@@ -233,10 +233,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8001</onup>
 			<ondown>8003</ondown>
 			<onleft>8002</onleft>
@@ -313,10 +313,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8002</onup>
 			<ondown>8004</ondown>
 			<onleft>8003</onleft>
@@ -393,10 +393,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8003</onup>
 			<ondown>8005</ondown>
 			<onleft>8004</onleft>
@@ -473,10 +473,10 @@
 			<disabledcolor>FF505050</disabledcolor>
 			<textoffsetx>50</textoffsetx>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8004</onup>
 			<ondown>8006</ondown>
 			<onleft>8005</onleft>
@@ -548,10 +548,10 @@
 			<textureslidernibfocus>slidernubf.png</textureslidernibfocus>
 			<font>Font_20</font>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8005</onup>
 			<ondown>8007</ondown>
 			<onleft>8006</onleft>
@@ -623,10 +623,10 @@
 			<textureslidernibfocus>slidernubf.png</textureslidernibfocus>
 			<font>Font_20</font>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8006</onup>
 			<ondown>8008</ondown>
 			<onleft>8007</onleft>
@@ -698,10 +698,10 @@
 			<textureslidernibfocus>slidernubf.png</textureslidernibfocus>
 			<font>Font_20</font>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8007</onup>
 			<ondown>8009</ondown>
 			<onleft>8008</onleft>
@@ -773,10 +773,10 @@
 			<textureslidernibfocus>slidernubf.png</textureslidernibfocus>
 			<font>Font_20</font>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8008</onup>
 			<ondown>8010</ondown>
 			<onleft>8009</onleft>
@@ -848,10 +848,10 @@
 			<textureslidernibfocus>slidernubf.png</textureslidernibfocus>
 			<font>Font_20</font>
 			<info></info>
-			<action></action>
+			<!-- <action></action> -->
 			<controloffsetx></controloffsetx>
 			<controloffsety></controloffsety>
-			<pulseonselect></pulseonselect>
+			<pulseonselect>false</pulseonselect>
 			<onup>8009</onup>
 			<ondown>10000</ondown>
 			<onleft>8010</onleft>

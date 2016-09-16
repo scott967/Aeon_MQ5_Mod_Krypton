@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ5 Krypton 9.1.16 -->
+<!-- Aeon MQ5 Krypton 9.1.16/9.2.1 -->
 <window>
 	<include>Animation_DialogPopup</include>
 	<controls>
@@ -89,33 +89,33 @@
 			</control>
 			<control type="button" id="7">
 				<width>680</width>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="radiobutton" id="8">
 				<width>580</width>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 				<textwidth>540</textwidth>
 				<radioposx>580</radioposx>
 			</control>
 			<control type="spincontrolex" id="9">
 				<width>580</width>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 				<spinposx>40</spinposx>
 			</control>
 			<control type="edit" id="12">
 				<width>680</width>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 				<texturefocus>settings_button_focus.png</texturefocus>
 			</control>
 			<control type="sliderex" id="13">
 				<width>680</width>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="label" id="14">
 				<width>480</width>
 				<height>40</height>
 				<aligny>center</aligny>
-				<textoffset>20</textoffset>
+				<textoffsetx>20</textoffsetx>
 				<textcolor>$VAR[value_headercolor]</textcolor>
 			</control>
 			<control type="image">

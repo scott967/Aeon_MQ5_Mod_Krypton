@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Jarvis 8.1.13 -->
+<!-- Krypton 9.2.1 -->
 
 <window>
 	<defaultcontrol always="true">570</defaultcontrol>
@@ -251,11 +252,11 @@
 						<!-- <texturenofocus>topmenu_button_nofocus.png</texturenofocus> -->
 						<texturefocus>topmenu_button_focus.png</texturefocus>
 						<!-- <alttexturenofocus>topmenu_button_nofocus.png</alttexturenofocus> -->
-						<alttexturefocus>topmenu_button_focus.png</alttexturefocus>
+						<!-- <alttexturefocus>topmenu_button_focus.png</alttexturefocus> -->
 						<pulseonselect>false</pulseonselect>
 						<radioheight>30</radioheight>
-						<textureradiofocus>radiobutton_on.png</textureradiofocus>
-						<textureradionofocus>radiobutton.png</textureradionofocus>
+						<textureradioonfocus>radiobutton_on.png</textureradioonfocus>
+						<textureradioonnofocus>radiobutton.png</textureradioonnofocus>
 						<include>Animation_Fade</include>
 						<colordiffuse>FFFFFAF0</colordiffuse>
 						<left>10</left>
