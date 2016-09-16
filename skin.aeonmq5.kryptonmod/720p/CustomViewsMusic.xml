@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Isengard 7.1.11 Mid List -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.2.1 window IDs -->
 
 <window id="1103" type="dialog"> <!-- was 626 -->
 	<defaultcontrol always="true">9030</defaultcontrol>
-	<onunload condition="Window.IsActive(500)">AlarmClock(refreshview,ActivateWindowAndFocus(500, 9940,0),0:01,true)</onunload>
-	<onunload condition="Window.IsActive(502)">AlarmClock(refreshview,ActivateWindowAndFocus(502, 9940,0),0:01,true)</onunload>
+	<onunload condition="Window.IsActive(musicplaylist)">AlarmClock(refreshview,ActivateWindowAndFocus(musicplaylist, 9940,0),0:01,true)</onunload>
+	<onunload condition="Window.IsActive(music)">AlarmClock(refreshview,ActivateWindowAndFocus(music, 9940,0),0:01,true)</onunload>
 	<controls>
 		<control type="group">
 			<include>Animation_DialogPopup</include>

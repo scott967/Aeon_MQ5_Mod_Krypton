@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.6 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.18/9.1.19 -->
+<!-- Krypton 9.1.18/9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!--##################################################################################   VISTA ShowCase - ID 66   ##################################################################################-->
@@ -185,108 +185,108 @@
 		<preloaditems>2</preloaditems>
 		<scrolltime>450</scrolltime>
 		<visible>![Container.Content(episodes) | Container.Content(years)]</visible>
-		<itemlayout height="380" width="196" condition="Window.IsActive(25) + !Container.Content(episodes) | Window.IsActive(1)">
+		<itemlayout height="380" width="196" condition="Window.IsActive(videos) + !Container.Content(episodes) | Window.IsActive(programs)">
 			<control type="group">
-				<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+				<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 				<control type="image"><!-- Poster reflexo -->
 					<include>ShowCasePosterReflect</include>
 					<texture flipy="true" diffuse="thumb_poster_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Poster -->
 					<include>ShowCasePoster</include>
 					<texture diffuse="thumb_poster_diffuse.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image">
 					<include>WatchedShowCase</include>
-					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 			</control>
 			<control type="group">
-				<visible>![Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+				<visible>![Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 				<control type="image"><!-- Poster reflexo -->	
 					<include>ShowCaseThumbReflectFlat</include>
 					<texture flipy="true" diffuse="thumb_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Poster + Estojo Reflexo -->
 					<include>ShowCaseThumbCaseReflectFlat</include>
 					<texture flipy="true" diffuse="thumb_box_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_videocase0]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Poster + Estojo -->
 					<include>ShowCaseCaseFlat</include>
 					<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image">
 					<include>WatchedShowCaseCase</include>
-					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Estojo -->
 					<include>ShowCaseThumbCaseFlat</include>
 					<texture>$VAR[value_videocase0]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 				<control type="image"><!-- Codec -->
 					<include>ShowCaseCodecFlat</include>
 					<texture>$VAR[value_videocodec0]</texture>
-					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+					<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 				</control>
 			</control>
 		</itemlayout>
-		<focusedlayout height="380" width="196" condition="Window.IsActive(25) + !Container.Content(episodes) | Window.IsActive(1)">
+		<focusedlayout height="380" width="196" condition="Window.IsActive(videos) + !Container.Content(episodes) | Window.IsActive(programs)">
 			<control type="group">
 				<animation effect="zoom" start="100" end="110" center="135,205" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-				<animation effect="zoom" start="110" end="100" center="135,205" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(1)] | !Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]">Unfocus</animation>
+				<animation effect="zoom" start="110" end="100" center="135,205" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(66) + [Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(programs)] | !Window.IsActive(Videos) + Skin.HasSetting(flattenshowcasemusic)]">Unfocus</animation>
 				<control type="group">
-					<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+					<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 					<control type="image"><!-- Poster reflexo -->
 						<include>ShowCasePosterReflect</include>
 						<texture flipy="true" diffuse="thumb_poster_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Poster -->
 						<include>ShowCasePoster</include>
 						<texture diffuse="thumb_poster_diffuse.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image">
 						<include>WatchedShowCase</include>
-						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 				</control>
 				<control type="group">
-					<visible>![Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+					<visible>![Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 					<control type="image"><!-- Poster reflexo -->	
 						<include>ShowCaseThumbReflectFlat</include>
 						<texture flipy="true" diffuse="thumb_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Poster + Estojo Reflexo -->
 						<include>ShowCaseThumbCaseReflectFlat</include>
 						<texture flipy="true" diffuse="thumb_box_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_videocase0]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Poster + Estojo -->
 						<include>ShowCaseCaseFlat</include>
 						<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image">
 						<include>WatchedShowCaseCase</include>
-						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + [Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Estojo -->
 						<include>ShowCaseThumbCaseFlat</include>
 						<texture>$VAR[value_videocase0]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 					<control type="image"><!-- Codec -->
 						<include>ShowCaseCodecFlat</include>
 						<texture>$VAR[value_videocodec0]</texture>
-						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(25) | Window.IsActive(1)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(500) | Window.IsActive(502)]] + !Control.IsVisible(6000)</visible>
+						<visible>[Skin.HasSetting(flattenshowcase) + [Window.IsActive(videos) | Window.IsActive(programs)] | Skin.HasSetting(flattenshowcasemusic) + [Window.IsActive(musicplaylist) | Window.IsActive(music)]] + !Control.IsVisible(6000)</visible>
 					</control>
 				</control>
 			</control>
@@ -316,7 +316,7 @@
 				<height>50</height>
 				<texture>$VAR[value_watchedstyle]</texture>
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-				<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
+				<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout height="350" width="250" condition="[Container.Content(episodes) + Skin.HasSetting(flattenshowcase)]">
@@ -347,7 +347,7 @@
 					<height>50</height>
 					<texture>$VAR[value_watchedstyle]</texture>
 					<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(1)] + !Skin.HasSetting(nooverlays)</visible>
+					<visible>String.IsEqual(ListItem(0).Overlay,OverlayWatched.png) + Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(episodes) | Window.IsActive(programs)] + !Skin.HasSetting(nooverlays)</visible>
 				</control>
 			</control>
 		</focusedlayout>
@@ -358,7 +358,7 @@
 			<control type="group" id="6001">
 				<posy>360</posy>
 				<camera x="640" y="540"/>
-				<visible>Container.OnNext + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
+				<visible>Container.OnNext + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]</visible>
 				<animation effect="slide" end="-90,0" time="210" reversible="false">Hidden</animation>
 				<control type="group"><!-- -7 -->
 					<posx>10</posx>
@@ -404,7 +404,7 @@
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(9).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="fade" start="0" end="0" delay="0" time="0" reversible="false">Visible</animation>
 					<control type="group">
-						<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+						<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 						<control type="image"><!-- Poster/Icon mode -->
 							<include>ShowCasePoster</include>
 							<texture fallback="DefaultVideoPoster.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_poster9]</texture>
@@ -415,7 +415,7 @@
 						</control>
 					</control>
 					<control type="group">
-						<visible>!Skin.HasSetting(noshowcasevideocase) + ![Container.Content(genres) | Window.IsActive(1)]</visible>
+						<visible>!Skin.HasSetting(noshowcasevideocase) + ![Container.Content(genres) | Window.IsActive(programs)]</visible>
 						<control type="image"><!-- Poster/Icon mode -->
 							<include>ShowCaseCase</include>
 							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster9]</texture>
@@ -441,7 +441,7 @@
 						</control>
 					</control>
 					<control type="group">
-						<visible>!Skin.HasSetting(noshowcasevideocase) + ![Container.Content(genres) | Window.IsActive(1)]</visible>
+						<visible>!Skin.HasSetting(noshowcasevideocase) + ![Container.Content(genres) | Window.IsActive(programs)]</visible>
 						<control type="image"><!-- Poster/Icon mode -->
 							<include>ShowCaseCase</include>
 							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster8]</texture>
@@ -458,13 +458,13 @@
 					<animation effect="fade" start="0" end="0" delay="0" time="0" reversible="false">Visible</animation>
 					<control type="group">
 						<control type="image"><!-- Icon mode -->
-							<include condition="[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]">ShowCasePoster</include>
-							<include condition="!Skin.HasSetting(noshowcasevideocase) + Window.IsActive(1)">ShowCaseCase</include>
+							<include condition="[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]">ShowCasePoster</include>
+							<include condition="!Skin.HasSetting(noshowcasevideocase) + Window.IsActive(programs)">ShowCaseCase</include>
 							<texture fallback="DefaultVideoPoster.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_poster7]</texture>
 						</control>
 						<control type="image"><!-- Icon reflect mode -->
-							<include condition="[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]">ShowCasePosterReflect</include>
-							<include condition="!Skin.HasSetting(noshowcasevideocase) + Window.IsActive(1)">ShowCaseThumbCaseReflect</include>
+							<include condition="[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]">ShowCasePosterReflect</include>
+							<include condition="!Skin.HasSetting(noshowcasevideocase) + Window.IsActive(programs)">ShowCaseThumbCaseReflect</include>
 							<texture flipy="true" diffuse="thumb_reflect.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster7]</texture>
 						</control>
 					</control>
@@ -530,7 +530,7 @@
 			<control type="group" id="6002">
 				<posy>360</posy>
 				<camera x="640" y="540"/>
-				<visible>Container.OnPrevious + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
+				<visible>Container.OnPrevious + !String.IsEqual(container(66).numitems,1) + ![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]</visible>
 				<animation effect="slide" end="90,0" time="210" reversible="false">Hidden</animation>
 				<control type="group"><!-- 7 -->
 					<posx>1000</posx>
@@ -575,7 +575,7 @@
 					<visible>!Container.OnPrevious</visible>
 					<animation effect="fade" start="0" end="0" delay="0" time="0" reversible="false">Visible</animation>
 					<control type="group">
-						<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1)]</visible>
+						<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs)]</visible>
 						<control type="image"><!-- Icon mode -->
 							<include>ShowCasePoster</include>
 							<texture background="true">$VAR[value_poster-8]</texture>
@@ -586,7 +586,7 @@
 						</control>
 					</control>
 					<control type="group">
-						<visible>!Skin.HasSetting(noshowcasevideocase) + !Window.IsActive(1)</visible>
+						<visible>!Skin.HasSetting(noshowcasevideocase) + !Window.IsActive(programs)</visible>
 						<control type="image"><!-- Icon mode -->
 							<include>ShowCaseCase</include>
 							<texture background="true">$VAR[value_poster-8]</texture>
@@ -657,7 +657,7 @@
 			</control>
 			<control type="button" id="960">
 				<include>InvisibleButton</include>
-				<visible>![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]</visible>
+				<visible>![Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]</visible>
 				<animation effect="fade" start="100" end="0" time="800">Hidden</animation>
 			</control>
 			<control type="group" id="6000">
@@ -670,7 +670,7 @@
 					<posx>10</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-6).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="-90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="-90" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-685" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -680,7 +680,7 @@
 					<posx>100</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-5).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="0" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-577" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -690,7 +690,7 @@
 					<posx>190</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-4).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="90" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-469" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -700,7 +700,7 @@
 					<posx>280</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-3).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="180" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="180" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-362" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -710,7 +710,7 @@
 					<posx>370</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-2).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="270" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-256" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -720,7 +720,7 @@
 					<posx>460</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(-1).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="360" start="-55" end="-55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="360" start="0" end="55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="-151" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -730,7 +730,7 @@
 					<posx>1000</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(6).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="1380" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="1380" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="685" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -740,7 +740,7 @@
 					<posx>910</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(5).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="1290" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="577" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -750,7 +750,7 @@
 					<posx>820</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(4).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="1200" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="1200" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="469" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -760,7 +760,7 @@
 					<posx>730</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(3).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="1110" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="1110" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="362" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -770,7 +770,7 @@
 					<posx>640</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(2).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="1020" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="1020" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="256" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -780,7 +780,7 @@
 					<posx>550</posx>
 					<visible>!IsEmpty(Container(66).ListItemNoWrap(1).label) | !Skin.HasSetting(ShowCasefixedlist)</visible>
 					<animation effect="rotatey" center="930" start="55" end="55" time="0" condition="true">Conditional</animation>
-					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(1)]]">
+					<animation type="Conditional" condition="[Skin.HasSetting(flattenshowcase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Window.IsActive(programs)]]">
 						<effect type="rotatey" center="930" start="0" end="-55" time="800" tween="cubic" easing="inout"/>
 						<effect type="slide" start="0" end="151" time="800" tween="cubic" easing="inout"/>
 					</animation>
@@ -795,7 +795,7 @@
 	</include>
 	<include name="VideoShowCaseThumb0">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -811,7 +811,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -841,7 +841,7 @@
 	</include>
 	<include name="VideoShowCaseThumb1">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -857,7 +857,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -887,7 +887,7 @@
 	</include>
 	<include name="VideoShowCaseThumb2">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -903,7 +903,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -933,7 +933,7 @@
 	</include>
 	<include name="VideoShowCaseThumb3">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -949,7 +949,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -979,7 +979,7 @@
 	</include>
 	<include name="VideoShowCaseThumb4">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -995,7 +995,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1025,7 +1025,7 @@
 	</include>
 	<include name="VideoShowCaseThumb5">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1041,7 +1041,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1071,7 +1071,7 @@
 	</include>
 	<include name="VideoShowCaseThumb6">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1087,7 +1087,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1117,7 +1117,7 @@
 	</include>
 	<include name="VideoShowCaseThumb7">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1133,7 +1133,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1163,7 +1163,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-1">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1179,7 +1179,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1209,7 +1209,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-2">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1225,7 +1225,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1255,7 +1255,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-3">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1271,7 +1271,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1301,7 +1301,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-4">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1317,7 +1317,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1347,7 +1347,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-5">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1363,7 +1363,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1393,7 +1393,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-6">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1409,7 +1409,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1439,7 +1439,7 @@
 	</include>
 	<include name="VideoShowCaseThumb-7">
 		<control type="group">
-			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(1) | Container.Content(genres)]</visible>
+			<visible>[Skin.HasSetting(noshowcasevideocase) | Window.IsActive(programs) | Container.Content(genres)]</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster reflexo -->
 				<include>ShowCasePosterReflect</include>
@@ -1455,7 +1455,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(1)</visible>
+			<visible>!Skin.HasSetting(noshowcasevideocase) | Container.Content(genres) | Window.IsActive(programs)</visible>
 			<include>Animation_VisibleChange</include>
 			<control type="image"><!-- Poster Reflexo -->
 				<include>ShowCaseThumbReflect</include>
@@ -1497,7 +1497,7 @@
 			<control type="group"><!-- painel de info fanart layout -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9966) | String.IsEqual(skin.string(showcasevideopanel),alwayson) | String.IsEqual(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + SubString(skin.string(showcaselayout),fanart) + ![String.IsEqual(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
+				<visible>[Control.HasFocus(9966) | String.IsEqual(skin.string(showcasevideopanel),alwayson) | String.IsEqual(skin.string(showcasevideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(637)] + SubString(skin.string(showcaselayout),fanart) + ![String.IsEqual(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>

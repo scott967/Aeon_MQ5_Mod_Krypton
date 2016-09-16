@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<!-- Aeon MQ 5 Helix 6.1.5 -->
 	<!-- Isengard 7.1.9/7.1.10/7.1.11 -->
-	<!-- Krypton 9.1.19 -->
+	<!-- Krypton 9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!--##################################################################################   VISTA PANEL - ID 62   ##################################################################################-->
@@ -40,7 +40,7 @@
 					<pagecontrol>80</pagecontrol>
 					<preloaditems>2</preloaditems>
 					<visible>!Container.Content(years)</visible>
-					<itemlayout condition="Window.IsActive(25) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(25) + Container.Content(genres)" width="120" height="170"><!-- POSTER SEM ESTOJO -->
+					<itemlayout condition="Window.IsActive(videos) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(videos) + Container.Content(genres)" width="120" height="170"><!-- POSTER SEM ESTOJO -->
 						<control type="image">
 							<posx>8</posx>
 							<posy>6</posy>
@@ -127,7 +127,7 @@
 							<height>180</height>
 						</control>
 					</itemlayout>
-					<itemlayout condition="Window.IsActive(25) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) + !Skin.HasSetting(nopanelvideocase)  | !Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)]" width="120" height="172"><!-- ESTOJO -->
+					<itemlayout condition="Window.IsActive(videos) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) + !Skin.HasSetting(nopanelvideocase)  | !Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)]" width="120" height="172"><!-- ESTOJO -->
 						<control type="image"><!-- Poster com estojo -->
 							<posx>9</posx>
 							<posy>18</posy>
@@ -172,7 +172,7 @@
 							<height>172</height>
 						</control>
 					</itemlayout>
-					<itemlayout condition="Window.IsActive(25) + [Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(noviewpanelposter)" width="120" height="120"><!-- ARTE -->
+					<itemlayout condition="Window.IsActive(videos) + [Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(noviewpanelposter)" width="120" height="120"><!-- ARTE -->
 						<control type="image"><!-- clearlogo e clearart -->
 							<posx>8</posx>
 							<posy>6</posy>
@@ -192,7 +192,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
-					<itemlayout condition="!Window.IsActive(25)" width="120" height="120">
+					<itemlayout condition="!Window.IsActive(videos)" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -217,7 +217,7 @@
 							<height>120</height>
 						</control>
 					</itemlayout>
-					<focusedlayout condition="Window.IsActive(25) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(25) + Container.Content(genres)" width="120" height="170"><!-- POSTER SEM ESTOJO -->
+					<focusedlayout condition="Window.IsActive(videos) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(videos) + Container.Content(genres)" width="120" height="170"><!-- POSTER SEM ESTOJO -->
 						<control type="image">
 							<posx>8</posx>
 							<posy>6</posy>
@@ -315,7 +315,7 @@
 							<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)]</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="Window.IsActive(25) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) + !Skin.HasSetting(nopanelvideocase)  | !Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)]" width="120" height="172"><!-- ESTOJO -->
+					<focusedlayout condition="Window.IsActive(videos) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) + !Skin.HasSetting(nopanelvideocase)  | !Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(nopanelbigicon) | Container.Content(sets)]" width="120" height="172"><!-- ESTOJO -->
 						<control type="image">
 							<posx>9</posx>
 							<posy>18</posy>
@@ -370,7 +370,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="Window.IsActive(25) + [Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(noviewpanelposter)" width="120" height="120">
+					<focusedlayout condition="Window.IsActive(videos) + [Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(noviewpanelposter)" width="120" height="120">
 						<control type="image"><!-- clearlogo e clearart -->
 							<posx>8</posx>
 							<posy>6</posy>
@@ -397,7 +397,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!Window.IsActive(25)" width="120" height="120">
+					<focusedlayout condition="!Window.IsActive(videos)" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>

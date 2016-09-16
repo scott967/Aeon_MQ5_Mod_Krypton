@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.2.1 window IDs 34 -->
 
-<window id="34">
+<window>
 	<defaultcontrol>9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<controls>
@@ -148,7 +149,7 @@
 				<height>600</height>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
-				<onleft condition="Window.Previous(4)">ActivateWindow(4)</onleft>
+				<onleft condition="Window.Previous(settings)">ActivateWindow(settings)</onleft>
 				<onleft condition="Window.Previous(Home)">ActivateWindow(Home)</onleft>
 				<onright condition="Container(9000).HasFocus(5)">9001</onright>
 				<onright condition="Container(9000).HasFocus(6)">2</onright>

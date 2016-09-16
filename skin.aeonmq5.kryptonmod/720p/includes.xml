@@ -2,7 +2,7 @@
 	<!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.4/6.1.5/6.1.9 Shelfcase Mod -->
 	<!-- Isengard 7.1.9 Shelfcase/7.1.10/7.1.11 MidList/7.1.12 -->
 	<!-- Jarvis 8.1.13/8.1.14 -->
-	<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19 -->
+	<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs -->
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="IncludesVariables.xml"/>
@@ -181,7 +181,7 @@
 		<animation effect="fade" time="300" condition="String.IsEqual(skin.string(animationwindow),fade)">WindowClose</animation>
 		<animation effect="fade" time="350">Visible</animation>
 		<animation effect="fade" time="300">Hidden</animation>
-		<animation effect="slide" start="0,0" end="0,-1000" time="300" condition="Window.IsVisible(114)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-1000" time="300" condition="Window.IsVisible(playercontrols)">Conditional</animation>
 	</include>
 	<include name="Animation_DefaultGlass">
 		<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
@@ -249,7 +249,7 @@
 		<animation effect="slide" start="0,-70" end="0,0" time="500" easing="inout" tween="cubic">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 		<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
-		<animation effect="slide" end="0,-70" time="300" easing="inout" tween="cubic" condition="Window.IsVisible(100) | Window.IsVisible(104) | Window.IsVisible(107) | Window.IsVisible(112) | Window.IsVisible(133) | Window.IsVisible(151) | Window.IsVisible(2002)">Conditional</animation> <!-- 151 was 614 extendedprogress -->
+		<animation effect="slide" end="0,-70" time="300" easing="inout" tween="cubic" condition="Window.IsVisible(yesnodialog) | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(okdialog)">Conditional</animation> <!-- 151 was 614 extendedprogress -->
 	</include>
 	<include name="Animation_TopDialogPopup">
 		<animation effect="slide" start="0,-100" end="0" time="500" easing="inout" tween="cubic">WindowOpen</animation>
@@ -292,7 +292,7 @@
 		<animation effect="fade" start="100" end="0" time="250" condition="Window.IsVisible(Home)">WindowClose</animation>
 	</include>	
 	<include name="Animation_HiddenView">
-		<animation effect="slide" start="0,0" end="0,800" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsActive(135) | Window.IsActive(2001) | Window.IsActive(2003) | Control.HasFocus(9930) + Player.HasVideo + !Skin.HasSetting(fullscreentrailer)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,800" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsActive(songinformation) | Window.IsActive(musicinformation) | Window.IsActive(movieinformation) | Control.HasFocus(9930) + Player.HasVideo + !Skin.HasSetting(fullscreentrailer)">Conditional</animation>
 		<animation effect="slide" end="0,40" time="500" tween="sine" easing="out" condition="SubString(skin.string(mediaflags),off) + !Control.IsVisible(57)">Conditional</animation>
 	</include>
 	<include name="Animation_Timer1">
@@ -450,10 +450,10 @@
 		<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">WindowClose</animation>
 		<animation effect="zoom" start="100" end="0" center="auto" easing="in" tween="sine" time="300">Hidden</animation>
 		<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(2006)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(2006)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
 	</include>
 	<include name="WindowBG">
 		<posx>0</posx>
@@ -464,10 +464,10 @@
 		<randomize>true</randomize>
 		<include condition="Skin.HasSetting(keepaspect)">KeepAspect</include>
 		<fadetime>FanartCrossFadeTime</fadetime>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(2006)">Conditional</animation>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(2006)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(2006)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="10,10" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
 	</include>
 	<include name="HomeBG">
 		<posx>0</posx>
@@ -503,7 +503,7 @@
 			<colordiffuse>C3FFFFFF</colordiffuse>
 			<include>Animation_Fade</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog)">conditional</animation>
-			<visible>Window.IsVisible(101) | Window.IsVisible(103) | Window.IsVisible(106) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(114) | Window.IsVisible(121) | Window.IsVisible(126) | Window.IsVisible(128) | Window.IsVisible(129) | Window.IsVisible(130) | Window.IsVisible(132) | Window.IsVisible(134) | Window.IsVisible(136) | Window.IsVisible(137) | Window.IsVisible(623) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(2000)</visible>
+			<visible>Window.IsVisible(progressdialog) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(contextmenu) | Window.IsVisible(numericinput) | Window.IsVisible(shutdownmenu) | Window.IsVisible(playercontrols) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(mediasource) | Window.IsVisible(profilesettings) | Window.IsVisible(contentsettings) | Window.IsVisible(favourites) | Window.IsVisible(smartplaylisteditor) | Window.IsVisible(smartplaylistrule) | Window.IsVisible(radiotimers) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(selectdialog)</visible>
 		</control>
 		<include condition="!String.IsEqual(skin.string(defaultsettings),2)">DefaultSettings</include>
 	</include>
@@ -844,16 +844,16 @@
 				<onfocus>Skin.SetString(menu1005.master,weathersettings)</onfocus><!-- Clima ajustes -->
 				<onfocus>Skin.SetString(menu1005.action,ActivateWindow(weathersettings))</onfocus>
 				<onfocus>Skin.SetString(menu1006.master,weathersettings)</onfocus><!-- Clima estacoes -->
-				<onfocus>Skin.SetString(menu1006.action,ActivateWindow(633))</onfocus>
+				<onfocus>Skin.SetString(menu1006.action,ActivateWindow(633))</onfocus> <!-- custom seasons -->
 				<onfocus>AlarmClock(nextstep,SetFocus(908),0:02,true)</onfocus>
 			</control>
 			<control type="button" id="908">
 				<include>InvisibleButton</include>
 				<onclick>noop</onclick>
 				<onfocus>Skin.SetString(menu1101.master,settingscustom)</onfocus><!-- Customizar menu -->
-				<onfocus>Skin.SetString(menu1101.action,ActivateWindow(6000))</onfocus>
+				<onfocus>Skin.SetString(menu1101.action,ActivateWindow(6000))</onfocus> <!-- custom home -->
 				<onfocus>Skin.SetString(menu1102.master,settingspresets)</onfocus><!-- Pre-definicoes -->
-				<onfocus>Skin.SetString(menu1102.action,ActivateWindow(630))</onfocus>
+				<onfocus>Skin.SetString(menu1102.action,ActivateWindow(630))</onfocus> <!-- custom presets -->
 				<onfocus>Skin.SetString(menu1103.master,settingsskin)</onfocus><!-- Ajustes da skin -->
 				<onfocus>Skin.SetString(menu1103.action,ActivateWindow(skinsettings))</onfocus>
 				<onfocus>Skin.SetString(menu1104.master,settingsaddons)</onfocus><!-- Janela Add-ons -->
@@ -901,7 +901,7 @@
 			<control type="button" id="911">
 				<include>InvisibleButton</include>
 				<onclick>noop</onclick>
-				<onfocus>AlarmClock(replace,ReplaceWindow(0),0:01,true)</onfocus>
+				<onfocus>AlarmClock(replace,ReplaceWindow(home),0:01,true)</onfocus>
 				<onfocus>Skin.SetString(defaultsettings,2)</onfocus>
 			</control>
 			<control type="image">
@@ -1049,7 +1049,7 @@
 			<width>1280</width>
 			<height>720</height>
 			<texture>black.png</texture>
-			<visible>Player.HasVideo + [!Window.IsActive(0) + Skin.HasSetting(livebg) | Window.IsActive(0) + Skin.HasSetting(homevisvideo) | Window.IsActive(28) + !Skin.HasSetting(noliveplaylistbg)]</visible>
+			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | Window.IsActive(videoplaylist) + !Skin.HasSetting(noliveplaylistbg)]</visible>
 		</control>
 		<control type="videowindow">
 			<posx>0</posx>
@@ -1057,7 +1057,7 @@
 			<width>1280</width>
 			<height>720</height>
 			<aspectratio>keep</aspectratio>
-			<visible>Player.HasVideo + [!Window.IsActive(0) + Skin.HasSetting(livebg) | Window.IsActive(0) + Skin.HasSetting(homevisvideo) | Window.IsActive(28) + !Skin.HasSetting(noliveplaylistbg)]</visible>
+			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | Window.IsActive(videoplaylist) + !Skin.HasSetting(noliveplaylistbg)]</visible>
 		</control>
 		<control type="visualisation">
 			<posx>0</posx>
@@ -1068,7 +1068,7 @@
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-			<visible>Player.HasAudio + [!Window.IsActive(0) + Skin.HasSetting(livebg) | Window.IsActive(0) + Skin.HasSetting(homevisaudio)]</visible>
+			<visible>Player.HasAudio + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisaudio)]</visible>
 		</control>
 	</include>
 	<include name="CustomMenuButton">
@@ -1538,7 +1538,7 @@
 			<colordiffuse>FFFFFAF0</colordiffuse>
 			<aspectratio>keep</aspectratio>
 			<fadetime>FanartCrossFadeTime</fadetime>
-			<visible>!IsEmpty(Window(2003).Property(AudioLanguage.1)) + !Control.IsVisible(70)</visible>
+			<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1)) + !Control.IsVisible(70)</visible>
 		</control>
 		<control type="label">
 			<posx>40</posx>
@@ -1547,7 +1547,7 @@
 			<height>25</height>
 			<font>Font_18A</font>
 			<aligny>center</aligny>
-			<label>$INFO[Window(2003).Property(AudioLanguage.1)]$INFO[Window(2003).Property(AudioLanguage.2), / ]$INFO[Window(2003).Property(AudioLanguage.3), / ]$INFO[Window(2003).Property(AudioLanguage.4), / ]$INFO[Window(2003).Property(AudioLanguage.5), / ]$INFO[Window(2003).Property(AudioLanguage.6), / ]$INFO[Window(2003).Property(AudioLanguage.7), / ]$INFO[Window(2003).Property(AudioLanguage.8), / ]$INFO[Window(2003).Property(AudioLanguage.9), / ]$INFO[Window(2003).Property(AudioLanguage.10), / ]</label>
+			<label>$INFO[Window(movieinformation).Property(AudioLanguage.1)]$INFO[Window(movieinformation).Property(AudioLanguage.2), / ]$INFO[Window(movieinformation).Property(AudioLanguage.3), / ]$INFO[Window(movieinformation).Property(AudioLanguage.4), / ]$INFO[Window(movieinformation).Property(AudioLanguage.5), / ]$INFO[Window(movieinformation).Property(AudioLanguage.6), / ]$INFO[Window(movieinformation).Property(AudioLanguage.7), / ]$INFO[Window(movieinformation).Property(AudioLanguage.8), / ]$INFO[Window(movieinformation).Property(AudioLanguage.9), / ]$INFO[Window(movieinformation).Property(AudioLanguage.10), / ]</label>
 			<textcolor>FFFFFAF0</textcolor>
 			<scroll>true</scroll>
 			<scrollout>false</scrollout>
@@ -1562,8 +1562,8 @@
 			<colordiffuse>FFFFFAF0</colordiffuse>
 			<aspectratio>keep</aspectratio>
 			<fadetime>FanartCrossFadeTime</fadetime>
-			<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(2003).Property(AudioLanguage.1))">Conditional</animation>
-			<visible>!IsEmpty(Window(2003).Property(SubtitleLanguage.1)) + !Control.IsVisible(70)</visible>
+			<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
+			<visible>!IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + !Control.IsVisible(70)</visible>
 		</control>
 		<control type="label">
 			<posx>40</posx>
@@ -1572,11 +1572,11 @@
 			<height>25</height>
 			<font>Font_18A</font>
 			<aligny>center</aligny>
-			<label>$INFO[Window(2003).Property(SubtitleLanguage.1)]$INFO[Window(2003).Property(SubtitleLanguage.2), / ]$INFO[Window(2003).Property(SubtitleLanguage.3), / ]$INFO[Window(2003).Property(SubtitleLanguage.4), / ]$INFO[Window(2003).Property(SubtitleLanguage.5), / ]$INFO[Window(2003).Property(SubtitleLanguage.6), / ]$INFO[Window(2003).Property(SubtitleLanguage.7), / ]$INFO[Window(2003).Property(SubtitleLanguage.8), / ]$INFO[Window(2003).Property(SubtitleLanguage.9), / ]$INFO[Window(2003).Property(SubtitleLanguage.10), / ]</label>
+			<label>$INFO[Window(movieinformation).Property(SubtitleLanguage.1)]$INFO[Window(movieinformation).Property(SubtitleLanguage.2), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.3), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.4), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.5), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.6), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.7), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.8), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.9), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.10), / ]</label>
 			<textcolor>FFFFFAF0</textcolor>
 			<scroll>true</scroll>
 			<scrollout>false</scrollout>
-			<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(2003).Property(AudioLanguage.1))">Conditional</animation>
+			<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
 			<visible>!Control.IsVisible(70)</visible>
 		</control>
 	</include>	
@@ -2130,7 +2130,7 @@
 			<animation effect="slide" start="0,-70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
 			<animation effect="slide" end="0,-70" time="500" tween="sine" easing="out" condition="Control.IsVisible(79)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(637) | Window.IsVisible(641) | Window.IsVisible(1103)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -2163,7 +2163,7 @@
 			<animation effect="slide" start="0,-70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
 			<animation effect="slide" end="0,-70" time="500" tween="sine" easing="out" condition="Control.IsVisible(79)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151) | Window.IsVisible(621) | Window.IsVisible(625) | Window.IsVisible(1103) | Window.IsActive(tvchannels) | Window.IsActive(radiochannels) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(637) | Window.IsVisible(641) | Window.IsVisible(1103) | Window.IsActive(tvchannels) | Window.IsActive(radiochannels) + [Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-70" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 			<control type="image">
 				<posx>780</posx>
@@ -2302,7 +2302,7 @@
 			<animation effect="slide" start="0,0" end="0,70" time="300" easing="inout" tween="sine">WindowClose</animation>
 			<animation effect="slide" start="0,0" end="0,70" time="300" easing="inout" tween="sine">Hidden</animation>
 			<animation effect="slide" start="0,0" end="450,0" time="1000" tween="cubic" easing="inout" condition="Control.IsVisible(605) | Control.IsVisible(606)">Conditional</animation>
-			<visible>system.getbool(lookandfeel.enablerssfeeds) + ![Skin.HasSetting(submode) | Window.IsVisible(5099)]</visible>
+			<visible>system.getbool(lookandfeel.enablerssfeeds) + ![Skin.HasSetting(submode) | Window.IsVisible(5099)]</visible> <!-- custom subSmart -->
 			<control type="image">
 				<posx>100</posx>
 				<posy>694</posy>
@@ -2691,7 +2691,7 @@
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_info),disable)]</property>
 				<icon>osd_menu_info.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(142)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(fullscreeninfo)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_info),disable)">Skin.SetString(osd_video_info,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_info),disable)">Skin.Reset(osd_video_info,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_info),disable) | Skin.HasSetting(customosd)]</visible>
@@ -2719,7 +2719,7 @@
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_audio),disable)]</property>
 				<icon>osd_menu_audio.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(124)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(osdaudiosettings)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_audio),disable)">Skin.SetString(osd_video_audio,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_audio),disable)">Skin.Reset(osd_video_audio,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_audio),disable) | Skin.HasSetting(customosd)]</visible>
@@ -2728,7 +2728,7 @@
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_video),disable)]</property>
 				<icon>osd_menu_video.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(123)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(osdvideosettings)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_video),disable)">Skin.SetString(osd_video_video,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_video),disable)">Skin.Reset(osd_video_video,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_video),disable) | Skin.HasSetting(customosd)]</visible>
@@ -2836,7 +2836,7 @@
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_book),disable)]</property>
 				<icon>osd_menu_book.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(125)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(videobookmarks)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_book),disable)">Skin.SetString(osd_video_book,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_book),disable)">Skin.Reset(osd_video_book,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_book),disable) | Skin.HasSetting(customosd)] + !VideoPlayer.Content(LiveTV)</visible>
@@ -2846,7 +2846,7 @@
 				<property name="condition">$INFO[skin.string(osd_video_playlist),disable)]</property>
 				<icon>osd_menu_playlist.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">Dialog.Close(VideoOSD)</onclick>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(28)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(videoplaylist)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_playlist),disable)">Skin.SetString(osd_video_playlist,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_playlist),disable)">Skin.Reset(osd_video_playlist,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_playlist),disable) | Skin.HasSetting(customosd)] + !VideoPlayer.Content(LiveTV)</visible>
@@ -2900,7 +2900,7 @@
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_gsettings),disable)]</property>
 				<icon>osd_menu_gensettings.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(4)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(settings)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_gsettings),disable)">Skin.SetString(osd_video_gsettings,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_gsettings),disable)">Skin.Reset(osd_video_gsettings,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_gsettings),disable) | Skin.HasSetting(customosd)]</visible>
@@ -3097,7 +3097,7 @@
 				<property name="condition">$INFO[skin.string(osd_audio_playlist),disable)]</property>
 				<icon>osd_menu_playlist.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">Dialog.Close(MusicOSD)</onclick>
-				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(500)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(musicplaylist)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_audio_playlist),disable)">Skin.SetString(osd_audio_playlist,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_audio_playlist),disable)">Skin.Reset(osd_audio_playlist,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_audio_playlist),disable) | Skin.HasSetting(customosd)]</visible>
@@ -3224,7 +3224,7 @@
 				<property name="condition">$INFO[skin.string(osd_audio_settings),disable)]</property>
 				<icon>osd_menu_settings.png</icon>
 			<!-- 	<onclick condition="!Skin.HasSetting(customosd)">Dialog.Close(all,true)</onclick> -->
-				<onclick condition="!Skin.HasSetting(customosd)">AlarmClock(customosd,ActivateWindow(627),0:01,true)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">AlarmClock(customosd,ActivateWindow(627),0:01,true)</onclick> <!-- custom osd music -->
 				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_audio_settings),disable)">Skin.SetString(osd_audio_settings,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_audio_settings),disable)">Skin.Reset(osd_audio_settings,disable)</onclick>
 			</item>

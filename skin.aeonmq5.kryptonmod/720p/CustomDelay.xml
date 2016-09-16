@@ -2,7 +2,7 @@
 	<!-- Aeon MQ 5 Helix 6.1.0/6.1.3 -->
 	<!-- Jarvis 8.1.14 -->
 
-<window id="638" type="dialog">
+<window id="638" type="dialog"> <!-- safe id -->
 	<defaultcontrol>-</defaultcontrol>
 	<onload condition="SubString(skin.string(panel_seconds),1)">SetFocus(9061)</onload>
 	<onload condition="SubString(skin.string(panel_seconds),2)">SetFocus(9062)</onload>

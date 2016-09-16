@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.2 -->
-	<!-- Krypton 9.1.19 -->
+	<!-- Krypton 9.1.19/9.2.1 window IDs -->
 
-<window id="5600" type="dialog">
+<window id="5600" type="dialog"> <!-- safe id -->
 	<defaultcontrol>604</defaultcontrol>
 	<controls>
 
@@ -12,7 +12,7 @@
 			<animation effect="slide" start="-1300,0" end="0,0" time="700" tween="sine" easing="inout" delay="1000">Visible</animation>
 			<animation effect="slide" start="0,0" end="-1300,0" time="400" tween="sine" easing="inout">WindowClose</animation>
 			<animation effect="slide" start="0,0" end="-1300,0" time="400" tween="sine" easing="inout">Hidden</animation>
-			<visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Window.IsVisible(120) | Window.IsVisible(122) | Skin.HasSetting(novisfurniture) | Skin.HasSetting(nonexttracks_on)] + String.IsEqual(skin.string(vis_layout),default)</visible>
+			<visible>![IsEmpty(MusicPlayer.offset(1).Artist) | Window.IsVisible(musicosd) | Window.IsVisible(visualisationpresetlist) | Skin.HasSetting(novisfurniture) | Skin.HasSetting(nonexttracks_on)] + String.IsEqual(skin.string(vis_layout),default)</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>385</posy>
@@ -86,7 +86,7 @@
 				<font>Font_18A</font>
 				<align>right</align>
 				<textoffsetx>40</textoffsetx>
-				<onclick>ActivateWindow(120)</onclick>
+				<onclick>ActivateWindow(musicosd)</onclick>
 				<textcolor>80FFFAF0</textcolor>
 				<focusedcolor>FFFFFAF0</focusedcolor>
 				<texturefocus flipx="true" diffuse="gradient_button.png">settings_button_focus.png</texturefocus>

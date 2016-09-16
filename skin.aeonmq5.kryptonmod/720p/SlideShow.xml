@@ -1,7 +1,9 @@
-	<!-- Aeon MQ 5 -->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Aeon MQ 5 -->
+<!-- Krypton 9.2.1 window IDs 2007 -->
 
-	<window id="2007">
+<window>
 	<defaultcontrol>2</defaultcontrol>
 	<controls>
 	</controls>
-	</window>
+</window>

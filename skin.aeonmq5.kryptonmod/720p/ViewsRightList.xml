@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.2 by lizard/6.1.6 -->
 <!-- Isengard 7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19 -->
+<!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!--##################################################################################   VISTA RIGHT LIST - ID 59   ##################################################################################-->
@@ -56,7 +56,7 @@
 					<texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
 					<aspectratio align="right" aligny="bottom">keep</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>Window.IsActive(500) | Window.IsActive(502)</visible>
+					<visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
 				</control>
 				<control type="image"><!-- clearlogo e clearart -->
 					<posx>360</posx>
@@ -66,7 +66,7 @@
 					<texture background="true">$VAR[value_logoandclearart]</texture>
 					<aspectratio align="right" aligny="bottom">keep</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>Window.IsActive(25) + !Skin.HasSetting(noartrightlistvideo)</visible>
+					<visible>Window.IsActive(videos) + !Skin.HasSetting(noartrightlistvideo)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -92,8 +92,8 @@
 					<height>100</height>
 					<texture>darkgrey.png</texture>
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-					<animation effect="fade" end="85" condition="!Window.IsActive(28)">Conditional</animation>
-					<animation effect="fade" end="50" condition="Window.IsActive(28)">Conditional</animation>
+					<animation effect="fade" end="85" condition="!Window.IsActive(videoplaylist)">Conditional</animation>
+					<animation effect="fade" end="50" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
 				<control type="image">
 					<posx>271</posx>
@@ -110,8 +110,8 @@
 					<height>100</height>
 					<texture flipx="true" diffuse="shadow_mask_v.png">darkgrey.png</texture>
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-					<animation effect="fade" end="85" condition="!Window.IsActive(28)">Conditional</animation>
-					<animation effect="fade" end="50" condition="Window.IsActive(28)">Conditional</animation>
+					<animation effect="fade" end="85" condition="!Window.IsActive(videoplaylist)">Conditional</animation>
+					<animation effect="fade" end="50" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
 				<control type="image">
 					<posx>300</posx>
@@ -120,8 +120,8 @@
 					<height>25</height>
 					<texture flipx="true" diffuse="shadow_mask_v.png">darkgrey.png</texture>
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-					<animation effect="fade" end="95" condition="!Window.IsActive(28)">Conditional</animation>
-					<animation effect="fade" end="40" condition="Window.IsActive(28)">Conditional</animation>
+					<animation effect="fade" end="95" condition="!Window.IsActive(videoplaylist)">Conditional</animation>
+					<animation effect="fade" end="40" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
 				<control type="label"><!-- Year/Publisher -->
 					<posx>320</posx>
@@ -162,8 +162,8 @@
 					<height>620</height>
 					<texture diffuse="shadow_mask_v.png">darkgrey.png</texture>
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-					<animation effect="fade" end="75" condition="!Window.IsActive(28)">Conditional</animation>
-					<animation effect="fade" end="50" condition="Window.IsActive(28)">Conditional</animation>
+					<animation effect="fade" end="75" condition="!Window.IsActive(videoplaylist)">Conditional</animation>
+					<animation effect="fade" end="50" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
 				<control type="image">
 					<posx>720</posx>
@@ -199,7 +199,7 @@
 					<height>550</height>
 					<texture>osd_black_bg.png</texture>
 					<animation effect="fade" start="100" end="10" time="2000" condition="!Control.Hasfocus(51)">conditional</animation>
-					<visible>!Window.IsActive(28)</visible>
+					<visible>!Window.IsActive(videoplaylist)</visible>
 				</control>
 
 				<control type="fixedlist" id="59">
@@ -217,9 +217,9 @@
 					<preloaditems>2</preloaditems>
 					<animation effect="slide" start="0,0" end="600,0" time="600" easing="inout" tween="cubic" condition="Control.HasFocus(9915)">Conditional</animation>
 					<animation effect="slide" start="0,0" end="-30,0" time="200" easing="inout" tween="cubic" condition="Control.HasFocus(80)">Conditional</animation>
-					<animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(621)">Conditional</animation>
+					<animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(637)">Conditional</animation>
 					<visible>!Container.Content(years)</visible>
-					<itemlayout condition="Window.IsActive(25) | Window.IsActive(28) | Window.IsActive(500) | Window.IsActive(502)" height="30">
+					<itemlayout condition="Window.IsActive(videos) | Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist) | Window.IsActive(music)" height="30">
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
@@ -248,7 +248,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout condition="IsEmpty(Control.GetLabel(5902)) | [[Window.IsActive(25)  | Window.IsActive(28)]+ Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(slimrightlistmusic)]" height="30">
+					<focusedlayout condition="IsEmpty(Control.GetLabel(5902)) | [[Window.IsActive(videos)  | Window.IsActive(videoplaylist)]+ Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimrightlistmusic)]" height="30">
 						<control type="image">
 							<posx>20</posx>
 							<posy>0</posy>
@@ -291,7 +291,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!IsEmpty(Control.GetLabel(5902)) + [[Window.IsActive(25) | Window.IsActive(28)] + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + !Skin.HasSetting(slimrightlistmusic)]" height="50">
+					<focusedlayout condition="!IsEmpty(Control.GetLabel(5902)) + [[Window.IsActive(videos) | Window.IsActive(videoplaylist)] + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimrightlistmusic)]" height="50">
 						<control type="image">
 							<animation effect="fade" start="100" end="60" time="0" condition="!Control.Hasfocus(51)">conditional</animation>
 							<posx>0</posx>
@@ -406,7 +406,7 @@
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
 					<animation effect="slide" time="200" start="0,0" end="0,-20" tween="cubic" easing="out" condition="!Skin.HasSetting(norightlistvideocase)">Conditional</animation>
-					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(norightlistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(25) + Control.IsVisible(9923)</visible>
+					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(norightlistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
 					<control type="image">
 						<posx>112</posx>
 						<posy>70</posy>
@@ -438,62 +438,62 @@
 						<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
-					<visible>![IsEmpty(Window(0).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(norightlistdiscart)] + Window.IsActive(25) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+					<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(norightlistdiscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.1.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.1.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.2.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.2.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.3.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.3.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.4.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.4.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.4.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.5.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.5.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.5.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.6.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.6.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.7.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.7.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.7.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.8.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.8.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.8.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.9.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.9.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.9.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>RightListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.10.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.10.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.10.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))</visible>
 					</control>
 				</control>
 
 				<control type="group"><!-- VIDEO SEM ESTOJO -->
 					<include>Animation_Fade</include>
-					<visible>![!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(500) | Window.IsActive(502)]</visible>
+					<visible>![!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 					<control type="image"><!-- Filmes/Fotos/Arquivos reflexo -->
 						<posx>-5</posx>
 						<posy>419</posy>
@@ -543,7 +543,7 @@
 
 				<control type="group"><!-- FILMES ESTOJO -->
 					<include>Animation_Fade</include>
-					<visible>!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(500) | Window.IsActive(502)]</visible>
+					<visible>!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 					<control type="image"><!-- Poster reflexo -->
 						<posx>-5</posx>
 						<posy>436</posy>
@@ -593,7 +593,7 @@
 
 				<control type="group"><!-- MUSICA -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(500) | Window.IsActive(502)] + [Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
+					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
 					<control type="image"><!-- Musica reflexo -->
 						<posx>-5</posx>
 						<posy>420</posy>
@@ -618,7 +618,7 @@
 
 				<control type="group"><!-- MUSICA ESTOJO -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(500) | Window.IsActive(502)] + ![Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
+					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
 					<control type="image"><!-- Musica/Estojo reflexo-->
 						<posx>18</posx>
 						<posy>420</posy>

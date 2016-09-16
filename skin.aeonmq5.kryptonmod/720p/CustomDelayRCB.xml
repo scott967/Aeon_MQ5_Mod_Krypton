@@ -1,6 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.0 / 6.1.3  -->
+	<!-- Krypton 9.2.1 window ids -->
 
-<window id="637" type="dialog">
+<window id="637" type="dialog"> <!-- safe id was 621 -->
 	<defaultcontrol>-</defaultcontrol>
 	<onload condition="SubString(skin.string(gamevideo_seconds),0)">SetFocus(9061)</onload>
 	<onload condition="SubString(skin.string(gamevideo_seconds),1)">SetFocus(9062)</onload>

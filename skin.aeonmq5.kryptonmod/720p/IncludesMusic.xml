@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Isengard 7.1.11 Mid List -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.17/9.1.19 -->
+<!-- Krypton 9.1.16/9.1.17/9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!-- ######################################################################### Music Window #########################################################################-->
@@ -69,14 +69,14 @@
 				<control type="button" id="9922"><!-- refresh das vistas -->
 					<include>InvisibleButton</include>
 					<animation effect="fade" start="0" end="100" time="150" delay="3000">Hidden</animation>
-					<visible>Window.IsVisible(1103)</visible>
+					<visible>Window.IsVisible(1103)</visible> <!-- custom views music -->
 				</control>
 				<control type="group">
 					<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 					<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 					<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 					<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
-					<visible>![Control.IsVisible(51) | [Control.IsVisible(55) | Control.IsVisible(70)] + [Container.Content(artists) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(621)]</visible>
+					<visible>![Control.IsVisible(51) | [Control.IsVisible(55) | Control.IsVisible(70)] + [Container.Content(artists) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(637)]</visible>
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -240,7 +240,7 @@
 							<posy>645</posy>
 							<orientation>horizontal</orientation>
 							<itemgap>17</itemgap>
-							<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(621)">Conditional</animation>
+							<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(637)">Conditional</animation>
 							<control type="image"><!-- studio -->
 								<include>FlagImage</include>
 								<texture>$VAR[value_studiosicon]</texture>

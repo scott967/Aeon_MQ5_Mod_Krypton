@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
-<!--  Krypton 9.1.16/9.1.19 -->
+<!--  Krypton 9.1.16/9.1.19/9.2.1 window IDs 2006 -->
 
-<window id="2006">
+<window>
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="Skin.HasSetting(nolyrics_on) + ![IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(novisfurniture) | Skin.HasSetting(nonexttracks_on)]">ActivateWindow(5600)</onload>
@@ -103,7 +103,7 @@
 				<posx>0</posx>
 				<posy>773</posy>
 				<animation effect="slide" start="0,0" end="-400,0" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window(Visualisation).Property(ArtistSlideshow))">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,270" time="400" tween="cubic" easing="inout" condition="Window.IsVisible(120) | Window.IsVisible(627)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,270" time="400" tween="cubic" easing="inout" condition="Window.IsVisible(musicosd) | Window.IsVisible(627)">Conditional</animation>  <!-- custom osd music -->
 				<animation effect="slide" start="0,0" end="0,300" time="700" tween="cubic" easing="out" condition="Skin.HasSetting(novisfurniture)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-900,0" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(furniture_cdart)">Conditional</animation>
 				<animation effect="slide" start="0,720" end="0,-300" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>

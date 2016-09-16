@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.19 -->
+<!-- Krypton 9.1.19/9.2.1 window IDs -->
 
 <window>
 	<onload>ClearProperty(TVGuide.MondayList,Home)</onload>
@@ -914,7 +914,7 @@
 					<animation effect="slide" start="0,-70" end="0,0" time="500" delay="500" easing="inout" tween="cubic">WindowOpen</animation>
 					<animation effect="slide" start="0,-70" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 					<animation effect="slide" start="0,0" end="0,-70" time="300" easing="inout" tween="cubic">Hidden</animation>
-					<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(104) | Window.IsVisible(107) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(151) | Window.IsVisible(621)">Conditional</animation> <!-- 151 was 614 extendedprogress -->
+					<animation effect="slide" start="0,0" end="0,-70" time="400" tween="cubic" easing="in" condition="Control.HasFocus(9920) | Control.IsVisible(608) | ControlGroup(9000).HasFocus | Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(637)">Conditional</animation> <!-- 151 was 614 extendedprogress -->
 					<animation effect="slide" start="0,0" end="0,-70" time="50" tween="cubic" easing="in" condition="Control.HasFocus(160)">Conditional</animation>
 					<visible>Skin.HasSetting(nextaireddate)</visible>
 					<control type="image">

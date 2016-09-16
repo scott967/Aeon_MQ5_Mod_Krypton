@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 -->
 <!-- Jarvismod 8.1.14 -->
 
-<window id="629" type="dialog">
+<window id="629" type="dialog">  <!-- safe id -->
 	<defaultcontrol always="true">9930</defaultcontrol>
 	<onunload condition="!Window.IsActive(Home)">AlarmClock(firstfocus,SetFocus(51),0:01,true)</onunload>
 	<onunload condition="Window.IsActive(Home)">AlarmClock(firstfocus,SetFocus(9100),0:01,true)</onunload>

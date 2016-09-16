@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/Orby/6.1.4 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
+<!-- Krypton 9.2.1 window IDs 103 -->
 
 <window id="103">
 	<defaultcontrol always="true">300</defaultcontrol>
@@ -12,7 +13,7 @@
 	<controls>
 		<control type="group">
 			<include>Animation_DialogPopup</include>
-			<visible>!Window.IsVisible(109)</visible>  <!-- DialogNumeric -->
+			<visible>!Window.IsVisible(numericinput)</visible>  <!-- DialogNumeric -->
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -174,8 +175,8 @@
 						<ondown>303</ondown>
 						<texturenofocus>darkgrey.png</texturenofocus>
 						<texturefocus>grey.png</texturefocus>
-						<textureonnofocus>grey.png</textureonnofocus>
-						<textureonfocus>grey.png</textureonfocus>
+						<textureradioonnofocus>grey.png</textureradioonnofocus>
+						<textureradioonfocus>grey.png</textureradioonfocus>
 						<radioposy>5</radioposy>
 						<radioposx>120</radioposx>
 						<radiowidth>30</radiowidth>
@@ -272,8 +273,8 @@
 						<ondown>307</ondown>
 						<texturenofocus>darkgrey.png</texturenofocus>
 						<texturefocus>grey.png</texturefocus>
-						<textureonnofocus>black.png</textureonnofocus>
-						<textureonfocus>grey.png</textureonfocus>
+						<textureradioonnofocus>black.png</textureradioonnofocus>
+						<textureradioonfocus>grey.png</textureradioonfocus>
 						<align>center</align>
 						<aligny>center</aligny>
 						<radioposy>5</radioposy>

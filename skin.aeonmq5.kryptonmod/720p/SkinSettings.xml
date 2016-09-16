@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 -->
 <!-- Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.19 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs -->
 
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
@@ -210,7 +210,7 @@
 				</control>
 				<control type="button" id="1057"><!-- Ir para customizacao do menu -->
 					<label>31207</label>
-					<onclick>ActivateWindow(6000)</onclick>
+					<onclick>ActivateWindow(6000)</onclick>  <!-- custo home -->
 					<onclick>Skin.SetBool(custommode)</onclick>
 				</control>
 			</control>
@@ -643,7 +643,7 @@
 					<onleft>9100</onleft>
 					<onright>9100</onright>
 					<colordiffuse>FFB20000</colordiffuse>
-					<onclick>ActivateWindow(628)</onclick>
+					<onclick>ActivateWindow(628)</onclick> <!-- custom res -->
 					<visible>Skin.HasSetting(resetmode)</visible>
 				</control>
 			</control>
@@ -2209,7 +2209,7 @@
 				<control type="radiobutton" id="1070"><!-- Tema meu tema -->
 					<label>31908</label>
 					<onclick>Skin.SetString(theme,mytheme)</onclick>
-					<onclick>ActivateWindow(640)</onclick>
+					<onclick>ActivateWindow(640)</onclick>  <!-- custom help -->
 					<selected>SubString(skin.string(theme),mytheme)</selected>
 				</control>
 				<control type="button" id="1071"><!-- Caminho do meu tema -->
@@ -2755,7 +2755,7 @@
 						<aligny>center</aligny>
 						<font>Font_14</font>
 						<textcolor>FFFFFAF0</textcolor>
-						<label>$INFO[Window(0).Property(Movies.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Movies.UnWatched)]</label>
+						<label>$INFO[Window(home).Property(Movies.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(home).Property(Movies.UnWatched)]</label>
 					</control>
 				</control>
 
@@ -2782,7 +2782,7 @@
 						<aligny>center</aligny>
 						<font>Font_14</font>
 						<textcolor>FFFFFAF0</textcolor>
-						<label>$INFO[Window(0).Property(Movies.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(0).Property(Movies.UnWatched)]</label>
+						<label>$INFO[Window(home).Property(Movies.Count)][COLOR=50FFFAF0] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[Window(home).Property(Movies.UnWatched)]</label>
 					</control>
 				</control>
 

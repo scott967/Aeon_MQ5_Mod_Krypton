@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarivs 8.1.14 -->
+<!-- Krypton 9.2.1 window IDs 126 -->
 
-<window type="dialog" id="126">
+<window type="dialog">
 	<defaultcontrol>450</defaultcontrol>
 	<!-- <zorder>4</zorder> -->
 	<coordinates>

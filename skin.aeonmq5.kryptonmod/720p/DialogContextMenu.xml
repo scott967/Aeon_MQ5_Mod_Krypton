@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.1 -->
 	<!-- Jarvis 8.1.14 -->
+	<!-- Krypton 9.2.1 window IDs 106 -->
 	
-<window id="106">
+<window>
 	<defaultcontrol>1000</defaultcontrol>
 	<!-- <zorder>4</zorder> -->
 	<coordinates>
 		<system>1</system>
 	</coordinates>
 	<include>Animation_DialogPopup</include>
-	<animation effect="slide" time="0" tween="cubic" easing="out" end="400,0" condition="Window.IsVisible(146)">Conditional</animation>
+	<animation effect="slide" time="0" tween="cubic" easing="out" end="400,0" condition="Window.IsVisible(addoninformation)">Conditional</animation>
 	<controls>
 		<control type="image">
 			<posx>0</posx>
@@ -70,16 +71,16 @@
 			</control>
 			<control type="button" id="1030">
 				<include>DialogContext_Button</include>
-				<onleft>Dialog.Close(106)</onleft>
-				<onright>Dialog.Close(106)</onright>
+				<onleft>Dialog.Close(contextmenu)</onleft>
+				<onright>Dialog.Close(contextmenu)</onright>
 				<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
 				<label>31671</label>
 				<visible>System.HasAddon(script.libraryeditor) + [Container.Content(Movies) | Container.Content(episodes)]</visible>
 			</control>
 			<control type="button" id="1031">
 				<include>DialogContext_Button</include>
-				<onleft>Dialog.Close(106)</onleft>
-				<onright>Dialog.Close(106)</onright>
+				<onleft>Dialog.Close(contextmenu)</onleft>
+				<onright>Dialog.Close(contextmenu)</onright>
 				<onclick condition="!Skin.HasSetting(fullscreentrailer)">SetFocus(9930)</onclick>
 				<onclick condition="!Skin.HasSetting(fullscreentrailer)">PlayMedia($INFO[ListItem.Trailer],1)</onclick>
 				<onclick condition="Skin.HasSetting(fullscreentrailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
@@ -88,9 +89,9 @@
 			</control>
 			<control type="button" id="1032">
 				<include>DialogContext_Button</include>
-				<onleft>Dialog.Close(106)</onleft>
-				<onright>Dialog.Close(106)</onright>
-				<onclick>ActivateWindow(111)</onclick>
+				<onleft>Dialog.Close(contextmenu)</onleft>
+				<onright>Dialog.Close(contextmenu)</onright>
+				<onclick>ActivateWindow(shutdownmenu)</onclick>
 				<label>31243</label>
 			</control>
 			<control type="button" id="9325"><!-- ArtWork Downloader Solo Mode-->
@@ -113,8 +114,8 @@
 			</control>
 			<control type="button" id="1033">
 				<include>DialogContext_Button</include>
-				<onleft>Dialog.Close(106)</onleft>
-				<onright>Dialog.Close(106)</onright>
+				<onleft>Dialog.Close(contextmenu)</onleft>
+				<onright>Dialog.Close(contextmenu)</onright>
 				<onclick>RunScript(script.trakt,action=contextmenu)</onclick>
 				<label>trakt</label>
 				<visible>System.HasAddon(script.trakt)</visible>

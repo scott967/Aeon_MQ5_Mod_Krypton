@@ -2,9 +2,9 @@
 <!-- Aeon MQ 5 Helix 6.1.2/6.1.3 -->
 <!-- Isengard 7.1.9 ShelfCase/7.1.11 MidList -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16/9.1.19 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 25 -->
 
-<window id="25">
+<window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<!-- <onload condition="Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload> -->
@@ -146,7 +146,7 @@
 						<posy>645</posy>
 						<orientation>horizontal</orientation>
 						<itemgap>17</itemgap>
-						<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(621)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(637)">Conditional</animation>
 						<control type="image"><!-- studio -->
 							<include>FlagImage</include>
 							<texture>$VAR[value_studiosicon]</texture>
@@ -310,7 +310,7 @@
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<visible>[Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(60) | Control.IsVisible(61) | Control.IsVisible(62) | Control.IsVisible(63) | Control.IsVisible(64) | Control.IsVisible(65) | Control.IsVisible(66) | Control.IsVisible(67) | Control.IsVisible(68) | Control.IsVisible(69)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(2003) | Window.IsVisible(637)]</visible>
+				<visible>[Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(60) | Control.IsVisible(61) | Control.IsVisible(62) | Control.IsVisible(63) | Control.IsVisible(64) | Control.IsVisible(65) | Control.IsVisible(66) | Control.IsVisible(67) | Control.IsVisible(68) | Control.IsVisible(69)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(movieinformation) | Window.IsVisible(637)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -321,7 +321,7 @@
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(Window(2003).Property(AudioLanguage.1))</visible>
+					<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>58</posy>
@@ -388,7 +388,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>IsEmpty(Window(2003).Property(AudioLanguage.1))</visible>
+					<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>58</posy>
@@ -463,8 +463,8 @@
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<animation effect="slide" end="0,20" time="500" tween="sine" easing="out" condition="!IsEmpty(Window(2003).Property(AudioLanguage.1))">Conditional</animation>
-				<visible>[Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(59)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(2003) | Window.IsVisible(621) | Skin.HasSetting(notvshowstagline) | IsEmpty(Control.GetLabel(555)) | String.IsEqual(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
+				<animation effect="slide" end="0,20" time="500" tween="sine" easing="out" condition="!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
+				<visible>[Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(59)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(movieinformation) | Window.IsVisible(637) | Skin.HasSetting(notvshowstagline) | IsEmpty(Control.GetLabel(555)) | String.IsEqual(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -498,7 +498,7 @@
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(2003).Property(AudioLanguage.1)) + IsEmpty(Window(2003).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(2003) | Window.IsVisible(621) | Window.IsVisible(625)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(movieinformation).Property(AudioLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation) | Window.IsVisible(637) | Window.IsVisible(641)]</visible>
 				<posx>810</posx>
 				<posy>35</posy>
 				<include>AudioandSub</include>

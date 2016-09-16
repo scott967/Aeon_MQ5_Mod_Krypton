@@ -2,9 +2,9 @@
 <!-- Aeon MQ 5 Helix 6.1.0/Orby -->
 <!-- Isengard 7.1.9 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.18 -->
+<!-- Krypton 9.1.18/9.2.1 window IDs 136 -->
 
-<window id="136">
+<window>
 	<defaultcontrol always="true">22</defaultcontrol>
 	<controls>
 		<control type="group">

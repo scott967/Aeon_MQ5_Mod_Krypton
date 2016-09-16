@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.2 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15/9.1.19 -->
+<!-- Krypton 9.1.15/9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!--##################################################################################   VISTA GLASS LIST - ID 57   ##################################################################################-->
@@ -40,7 +40,7 @@
 			<animation effect="slide" start="1000,0" end="0,0" time="600" easing="out" tween="sine">WindowOpen</animation>
 			<animation effect="slide" start="1000,0" end="0,0" time="600" easing="out" tween="sine">Visible</animation>
 			<animation effect="slide" start="0,0" end="1000,0" time="600" easing="out" tween="sine">Hidden</animation>
-			<visible>Control.IsVisible(57) + [Control.HasFocus(9957) | String.IsEqual(skin.string(glasslistvideopanel),alwayson) | String.IsEqual(skin.string(glasslistvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)]</visible>
+			<visible>Control.IsVisible(57) + [Control.HasFocus(9957) | String.IsEqual(skin.string(glasslistvideopanel),alwayson) | String.IsEqual(skin.string(glasslistvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(637)]</visible>  <!-- custom delay RCB -->
 			<control type="group">
 				<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
@@ -325,7 +325,7 @@
 						<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
-					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(noglasslistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(25) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
+					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(noglasslistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
 					<control type="image">
 						<posx>112</posx>
 						<posy>55</posy>
@@ -357,31 +357,31 @@
 						<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
-					<visible>![IsEmpty(Window(0).Property(Set.Movie.6.Art(discart))) | Skin.HasSetting(noglasslistdiscart)] + Window.IsActive(25) + SubString(ListItem.Path,videodb://movies/sets,left) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
+					<visible>![IsEmpty(Window(home).Property(Set.Movie.6.Art(discart))) | Skin.HasSetting(noglasslistdiscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.6.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.6.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.7.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.7.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.7.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.8.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.8.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.8.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.9.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.9.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.9.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.10.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.10.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.10.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))</visible>
 					</control>
 				</control>
 
@@ -403,31 +403,31 @@
 						<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
-					<visible>![IsEmpty(Window(0).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(noglasslistdiscart)] + Window.IsActive(25) + SubString(ListItem.Path,videodb://movies/sets,left) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
+					<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(noglasslistdiscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + [Control.HasFocus(9957) | Control.IsVisible(9923)]</visible>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.1.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.1.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.2.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.2.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.3.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.3.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.4.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.4.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.4.Art(discart)))</visible>
 					</control>
 					<control type="image">
 						<include>GlassListDisc</include>
-						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.5.Art(discart))]</texture>
-						<visible>!IsEmpty(Window(0).Property(Set.Movie.5.Art(discart)))</visible>
+						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
+						<visible>!IsEmpty(Window(home).Property(Set.Movie.5.Art(discart)))</visible>
 					</control>
 				</control>
 
@@ -435,7 +435,7 @@
 					<posx>704</posx>
 					<posy>88</posy>
 					<include>Animation_Fade</include>
-					<visible>![!Skin.HasSetting(noglasslistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(500) | Window.IsActive(502)]</visible>
+					<visible>![!Skin.HasSetting(noglasslistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 					<control type="image"><!-- Filmes/Fotos/Arquivos reflexo -->
 						<posx>0</posx>
 						<posy>406</posy>
@@ -512,7 +512,7 @@
 
 				<control type="group"><!-- MUSICA -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(noaudiomediacase)</visible>
+					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(noaudiomediacase)</visible>
 					<control type="image"><!-- Musica reflexo -->
 						<posx>-5</posx>
 						<posy>420</posy>
@@ -537,7 +537,7 @@
 
 				<control type="group"><!-- MUSICA ESTOJO -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(500) | Window.IsActive(502)] + !Skin.HasSetting(noaudiomediacase)</visible>
+					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(noaudiomediacase)</visible>
 					<control type="image"><!-- Musica/Estojo reflexo-->
 						<posx>18</posx>
 						<posy>420</posy>
@@ -711,7 +711,7 @@
 						<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="IsEmpty(Control.GetLabel(198)) | Window.IsActive(25) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(slimglasslistmusic)" width="300" height="40">
+				<focusedlayout condition="IsEmpty(Control.GetLabel(198)) | Window.IsActive(videos) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimglasslistmusic)" width="300" height="40">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -744,7 +744,7 @@
 						<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 				</focusedlayout>
-				<focusedlayout condition="![IsEmpty(Control.GetLabel(198)) | Window.IsActive(25) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(500) | Window.IsActive(502)] + Skin.HasSetting(slimglasslistmusic)]" width="300" height="60">
+				<focusedlayout condition="![IsEmpty(Control.GetLabel(198)) | Window.IsActive(videos) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimglasslistmusic)]" width="300" height="60">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>

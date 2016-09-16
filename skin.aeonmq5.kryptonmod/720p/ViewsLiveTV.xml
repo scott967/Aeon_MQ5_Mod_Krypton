@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.4/6.1.5 -->
 	<!-- Jarvis 8.1.15 RjSachse EPGTimeLineLow view -->
-	<!-- Krypton 9.1.16 -->
+	<!-- Krypton 9.1.16/9.2.1 window IDs  -->
 
 <includes>
 	<include name="EPGMenu">
@@ -112,7 +112,7 @@
 			<font>Font_18A</font>
 			<textcolor>$VAR[value_headercolor]</textcolor>
 			<label>$LOCALIZE[142] [COLOR=FFFFFAF0]$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($INFO[ListItem.StartDate]) - [/COLOR]$LOCALIZE[180]: [COLOR=FFFFFAF0]$INFO[ListItem.Duration] - [/COLOR]$LOCALIZE[515]: [COLOR=FFFFFAF0]$INFO[ListItem.Genre][/COLOR]</label>
-			<visible>!Window.IsVisible(618)</visible>
+			<visible>!Window.IsVisible(tvtimers)</visible>
 		</control>
 		<control type="label"><!-- Hora/Data/Genero -->
 			<posx>170</posx>
@@ -124,7 +124,7 @@
 			<font>Font_18A</font>
 			<textcolor>$VAR[value_headercolor]</textcolor>
 			<label>$LOCALIZE[142] [COLOR=FFFFFAF0]$INFO[ListItem.Date][/COLOR]</label>
-			<visible>Window.IsVisible(618) + !IsEmpty(ListItem.Date)</visible>
+			<visible>Window.IsVisible(tvtimers) + !IsEmpty(ListItem.Date)</visible>
 		</control>
 		<control type="image">
 			<posx>170</posx>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13/8/1/14 -->
-<!-- Krypton 9.1.17/9.1.19 -->
+<!-- Krypton 9.1.17/9.1.19/9.2.1 window IDs 4 -->
 
-<window id="4">
+<window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<controls>
@@ -185,11 +185,11 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onleft condition="Window.Previous(Home)">ActivateWindow(Home)</onleft>
-				<onleft condition="Window.Previous(25)">ActivateWindow(25)</onleft>
+				<onleft condition="Window.Previous(videos)">ActivateWindow(videos)</onleft>
 				<onright condition="Container(9000).HasFocus(100)">ActivateWindow(AddonBrowser)</onright>
 				<onright condition="Container(9000).HasFocus(101)">ActivateWindow(SystemSettings)</onright>
 				<!-- <onright condition="Container(9000).HasFocus(102)">ActivateWindow(NetworkSettings)</onright> -->
-				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(34)</onright>  <!-- profiles -->
+				<onright condition="Container(9000).HasFocus(103)">ActivateWindow(profiles)</onright>  <!-- profiles -->
 				<onright condition="Container(9000).HasFocus(104)">21</onright>
 				<onright condition="Container(9000).HasFocus(105)">ActivateWindow(InterfaceSettings)</onright>
 				<onright condition="Container(9000).HasFocus(106)">ActivateWindow(PlayerSettings)</onright>
@@ -352,7 +352,7 @@
 						<property name="MainLabel">31394</property>
 						<property name="SubLabel">31395</property>
 						<icon>special://skin/backgrounds/extras/settings_profiles.jpg</icon>
-						<onclick>ActivateWindow(34)</onclick>
+						<onclick>ActivateWindow(profiles)</onclick>
 					</item>
 					<item id="104"><!-- Skin Options -->
 						<label>31371</label>

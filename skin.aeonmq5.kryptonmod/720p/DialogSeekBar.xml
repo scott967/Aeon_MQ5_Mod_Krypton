@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Isengard 7.1.8/7.1.9 -->
-	<!-- krypton 9.1.19 -->
+	<!-- Krypton 9.1.19/9.2.1 window IDs-->
 
 <window>
 	<defaultcontrol>23</defaultcontrol>
-	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(123) | Window.IsActive(124) | Window.IsActive(SubtitleSearch)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo]</visible>
+	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(SubtitleSearch)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo]</visible>
 	<controls>
 		<control type="group">
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>

@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.4 -->
+	<!-- Krypton 9.2.1 window IDs -->
 
 <window id="1102" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
-	<onunload>AlarmClock(refreshview,ActivateWindowAndFocus(616, 9940,0),0:01,true)</onunload>
+	<onunload>AlarmClock(refreshview,ActivateWindowAndFocus(tvrecordings, 9940,0),0:01,true)</onunload>
 	<controls>
 		<control type="group">
 			<include>Animation_DialogPopup</include>

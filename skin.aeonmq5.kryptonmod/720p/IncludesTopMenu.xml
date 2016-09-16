@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.2/6.1.3 /6.1.4/6.1.5/6.1.6/6.1.8/6.1.9 wall audiocover-->
 <!-- Isengard 7.1.10 wall audiocover/7.1.11/MidList mod/7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19 -->
+<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>21</posy>
@@ -142,9 +142,9 @@
 				<animation effect="fade" start="20" end="40" time="700" condition="true" pulse="true">Conditional</animation>
 				<onleft>SetFocus(9940)</onleft>
 				<onright>SetFocus(9940)</onright>
-				<onclick condition="Window.IsActive(25)">ActivateWindow(641)</onclick>
-				<onclick condition="Window.IsActive(500) | Window.IsActive(502)">ActivateWindow(1103)</onclick>
-				<onclick condition="Window.IsActive(1)">ActivateWindow(631)</onclick>
+				<onclick condition="Window.IsActive(videos)">ActivateWindow(641)</onclick>  <!-- custom views videos -->
+				<onclick condition="Window.IsActive(musicplaylist) | Window.IsActive(music)">ActivateWindow(1103)</onclick>
+				<onclick condition="Window.IsActive(programs)">ActivateWindow(631)</onclick>  <!-- custom views programs -->
 				<ondown>SetFocus(51)</ondown>
 				<visible>![Skin.HasSetting(rcbgames) | Window.IsActive(2)]</visible>
 			</control>
@@ -159,7 +159,7 @@
 				<label>31141</label>
 				<textcolor>FFFFFAF0</textcolor>
 				<include>Animation_Fade</include>
-				<visible>Control.HasFocus(9940) + ![Skin.HasSetting(rcbgames) | Window.IsActive(2)]</visible>
+				<visible>Control.HasFocus(9940) + ![Skin.HasSetting(rcbgames) | Window.IsActive(pictures)]</visible>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -218,9 +218,9 @@
 				<include>InvisibleButton</include>
 				<onleft>SetFocus(9941)</onleft>
 				<onright>SetFocus(9942)</onright>
-				<onup condition="Window.IsActive(25)">ActivateWindow(641)</onup>
-				<onup condition="Window.IsActive(500) | Window.IsActive(502)">ActivateWindow(1103)</onup>
-				<onup condition="Window.IsActive(1)">ActivateWindow(631)</onup>
+				<onup condition="Window.IsActive(videos)">ActivateWindow(641)</onup>  <!-- custom views videos -->
+				<onup condition="Window.IsActive(musicplaylist) | Window.IsActive(music)">ActivateWindow(1103)</onup>
+				<onup condition="Window.IsActive(programs)">ActivateWindow(631)</onup>  <!-- custom views programs -->
 				<ondown>SetFocus(51)</ondown>
 			</control>
 			<control type="button" id="9941">
@@ -262,13 +262,13 @@
 				<animation effect="fade" start="20" end="40" time="700" condition="true" pulse="true">Conditional</animation>
 				<onleft>SetFocus(2)</onleft>
 				<onright>SetFocus(2)</onright>
-				<onclick condition="Window.IsActive(25)">ActivateWindow(641)</onclick>
-				<onclick condition="Window.IsActive(500) | Window.IsActive(502)">ActivateWindow(1103)</onclick>
-				<!-- <onclick condition="Window.IsActive(617)">ActivateWindow(1101)</onup> -->
-				<onclick condition="Window.IsActive(1)">ActivateWindow(631)</onclick>
+				<onclick condition="Window.IsActive(videos)">ActivateWindow(641)</onclick>  <!-- custom views video -->
+				<onclick condition="Window.IsActive(musicplaylist) | Window.IsActive(music)">ActivateWindow(1103)</onclick>
+				<!-- <onclick condition="Window.IsActive(702)">ActivateWindow(1101)</onup> -->
+				<onclick condition="Window.IsActive(programs)">ActivateWindow(631)</onclick>  <!-- custom views programs -->
 				<!-- <ondown condition="Window.IsActive(1103)">SetFocus(50)</ondown> -->
 				<ondown>SetFocus(51)</ondown>
-				<visible>![Skin.HasSetting(rcbgames) | Window.IsActive(2)]</visible>
+				<visible>![Skin.HasSetting(rcbgames) | Window.IsActive(pictures)]</visible>
 			</control>
 			<control type="label">
 				<left>30</left>
@@ -337,34 +337,34 @@
 				<visible>Control.HasFocus(9942)</visible>
 			</control>
 			<control type="button" id="2">
-				<visible>!Window.IsActive(616)</visible>
+				<visible>!Window.IsActive(tvrecordings)</visible>
 				<include>InvisibleButton</include>
 				<onleft>SetFocus(9231)</onleft> <!-- was 9941 -->
 				<onright>SetFocus(9231)</onright> <!-- was 9942 -->
-				<onup condition="Window.IsActive(617) + ![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]">ActivateWindow(1101)</onup>
-				<ondown condition="Window.IsActive(617) + [IntegerGreaterThan(Container(13).NumItems,0) + Control.IsVisible(13) | !Control.IsVisible(13)]">SetFocus(50)</ondown>
+				<onup condition="Window.IsActive(tvguide) + ![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]">ActivateWindow(1101)</onup>
+				<ondown condition="Window.IsActive(tvguide) + [IntegerGreaterThan(Container(13).NumItems,0) + Control.IsVisible(13) | !Control.IsVisible(13)]">SetFocus(50)</ondown>
 			</control>
 			<control type="button" id="9940">
-				<visible>Window.IsActive(616)</visible>
+				<visible>Window.IsActive(tvrecordings)</visible>
 				<include>InvisibleButton</include>
 				<onleft>SetFocus(9941)</onleft>
 				<onright>SetFocus(9942)</onright>
-				<onup>ActivateWindow(1102)</onup>
+				<onup>ActivateWindow(1102)</onup> <!-- custom views recordings -->
 				<ondown>SetFocus(51)</ondown>
 			</control>
 			<control type="button" id="9941">
 				<include>InvisibleButton</include>
-				<onfocus condition="!Window.IsActive(616)">SetFocus(2)</onfocus>
-				<onfocus condition="Window.IsActive(616)">SetFocus(9940)</onfocus>
-				<onclick condition="Window.IsActive(616)">Container.PreviousViewMode</onclick>
-				<onfocus condition="Window.IsActive(616)">Container.PreviousViewMode</onfocus>
+				<onfocus condition="!Window.IsActive(tvrecordings)">SetFocus(2)</onfocus>
+				<onfocus condition="Window.IsActive(tvrecordings)">SetFocus(9940)</onfocus>
+				<onclick condition="Window.IsActive(tvrecordings)">Container.PreviousViewMode</onclick>
+				<onfocus condition="Window.IsActive(tvrecordings)">Container.PreviousViewMode</onfocus>
 			</control>
 			<control type="button" id="9942">
 				<include>InvisibleButton</include>
-				<onfocus condition="!Window.IsActive(616)">SetFocus(2)</onfocus>
-				<onfocus condition="Window.IsActive(616)">SetFocus(9940)</onfocus>
-				<onclick condition="Window.IsActive(616)">Container.NextViewMode</onclick>
-				<onfocus condition="Window.IsActive(616)">Container.NextViewMode</onfocus>
+				<onfocus condition="!Window.IsActive(tvrecordings)">SetFocus(2)</onfocus>
+				<onfocus condition="Window.IsActive(tvrecordings)">SetFocus(9940)</onfocus>
+				<onclick condition="Window.IsActive(tvrecordings)">Container.NextViewMode</onclick>
+				<onfocus condition="Window.IsActive(tvrecordings)">Container.NextViewMode</onfocus>
 			</control>
 		</control>
 	</include>  
@@ -393,7 +393,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -480,7 +480,7 @@
 					<include>TopMenuButton</include>
 					<label>31375</label>
 					<onclick>SetFocus(51)</onclick>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -589,7 +589,7 @@
 				<control type="button" id="9218"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(52) + SubString(skin.string(bannervideopanel),auto)</visible>
 				</control>
 				<control type="button" id="9219"><!-- nivel de glass -->
@@ -597,7 +597,7 @@
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>Skin.SetString(view_glass,bannerglass)</onclick>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(636)</onclick>
+					<onclick>ActivateWindow(636)</onclick> <!-- custom menu glass -->
 					<visible>Control.IsVisible(52) + SubString(skin.string(bannervideopanel),auto)</visible>
 				</control>
 
@@ -787,7 +787,7 @@
 				<control type="button" id="9243"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(56) + SubString(skin.string(wallvideopanel),auto)</visible>
 				</control>
 				<control type="button" id="9244"><!-- nivel de glass -->
@@ -795,7 +795,7 @@
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>Skin.SetString(view_glass,wallglass)</onclick>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(636)</onclick>
+					<onclick>ActivateWindow(636)</onclick> <!-- custom views glass -->
 					<visible>Control.IsVisible(56) + SubString(skin.string(wallvideopanel),auto)</visible>
 				</control>
 
@@ -860,7 +860,7 @@
 				<control type="button" id="9258"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(57) + SubString(skin.string(glasslistvideopanel),auto)</visible>
 				</control>
 
@@ -945,7 +945,7 @@
 				<control type="button" id="9274"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(60) + SubString(skin.string(showartvideopanel),auto)</visible>
 				</control>
 
@@ -997,7 +997,7 @@
 				<control type="button" id="9286"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(61) + SubString(skin.string(multiplexvideopanel),auto)</visible>
 				</control>
 				<control type="radiobutton" id="9287">
@@ -1099,7 +1099,7 @@
 					<label>31493</label>
 					<onclick>Skin.ToggleSetting(showcasefixedlist)</onclick>
 					<selected>Skin.HasSetting(showcasefixedlist)</selected>
-					<onclick>ActivateWindow(25)</onclick>
+					<onclick>ActivateWindow(videos)</onclick>
 					<visible>Control.IsVisible(66)</visible>
 				</control>
 				<control type="radiobutton" id="92104">
@@ -1126,7 +1126,7 @@
 				<control type="button" id="92107"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custonm delay -->
 					<visible>Control.IsVisible(66) + SubString(skin.string(showcasevideopanel),auto)</visible>
 				</control>
 				<control type="radiobutton" id="92108">
@@ -1168,7 +1168,7 @@
 				<itemgap>0</itemgap>
 				<focusposition>1</focusposition>
 				<scrolltime>450</scrolltime>
-				<include condition="!Window.IsActive(28)">TopMenu_VideoNoPlaylist</include>
+				<include condition="!Window.IsActive(videoplaylist)">TopMenu_VideoNoPlaylist</include>
 				<control type="radiobutton" id="9302">
 					<include>TopMenuRadioButton</include>
 					<label>31620</label>
@@ -1179,25 +1179,25 @@
 					<include>TopMenuRadioButton</include>
 					<label>31227</label>
 					<onclick>Skin.ToggleSetting(videoinfobar)</onclick>
-					<onclick>ReplaceWindow(25)</onclick>
+					<onclick>ReplaceWindow(videos)</onclick>
 					<selected>Skin.HasSetting(videoinfobar)</selected>
-					<visible>!Window.IsActive(28)</visible>
+					<visible>!Window.IsActive(videoplaylist)</visible>
 				</control>
 				<control type="radiobutton" id="9325">
 					<include>TopMenuRadioButton</include>
 					<label>31227</label>
 					<onclick>Skin.ToggleSetting(vplaylistinfobar)</onclick>
-					<onclick>ReplaceWindow(28)</onclick>
+					<onclick>ReplaceWindow(videoplaylist)</onclick>
 					<selected>Skin.HasSetting(vplaylistinfobar)</selected>
-					<visible>Window.IsActive(28)</visible>
+					<visible>Window.IsActive(videoplaylist)</visible>
 				</control>
 				<control type="radiobutton" id="9304">
 					<include>TopMenuRadioButton</include>
 					<label>31250</label>
 					<onclick>Skin.ToggleSetting(videodate)</onclick>
-					<onclick>ReplaceWindow(25)</onclick>
+					<onclick>ReplaceWindow(videos)</onclick>
 					<selected>Skin.HasSetting(videodate)</selected>
-					<visible>!Window.IsActive(28)</visible>
+					<visible>!Window.IsActive(videoplaylist)</visible>
 				</control>
 				<control type="radiobutton" id="9305">
 					<include>TopMenuRadioButton</include>
@@ -1239,7 +1239,7 @@
 					<include>TopMenuRadioButton</include>
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(632)</onclick>
+					<onclick>ActivateWindow(632)</onclick> <!-- custom glass -->
 				</control>
 				<control type="radiobutton" id="9312">
 					<include>TopMenuRadioButton</include>
@@ -1341,7 +1341,7 @@
 					<selected>System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				</control>
-				<include condition="Window.IsActive(28)">TopMenu_Playlist</include>
+				<include condition="Window.IsActive(videoplaylist)">TopMenu_Playlist</include>
 			</control>
 
 			<control type="grouplist" id="9401"><!-- Artwork -->
@@ -1773,7 +1773,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -1858,7 +1858,7 @@
 					<include>TopMenuButton</include>
 					<label>31375</label>
 					<onclick>SetFocus(51)</onclick>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -2041,14 +2041,14 @@
 					<include>TopMenuRadioButton</include>
 					<label>31227</label>
 					<onclick>Skin.ToggleSetting(musicinfobar)</onclick>
-					<onclick>ReplaceWindow(25)</onclick>
+					<onclick>ReplaceWindow(videos)</onclick>
 					<selected>Skin.HasSetting(musicinfobar)</selected>
 				</control>
 				<control type="radiobutton" id="9355">
 					<include>TopMenuRadioButton</include>
 					<label>31250</label>
 					<onclick>Skin.ToggleSetting(musicdate)</onclick>
-					<onclick>ReplaceWindow(25)</onclick>
+					<onclick>ReplaceWindow(videos)</onclick>
 					<selected>Skin.HasSetting(musicdate)</selected>
 				</control>
 				<control type="radiobutton" id="9356"><!-- Etiquetas sempre visivel -->
@@ -2079,7 +2079,7 @@
 					<include>TopMenuRadioButton</include>
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(632)</onclick>
+					<onclick>ActivateWindow(632)</onclick>  <!-- custom glass -->
 				</control>
 				<control type="radiobutton" id="9361">
 					<include>TopMenuRadioButton</include>
@@ -2351,7 +2351,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -2399,7 +2399,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -2564,7 +2564,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom delay -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -2612,7 +2612,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -2678,7 +2678,7 @@
 					<include>TopMenuRadioButton</include>
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(632)</onclick>
+					<onclick>ActivateWindow(632)</onclick> <!-- custom glass -->
 				</control>
 			</control>
 
@@ -2792,7 +2792,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom delay -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -2837,7 +2837,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -2865,7 +2865,7 @@
 				<control type="button" id="9212"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_gamevideoseconds]</label>
-					<onclick>ActivateWindow(637)</onclick>
+					<onclick>ActivateWindow(637)</onclick> <!-- custom delayRCB -->
 					<visible>Control.IsVisible(50) + SubString(skin.string(games_video),auto)</visible>
 				</control>
 				<control type="button" id="4001"><!-- Missing info filter -->
@@ -2919,7 +2919,7 @@
 					<include>TopMenuRadioButton</include>
 					<label>- $LOCALIZE[31252]</label>
 					<onclick>SetFocus(260)</onclick>
-					<onclick>ActivateWindow(632)</onclick>
+					<onclick>ActivateWindow(632)</onclick> <!-- custom glass -->
 				</control>
 				<!-- Multiplex -->
 				<control type="radiobutton" id="9220">
@@ -2946,7 +2946,7 @@
 				<control type="button" id="9223"><!-- Seletor de delay -->
 					<include>TopMenuButton</include>
 					<label>$VAR[value_seconds]</label>
-					<onclick>ActivateWindow(638)</onclick>
+					<onclick>ActivateWindow(638)</onclick> <!-- custom delay -->
 					<visible>Control.IsVisible(53) + SubString(skin.string(multiplexgamespanel),auto)</visible>
 				</control>
 				<control type="radiobutton" id="9224">
@@ -3147,7 +3147,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custo dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -3195,7 +3195,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -3450,7 +3450,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -3495,7 +3495,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -3769,7 +3769,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!SubString(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!SubString(skin.string(codestep),step3)">ActivateWindow(629)</onclick> <!-- custom dialog -->
 					<onclick condition="SubString(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
 				</control>
@@ -3823,7 +3823,7 @@
 				<control type="button" id="9112">
 					<include>TopMenuButton</include>
 					<label>31375</label>
-					<onclick>ActivateWindow(4)</onclick>
+					<onclick>ActivateWindow(settings)</onclick>
 					<visible>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
@@ -4029,7 +4029,7 @@
 					<onright>32</onright>
 					<label>$LOCALIZE[31134]/$LOCALIZE[31135]</label>
 					<enable>!Skin.HasSetting(kiosk)</enable>
-					<visible>Window.IsActive(617)</visible>
+					<visible>Window.IsActive(tvguide)</visible>
 				</control>
 				<control type="button" id="9232"><!-- Change PVR View -->
 					<include>TopMenuTopButton</include>
@@ -4040,7 +4040,7 @@
 					<onright>32</onright>
 					<label>$LOCALIZE[31134]/$LOCALIZE[31135]</label>
 					<enable>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)] + !Skin.HasSetting(kiosk)</enable>
-					<visible>![Window.IsActive(617) | Window.IsActive(616)]</visible>
+					<visible>![Window.IsActive(tvguide) | Window.IsActive(tvrecordings)]</visible>
 				</control>
 				<control type="button" id="9233"><!-- Change PVR View for recordings -->
 					<include>TopMenuTopButton</include>
@@ -4051,7 +4051,7 @@
 					<onright>32</onright>
 					<label>$LOCALIZE[31134]/$LOCALIZE[31135]</label>
 					<enable>![Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)] + !Skin.HasSetting(kiosk)</enable>
-					<visible>Window.IsActive(616)</visible>
+					<visible>Window.IsActive(tvrecordings)</visible>
 				</control>
 			</control>
 			<control type="group">

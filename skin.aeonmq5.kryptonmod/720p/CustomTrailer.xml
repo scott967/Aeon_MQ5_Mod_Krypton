@@ -3,7 +3,7 @@
 	<!-- Isengard 7.1.13 -->
 	<!-- Jarvis 8.1.13 -->
 
-<window id="639" type="dialog">
+<window id="639" type="dialog"> <!-- safe id -->
 	<defaultcontrol>9006</defaultcontrol>
 	<onunload>Skin.Reset(custom_trailer)</onunload>
 	<zorder>3</zorder>

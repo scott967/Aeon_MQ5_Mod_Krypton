@@ -1,5 +1,7 @@
-	<!-- Aeon MQ 5 -->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Aeon MQ 5 -->
+<!-- Krypton 9.2.1 window IDs 502 -->
 
-	<window id="502">
+<window>
 	<include>MusicWindow</include>
-	</window>
+</window>

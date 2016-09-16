@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Aeon MQ 5 Helix 6.1.5 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.17/9.1.19 -->
+<!-- Krypton 9.1.17/9.1.19/9.2.1 window IDs -->
 
-<window id="6000">
+<window id="6000"> <!-- safe id -->
 	<defaultcontrol>-</defaultcontrol>
 	<onload condition="Skin.HasSetting(languagedone)">SetFocus(9000)</onload>
 	<onload condition="!Skin.HasSetting(languagedone)">SetFocus(9010)</onload>
@@ -469,7 +469,7 @@
 			<control type="group">
 				<posy>-5</posy>
 				<include>Animation_TopPopup</include>
-				<visible>![Window.IsVisible(104) | Window.IsVisible(107) | Window.IsVisible(133) | Window.IsVisible(151)] + [Control.HasFocus(80) | Control.HasFocus(452)]</visible> <!-- 151 was 614 extendedprogress -->
+				<visible>![Window.IsVisible(volumebar) | Window.IsVisible(notification) | Window.IsVisible(extendedprogressdialog)] + [Control.HasFocus(80) | Control.HasFocus(452)]</visible> <!-- 151 was 614 extendedprogress -->
 				<control type="image">
 					<posx>1230</posx>
 					<posy>60</posy>

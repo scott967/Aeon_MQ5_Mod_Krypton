@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Aeon MQ 5 Isengard 7.1.9 ShelfCase/7.1.10 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.19 -->
+<!-- Krypton 9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!--##################################################################################   VISTA SHELFCASE - ID 69   ##################################################################################-->
@@ -33,7 +33,7 @@
 					<animation effect="rotatey" center="50" start="8" end="8" time="0" condition="true">Conditional</animation>
 					<animation effect="slide" start="0,0" end="0,-8" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
 					<visible>![Container.Content(episodes) | Container.Content(years)]</visible>
-					<itemlayout width="176" height="245" condition="Window.IsActive(25) | Window.IsActive(28) | Window.IsActive(1)">
+					<itemlayout width="176" height="245" condition="Window.IsActive(videos) | Window.IsActive(videoplaylist) | Window.IsActive(programs)">
 						<control type="group">
 							<posx>150</posx>
 							<posy>0</posy>
@@ -101,7 +101,7 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout width="220" height="515" condition="Window.IsActive(25) | Window.IsActive(28) | Window.IsActive(1)">
+					<focusedlayout width="220" height="515" condition="Window.IsActive(videos) | Window.IsActive(videoplaylist) | Window.IsActive(programs)">
 						<control type="group">
 							<posx>140</posx>
 							<posy>0</posy>
@@ -187,7 +187,7 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<itemlayout width="176" height="245" condition="Window.IsActive(500) | Window.IsActive(502)">
+					<itemlayout width="176" height="245" condition="Window.IsActive(musicplaylist) | Window.IsActive(music)">
 						<control type="group">
 							<posx>150</posx>
 							<posy>60</posy>
@@ -231,7 +231,7 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout width="220" height="515" condition="Window.IsActive(500) | Window.IsActive(502)">
+					<focusedlayout width="220" height="515" condition="Window.IsActive(musicplaylist) | Window.IsActive(music)">
 						<control type="group">
 							<posx>140</posx>
 							<posy>60</posy>
@@ -317,7 +317,7 @@
 				<camera x="1340" y="380" />
 				<animation effect="rotatey" center="50" start="8" end="8" time="0" condition="true">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-8" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
-				<visible>Window.IsActive(25) + Control.IsVisible(9923)</visible>
+				<visible>Window.IsActive(videos) + Control.IsVisible(9923)</visible>
 				<control type="image">
 					<posx>650</posx>
 					<posy>410</posy>
@@ -334,36 +334,36 @@
 					<posy>410</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.1.Art(discart))]</texture>
+					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.1.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(discart)))</visible>
 				</control>
 				<control type="image">
 					<posx>760</posx>
 					<posy>410</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.2.Art(discart))]</texture>
+					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.2.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(discart)))</visible>
 				</control>
 				<control type="image">
 					<posx>870</posx>
 					<posy>410</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.3.Art(discart))]</texture>
+					<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.3.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(discart)))</visible>
 				</control>
 			</control><!-- END CDART-->
 
@@ -372,7 +372,7 @@
 				<camera x="1340" y="380" />
 				<animation effect="rotatey" center="50" start="8" end="8" time="0" condition="true">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-8" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
-				<visible>Window.IsActive(25) + Control.IsVisible(9923)</visible>
+				<visible>Window.IsActive(videos) + Control.IsVisible(9923)</visible>
 				<control type="image">
 					<posx>650</posx>
 					<posy>605</posy>
@@ -390,39 +390,39 @@
 					<posy>605</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.1.Art(discart))]</texture>
+					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
 					<colordiffuse>30FFFFFF</colordiffuse>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="360" center="auto" time="40000" delay="5000" loop="true" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.1.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.1.Art(discart)))</visible>
 				</control>
 				<control type="image">
 					<posx>760</posx>
 					<posy>605</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.2.Art(discart))]</texture>
+					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
 					<colordiffuse>30FFFFFF</colordiffuse>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.2.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.2.Art(discart)))</visible>
 				</control>
 				<control type="image">
 					<posx>870</posx>
 					<posy>605</posy>
 					<width>200</width>
 					<height>200</height>
-					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(0).Property(Set.Movie.3.Art(discart))]</texture>
+					<texture flipy="true" diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
 					<colordiffuse>30FFFFFF</colordiffuse>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<animation effect="rotate" start="0" end="360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 					<include>Animation_ViewsCDart</include>
-					<visible>!IsEmpty(Window(0).Property(Set.Movie.3.Art(discart)))</visible>
+					<visible>!IsEmpty(Window(home).Property(Set.Movie.3.Art(discart)))</visible>
 				</control>
 			</control><!-- END MODIF CDART REFLECT-->
 

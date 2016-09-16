@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5  Helix 6.1.0/6.1.7 -->
 	<!-- Jarvis 8.1.14 -->
-	<!-- Krypton 9.1.19 -->
+	<!-- Krypton 9.1.19/9.2.1 window IDs -->
 
 <includes>
 	<!-- ######################################################################### Current #########################################################################-->
@@ -4539,7 +4539,7 @@
 					<control type="image">
 						<description>forecast icon</description>
 						<include>TWC.Weekend.DayIconCommon</include>
-						<texture>$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.2.OutlookIcon)]</texture>
+						<texture>$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.2.OutlookIcon)]</texture>
 						<visible>!Skin.HasSetting(custom_wxicons.multi)</visible>
 					</control>
 					<control type="image">
@@ -4737,7 +4737,7 @@
 					<control type="image">
 						<description>forecast icon</description>
 						<include>TWC.Weekend.DayIconCommon</include>
-						<texture>$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.3.OutlookIcon)]</texture>
+						<texture>$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.3.OutlookIcon)]</texture>
 						<visible>!Skin.HasSetting(custom_wxicons.multi)</visible>
 					</control>
 					<control type="image">
@@ -4954,7 +4954,7 @@
 					<control type="image">
 						<description>forecast icon</description>
 						<include>TWC.Weekend.DayIconCommon</include>
-						<texture>$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.1.OutlookIcon)]</texture>
+						<texture>$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.1.OutlookIcon)]</texture>
 						<visible>!Skin.HasSetting(custom_wxicons.multi)</visible>
 					</control>
 					<control type="image">
@@ -5144,7 +5144,7 @@
 					<control type="image">
 						<description>forecast icon</description>
 						<include>TWC.Weekend.DayIconCommon</include>
-						<texture>$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.2.OutlookIcon)]</texture>
+						<texture>$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window.Property(Weekend.2.OutlookIcon)]</texture>
 						<visible>!Skin.HasSetting(custom_wxicons.multi)</visible>
 					</control>
 					<control type="image">

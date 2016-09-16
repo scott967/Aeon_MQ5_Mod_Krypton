@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.0 6.1.1 -->
 	<!-- Jarvis 8.1.13/8.1.14 -->
+	<!-- Krypton 9.2.1 window IDs 111 -->
 
-<window id="111" type="dialog">
+<window type="dialog">
 	<defaultcontrol always="true">4112</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -44,8 +45,8 @@
 				<posy>150</posy>
 				<width>454</width>
 				<height>450</height>
-				<onleft>Dialog.Close(111)</onleft>
-				<onright>Dialog.Close(111)</onright>
+				<onleft>Dialog.Close(shutdownmenu)</onleft>
+				<onright>Dialog.Close(shutdownmenu)</onright>
 				<orientation>vertical</orientation>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
@@ -98,31 +99,31 @@
 					</item>
 					<item id="2"><!-- Presets do menu principal -->
 						<label>31165</label>
-						<onclick>Dialog.Close(111)</onclick>
-						<onclick>ActivateWindow(630)</onclick>
-						<visible>![IsEmpty(skin.string(preset1.on)) + IsEmpty(skin.string(preset2.on)) + IsEmpty(skin.string(preset3.on)) + IsEmpty(skin.string(preset4.on)) + IsEmpty(skin.string(preset5.on)) + IsEmpty(skin.string(preset6.on)) + IsEmpty(skin.string(preset7.on)) + IsEmpty(skin.string(preset8.on)) + IsEmpty(skin.string(preset9.on)) + IsEmpty(skin.string(preset10.on))] + Window.IsVisible(0)</visible>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>ActivateWindow(630)</onclick>  <!-- custom presets -->
+						<visible>![IsEmpty(skin.string(preset1.on)) + IsEmpty(skin.string(preset2.on)) + IsEmpty(skin.string(preset3.on)) + IsEmpty(skin.string(preset4.on)) + IsEmpty(skin.string(preset5.on)) + IsEmpty(skin.string(preset6.on)) + IsEmpty(skin.string(preset7.on)) + IsEmpty(skin.string(preset8.on)) + IsEmpty(skin.string(preset9.on)) + IsEmpty(skin.string(preset10.on))] + Window.IsVisible(home)</visible>
 					</item>
 					<item id="15"><!-- Settings -->
 						<label>31011</label>
-						<onclick>Dialog.Close(111)</onclick>
-						<onclick>ActivateWindow(4)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>ActivateWindow(settings)</onclick>
 					</item>
 					<item id="3"><!-- Home Visualiser Video -->
 						<label>$VAR[value_buttonmenu_video]</label>
 						<onclick>Skin.Togglesetting(homevisvideo)</onclick>
-						<visible>Window.IsActive(0)</visible>
+						<visible>Window.IsActive(home)</visible>
 					</item>
 					<item id="4"><!-- Home Visualiser Audio -->
 						<label>$VAR[value_buttonmenu_audio]</label>
 						<onclick>Skin.Togglesetting(homevisaudio)</onclick>
-						<visible>Window.IsActive(0)</visible>
+						<visible>Window.IsActive(home)</visible>
 					</item>
 					<item id="5"><!-- Now Playing - Playlist -->
 						<label>31035</label>
 						<!-- <icon>icon_button_nowplaying.png</icon> -->
-						<onclick>Dialog.Close(111)</onclick>
-						<onclick condition="Player.HasAudio">ActivateWindow(500)</onclick>
-						<onclick condition="Player.HasVideo">ActivateWindow(28)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick condition="Player.HasAudio">ActivateWindow(musicplaylist)</onclick>
+						<onclick condition="Player.HasVideo">ActivateWindow(videoplaylist)</onclick>
 					</item>
 					<item id="12"><!-- Eject Tray -->
 						<label>31742</label>
@@ -130,12 +131,12 @@
 					</item>
 					<item id="13"><!-- File Manager -->
 						<label>10003</label>
-						<onclick>Dialog.Close(111)</onclick>
-						<onclick>ActivateWindow(3)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>ActivateWindow(filemanager)</onclick>
 					</item>
 					<item id="14"><!-- Favourites -->
 						<label>1036</label>
-						<onclick>Dialog.Close(111)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
 						<onclick>ActivateWindow(Favourites)</onclick>
 					</item>
 				</content>
