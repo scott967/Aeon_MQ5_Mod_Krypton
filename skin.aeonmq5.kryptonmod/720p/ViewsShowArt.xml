@@ -41,7 +41,7 @@
 		<scrolltime>400</scrolltime>
 		<preloaditems>2</preloaditems>
 		<animation effect="slide" start="0,0" end="0,-32" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
-		<animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(621)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" time="200" condition="Window.IsVisible(637)">Conditional</animation>
 		<visible>![Container.Content(sets) | Container.Content(years) | Container.Content(genres) | Container.Content(actors)]</visible>
 		<itemlayout width="240" height="300">
 			<control type="image"><!-- reflexo -->
@@ -138,7 +138,7 @@
 			<control type="group"><!-- painel de info -->
 				<animation effect="slide" start="0,-600" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-600" time="500" tween="sine" easing="out">Hidden</animation>
-				<visible>[Control.HasFocus(9960) | String.IsEqual(skin.string(showartvideopanel),alwayson) | String.IsEqual(skin.string(showartvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(621)] + !String.IsEqual(ListItem.Label,..)</visible>
+				<visible>[Control.HasFocus(9960) | String.IsEqual(skin.string(showartvideopanel),alwayson) | String.IsEqual(skin.string(showartvideopanel),auto) + Control.IsVisible(9921) | Window.IsVisible(637)] + !String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>56</posy>
