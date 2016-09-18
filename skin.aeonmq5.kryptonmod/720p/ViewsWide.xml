@@ -791,7 +791,7 @@
 					<width>200</width>
 					<height>72</height>
 					<aspectratio align="right" aligny="bottom">keep</aspectratio>
-					<texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+					<texture background="true" fallback="transparent.png">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
 					<fadetime>250</fadetime>	
 				</control>
 				<control type="image" id="1018"><!-- clearlogo e clearart -->

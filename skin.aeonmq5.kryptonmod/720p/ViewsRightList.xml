@@ -53,7 +53,7 @@
 					<posy>440</posy>
 					<width>300</width>
 					<height>110</height>
-					<texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+					<texture background="true" fallback="transparent.png">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
 					<aspectratio align="right" aligny="bottom">keep</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<visible>Window.IsActive(musicplaylist) | Window.IsActive(music)</visible>
