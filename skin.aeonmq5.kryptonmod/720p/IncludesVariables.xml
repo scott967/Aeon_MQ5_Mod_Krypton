@@ -3848,6 +3848,7 @@
 		<value condition="SubString(Container(9000).ListItem.Property(id),apl)">$VAR[value_menutheme_aplaylist]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),vnodes)">$VAR[value_menutheme_vnodes]</value>
 		<value condition="SubString(Container(9000).ListItem.Property(id),addon)">$VAR[value_menutheme_addons]</value>
+		<value>$VAR[value_menutheme_mymenu]</value>  <!-- fallback -->
 	</variable>
 
 	<variable name="value_menutheme_movies">
