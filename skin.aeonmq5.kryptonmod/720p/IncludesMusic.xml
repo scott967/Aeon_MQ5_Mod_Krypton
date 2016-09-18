@@ -31,12 +31,12 @@
 			<control type="multiimage" id="5032"><!-- Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-				<visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra)</visible>
+				<visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5033"><!-- Extra Fanart Song -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra)</visible>
+				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image" id="9924"><!-- record label control -->
 				<include>InvisibleButton</include>
@@ -424,7 +424,7 @@
 					<width>200</width>
 					<height>50</height>
 					<aspectratio>keep</aspectratio>
-					<texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+					<texture background="true" fallback="transparent.png">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<animation effect="slide" end="-490,-180" tween="cubic" easing="in" condition="Control.IsVisible(54)">Conditional</animation>
 					<include>Animation_HiddenView</include>

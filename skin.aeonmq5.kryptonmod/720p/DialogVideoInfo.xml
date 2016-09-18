@@ -24,17 +24,17 @@
 			<control type="multiimage" id="5020"><!-- Extra Fanart Movies/TvShows/MusicVideos -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra)</visible>
+				<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra)] + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5021"><!-- Extra Fanart Seasons -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-				<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),extra)</visible>
+				<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5022"><!-- Extra Fanart Episodes -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
-				<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra)</visible>
+				<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image" id="5023"><!-- Season Fanart -->
 				<include>InvisibleButton</include>
@@ -411,7 +411,7 @@
 				<width>190</width>
 				<aspectratio>keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-				<visible>!Container.Content(episodes)</visible>
+				<visible>!Container.Content(episodes) + !String.IsEmpty(ListItem.Art(clearlogo))</visible>
 			</control>
 			<control type="image"><!-- ClearArt -->
 				<posx>755</posx>
@@ -420,7 +420,7 @@
 				<width>190</width>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(clearart)]</texture>
-				<visible>!Container.Content(episodes)</visible>
+				<visible>!Container.Content(episodes) + !String.IsEmpty(ListItem.Art(clearart))</visible>
 			</control>
 			<control type="image"><!-- Thumb -->
 				<posx>987</posx>

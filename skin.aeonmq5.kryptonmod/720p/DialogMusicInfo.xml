@@ -23,12 +23,12 @@
 			<control type="multiimage" id="5032"><!-- Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-				<visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra)</visible>
+				<visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5033"><!-- Extra Fanart Song -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra)</visible>
+				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>

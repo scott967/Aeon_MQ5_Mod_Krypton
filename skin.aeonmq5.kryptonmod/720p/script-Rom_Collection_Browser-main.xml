@@ -23,7 +23,7 @@
 		<control type="multiimage" id="5020"><!-- Extra Fanart -->
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-			<visible>SubString(skin.string(gamesfanart),extra)</visible>
+			<visible>SubString(skin.string(gamesfanart),extra) + !ListItem.IsParentFolder</visible>
 		</control>
 
 		<!-- Views Group -->
