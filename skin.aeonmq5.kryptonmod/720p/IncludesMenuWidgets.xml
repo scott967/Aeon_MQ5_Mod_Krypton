@@ -38193,7 +38193,7 @@
 				<colordiffuse>95FFFFFF</colordiffuse>
 				<visible>Skin.HasSetting(custom_wxicons.multi)</visible>
 			</control>
-			<control type="label"><!-- Local  / Condicao atual -->
+			<control type="label"><!-- Location / Current Temp -->
 				<posx>55</posx>
 				<posy>80</posy>
 				<width>940</width>
@@ -38228,7 +38228,7 @@
 				<texture>weather_alert.png</texture>
 				<visible>!IsEmpty(Window(Weather).Property(Alerts))</visible>
 			</control>
-			<control type="label"><!-- Sensacao termica (wind chill) -->
+			<control type="label"><!-- Feels like (wind chill) -->
 				<posx>55</posx>
 				<posy>160</posy>
 				<width>130</width>
@@ -38252,7 +38252,7 @@
 				<label>$INFO[Window(Weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
 				<scroll>true</scroll>
 			</control>
-			<control type="label"><!-- Change de chuva -->
+			<control type="label"><!-- Chance rain -->
 				<posx>55</posx>
 				<posy>220</posy>
 				<width>130</width>
@@ -38336,7 +38336,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
 				<scroll>true</scroll>
-				<visible>!IsEmpty(Window(Weather).Property(Day0.HighTemp))</visible>
+				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
 			</control>
 			<control type="image"><!-- Minima prevista -->
 				<posx>50</posx>
