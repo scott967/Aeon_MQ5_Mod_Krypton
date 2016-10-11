@@ -6,11 +6,11 @@
 
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
-	<menucontrol>9000</menucontrol>
+	<menucontrol>9900</menucontrol>
 	<!-- <onload condition="Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload> -->
 	<onload condition="!Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">SetProperty(TvTunesBlocked,true)</onload>
 	<onload condition="Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes)">ClearProperty(TvTunesBlocked)</onload>
-	<onload condition="System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,backend=True)</onload> 
+<!-- 	<onload condition="System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,backend=True)</onload>  -->
 	<!-- <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,backend=true)</onload> -->
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
@@ -146,7 +146,7 @@
 						<posy>645</posy>
 						<orientation>horizontal</orientation>
 						<itemgap>17</itemgap>
-						<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(637)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(637)">Conditional</animation> <!-- customdelayRCB -->
 						<control type="image"><!-- studio -->
 							<include>FlagImage</include>
 							<texture>$VAR[value_studiosicon]</texture>
@@ -321,7 +321,7 @@
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+					<visible>!IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>58</posy>
@@ -388,7 +388,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+					<visible>IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>58</posy>
@@ -463,7 +463,7 @@
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<animation effect="slide" end="0,20" time="500" tween="sine" easing="out" condition="!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
+				<animation effect="slide" end="0,20" time="500" tween="sine" easing="out" condition="!IsEmpty(ListItem.Property(AudioLanguage.1))">Conditional</animation>
 				<visible>[Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(59)] + ![ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Control.HasFocus(9940) | Window.IsActive(movieinformation) | Window.IsVisible(637) | Skin.HasSetting(notvshowstagline) | IsEmpty(Control.GetLabel(555)) | String.IsEqual(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
 				<control type="image">
 					<posx>0</posx>
@@ -498,7 +498,7 @@
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(movieinformation).Property(AudioLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation) | Window.IsVisible(637) | Window.IsVisible(641)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(ListItem.Property(AudioLanguage.1)) + IsEmpty(ListItem.Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation) | Window.IsVisible(637) | Window.IsVisible(641)]</visible>
 				<posx>810</posx>
 				<posy>35</posy>
 				<include>AudioandSub</include>

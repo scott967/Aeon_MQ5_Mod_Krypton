@@ -286,7 +286,7 @@
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 				</control>
 				<control type="group">
-					<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+					<visible>!IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>48</posy>
@@ -324,7 +324,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+					<visible>IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label"><!-- Title -->
 						<posx>30</posx>
 						<posy>48</posy>
@@ -371,7 +371,7 @@
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
 				<animation effect="slide" end="0,-20" time="500" tween="sine" easing="out" condition="![Skin.HasSetting(videoinfobar) | Skin.HasSetting(videodate)]">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(Window(movieinformation).Property(AudioLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(ListItem.Property(AudioLanguage.1)) + IsEmpty(ListItem.Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Control.HasFocus(9940) | Control.IsVisible(9922) | Window.IsActive(movieinformation)]</visible>
 				<posx>810</posx>
 				<posy>35</posy>
 				<include>AudioandSub</include>
