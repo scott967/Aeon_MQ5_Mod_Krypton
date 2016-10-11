@@ -390,7 +390,7 @@
 						<colordiffuse>CCCCCCCC</colordiffuse>
 						<aspectratio>keep</aspectratio>
 						<fadetime>FanartCrossFadeTime</fadetime>
-						<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+						<visible>!IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					</control>
 					<control type="label">
 						<description>AUDIO LANGUAGES</description>
@@ -400,7 +400,7 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<font>Font_17</font>
-						<label>$INFO[Window(movieinformation).Property(AudioLanguage.1)]$INFO[Window(movieinformation).Property(AudioLanguage.2), / ]$INFO[Window(movieinformation).Property(AudioLanguage.3), / ]$INFO[Window(movieinformation).Property(AudioLanguage.4), / ]$INFO[Window(movieinformation).Property(AudioLanguage.5), / ]$INFO[Window(movieinformation).Property(AudioLanguage.6), / ]$INFO[Window(movieinformation).Property(AudioLanguage.7), / ]$INFO[Window(movieinformation).Property(AudioLanguage.8), / ]$INFO[Window(movieinformation).Property(AudioLanguage.9), / ]$INFO[Window(movieinformation).Property(AudioLanguage.10), / ]</label>
+						<label>$INFO[ListItem.Property(AudioLanguage.1)]$INFO[ListItem.Property(AudioLanguage.2), / ]$INFO[ListItem.Property(AudioLanguage.3), / ]$INFO[ListItem.Property(AudioLanguage.4), / ]$INFO[ListItem.Property(AudioLanguage.5), / ]$INFO[ListItem.Property(AudioLanguage.6), / ]$INFO[ListItem.Property(AudioLanguage.7), / ]$INFO[ListItem.Property(AudioLanguage.8), / ]$INFO[ListItem.Property(AudioLanguage.9), / ]$INFO[ListItem.Property(AudioLanguage.10), / ]</label>
 						<textcolor>CCCCCCCC</textcolor>
 						<scroll>true</scroll>
 						<scrollout>false</scrollout>
@@ -415,8 +415,8 @@
 						<colordiffuse>CCCCCCCC</colordiffuse>
 						<aspectratio>keep</aspectratio>
 						<fadetime>FanartCrossFadeTime</fadetime>
-						<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
-						<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+						<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(ListItem.Property(AudioLanguage.1))">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					</control>
 					<control type="label">
 						<description>SUBTITLE LANGUAGES</description>
@@ -426,11 +426,11 @@
 						<height>25</height>
 						<aligny>center</aligny>
 						<font>Font_17</font>
-						<label>$INFO[Window(movieinformation).Property(SubtitleLanguage.1)]$INFO[Window(movieinformation).Property(SubtitleLanguage.2), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.3), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.4), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.5), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.6), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.7), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.8), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.9), / ]$INFO[Window(movieinformation).Property(SubtitleLanguage.10), / ]</label>
+						<label>$INFO[ListItem.Property(SubtitleLanguage.1)]$INFO[ListItem.Property(SubtitleLanguage.2), / ]$INFO[ListItem.Property(SubtitleLanguage.3), / ]$INFO[ListItem.Property(SubtitleLanguage.4), / ]$INFO[ListItem.Property(SubtitleLanguage.5), / ]$INFO[ListItem.Property(SubtitleLanguage.6), / ]$INFO[ListItem.Property(SubtitleLanguage.7), / ]$INFO[ListItem.Property(SubtitleLanguage.8), / ]$INFO[ListItem.Property(SubtitleLanguage.9), / ]$INFO[ListItem.Property(SubtitleLanguage.10), / ]</label>
 						<textcolor>CCCCCCCC</textcolor>
 						<scroll>true</scroll>
 						<scrollout>false</scrollout>
-						<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(Window(movieinformation).Property(AudioLanguage.1))">Conditional</animation>
+						<animation effect="slide" end="0,-28" time="0" tween="sine" easing="out" condition="IsEmpty(ListItem.Property(AudioLanguage.1))">Conditional</animation>
 					</control>
 				</control>
 				<!-- ##########          END AUDIO / LANGUAGE FLAGS          ########## -->

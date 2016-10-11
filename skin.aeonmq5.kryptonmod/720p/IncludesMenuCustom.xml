@@ -4677,27 +4677,25 @@
 				<onclick condition="System.HasAddon(script.artworkorganizer)">RunScript(script.artworkorganizer)</onclick>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies) + Skin.HasSetting(randommoviebg) | String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Skin.HasSetting(randomtvshowbg) | String.IsEqual(Container(9000).ListItem.Property(id),concerts) + Skin.HasSetting(randomconcertbg) | String.IsEqual(Container(9000).ListItem.Property(id),music) + Skin.HasSetting(randommusicbg)</visible>
 			</control>
-			<control type="button" id="127"><!-- Pacote extra normal -->
-				<label>$VAR[value_addon14]</label>
-				<onclick condition="!System.HasAddon(script.aeonmq5.extrapack)">ActivateWindow(AddonBrowser)</onclick>
-				<onclick condition="System.HasAddon(script.aeonmq5.extrapack)">RunScript(script.aeonmq5.extrapack,mode=default)</onclick>
+			<control type="button" id="127"><!-- set weather icons -->
+				<label>$LOCALIZE[31702] $LOCALIZE[31009] $LOCALIZE[536] / $LOCALIZE[33069]</label>
+				<onclick>ActivateWindowAndFocus(SkinSettings,9100,10)</onclick>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
-				<enable>Skin.HasSetting(custom_wxicons.multi) | SubString(skin.string(weatherconditionbg),weathercondition)</enable>
+				<!-- <enable>Skin.HasSetting(custom_wxicons.multi) | SubString(skin.string(weatherconditionbg),weathercondition)</enable> -->
 			</control>
-			<control type="button" id="128"><!-- Pacote extra forcado -->
+			<!-- <control type="button" id="128">
 				<label>31923</label>
 				<onclick>RunScript(script.aeonmq5.extrapack,mode=forcerefresh)</onclick>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + System.HasAddon(script.aeonmq5.extrapack)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 				<enable>Skin.HasSetting(custom_wxicons.multi) | SubString(skin.string(weatherconditionbg),weathercondition)</enable>
-			</control>
-			<control type="radiobutton" id="129"><!-- Icones Clima Animados --><!-- nao trocar id -->
+			</control> -->
+			<!-- <control type="radiobutton" id="129">
 				<include>CustomMenuRadioButton</include>
-				<!-- <label>$VAR[value_animatedicons]</label> -->
 				<label>$LOCALIZE[31543]</label>
 				<onclick>ActivateWindowAndFocus(skinsettings,9100,35)</onclick>
 				<selected>Skin.HasSetting(custom_wxicons.multi)</selected>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
-			</control>
+			</control> -->
 			<control type="radiobutton" id="130"><!-- Icones Clima Externo --><!-- nao trocar id -->
 				<include>CustomMenuRadioButton</include>
 				<label>31903</label>
@@ -4714,9 +4712,13 @@
 			<control type="button" id="132"><!-- Fundo Clima/Condicional -->
 				<include>CustomMenuButton</include>
 				<label>$VAR[value_weathercondition] ($LOCALIZE[31181])</label>
-				<onclick>SetFocus(4094)</onclick>
+				<!-- <onclick>SetFocus(4094)</onclick> -->
+				<onclick>Skin.SelectBool(33069, 31540|wx_bg_weathercondition, 31542|wx_bg_southamerica, 31541|wx_bg_northamerica)</onclick>
+				<onunfocus condition="Skin.HasSetting(wx_bg_weathercondition)">Skin.SetString(weatherconditionbg,weathercondition)</onunfocus>
+				<onunfocus condition="Skin.HasSetting(wx_bg_southamerica)">Skin.SetString(weatherconditionbg,southamerica)</onunfocus>
+				<onunfocus condition="Skin.HasSetting(wx_bg_northamerica)">Skin.SetString(weatherconditionbg,northamerica)</onunfocus>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
-				<enable>IsEmpty(skin.string(weather.bg))</enable>
+				<enable>IsEmpty(skin.string(weather.bg))</enable>  <!-- never set -->
 			</control>
 			<control type="radiobutton" id="133"><!-- Fundo Clima Externo -->
 				<include>CustomMenuRadioButton</include>
@@ -4798,7 +4800,7 @@
 			<onfocus>Skin.SetString(custom_subid,$INFO[Container(9000).ListItem.Property(name)].subid)</onfocus>
 			<onfocus>Skin.SetString(custom_master,$INFO[Container(9000).ListItem.Property(name)].master)</onfocus>
 		</control>
-		<control type="button" id="4094">
+		<control type="button" id="4094"> <!-- weather background selector -->
 			<include>InvisibleButton</include>
 			<onfocus>SetFocus(450)</onfocus>
 			<onfocus condition="SubString(skin.string(weatherconditionbg),northamerica)">Skin.SetString(weatherconditionbg,southamerica)</onfocus>

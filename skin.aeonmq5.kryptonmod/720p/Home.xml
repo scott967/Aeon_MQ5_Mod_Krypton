@@ -8,7 +8,8 @@
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
 	<onload condition="!String.IsEqual(skin.string(defaultsettings),2)">SetFocus(900)</onload>
-	<onload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onload>
+	<onload condition="SkinString(custom_wxicons.path)">SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onload>
+	<onload condition="!SkinString(custom_wxicons.path)">SetProperty(current_wxicon_path,resource://resource.images.weathericons.default/,0)</onload> <!-- default weather icons -->
 	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onload>
 	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="System.HasAddon(script.favourites) + ![IsEmpty(skin.string(favouriteswidget)) | Skin.HasSetting(nofavouriteswidget)]">RunScript(script.favourites)</onload>

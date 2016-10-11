@@ -10,8 +10,8 @@
 	<onunload>Skin.Reset(customwindow)</onunload>
 	<onunload>Skin.Reset(resetmode)</onunload>
 	<onunload>Skin.Reset(fonte)</onunload>
-	<onunload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onunload>
-	<onunload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onunload>
+	<onunload>SetProperty(home,current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onunload>
+	<onunload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(home,current_wxicon_multi,true,0)</onunload>
 	<controls>
 		<control type="multiimage">
 			<include>HomeBG</include>
@@ -2138,7 +2138,7 @@
 				<animation effect="fade" time="50">Hidden</animation>
 				<visible allowhiddenfocus="true">Container(9100).HasFocus(35)</visible>
 			</control>
-			<control type="grouplist" id="9004"><!-- Temas -->
+			<control type="grouplist" id="9004"><!-- Themes -->
 				<visible>Container(9100).HasFocus(22)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>240</posx>
@@ -2149,76 +2149,77 @@
 				<onright>81</onright>
 				<itemgap>0</itemgap>
 				<pagecontrol>81</pagecontrol>
-				<control type="button" id="1060"><!-- Pacote extra normal --><!-- Nao trocar ids -->
+				<control type="button" id="1060"><!-- install or update theme resource -->
 					<label>$VAR[value_addon14]</label>
-					<onclick condition="!System.HasAddon(script.aeonmq5.extrapack)">ActivateWindow(AddonBrowser)</onclick>
-					<onclick condition="System.HasAddon(script.aeonmq5.extrapack)">RunScript(script.aeonmq5.extrapack,mode=default)</onclick>
+					<onclick condition="!Skin.String(custom_themes.name)">RunScript(script.image.resource.select,type=resource.images.skinthemes&amp;property=custom_themes)</onclick>
+					<onclick condition="Skin.String(custom_themes.name)">SetFocus(9100,10)</onclick>
 				</control>
-				<control type="button" id="1061"><!-- Pacote extra forcado -->
-					<label>31923</label>
-					<onclick>RunScript(script.aeonmq5.extrapack,mode=forcerefresh)</onclick>
-					<visible>System.HasAddon(script.aeonmq5.extrapack)</visible>
-				</control>
-				<control type="radiobutton" id="1069"><!-- Tema aleatorio -->
+				<control type="radiobutton" id="1069"><!--Random themes -->
 					<label>31899</label>
 					<onclick>Skin.ToggleSetting(randomthemes)</onclick>
 					<selected>Skin.HasSetting(randomthemes) + !SubString(skin.string(theme),mytheme)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack) + !SubString(skin.string(theme),mytheme)</enable>
+					<enable>Skin.String(custom_themes.name) + !SubString(skin.string(theme),mytheme)</enable>
 				</control>
-				<control type="radiobutton" id="1062"><!-- Tema padrao-->
+				<control type="radiobutton" id="1062"><!-- coral-->
 					<label>$LOCALIZE[31129] ($LOCALIZE[31277])</label>
 					<onclick>Skin.SetString(theme,coral)</onclick>
 					<selected>SubString(skin.string(theme),coral)</selected>
 				</control>
-				<control type="radiobutton" id="1063"><!-- Tema moderno -->
+				<control type="radiobutton" id="1063"><!-- modern -->
 					<label>$LOCALIZE[31904]</label>
 					<onclick>Skin.SetString(theme,modern)</onclick>
 					<selected>SubString(skin.string(theme),modern)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1064"><!-- Tema futuro -->
+				<control type="radiobutton" id="1064"><!-- future -->
 					<label>31894</label>
 					<onclick>Skin.SetString(theme,future)</onclick>
 					<selected>SubString(skin.string(theme),future)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1065"><!-- Tema frio -->
+				<control type="radiobutton" id="1065"><!-- cold -->
 					<label>31895</label>
 					<onclick>Skin.SetString(theme,cold)</onclick>
 					<selected>SubString(skin.string(theme),cold)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1066"><!-- Tema quente -->
+				<control type="radiobutton" id="1066"><!-- warm -->
 					<label>31896</label>
 					<onclick>Skin.SetString(theme,warm)</onclick>
 					<selected>SubString(skin.string(theme),warm)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1067"><!-- Tema sombrio -->
+				<control type="radiobutton" id="1067"><!-- dark -->
 					<label>31897</label>
 					<onclick>Skin.SetString(theme,darkness)</onclick>
 					<selected>SubString(skin.string(theme),darkness)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1068"><!-- Tema arte digital -->
+				<control type="radiobutton" id="1068"><!-- digital -->
 					<label>31898</label>
 					<onclick>Skin.SetString(theme,digitalart)</onclick>
 					<selected>SubString(skin.string(theme),digitalart)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>Skin.String(custom_themes.name)</enable>
 				</control>
-				<control type="radiobutton" id="1070"><!-- Tema meu tema -->
+				<control type="radiobutton" id="1061"><!-- colors -->
+					<label>COLORS IMAGES THEME</label>
+					<onclick>Skin.SetString(theme,colours)</onclick>
+					<selected>SubString(skin.string(theme),colours)</selected>
+					<enable>Skin.String(custom_themes.name)</enable>
+				</control>
+				<control type="radiobutton" id="1070"><!-- My theme -->
 					<label>31908</label>
 					<onclick>Skin.SetString(theme,mytheme)</onclick>
 					<onclick>ActivateWindow(640)</onclick>  <!-- custom help -->
 					<selected>SubString(skin.string(theme),mytheme)</selected>
 				</control>
-				<control type="button" id="1071"><!-- Caminho do meu tema -->
+				<control type="button" id="1071"><!-- my theme path -->
 					<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[15311][/COLOR] $INFO[skin.string(CustomMyTheme)]</label>
 					<onclick>Skin.SetPath(CustomMyTheme)</onclick>
 					<visible>SubString(skin.string(theme),mytheme)</visible>
 				</control>
 			</control>
-			<control type="group"><!-- Temas -->
+			<control type="group"><!-- Theme preview window -->
 				<visible>Container(9100).HasFocus(22)</visible>
 				<include>Animation_Fade</include>
 				<control type="image">
@@ -2272,16 +2273,16 @@
 				<ondown>260</ondown>
 				<itemgap>0</itemgap>
 				<pagecontrol>82</pagecontrol>
-				<control type="button" id="1080"><!-- Pacote extra normal -->
-					<label>$VAR[value_addon14]</label>
-					<onclick condition="!System.HasAddon(script.aeonmq5.extrapack)">ActivateWindow(AddonBrowser)</onclick>
-					<onclick condition="System.HasAddon(script.aeonmq5.extrapack)">RunScript(script.aeonmq5.extrapack,mode=default)</onclick>
+				<control type="button" id="1060"><!-- install or update style resource -->
+					<label>$VAR[value_addon15]</label>
+					<onclick condition="!Skin.String(custom_styles.name)">RunScript(script.image.resource.select,type=resource.images.skinstyles&amp;property=custom_styles)</onclick>
+					<onclick condition="Skin.String(custom_styles.name)">SetFocus(9100,10)</onclick>
 				</control>
-				<control type="button" id="1081"><!-- Pacote extra forcado -->
+				<!-- <control type="button" id="1081">
 					<label>31923</label>
 					<onclick>RunScript(script.aeonmq5.extrapack,mode=forcerefresh)</onclick>
 					<visible>System.HasAddon(script.aeonmq5.extrapack)</visible>
-				</control>
+				</control> -->
 				<control type="radiobutton" id="1082"><!-- Inverter cores do menu -->
 					<label>31117</label>
 					<onclick>Skin.ToggleSetting(whitemenu)</onclick>
@@ -2297,13 +2298,13 @@
 					<onclick>Skin.SetString(style,graphite)</onclick>
 					<selected>String.IsEqual(skin.string(style),graphite)</selected>
 				</control>
-				<control type="radiobutton" id="1086"><!-- Estilo by extrapack -->
-					<label>31614</label>
+				<control type="radiobutton" id="1086"><!-- Resource Styles -->
+					<label>RESOURCE $LOCALIZE[31345]</label>
 					<onclick>Skin.SetString(style,extrapack)</onclick>
-					<onclick>Skin.SetString(extrapackstyle,special://userdata/addon_data/skin.aeonmq5.extrapack/styles/)</onclick>
-					<onclick>Skin.SetImage(extrapackstyle,,special://userdata/addon_data/skin.aeonmq5.extrapack/styles/)</onclick>
+					<onclick>Skin.SetString(extrapackstyle,resource://resource.images.skinstyles.aeonmq5/)</onclick>
+					<onclick>Skin.SetFile(extrapackstyle,.jpg | .png,resource://resource.images.skinstyles.aeonmq5/)</onclick>
 					<selected>String.IsEqual(skin.string(style),extrapack)</selected>
-					<enable>System.HasAddon(script.aeonmq5.extrapack)</enable>
+					<enable>!String.IsEmpty(Skin.String(custom_styles.name))</enable>
 				</control>
 				<control type="radiobutton" id="1087"><!-- Meu estilo -->
 					<label>$LOCALIZE[31615]  ($LOCALIZE[31206])</label>
@@ -2619,7 +2620,7 @@
 				</control>
 			</control>
 
-			<control type="grouplist" id="9011"><!-- Icons -->
+			<control type="grouplist" id="9011"><!-- Icons/Backgrounds -->
 				<visible>Container(9100).HasFocus(35)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>240</posx>
@@ -2636,6 +2637,11 @@
 					<label>$LOCALIZE[31009] $LOCALIZE[536]</label>
 					<label2>$INFO[Skin.String(custom_wxicons.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=custom_wxicons)</onclick>
+				</control>
+				<control type="button" id="3509">
+					<label>$LOCALIZE[31009] $LOCALIZE[33069]</label>
+					<label2>$INFO[Skin.String(custom_wxfanart.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.weatherfanart&amp;property=custom_wxfanart)</onclick>
 				</control>
 				<control type="button" id="3502">
 					<label>$LOCALIZE[20338] ($LOCALIZE[157]) $LOCALIZE[515] $LOCALIZE[536]</label>
@@ -2666,6 +2672,16 @@
 					<label>$LOCALIZE[264] $LOCALIZE[21899] $LOCALIZE[536]</label>
 					<label2>$INFO[Skin.String(custom_recordlabels.name)]</label2>
 					<onclick>RunScript(script.image.resource.select,type=resource.images.recordlabels&amp;property=custom_recordlabels)</onclick>
+				</control>
+				<control type="button" id="3508">
+					<label>$LOCALIZE[31893]</label>
+					<label2>$INFO[Skin.String(custom_themes.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.skinthemes&amp;property=custom_themes)</onclick>
+				</control>
+				<control type="button" id="3510">
+					<label>$LOCALIZE[31345]</label>
+					<label2>$INFO[Skin.String(custom_styles.name)]</label2>
+					<onclick>RunScript(script.image.resource.select,type=resource.images.skinstyles&amp;property=custom_styles)</onclick>
 				</control>
 			</control>
 
@@ -3835,8 +3851,8 @@
 						<onclick>Skin.SetBool(fonte)</onclick>
 						<onclick>SetFocus(9008)</onclick>
 					</item>
-					<item id="35"><!-- Icons -->
-						<label>$LOCALIZE[536]</label>
+					<item id="35"><!-- Icons / backgrounds -->
+						<label>$LOCALIZE[536]/$LOCALIZE[33069]</label>
 						<icon>-</icon>
 						<onclick>SetFocus(9011)</onclick>
 					</item>

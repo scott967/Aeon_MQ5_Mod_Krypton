@@ -86,7 +86,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="10000" time="3000" repeat="10000">!Skin.HasSetting(noallowscroll)</autoscroll>
 			</control>
-			<control type="grouplist">
+			<control type="grouplist"> <!-- Weather icons non animation (custom_wxicons.multi false) -->
 				<posx>450</posx>
 				<posy>610</posy>
 				<width>630</width>
@@ -95,7 +95,7 @@
 				<itemgap>0</itemgap>
 				<scrolltime>-</scrolltime>
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>!Skin.HasSetting(custom_wxicons.multi) + [Control.HasFocus(129) | Control.HasFocus(130) | Control.HasFocus(131)]</visible>
+				<visible>!Skin.HasSetting(custom_wxicons.multi) + [Control.HasFocus(127) | Control.HasFocus(130) | Control.HasFocus(131)]</visible>
 				<control type="image"><!-- Icone do clima 1 -->
 					<width>180</width>
 					<height>90</height>
@@ -115,7 +115,7 @@
 					<texture background="true">$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
 				</control>
 			</control>
-			<control type="grouplist">
+			<control type="grouplist"> <!-- Weather icons animation (custom_wxicons.multi true) -->
 				<posx>450</posx>
 				<posy>610</posy>
 				<width>630</width>
@@ -124,7 +124,7 @@
 				<itemgap>0</itemgap>
 				<scrolltime>-</scrolltime>
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>Skin.HasSetting(custom_wxicons.multi) + [Control.HasFocus(129) | Control.HasFocus(130) | Control.HasFocus(131)]</visible>
+				<visible>Skin.HasSetting(custom_wxicons.multi) + [Control.HasFocus(127) | Control.HasFocus(130) | Control.HasFocus(131)]</visible>
 				<control type="multiimage"><!-- Icone animado 1 -->
 					<width>180</width>
 					<height>90</height>
@@ -374,7 +374,7 @@
 			</control>
 			<control type="group">
 				<include>Animation_TopPopup</include>
-				<visible>![Window.IsVisible(104) | Window.IsVisible(107) | Window.IsVisible(133) | Window.IsVisible(151) | Control.HasFocus(80) | Control.HasFocus(452)]</visible> <!-- 151 was 614 extendedprogress -->
+				<visible>![Window.IsVisible(volumebar) | Window.IsVisible(notification) | Window.IsVisible(extendedprogressdialog) | Control.HasFocus(80) | Control.HasFocus(452)]</visible> <!-- 151 was 614 extendedprogress -->
 				<control type="image">
 					<posx>10</posx>
 					<posy>30</posy>
