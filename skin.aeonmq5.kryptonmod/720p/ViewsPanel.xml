@@ -192,7 +192,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
-					<itemlayout condition="!Window.IsActive(videos)" width="120" height="120">
+					<itemlayout condition="!Window.IsActive(videos) + ![Container.Content(genres | Container.Content(roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -210,6 +210,36 @@
 							<texture>$VAR[value_watchedstyle]</texture>
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>	
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<include>Panel_Dimmer</include>
+							<width>120</width>
+							<height>120</height>
+						</control>
+					</itemlayout>
+					<itemlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
+						<control type="image">
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>105</width>
+							<height>105</height>
+							<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
+							<colordiffuse>FF909090</colordiffuse>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<posx>11</posx>
+							<posy>11</posy>
+							<width>95</width>
+							<height>95</height>
+							<font>Font_18A</font>
+							<!-- <scroll>true</scroll> -->
+							<!-- <scrollspeed>15</scrollspeed> -->
+							<wrapmultiline>true</wrapmultiline>
+							<textcolor>FFFFFAF0</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="image">
 							<include>Panel_Dimmer</include>
@@ -397,7 +427,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!Window.IsActive(videos)" width="120" height="120">
+					<focusedlayout condition="!Window.IsActive(videos) + ![Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -422,6 +452,33 @@
 								<effect type="fade" start="80" end="100" time="400" />
 							</animation>
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+					</focusedlayout>
+					<focusedlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
+						<control type="image">
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>105</width>
+							<height>105</height>
+							<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+								<effect type="fade" start="80" end="100" time="400" />
+							</animation>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<posx>11</posx>
+							<posy>11</posy>
+							<width>95</width>
+							<height>95</height>
+							<font>Font_18A</font>
+							<scroll>true</scroll>
+							<scrollspeed>15</scrollspeed>
+							<textcolor>FFFFFAF0</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</focusedlayout>
 				</control>
@@ -451,6 +508,17 @@
 					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
 					<aspectratio>stretch</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>!Container.Content(genres)</visible>
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>42</posy>
+					<width>387</width>
+					<height>210</height>
+					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</texture>
+					<aspectratio>keep</aspectratio>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>!Window.IsActive(videos) + Container.Content(genres)</visible>
 				</control>
 				<control type="label">
 					<posx>10</posx>
