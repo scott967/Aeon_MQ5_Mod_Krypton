@@ -59,6 +59,18 @@
 					<texture fallback="DefaultPicture.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="-2">black.png</bordertexture>
+					<visible>!String.Contains(ListItem.Path,resource:)</visible>
+				</control>
+				<control type="image">
+					<posx>840</posx>
+					<posy>95</posy>
+					<width>360</width>
+					<height>360</height>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<texture fallback="DefaultPicture.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Label]</texture>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordertexture border="-2">black.png</bordertexture>
+					<visible>String.Contains(ListItem.Path,resource:)</visible>
 				</control>
 				<control type="image">
 					<posx>840</posx>
@@ -69,6 +81,18 @@
 					<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio aligny="top">keep</aspectratio>
 					<bordertexture flipy="true" border="-2" diffuse="thumb_reflect.png">black.png</bordertexture>
+					<visible>!String.Contains(ListItem.Path,resource:)</visible>
+				</control>
+				<control type="image">
+					<posx>840</posx>
+					<posy>460</posy>
+					<width>360</width>
+					<height>360</height>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<texture flipy="true" fallback="DefaultPicture.png" diffuse="thumb_reflect.png" background="true">$INFO[ListItem.Path]$INFO[ListItem.Label]</texture>
+					<aspectratio aligny="top">keep</aspectratio>
+					<bordertexture flipy="true" border="-2" diffuse="thumb_reflect.png">black.png</bordertexture>
+					<visible>String.Contains(ListItem.Path,resource:)</visible>
 				</control>
 			</control>
 
