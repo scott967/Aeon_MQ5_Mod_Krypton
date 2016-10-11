@@ -5,7 +5,7 @@
 
 <window id="641" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
-	<onunload>AlarmClock(refreshview,ActivateWindowAndFocus(videos, 9940,0),0:01,true)</onunload>
+	<!-- <onunload>AlarmClock(refreshview,ActivateWindowAndFocus(videos, 9940,0),0:01,true)</onunload> -->
 	<controls>
 		<control type="group">
 			<include>Animation_DialogPopup</include>
@@ -113,7 +113,7 @@
 					<selected>Skin.HasSetting(viewwall_video)</selected>
 					<visible>![Container.Content(episodes) | Container.Content(sets) | Container.Content(years)]</visible>
 				</control>
-				<control type="radiobutton" id="19267"><!-- 3DWall --><!-- 67 -->
+				<control type="radiobutton" id="19267"><!-- 3DWall --><!-- 67/68 -->
 					<radioposx>894</radioposx>
 					<label>31806</label>
 					<onclick>Skin.ToggleSetting(view3dwall_video)</onclick>
