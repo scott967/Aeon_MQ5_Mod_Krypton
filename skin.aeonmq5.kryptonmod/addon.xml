@@ -2,7 +2,6 @@
 <addon id="skin.aeonmq5" version="9.2.1" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.aeonmq5.extrapack" version="1.0.1"/>
 		<import addon="script.favourites" version="4.0.4"/>
 		<import addon="script.artwork.downloader" version="12.0.11"/>
 		<import addon="script.randomandlastitems" version="2.0.3"/>
@@ -11,7 +10,6 @@
 		<import addon="script.tv.show.next.aired" version="6.0.10"/>
 		<import addon="service.skin.widgets" version="0.0.19"/>
 		<import addon="script.cu.lrclyrics" version="1.0.1"/>
-		<import addon="script.videolanguage" version="0.0.6"/>
 		<import addon="script.globalsearch" version="1.1.1"/>
 		<import addon="script.toolbox" version="1.0.1"/>
 		<import addon="script.image.resource.select" version="0.0.5"/>
@@ -61,12 +59,13 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.2.0 - RELEASE DATE 08/30/2016 for Kodi KRYPTON BETA1[/COLOR][/B]
-Fixed:  Top Menu and Main menu for Video Add-ons now works
-Fixed:  Obsolete System.GetBool(PVRManager.enabled) removed
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.1 - RELEASE DATE 10/30/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
 New:  Various Krypton compliance changes
-New:  DialogPlayerProgressInfo (key O in video/live tv)
-New:  Support for video speedup
+New:  Remove videolaguage script
+New:  Remove "etrapack"
+New:  Support Aoen MQ7 theme resource
+New:  Provide new "styles" resource
+New:  ssupport video playback speeds 0.8-1.5
 		</news>
 	</extension>
 
