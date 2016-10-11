@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.2.1 Krypton[COLOR=80FFFFFF] | [/COLOR]09/30/2016</value>
+		<value>9.2.1 Krypton[COLOR=80FFFFFF] | [/COLOR]10/30/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -1181,7 +1181,7 @@
 	</variable>
 	<variable name="value_recordlabelsicon">
 		<value condition="!IsEmpty(ListItem.Property(Album_Label)) + [Window.IsVisible(music) | Window.IsVisible(musicinformation)]">$INFO[Skin.String(custom_recordlabels.path)]$INFO[ListItem.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
-		<value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Property(Album_Label)) + Window.IsVisible(visualisation)">$INFO[Skin.String(custom_redordlabels.path)]$INFO[MusicPlayer.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
+		<value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Property(Album_Label)) + Window.IsVisible(visualisation)">$INFO[Skin.String(custom_recordlabels.path)]$INFO[MusicPlayer.Property(Album_Label)]$INFO[Skin.String(custom_recordlabels.ext)]</value>
 	</variable>
 	<variable name="value_musiccodec">
 		<value condition="SubString(ListItem.Filename,.aac)">flags/musiccodec/aac.png</value>
@@ -1800,14 +1800,19 @@
 		<value condition="SubString(skin.string(weatherconditionbg),northamerica)">$LOCALIZE[31720]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica)">$LOCALIZE[31721]</value>
 	</variable>
-	<variable name="value_animatedicons">
+	<variable name="value_animatedicons"> <!-- unused -->
 		<value condition="!Skin.HasSetting(weathericons_external) + !System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31543] ($LOCALIZE[31900])</value>
 		<value condition="!Skin.HasSetting(weathericons_external) + System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31543]</value>
 		<value condition="Skin.HasSetting(weathericons_external)">$LOCALIZE[31543]</value>
 	</variable>
+	<!-- <variable name ="wx_background">
+		<value condition="Skin.HasSetting(wx_bg_southamerica)">southamerica</value>
+		<value condition="Skin.HasSetting(wx_bg_weathercondition)">weathercondition</value>
+		<value>northamerica</value>
+	</variable> -->
 	<variable name="value_weathercondition">
-		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external) + !System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31540] ($LOCALIZE[31900])</value>
-		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external) + System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31540]</value>
+		<!-- <value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external) + !System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31540] ($LOCALIZE[31900])</value> -->
+		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external)">$LOCALIZE[31540]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + Skin.HasSetting(weathercondition_external)">$LOCALIZE[31540]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),northamerica)">$LOCALIZE[31541] ($VAR[value_seasonlabel])</value>
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica)">$LOCALIZE[31542] ($VAR[value_seasonlabel])</value>
@@ -2215,7 +2220,7 @@
 	<variable name="value_buttonmenu_video">
 		<value condition="Skin.HasSetting(homevisvideo)">$LOCALIZE[31740]: $LOCALIZE[31743]</value>
 		<value condition="!Skin.HasSetting(homevisvideo)">$LOCALIZE[31740]: $LOCALIZE[31711]</value>
-		<value>NO Skinsetting</value>
+		<value>NO Skinsetting</value> <!-- for testing -->
 	</variable>
 	<variable name="value_buttonmenu_audio">
 		<value condition="Skin.HasSetting(homevisaudio)">$LOCALIZE[31741]: $LOCALIZE[31743]</value>
@@ -2264,24 +2269,24 @@
 		<value condition="Skin.HasSetting(whitemenu)">25FFFAF0</value>
 		<value condition="!Skin.HasSetting(whitemenu)">90000000</value>
 	</variable>
-	<variable name="value_mainmenubg_preview">
+	<variable name="value_mainmenubg_preview">  <!-- resource images.skintheme -->
 		<value condition="Control.HasFocus(9100) + Container(9100).HasFocus(22)">special://skin/backgrounds/</value>
 		<value condition="Control.HasFocus(1060)">aeon_thumb.png</value>
-		<value condition="Control.HasFocus(1061)">aeon_thumb.png</value>
+		<value condition="Control.HasFocus(1061)">$INFO[Skin.String(custom_themes.path)]colours/</value>
 		<value condition="Control.HasFocus(1062)">special://skin/backgrounds/</value>
-		<value condition="Control.HasFocus(1063)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/</value>
-		<value condition="Control.HasFocus(1064)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/</value>
-		<value condition="Control.HasFocus(1065)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/</value>
-		<value condition="Control.HasFocus(1066)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/</value>
-		<value condition="Control.HasFocus(1067)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/</value>
-		<value condition="Control.HasFocus(1068)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/</value>
+		<value condition="Control.HasFocus(1063)">$INFO[Skin.String(custom_themes.path)]modern/</value>
+		<value condition="Control.HasFocus(1064)">$INFO[Skin.String(custom_themes.path)]future/</value>
+		<value condition="Control.HasFocus(1065)">$INFO[Skin.String(custom_themes.path)]cold/</value>
+		<value condition="Control.HasFocus(1066)">$INFO[Skin.String(custom_themes.path)]warm/</value>
+		<value condition="Control.HasFocus(1067)">$INFO[Skin.String(custom_themes.path)]darkness/</value>
+		<value condition="Control.HasFocus(1068)">$INFO[Skin.String(custom_themes.path)]digitalart/</value>
 		<value condition="Control.HasFocus(1070)">$INFO[Skin.String(CustomMyTheme)]/</value>
 		<value condition="Control.HasFocus(1060)">$INFO[Skin.String(CustomMyTheme)]/</value>
 	</variable>
 	<variable name="value_themedescription">
 		<value condition="Control.HasFocus(9100) + Container(9100).HasFocus(22)">$LOCALIZE[31606]</value>
 		<value condition="Control.HasFocus(1060)">$LOCALIZE[31254]</value>
-		<value condition="Control.HasFocus(1061)">$LOCALIZE[31967]</value>
+		<value condition="Control.HasFocus(1061)">$LOCALIZE[31966]</value>
 		<value condition="Control.HasFocus(1062)">$LOCALIZE[31975]</value>
 		<value condition="Control.HasFocus(1063)">$LOCALIZE[31966]</value>
 		<value condition="Control.HasFocus(1064)">$LOCALIZE[31965]</value>
@@ -2355,7 +2360,7 @@
 		<!-- <value condition="Container.Content(episodes) + [SubString(skin.string(episodesfanart),fanart) | SubString(skin.string(episodesfanart),extra) + IsEmpty(Control.GetLabel(5022))+ IsEmpty(Control.GetLabel(5025))]">$INFO[ListItem.Art(fanart)]</value> -->
 		<value condition="Container.Content(episodes) + [SubString(skin.string(episodesfanart),seasons) + IsEmpty(Control.GetLabel(5024))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(sets) + [SubString(skin.string(setsfanart),fanart) | SubString(skin.string(setsfanart),extra) + IsEmpty(Control.GetLabel(5020))]">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + !Skin.HasSetting(externalvideogenrefanart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_videogenre/$INFO[ListItem.Label,,.jpg]</value>
+		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + !Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(custom_moviegenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),genre) + Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(custom_moviegenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(videogenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 	</variable>
@@ -2373,7 +2378,7 @@
 		<value condition="IsEmpty(ListItem.Art(fanart)) + ![Container.Content(genres) | Container.Content(roles)]">special://skin/backgrounds/music.jpg</value>
 		<value condition="![Container.Content(songs) | Container.Content(playlists) | Container.Content(genres) | Container.Content(roles)] + [SubString(skin.string(musicfanart),fanart) | SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5032))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="[Container.Content(songs) | Container.Content(playlists)] + [SubString(skin.string(musicfanart),fanart) | SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5033))]">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + !Skin.HasSetting(externalmusicgenrefanart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_musicgenre/$INFO[ListItem.Label,,.jpg]</value>
+		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + !Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(custom_musicgenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),genre) + Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(custom_musicgenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenrefanart.ext)]</value>
 		<value condition="Container.Content(genres) + SubString(skin.string(musicgenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 	</variable>
@@ -2599,6 +2604,7 @@
 		<value condition="SubString(skin.string(theme),warm) + Skin.HasSetting(randomthemes)">$LOCALIZE[31890] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),darkness) + Skin.HasSetting(randomthemes)">$LOCALIZE[31891] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),digitalart) + Skin.HasSetting(randomthemes)">$LOCALIZE[31892] - $LOCALIZE[31049]</value>
+		<value condition="SubString(skin.string(theme),colours) + Skin.HasSetting(randomthemes)">$LOCALIZE[31893] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$LOCALIZE[31908]</value>
 	</variable>
 	<variable name="value_skinstatus_homeglass">
@@ -3078,18 +3084,18 @@
 	<variable name="value_poster">
 		<value condition="![IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
-		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_videogenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
 		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
-		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_musicgenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 	</variable>
 	<variable name="value_poster_midlist">
 		<value condition="![IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.poster)) + Container.Content(episodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
-		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_videogenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
 		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
-		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">special://userdata/addon_data/skin.aeonmq5.extrapack/icons_musicgenre/$INFO[ListItem.Label].jpg</value>
+		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 	</variable>
 	<variable name="value_poster-11">
@@ -3485,9 +3491,13 @@
 		<value condition="System.HasAddon(script.favourites)">$LOCALIZE[31015]</value>
 		<value condition="!System.HasAddon(script.favourites)">[COLOR=FFB20000]$LOCALIZE[31015] | $LOCALIZE[31435]: Favourites script[/COLOR]</value>
 	</variable>
-	<variable name="value_addon14">
-		<value condition="System.HasAddon(script.aeonmq5.extrapack)">$LOCALIZE[31888]</value>
-		<value condition="!System.HasAddon(script.aeonmq5.extrapack)">[COLOR=FFB20000]$LOCALIZE[31888] | $LOCALIZE[31435]: Aeon MQ 5 extrapack[/COLOR]</value>
+	<variable name="value_addon14"> <!-- resource skinthemes -->
+		<value condition="Skin.String(custom_themes.name)">Skin Themes - Aeon MQ</value>
+		<value condition="!Skin.String(custom_themes.name)">[COLOR=FFB20000]$LOCALIZE[31888] | $LOCALIZE[31435]: Skin Themes - Aeon MQ[/COLOR]</value>
+	</variable>
+	<variable name="value_addon15">  <!-- resource skinstyles -->
+		<value condition="Skin.String(custom_styles.name)">Skin Styles - Aeon MQ</value>
+		<value condition="!Skin.String(custom_styles.name)">[COLOR=FFB20000]$LOCALIZE[31888] | $LOCALIZE[31435]: Skin Styles - Aeon MQ[/COLOR]</value>
 	</variable>
 
 	<variable name="value_fallbackmusicbg">
@@ -3679,9 +3689,18 @@
 		<value condition="Player.Rewinding32x">$LOCALIZE[31301] 32X</value>
 	</variable>
 
+	<variable name="value_music_roles">
+		<value condition="String.EndsWith(Container.FolderPath,composer)">$LOCALIZE[29989]</value>
+		<value condition="String.EndsWith(Container.FolderPath,conductor)">$LOCALIZE[29990]</value>
+		<value condition="String.EndsWith(Container.FolderPath,orchestra)">$LOCALIZE[29993]</value>
+		<value condition="String.EndsWith(Container.FolderPath,remixer)">$LOCALIZE[38036]</value>
+		<value condition="String.EndsWith(Container.FolderPath,lyricist)">$LOCALIZE[29992]</value>
+		<value condition="String.EndsWith(Container.FolderPath,DJMixer)">$LOCALIZE[29991]</value>
+	</variable>
 	<variable name="value_music_title">
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value> 
-		<value condition="Container.Content(artists) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(artists) +!String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(artists) +String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Label]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
 	</variable>
@@ -3821,7 +3840,7 @@
 		<value condition="Control.HasFocus(116)">$LOCALIZE[31153]</value>
 		<value condition="Control.HasFocus(118)">$LOCALIZE[31170]</value>
 		<value condition="Control.HasFocus(119)">$LOCALIZE[31171]</value>
-		<value condition="Control.HasFocus(129) | Control.HasFocus(130) | Control.HasFocus(131)">$LOCALIZE[31083]</value>
+		<value condition="Control.HasFocus(127) | Control.HasFocus(130) | Control.HasFocus(131)">$LOCALIZE[31083]</value>
 		<value condition="Control.HasFocus(9000) + !IsEmpty(Container(9000).ListItem.Property(path)) + [SubString(Container(9000).ListItem.Property(id),vpl) | SubString(Container(9000).ListItem.Property(id),apl) | SubString(Container(9000).ListItem.Property(id),vnode) | SubString(Container(9000).ListItem.Property(id),favs) | SubString(Container(9000).ListItem.Property(id),addons)]">$LOCALIZE[31095][CR]$INFO[Container(9000).ListItem.Property(path)]</value>
 	</variable>
 
@@ -3853,96 +3872,105 @@
 
 	<variable name="value_menutheme_movies">
 		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),coral)">special://skin/backgrounds/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/movies.jpg</value>
-		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/movies.jpg</value>
+		<value condition="!Skin.HasSetting(randommoviebg) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/movies.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,movies]</value>
 		<value condition="Skin.HasSetting(randommoviebg)">special://userdata/addon_data/script.artworkorganizer/MovieFanart</value>
 	</variable>
 	<variable name="value_menutheme_tvshows">
 		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),coral)">special://skin/backgrounds/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/tvshows.jpg</value>
-		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/tvshows.jpg</value>
+		<value condition="!Skin.HasSetting(randomtvshowbg) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/tvshows.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,tvshows]</value>
 		<value condition="Skin.HasSetting(randomtvshowbg)">special://userdata/addon_data/script.artworkorganizer/TVShowFanart</value>
 	</variable>
 	<variable name="value_menutheme_concerts">
 		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),coral)">special://skin/backgrounds/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/concerts.jpg</value>
-		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/concerts.jpg</value>
+		<value condition="!Skin.HasSetting(randomconcertbg) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/concerts.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,concerts]</value>
 		<value condition="Skin.HasSetting(randomconcertbg)">special://userdata/addon_data/script.artworkorganizer/MusicVideoFanart</value>
 	</variable>
 	<variable name="value_menutheme_music">
 		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),coral)">special://skin/backgrounds/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/music.jpg</value>
-		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/music.jpg</value>
+		<value condition="!Skin.HasSetting(randommusicbg) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/music.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,music]</value>
 		<value condition="Skin.HasSetting(randommusicbg)">special://userdata/addon_data/script.artworkorganizer/ArtistFanart</value>
 	</variable>
 	<variable name="value_menutheme_livetv">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/livetv.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/livetv.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/livetv.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,livetv]</value>
 	</variable>
 	<variable name="value_menutheme_favourites">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/favourites.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/favourites.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/favourites.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,favourites]</value>
 	</variable>
 	<variable name="value_menutheme_games">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/games.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/games.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/games.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/games.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/games.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/games.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/games.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/games.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/games.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/games.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/games.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/games.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/games.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/games.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,games]</value>
 	</variable>
 	<variable name="value_menutheme_programs">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/programs.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/programs.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/programs.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,programs]</value>
 	</variable>
 	<variable name="value_menutheme_pictures">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/pictures.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/pictures.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/pictures.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,pictures]</value>
 	</variable>
 	<variable name="value_menutheme_weather">
@@ -3955,59 +3983,68 @@
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),coral)">special://skin/backgrounds/autumn.jpg</value>
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),coral)">special://skin/backgrounds/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/winter.jpg</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/winter.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/spring.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/summer.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/autumn.jpg</value>
-		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/winter.jpg</value>
+		
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/winter.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(9-21,12-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/spring.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(12-21,3-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/summer.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/autumn.jpg</value>
+		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/winter.jpg</value>
 
 		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,spring]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),northamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,summer]</value>
@@ -4018,77 +4055,84 @@
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(3-21,6-21) + SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,autumn]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),southamerica) + System.Date(6-21,9-21) + SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,winter]</value>
 
-		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_weather/$INFO[Weather.FanartCode]</value>
+		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + !Skin.HasSetting(weathercondition_external)">$INFO[Skin.String(custom_wxfanart.path)]$INFO[Weather.FanartCode]</value>
 		<value condition="SubString(skin.string(weatherconditionbg),weathercondition) + Skin.HasSetting(weathercondition_external)">$INFO[Skin.String(CustomWeatherConditionFolder)]/$INFO[Weather.FanartCode]</value>
 	</variable>
-	<variable name="value_menutheme_settings">
+	<variable name="value_menutheme_settings"> <!-- resource.images.skintheme -->
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/settings.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/settings.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/settings.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,settings]</value>
 	</variable>
 	<variable name="value_menutheme_shutdown">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/shutdown.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/shutdown.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/shutdown.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,shutdown]</value>
 	</variable>
 	<variable name="value_menutheme_mymenu">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/mymenu.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/mymenu.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/mymenu.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,mymenu]</value>
 	</variable>
 	<variable name="value_menutheme_vplaylist">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/vplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/vplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/vplaylist.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,vplaylist]</value>
 	</variable>
 	<variable name="value_menutheme_aplaylist">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/aplaylist.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/aplaylist.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/aplaylist.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,aplaylist]</value>
 	</variable>
 	<variable name="value_menutheme_vnodes">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/vnodes.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/vnodes.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/vnodes.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,vnodes]</value>
 	</variable>
 	<variable name="value_menutheme_addons">
 		<value condition="SubString(skin.string(theme),coral)">special://skin/backgrounds/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),modern)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_modern/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),future)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_future/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),cold)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_cold/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),warm)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_warm/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),darkness)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_darkness/addons.jpg</value>
-		<value condition="SubString(skin.string(theme),digitalart)">special://userdata/addon_data/skin.aeonmq5.extrapack/backgrounds_digitalart/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),modern)">$INFO[Skin.String(custom_themes.path)]modern/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),future)">$INFO[Skin.String(custom_themes.path)]future/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),cold)">$INFO[Skin.String(custom_themes.path)]cold/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),warm)">$INFO[Skin.String(custom_themes.path)]warm/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),darkness)">$INFO[Skin.String(custom_themes.path)]darkness/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),digitalart)">$INFO[Skin.String(custom_themes.path)]digitalart/addons.jpg</value>
+		<value condition="SubString(skin.string(theme),colours)">$INFO[Skin.String(custom_themes.path)]colours/addons.jpg</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$INFO[Skin.String(CustomMyTheme),,addons]</value>
 	</variable>
 	<variable name="SeekLabel">
