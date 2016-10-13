@@ -348,7 +348,7 @@
 					<!--  edit for MV artist -->
 					<control type="label">
 						<posx>30</posx>
-						<posy>100</posy>
+						<posy>110</posy>
 						<width>750</width>
 						<height>25</height>
 						<font>Font_21</font>
@@ -361,7 +361,7 @@
 					</control>
 					<control type="label">
 						<posx>30</posx>
-						<posy>100</posy>
+						<posy>110</posy>
 						<width>750</width>
 						<height>25</height>
 						<font>Font_21</font>
@@ -415,7 +415,7 @@
 					<!--  edit for MV artist -->
 					<control type="label">
 						<posx>30</posx>
-						<posy>100</posy>
+						<posy>110</posy>
 						<width>1100</width>
 						<height>25</height>
 						<font>Font_21</font>
@@ -428,7 +428,7 @@
 					</control>
 					<control type="label">
 						<posx>30</posx>
-						<posy>100</posy>
+						<posy>110</posy>
 						<width>750</width>
 						<height>25</height>
 						<font>Font_21</font>
