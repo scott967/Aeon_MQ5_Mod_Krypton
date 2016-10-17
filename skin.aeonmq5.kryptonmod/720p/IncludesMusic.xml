@@ -240,7 +240,7 @@
 								<textcolor>$VAR[value_flagscolor]</textcolor>
 								<fadetime>FanartCrossFadeTime</fadetime>
 								<scroll>true</scroll>
-								<visible>String.Contains(Container.FolderPath,role=)</visible>
+								<visible>String.Contains(Container.FolderPath,role=) | String.Contains(Container.FolderPath,roleid=-1000)</visible>
 							</control>
 						</control>
 					</control>

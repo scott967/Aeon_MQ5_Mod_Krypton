@@ -76,7 +76,7 @@
 				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>
 		</itemlayout>
-		<itemlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music)" width="298" height="360">
+		<itemlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music) + ![Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
 			<control type="image">
 				<posx>0</posx>
 				<posy>6</posy>
@@ -105,6 +105,32 @@
 				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
+			</control>
+		</itemlayout>
+		<itemlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
+			<control type="image">
+				<posx>0</posx>
+				<posy>6</posy>
+				<width>260</width>
+				<height>350</height>
+				<bordertexture border="-2">black.png</bordertexture>
+				<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
+				<colordiffuse>FF909090</colordiffuse>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>5</posx>
+				<posy>11</posy>
+				<width>250</width>
+				<height>340</height>
+				<font>Font_18A</font>
+				<!-- <scroll>true</scroll> -->
+				<!-- <scrollspeed>15</scrollspeed> -->
+				<wrapmultiline>true</wrapmultiline>
+				<textcolor>FFFFFAF0</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
 			</control>
 		</itemlayout>
 		<focusedlayout condition="![Window.IsActive(musicplaylist) | Window.IsActive(music)]" width="298" height="360">
@@ -143,7 +169,7 @@
 				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>	
 		</focusedlayout>
-		<focusedlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music)" width="298" height="360">
+		<focusedlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music) + ![Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
 			<control type="image">
 				<posx>0</posx>
 				<posy>6</posy>
@@ -178,6 +204,33 @@
 				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
 				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>	
+		</focusedlayout>
+		<focusedlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music) + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
+			<control type="image">
+				<posx>0</posx>
+				<posy>6</posy>
+				<width>260</width>
+				<height>350</height>
+				<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
+				<colordiffuse>FF909090</colordiffuse>
+				<aspectratio>keep</aspectratio>
+				<bordertexture border="-2">black.png</bordertexture>
+				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+			</control>
+			<control type="label">
+				<posx>5</posx>
+				<posy>11</posy>
+				<width>250</width>
+				<height>340</height>
+				<font>Font_18A</font>
+				<!-- <scroll>true</scroll> -->
+				<!-- <scrollspeed>15</scrollspeed> -->
+				<wrapmultiline>true</wrapmultiline>
+				<textcolor>FFFFFAF0</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
 		</focusedlayout>
 	</include>
 	<include name="ViewPoster">

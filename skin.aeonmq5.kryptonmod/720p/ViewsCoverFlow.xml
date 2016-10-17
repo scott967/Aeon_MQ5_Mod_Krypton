@@ -2126,7 +2126,7 @@
 				<preloaditems>2</preloaditems>
 				<hitrect x="490" y="370" w="318" h="318"/>
 				<animation effect="slide" start="0,0" end="0,-20" time="300" tween="sine" easing="out" condition="Control.HasFocus(80)">Conditional</animation>
-				<visible>![Container.Content(episodes) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(actors)]</visible>
+				<visible>![Container.Content(episodes) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles) | Container.Content(actors)]</visible>
 				<itemlayout width="318" height="318"/>
 				<focusedlayout width="318" height="318">
 					<control type="image">

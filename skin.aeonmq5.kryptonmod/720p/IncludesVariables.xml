@@ -3690,12 +3690,15 @@
 	</variable>
 
 	<variable name="value_music_roles">
-		<value condition="String.EndsWith(Container.FolderPath,composer)">$LOCALIZE[29989]</value>
-		<value condition="String.EndsWith(Container.FolderPath,conductor)">$LOCALIZE[29990]</value>
-		<value condition="String.EndsWith(Container.FolderPath,orchestra)">$LOCALIZE[29993]</value>
-		<value condition="String.EndsWith(Container.FolderPath,remixer)">$LOCALIZE[38036]</value>
-		<value condition="String.EndsWith(Container.FolderPath,lyricist)">$LOCALIZE[29992]</value>
-		<value condition="String.EndsWith(Container.FolderPath,DJMixer)">$LOCALIZE[29991]</value>
+		<value condition="String.EndsWith(Container.FolderPath,composer) | String.Contains(Container.FolderPath,=composer)">$LOCALIZE[29989]</value>
+		<value condition="String.EndsWith(Container.FolderPath,conductor) | String.Contains(Container.FolderPath,=conductor)">$LOCALIZE[29990]</value>
+		<value condition="String.EndsWith(Container.FolderPath,orchestra) | String.Contains(Container.FolderPath,=orchestra)">$LOCALIZE[29993]</value>
+		<value condition="String.EndsWith(Container.FolderPath,remixer) | String.Contains(Container.FolderPath,=remixer)">$LOCALIZE[38036]</value>
+		<value condition="String.EndsWith(Container.FolderPath,lyricist) | String.Contains(Container.FolderPath,=lyricist)">$LOCALIZE[29992]</value>
+		<value condition="String.EndsWith(Container.FolderPath,DJMixer) | String.Contains(Container.FolderPath,=djmixer)">$LOCALIZE[29991]</value>
+		<value condition="String.EndsWith(Container.FolderPath,arranger) | String.Contains(Container.FolderPath,=arranger)">$LOCALIZE[29988]</value>
+		<value condition="String.Contains(Container.FolderPath,=-1000)">All contributors</value>
+		<value>$LOCALIZE[29994]</value>
 	</variable>
 	<variable name="value_music_title">
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value> 
@@ -3704,6 +3707,17 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
 	</variable>
+<!-- 	<variable name="value_music_role">
+		<value conditon="String.Contains(Container.FolderPath,=composer)">$LOCALIZE[29989]</value>
+		<value conditon="String.Contains(Container.FolderPath,=conductor)">$LOCALIZE[29990]</value>
+		<value conditon="String.Contains(Container.FolderPath,=orchestra)">$LOCALIZE[29993]</value>
+		<value conditon="String.Contains(Container.FolderPath,=lyricist)">$LOCALIZE[29992]</value>
+		<value conditon="String.Contains(Container.FolderPath,=arranger)">$LOCALIZE[29988]</value>
+		<value conditon="String.Contains(Container.FolderPath,=djmixer)">$LOCALIZE[29991]</value>
+		<value conditon="String.Contains(Container.FolderPath,=remixer)">$LOCALIZE[38036]</value>
+		<value conditon="String.Contains(Container.FolderPath,=-1000)">All contributors</value>
+		<value>$LOCALIZE[29994]</value>
+	</variable> -->
 	<variable name="value_music_subtitle">
 		<value condition="Container.Content(albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(songinformation)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>

@@ -192,7 +192,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
-					<itemlayout condition="!Window.IsActive(videos) + ![Container.Content(genres | Container.Content(roles)]" width="120" height="120">
+					<itemlayout condition="!Window.IsActive(videos) + ![Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -217,7 +217,7 @@
 							<height>120</height>
 						</control>
 					</itemlayout>
-					<itemlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
+					<itemlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -427,7 +427,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!Window.IsActive(videos) + ![Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
+					<focusedlayout condition="!Window.IsActive(videos) + ![Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
@@ -454,7 +454,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles)]" width="120" height="120">
+					<focusedlayout condition="!Window.IsActive(videos) + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="120" height="120">
 						<control type="image">
 							<posx>6</posx>
 							<posy>6</posy>
