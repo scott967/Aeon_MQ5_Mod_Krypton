@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.2.1 Krypton[COLOR=80FFFFFF] | [/COLOR]10/30/2016</value>
+		<value>9.2.2 Krypton[COLOR=80FFFFFF] | [/COLOR]10/30/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>

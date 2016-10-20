@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5" version="9.2.1" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
+<addon id="skin.aeonmq5" version="9.2.2" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="script.favourites" version="4.0.4"/>
@@ -59,13 +59,14 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.2.1 - RELEASE DATE 10/30/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/30/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
 New:  Various Krypton compliance changes
 New:  Remove videolaguage script
-New:  Remove "etrapack"
-New:  Support Aoen MQ7 theme resource
+New:  Remove "extrapack" add-on
+New:  Support Aeon MQ7 theme resource
 New:  Provide new "styles" resource
-New:  ssupport video playback speeds 0.8-1.5
+New:  Support video playback speeds 0.8-1.5
+New:  Remove support for TVTunes add-on
 		</news>
 	</extension>
 
