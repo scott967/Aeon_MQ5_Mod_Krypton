@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.2/6.1.3 /6.1.4/6.1.5/6.1.6/6.1.8/6.1.9 wall audiocover-->
 <!-- Isengard 7.1.10 wall audiocover/7.1.11/MidList mod/7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs -->
+<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2 -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>21</posy>
@@ -1331,7 +1331,7 @@
 					<onclick>SetFocus(51)</onclick>
 					<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)</visible>
 				</control>
-				<control type="radiobutton" id="9323"><!-- TV Tunes -->
+				<!-- <control type="radiobutton" id="9323">
 					<include>TopMenuRadioButton</include>
 					<label>$VAR[value_addon2]</label>
 					<onclick condition="System.HasAddon(script.tvtunes)">Skin.ToggleSetting(ontvtunes)</onclick>
@@ -1340,7 +1340,7 @@
 					<onclick condition="!System.HasAddon(script.tvtunes)">ActivateWindow(Programs,Addons,return)</onclick>
 					<selected>System.HasAddon(script.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
 					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-				</control>
+				</control> -->
 				<include condition="Window.IsActive(videoplaylist)">TopMenu_Playlist</include>
 			</control>
 

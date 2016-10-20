@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.13 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 window IDs 2003 -->
+<!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 window IDs 2003/9.2.2 -->
 
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -830,11 +830,11 @@
 							<onclick>SendClick(2003,7)</onclick>
 							<!-- <visible>![Container.Content(episodes) | Container.Content(seasons) | Skin.HasSetting(kioskininfo)]</visible> -->
 						</item>
-						<item id="21"><!-- TvTunes Obter tema Filmes -->
+						<!-- <item id="21"></item>
 							<label>TVTUNES $LOCALIZE[31893] </label>
 							<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
 							<visible>Skin.HasSetting(ontvtunes) + System.HasAddon(script.tvtunes) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)] + IsEmpty(Window(movieinformation).Property("TvTunes_HideVideoInfoButton"))</visible>
-						</item>
+						</item> -->
 						<item id="20"><!-- Editor de info -->
 							<label>31671</label>
 							<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
