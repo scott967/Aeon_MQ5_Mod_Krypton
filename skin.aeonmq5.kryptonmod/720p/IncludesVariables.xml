@@ -3489,15 +3489,15 @@
 	</variable> 
 	<variable name="value_addon13">
 		<value condition="System.HasAddon(script.favourites)">$LOCALIZE[31015]</value>
-		<value condition="!System.HasAddon(script.favourites)">[COLOR=FFB20000]$LOCALIZE[31015] | $LOCALIZE[31435]: Favourites script[/COLOR]</value>
+		<value condition="!System.HasAddon(script.favourites)">[COLOR=FFB20000]$LOCALIZE[31435]: Favourites script[/COLOR]</value>
 	</variable>
 	<variable name="value_addon14"> <!-- resource skinthemes -->
 		<value condition="Skin.String(custom_themes.name)">Skin Themes - Aeon MQ</value>
-		<value condition="!Skin.String(custom_themes.name)">[COLOR=FFB20000]$LOCALIZE[31888] | $LOCALIZE[31435]: Skin Themes - Aeon MQ[/COLOR]</value>
+		<value condition="!Skin.String(custom_themes.name)">[COLOR=FFB20000]$LOCALIZE[31435]: Skin Themes - Aeon MQ[/COLOR]</value>
 	</variable>
 	<variable name="value_addon15">  <!-- resource skinstyles -->
 		<value condition="Skin.String(custom_styles.name)">Skin Styles - Aeon MQ</value>
-		<value condition="!Skin.String(custom_styles.name)">[COLOR=FFB20000]$LOCALIZE[31888] | $LOCALIZE[31435]: Skin Styles - Aeon MQ[/COLOR]</value>
+		<value condition="!Skin.String(custom_styles.name)">[COLOR=FFB20000]$LOCALIZE[31435]: Skin Styles - Aeon MQ[/COLOR]</value>
 	</variable>
 
 	<variable name="value_fallbackmusicbg">
