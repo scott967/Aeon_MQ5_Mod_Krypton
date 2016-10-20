@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 -->
-<!-- Krypton 9.2.1 window IDs 137 -->
+<!-- Krypton 9.2.1 window IDs 137/9.2.2 -->
 
 <window>
 	<defaultcontrol always="true">15</defaultcontrol>
@@ -58,7 +58,7 @@
 				<textcolor>$VAR[value_headercolor]</textcolor>
 			</control>
 			<control type="group" id="9001">
-				<control type="spincontrolex" id="15"><!-- Rule Field -->
+				<control type="button" id="15"><!-- Rule Field -->
 					<posx>0</posx>
 					<posy>110</posy>
 					<width>340</width>
@@ -68,16 +68,16 @@
 					<focusedcolor>FF101010</focusedcolor>
 					<disabledcolor>60ffffff</disabledcolor>
 					<texturefocus>settings_button_focus.png</texturefocus>
-					<spinposx>-4</spinposx>
+				<!-- 	<spinposx>-4</spinposx> -->
 					<textoffsetx>20</textoffsetx>
 					<aligny>center</aligny>
-					<reverse>yes</reverse>
+					<!-- <reverse>yes</reverse> -->
 					<onright>16</onright>
 					<onleft>16</onleft>
 					<onup>9000</onup>
 					<ondown>17</ondown>
 				</control>
-				<control type="spincontrolex" id="16"><!-- Rule operator -->
+				<control type="button" id="16"><!-- Rule operator -->
 					<posx>363</posx>
 					<posy>110</posy>
 					<width>336</width>
@@ -87,10 +87,10 @@
 					<focusedcolor>FF101010</focusedcolor>
 					<disabledcolor>60ffffff</disabledcolor>
 					<texturefocus>settings_button_focus.png</texturefocus>
-					<spinposx>-4</spinposx>
+					<!-- <spinposx>-4</spinposx> -->
 					<textoffsetx>20</textoffsetx>
 					<aligny>center</aligny>
-					<reverse>yes</reverse>
+					<!-- <reverse>yes</reverse> -->
 					<onright>9000</onright>
 					<onleft>15</onleft>
 					<onup>9000</onup>
