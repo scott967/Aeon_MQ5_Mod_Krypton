@@ -3595,7 +3595,7 @@
 		<value condition="Container(100).HasFocus(16)">$LOCALIZE[31406]</value>
 		<value condition="Container(100).HasFocus(17) + !VideoPlayer.Content(LiveTV)">$LOCALIZE[31306]</value><!-- next -->
 		<value condition="Container(100).HasFocus(17) + VideoPlayer.Content(LiveTV)">+ $LOCALIZE[31763]</value><!-- + canal -->
-		<value condition="Container(100).HasFocus(18)">$LOCALIZE[31739]</value>
+		<value condition="Container(100).HasFocus(18)">$LOCALIZE[36560]</value> <!-- CMS settings -->
 		<value condition="Container(100).HasFocus(19) + !Player.Rewinding">$LOCALIZE[31301]</value>
 		<value condition="Container(100).HasFocus(19) + Player.Rewinding">$VAR[value_seekreverse]</value>
 		<value condition="Container(100).HasFocus(20) + !Player.Paused">$LOCALIZE[31304]</value>

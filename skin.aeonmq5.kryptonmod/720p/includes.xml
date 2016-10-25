@@ -2742,6 +2742,15 @@
 				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_3dmode),disable)">Skin.Reset(osd_video_3dmode,disable)</onclick>
 				<visible>[!SubString(skin.string(osd_video_3dmode),disable) | Skin.HasSetting(customosd)]</visible>
 			</item>
+			<item id="18"><!-- cms control -->
+				<label>-</label>
+				<property name="condition">$INFO[skin.string(osd_video_cms),disable)]</property>
+				<icon>osd_menu_cms.png</icon>
+				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(osdcmssettings)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + !SubString(skin.string(osd_video_3dmode),disable)">Skin.SetString(osd_video_cms,disable)</onclick>
+				<onclick condition="Skin.HasSetting(customosd) + SubString(skin.string(osd_video_3dmode),disable)">Skin.Reset(osd_video_cms,disable)</onclick>
+				<visible>[!SubString(skin.string(osd_video_cms),disable) | Skin.HasSetting(customosd)] + System.HasCMS</visible>
+			</item>
 			<item id="23"><!-- skipbwd -->
 				<label>-</label>
 				<property name="condition">$INFO[skin.string(osd_video_skipbwd),disable)]</property>
