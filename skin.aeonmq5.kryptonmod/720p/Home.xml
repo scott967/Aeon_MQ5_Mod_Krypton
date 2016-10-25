@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.2 /6.1.3/6.1.8 -->
 <!-- Isengard 7.1.11 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.19/9.2.1 windowIDs -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 windowIDs/9.2.2 -->
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<!-- <allowoverlay>no</allowoverlay> -->
@@ -251,7 +251,7 @@
 					<width>475</width>
 					<height>278</height>
 					<texture>fanartframe.png</texture>
-					<visible>Player.HasAudio + !Control.HasFocus(603) | Player.HasVideo</visible>
+					<visible>Player.HasAudio + !Control.HasFocus(603) | Player.HasVideo + !Skin.HasSetting(homevisvideo)</visible>
 				</control>
 				<control type="multiimage">
 					<posx>35</posx>
@@ -282,6 +282,7 @@
 					<height>250</height>
 					<aspectratio>stretch</aspectratio>
 					<animation effect="slide" start="0,0" end="-2000,0" time="0">WindowClose</animation>
+					<visible>!Skin.HasSetting(homevisvideo)</visible>
 				</control>
 				<control type="group">
 					<posx>500</posx>

@@ -16,10 +16,12 @@
 			<control type="multiimage"><!-- Multi Fanart -->
 				<include>WindowBG</include>
 				<imagepath background="true">$VAR[value_videofanart]</imagepath>
+				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
 			</control>
 			<control type="image"><!-- Single Fanart -->
 				<include>WindowBG</include>
 				<texture background="true">$VAR[value_defaultvideofanart]</texture>
+				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
 			</control>
 			<control type="multiimage" id="5020"><!-- Extra Fanart Movies/TvShows/MusicVideos -->
 				<include>InvisibleButton</include>
@@ -50,7 +52,7 @@
 				<include>InvisibleButton</include>
 				<texture>$VAR[value_studiosicon]</texture>
 			</control>
-			<include>LiveBG</include>
+			<!-- <include>LiveBG</include> -->
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>

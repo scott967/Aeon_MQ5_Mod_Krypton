@@ -1357,19 +1357,20 @@
 				<itemgap>0</itemgap>
 				<focusposition>1</focusposition>
 				<scrolltime>450</scrolltime>
-				<control type="radiobutton" id="9402">
-					<include>TopMenuRadioButton</include>
-					<label>31463</label>
-					<onclick>Skin.ToggleSetting(animation_panscan)</onclick>
-					<selected>Skin.HasSetting(animation_panscan)</selected>
-					<visible>![Window.IsVisible(VideoPlaylist) + !Skin.HasSetting(noliveplaylistbg)]</visible>
-				</control>
 				<control type="radiobutton" id="9403"><!-- Visualizacao de video - Playlists -->
 					<include>TopMenuRadioButton</include>
 					<label>31125</label>
 					<onclick>Skin.ToggleSetting(noliveplaylistbg)</onclick>
 					<selected>!Skin.HasSetting(noliveplaylistbg)</selected>
+					<visible>Window.IsVisible(videoplaylist)</visible>
 				</control>
+				<control type="radiobutton" id="9402">
+					<include>TopMenuRadioButton</include>
+					<label>31463</label>
+					<onclick>Skin.ToggleSetting(animation_panscan)</onclick>
+					<selected>Skin.HasSetting(animation_panscan)</selected>
+					<visible>[Window.IsVisible(VideoPlaylist) + Skin.HasSetting(noliveplaylistbg)] | [Window.IsVisible(videos) + !Skin.HasSetting(livebg)]</visible>
+				</control>				
 				<!-- Movies Fanart  -->
 				<control type="radiobutton" id="9406"><!-- Fanart - Default -->
 					<include>TopMenuRadioButton</include>
