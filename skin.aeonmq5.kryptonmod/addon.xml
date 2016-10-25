@@ -59,7 +59,7 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/30/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/26/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
 New:  Various Krypton compliance changes
 New:  Remove videolaguage script
 New:  Remove "extrapack" add-on
@@ -67,6 +67,7 @@ New:  Support Aeon MQ7 theme resource
 New:  Provide new "styles" resource
 New:  Support video playback speeds 0.8-1.5
 New:  Remove support for TVTunes add-on
+New:  Add CMS settings from Video OSD menu
 		</news>
 	</extension>
 
