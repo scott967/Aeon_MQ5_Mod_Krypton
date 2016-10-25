@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.6 -->
 <!-- Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.19/9.2.1 window IDs-->
+<!-- Krypton 9.1.19/9.2.1 window IDs/9.2.2-->
 
 <includes>
 	<!--##################################################################################   VISTA POSTER - ID 54   #############################################################################-->
@@ -107,7 +107,7 @@
 				<visible>[!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)] + [SubString(skin.string(stylewatched),2) | SubString(skin.string(stylewatched),3)] + Control.HasFocus(54)</visible>
 			</control>
 		</itemlayout>
-		<itemlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
+		<itemlayout condition="Window.IsActive(musicplaylist) | Window.IsActive(music) + [Container.Content(genres) | Container.Content(roles) | String.IsEqual(Container.FolderName,roles)]" width="298" height="360">
 			<control type="image">
 				<posx>0</posx>
 				<posy>6</posy>
