@@ -235,7 +235,7 @@
 				<control type="button" id="18"><!-- order by -->
 					<posx>200</posx>
 					<posy>440</posy>
-					<width>488</width>
+					<width>355</width>
 					<!-- <label>21429</label> -->
 					<label>581</label>
 					<height>40</height>
@@ -258,14 +258,14 @@
 					<ondown>23</ondown>
 				</control>
 				<control type="button" id="19"><!-- ascending / descending -->
-					<posx>700</posx>
+					<posx>555</posx>
 					<posy>440</posy>
 					<height>40</height>
-					<width>211</width>
+					<width>355</width>
 					<label>580</label>
 					<!-- <altlabel>21430</altlabel> -->
 					<font>Font_18</font>
-					<texturenofocus>settings_menudivider.png</texturenofocus>
+					<!-- <texturenofocus>settings_menudivider.png</texturenofocus> -->
 					<texturefocus>grey.png</texturefocus>
 					<!-- <alttexturenofocus>settings_menudivider.png</alttexturenofocus>
 					<alttexturefocus>settings_button_focus.png</alttexturefocus> -->
@@ -285,7 +285,7 @@
 				<control type="button" id="23"><!-- group by -->
 					<posx>200</posx>
 					<posy>480</posy>
-					<width>488</width>
+					<width>355</width>
 					<label>21458</label>
 					<height>40</height>
 					<font>Font_18</font>
@@ -306,13 +306,13 @@
 					<ondown>22</ondown>
 				</control>
 				<control type="radiobutton" id="24"><!-- mixed -->
-					<posx>700</posx>
+					<posx>555</posx>
 					<posy>480</posy>
 					<height>40</height>
-					<width>211</width>
+					<width>355</width>
 					<label>$LOCALIZE[467]: $LOCALIZE[21459]</label>
 					<font>Font_18</font>
-					<radioposx>140</radioposx>
+					<radioposx>280</radioposx>
 					<align>left</align>
 					<textoffsetx>20</textoffsetx>
 					<onright>20</onright>
