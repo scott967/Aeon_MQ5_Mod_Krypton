@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 Helix 6.1.4/6.1.5 -->
 	<!-- Jarvis 8.1.15 RjSachse EPGTimeLineLow view -->
-	<!-- Krypton 9.1.16/9.2.1 window IDs  -->
+	<!-- Krypton 9.1.16/9.2.1 window IDs/9.2.2  -->
 
 <includes>
 	<include name="EPGMenu">
@@ -181,7 +181,7 @@
 				<viewtype label="19032">list</viewtype>
 				<posx>0</posx>
 				<posy>140</posy>
-				<width>1280</width>
+				<width>1265</width>
 				<height>430</height>
 				<onleft>9900</onleft>
 				<onright>9900</onright>
@@ -189,7 +189,7 @@
 				<onup condition="Skin.HasSetting(epggridwrap)">10</onup> -->
 				<onup>10</onup>
 				<ondown>10</ondown>
-				<pagecontrol>10</pagecontrol>
+				<pagecontrol>60</pagecontrol>
 				<scrolltime>350</scrolltime>
 				<timeblocks>40</timeblocks>
 				<rulerunit>6</rulerunit>
@@ -336,6 +336,14 @@
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
 				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<include>ScrollBar_Vertical</include>
+				<posx>1258</posx>
+				<posy>162</posy>
+				<height>418</height>
+				<onleft>10</onleft>
+				<onright>10</onright>
 			</control>
 			<include>PVRCommonInfo</include>
 		</control>
@@ -1030,13 +1038,13 @@
 				<viewtype label="19032">list</viewtype>
 				<left>0</left>
 				<top>570</top>
-				<width>1280</width>
+				<width>1265</width>
 				<height>150</height>
 				<onleft>9900</onleft>
 				<onright>9900</onright>
 				<onup>10</onup>
 				<ondown>10</ondown>
-				<pagecontrol>10</pagecontrol>
+				<pagecontrol>60</pagecontrol>
 				<scrolltime>350</scrolltime>
 				<timeblocks>40</timeblocks>
 				<rulerunit>6</rulerunit>
@@ -1201,6 +1209,14 @@
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
 				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<include>ScrollBar_Vertical</include>
+				<left>1258</left>
+				<top>593</top>
+				<height>135</height>
+				<onleft>10</onleft>
+				<onright>10</onright>
 			</control>
 			<control type="group">
 				<control type="image">
