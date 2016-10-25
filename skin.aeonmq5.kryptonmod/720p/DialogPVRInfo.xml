@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
+<!-- Krypton 9.2.2 -->
 
 <window>
 	<defaultcontrol always="true">7</defaultcontrol>
@@ -186,6 +187,12 @@
 					<width>200</width>
 					<include>SettingsBottomButton</include>
 					<label>19687</label>
+					<visible>Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)</visible>
+				</control>
+				<control type="button" id="9"><!-- Add timer -->
+					<width>200</width>
+					<include>SettingsBottomButton</include>
+					<label>19061</label>
 					<visible>Window.IsActive(PVRGuideInfo)</visible>
 				</control>
 			</control>
