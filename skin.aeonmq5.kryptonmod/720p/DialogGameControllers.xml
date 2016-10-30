@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ5 Krypton 9.1.16/9.2.1 -->
+<!-- Aeon MQ5 Krypton 9.1.16/9.2.1/9.2.2 -->
 <window>
 	<include>Animation_DialogPopup</include>
 	<defaultcontrol>3</defaultcontrol>
@@ -113,6 +113,10 @@
 				<width>150</width>
 				<height>30</height>
 				<textcolor>$VAR[value_headercolor]</textcolor>
+			</control>
+			<control type="image" id="9">
+				<height>2</height>
+				<texture>separator.png</texture>
 			</control>
 			<control type="gamecontroller" id="31">
 				<posx>155</posx>
