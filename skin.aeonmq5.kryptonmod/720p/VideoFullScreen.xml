@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
-<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2005 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2005/9.2.2 -->
 
 <window>
 	<controls>	
@@ -51,6 +51,16 @@
 				<aligny>center</aligny>
 				<font>Font_18</font>
 				<label>-</label>
+			</control>
+			<control type="label" id="1">
+				<posx>30</posx>
+				<posy>140</posy>	
+				<width>1250</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Font_18</font>
+				<label>$INFO[Player.SeekNumeric(hh:mm:ss)]</label>
 			</control>
 		</control>
 
