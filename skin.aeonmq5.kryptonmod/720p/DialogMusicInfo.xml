@@ -43,6 +43,7 @@
 				<posy>8</posy>
 				<width>1100</width>
 				<height>40</height>
+				<aligny>top</aligny>
 				<font>Font_40</font>
 				<label>$VAR[value_music_title]</label>
 				<textcolor>FFFFFAF0</textcolor>

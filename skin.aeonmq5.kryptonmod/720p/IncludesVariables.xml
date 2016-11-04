@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.2.2 Krypton[COLOR=80FFFFFF] | [/COLOR]10/30/2016</value>
+		<value>9.2.2 Kryptonmod[COLOR=80FFFFFF] | [/COLOR]10/31/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -2796,7 +2796,8 @@
 	</variable>
 	<variable name="value_audioinfo_value4">
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_YearsActive)]</value>
-		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Type)]</value>
+		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Type))">$INFO[ListItem.Property(Album_Type)]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_ReleaseType)]</value>
 	</variable>
 	<variable name="value_audioinfo_label5">
 		<value condition="Container.Content(artists)">$LOCALIZE[21893]/$LOCALIZE[21897]</value><!-- Born/die -->
@@ -3704,6 +3705,7 @@
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value> 
 		<value condition="Container.Content(artists) +!String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(artists) +String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Label]</value>
+		<value condition="String.IsEqual(ListItem.DBType,album) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
 	</variable>
@@ -3719,8 +3721,8 @@
 		<value>$LOCALIZE[29994]</value>
 	</variable> -->
 	<variable name="value_music_subtitle">
-		<value condition="Container.Content(albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Label]</value>
-		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(songinformation)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
+		<value condition="String.IsEqual(ListItem.DBType,album) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.AlbumArtist]</value>
+		<value condition="[String.IsEqual(ListItem.DBType,song) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(songinformation)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
 	</variable>
 	<variable name="value_songinfo_title">
 		<value condition="!Window.IsActive(musicplaylist) | [!Player.HasAudio + IsEmpty(VideoPlayer.Artist)]">$INFO[ListItem.Label]</value>
