@@ -2586,7 +2586,7 @@
 
 	<variable name="value_skinstatus_style">
 		<value condition="SubString(skin.string(style),graphite)">$LOCALIZE[31132] ($LOCALIZE[31277])</value>
-		<value condition="SubString(skin.string(style),extrapack)">$LOCALIZE[31614]</value>
+		<value condition="SubString(skin.string(style),extrapack)">$INFO[Skin.String(custom_styles.path)]</value>
 		<value condition="SubString(skin.string(style),mystyle)">$LOCALIZE[31615]</value>
 	</variable>
 	<variable name="value_skinstatus_theme">
@@ -2597,6 +2597,7 @@
 		<value condition="SubString(skin.string(theme),warm) + !Skin.HasSetting(randomthemes)">$LOCALIZE[31890]</value>
 		<value condition="SubString(skin.string(theme),darkness) + !Skin.HasSetting(randomthemes)">$LOCALIZE[31891]</value>
 		<value condition="SubString(skin.string(theme),digitalart) + !Skin.HasSetting(randomthemes)">$LOCALIZE[31892]</value>
+		<value condition="SubString(skin.string(theme),colours) + !Skin.HasSetting(randomthemes)">$LOCALIZE[31404]</value>
 		<value condition="SubString(skin.string(theme),coral) + Skin.HasSetting(randomthemes)">$LOCALIZE[31130] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),modern) + Skin.HasSetting(randomthemes)">$LOCALIZE[31617] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),future) + Skin.HasSetting(randomthemes)">$LOCALIZE[31968] - $LOCALIZE[31049]</value>
@@ -2604,7 +2605,7 @@
 		<value condition="SubString(skin.string(theme),warm) + Skin.HasSetting(randomthemes)">$LOCALIZE[31890] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),darkness) + Skin.HasSetting(randomthemes)">$LOCALIZE[31891] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),digitalart) + Skin.HasSetting(randomthemes)">$LOCALIZE[31892] - $LOCALIZE[31049]</value>
-		<value condition="SubString(skin.string(theme),colours) + Skin.HasSetting(randomthemes)">$LOCALIZE[31893] - $LOCALIZE[31049]</value>
+		<value condition="SubString(skin.string(theme),colours) + Skin.HasSetting(randomthemes)">$LOCALIZE[31404] - $LOCALIZE[31049]</value>
 		<value condition="SubString(skin.string(theme),mytheme)">$LOCALIZE[31908]</value>
 	</variable>
 	<variable name="value_skinstatus_homeglass">
@@ -3705,9 +3706,11 @@
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value> 
 		<value condition="Container.Content(artists) +!String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(artists) +String.IsEmpty(ListItem.Artist) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Label]</value>
+		<value condition="[String.Contains(ListItem.Label,all albums) | String.IsEqual(ListItem.Label,..) | String.Contains(Container.FolderPath,musicvideos)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Label]</value>
 		<value condition="String.IsEqual(ListItem.DBType,album) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
-		<value condition="[Container.Content(songs) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="[Container.Content(songs) | Container.Content(mixed) | Container.Content(musicvideos)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
+		<value condition="String.IsEqual(Container.FolderName,Music Videos) | String.IsEqual(Container.FolderName,Roles)">$INFO[Container.FolderName]</value>
 	</variable>
 <!-- 	<variable name="value_music_role">
 		<value conditon="String.Contains(Container.FolderPath,=composer)">$LOCALIZE[29989]</value>
@@ -3721,8 +3724,10 @@
 		<value>$LOCALIZE[29994]</value>
 	</variable> -->
 	<variable name="value_music_subtitle">
+		<value condition="String.Contains(ListItem.Label,all albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[Container.FolderName]</value>
 		<value condition="String.IsEqual(ListItem.DBType,album) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.AlbumArtist]</value>
 		<value condition="[String.IsEqual(ListItem.DBType,song) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(songinformation)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
+		<value condition="[Container.Content(musicvideos) | String.Contains(Container.FolderPath,musicvideos)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="value_songinfo_title">
 		<value condition="!Window.IsActive(musicplaylist) | [!Player.HasAudio + IsEmpty(VideoPlayer.Artist)]">$INFO[ListItem.Label]</value>
