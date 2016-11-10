@@ -76,7 +76,8 @@
 					<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 					<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 					<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
-					<visible>![Control.IsVisible(51) | [Control.IsVisible(55) | Control.IsVisible(70)] + [Container.Content(artists) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(637)]</visible>
+					<visible>![[Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(70)] + [Container.Content(artists) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(637)]</visible>
+					<!-- <visible>![Control.IsVisible(51) | [Control.IsVisible(55) | Control.IsVisible(70)] + [Container.Content(artists) | Container.Content(songs)] | ControlGroup(9000).HasFocus | Control.HasFocus(9920) | Control.IsVisible(9922) | Window.IsVisible(637)]</visible> -->
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
