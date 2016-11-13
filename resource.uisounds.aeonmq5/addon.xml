@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="resource.uisounds.aeonmq5" version="9.1.15" name="Aeon MQ5 Krypton UI" provider-name="Marcos Qui">
+<addon id="resource.uisounds.aeonmq5" version="9.2.2" name="Aeon MQ5 Krypton UI Sounds" provider-name="Marcos Qui">
   <requires>
     <import addon="kodi.resource" version="1.0.0"/>
   </requires>
@@ -8,5 +8,8 @@
     <summary lang="en">Aeon MQ5 Krypton GUI sounds</summary>
     <description lang="en">Aeon MQ5 Krypton GUI sounds</description>
     <platform>all</platform>
+	<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/31/2016 for Kodi KRYPTON BETA5+[/COLOR][/B]
+Update sound for opening/closing notification window (was inffodialog)
+		</news>
   </extension>
 </addon>

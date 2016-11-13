@@ -1,4 +1,5 @@
 <!-- Ace -->
+<!-- Krypton 9.2.2 -->
 
 <sounds>
   <actions>
@@ -37,7 +38,7 @@
   </actions>
   <windows>
   <window>
-    <name>InfoDialog</name>
+    <name>notification</name>
     <activate>notify.wav</activate>
     <deactivate>out.wav</deactivate>
   </window>
