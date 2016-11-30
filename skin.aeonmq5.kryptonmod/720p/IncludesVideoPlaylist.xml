@@ -117,7 +117,7 @@
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(55)">Conditional</animation>
 				<animation effect="slide" end="-450,0" time="0" condition="Control.IsVisible(57)">Conditional</animation>
 				<animation effect="slide" end="-780,0" time="0" condition="Control.IsVisible(59)">Conditional</animation>
-				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(ListItem.Property(AudioLanguage.1)) + IsEmpty(ListItem.Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(movieinformation)]</visible>
+				<visible>![Skin.HasSetting(nolanguageflags) | String.IsEqual(ListItem.Label,..) | IsEmpty(ListItem.Property(AudioLanguage.1)) + IsEmpty(ListItem.Property(SubtitleLanguage.1)) | Control.IsVisible(51) | Control.HasFocus(9920) | Window.IsActive(movieinformation)] + !Skin.HasSetting(vplaylistinfobar)</visible>
 				<posx>810</posx>
 				<posy>15</posy>
 				<include>AudioandSub</include>
