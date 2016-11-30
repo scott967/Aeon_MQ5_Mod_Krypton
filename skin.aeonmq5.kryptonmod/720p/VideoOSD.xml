@@ -91,8 +91,20 @@
 
 		<control type="group">
 			<posy>520</posy>
-			<animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
-			<animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">Visible</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic"/>
+				<!-- <effect type="fade" delay="10000" start="100" end="30" time="5000"/> -->
+			</animation>
+			<!-- <animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">WindowOpen</animation> -->
+			<animation type="Visible" reversible="false">
+				<effect type="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic"/>
+				<!-- <effect type="fade" delay="10000" start="100" end="30" time="5000"/> -->
+			</animation>
+			<animation type="Conditional" condition="Player.Forwarding | Player.Rewinding | Player.Seeking" reversible="false">
+				<effect type="fade" start="99" end="100" time="200"/>
+				<!-- <effect type="fade" delay="10000" start="100" end="30" time="5000"/> -->
+			</animation>
+			<!-- <animation effect="slide" time="400" start="0,200" end="0,0" easing="out" tween="cubic">Visible</animation> -->
 			<animation effect="slide" time="400" start="0,0" end="0,200" easing="in" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,200" easing="in" tween="cubic">Hidden</animation>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdcmssettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(sliderdialog) | Skin.HasSetting(novideofurnituretemp)]</visible>
@@ -194,10 +206,11 @@
 			</control>
 			<control type="label">
 				<posx>90</posx>
-				<posy>73</posy>
+				<posy>71</posy>
 				<width>1100</width>
 				<height>30</height>
 				<align>center</align>
+				<aligny>center</aligny>
 				<font>Font_17</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<shadowcolor>grey</shadowcolor>
