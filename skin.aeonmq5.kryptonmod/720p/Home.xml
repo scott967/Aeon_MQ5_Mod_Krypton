@@ -271,7 +271,7 @@
 					<width>110</width>
 					<height>60</height>
 					<aspectratio align="left" aligny="top">keep</aspectratio>
-					<texture background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
+					<texture background="true" fallback="transparent.png">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<visible>Player.HasAudio</visible>
 				</control>
