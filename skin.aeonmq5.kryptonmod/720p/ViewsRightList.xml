@@ -123,7 +123,7 @@
 					<animation effect="fade" end="95" condition="!Window.IsActive(videoplaylist)">Conditional</animation>
 					<animation effect="fade" end="40" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
-				<control type="label"><!-- Year/Publisher -->
+				<control type="label"><!-- Year/Publisher (video) Now Playing Artist (music) -->
 					<posx>320</posx>
 					<posy>544</posy>
 					<width>380</width>
@@ -133,6 +133,7 @@
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>$VAR[value_ground6_value]</label>
 					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
 				</control>
 
 				<control type="grouplist"><!-- Painel de info -->
@@ -150,7 +151,9 @@
 					</control>
 					<control type="label">
 						<include>RightListLabel</include>
-						<label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>
+						<label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>  <!-- song title (music) -->
+						<scroll>true</scroll>
+						<scrollspeed>30</scrollspeed>
 						<!-- <visible>!Container.Content(songs)</visible> -->
 					</control>
 				</control>
@@ -186,7 +189,7 @@
 					<height>496</height>
 					<font>Font_18A</font>
 					<label>$VAR[value_plot]</label>
-					<autoscroll delay="30000" time="3000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
+					<autoscroll delay="30000" time="4000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					<animation effect="slide" time="600" start="400,0" end="0,0" tween="cubic" easing="inout">Visible</animation>
 					<animation effect="slide" time="400" start="0,0" end="400,0" tween="cubic" easing="inout">Hidden</animation>
 					<visible>Control.HasFocus(9915)</visible>
@@ -267,6 +270,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
+							<scrolltime>30</scrolltime>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -279,6 +283,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
+							<scrolltime>30</scrolltime>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -311,6 +316,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
+							<scrolltime>30</scrolltime>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -323,6 +329,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
+							<scrolltime>30</scrolltime>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -336,6 +343,7 @@
 							<include>subcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$VAR[value_listinfofocus]</label>
+							<scrolltime>30</scrolltime>
 							<visible>!String.IsEqual(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -348,6 +356,7 @@
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
 							<label>$VAR[value_listinfofocus]</label>
+							<scrolltime>30</scrolltime>
 							<visible>!String.IsEqual(ListItem.Label,..) + !ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
