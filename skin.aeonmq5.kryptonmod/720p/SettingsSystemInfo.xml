@@ -94,16 +94,16 @@
 					<label>-</label>
 					<font>Font_20</font>
 				</control>
-				<control type="textbox"><!-- Prvicy notice -->
+			</control>
+			<control type="textbox" id="30"><!-- Privacy notice -->
 				<posx>290</posx>
 				<posy>120</posy>
 				<width>940</width>
-				<height>630</height>
+				<height>280</height>
 				<font>Font_20A</font>
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 				<scroll>true</scroll>
 				<autoscroll delay="25000" time="4000" repeat="25000">!Skin.HasSetting(noallowscroll)</autoscroll>
-			</control>
 			</control>
 			<control type="textbox"><!-- Creditos -->
 				<posx>290</posx>
