@@ -209,11 +209,23 @@
 					<posy>-10</posy>
 					<width>200</width>
 					<height>60</height>
-					<texture fallback="flags/music/genre/genre.png" background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
+					<texture fallback="transparent.png" background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
 					<fadetime>300</fadetime>
 					<aspectratio align="center">keep</aspectratio>
 					<animation effect="fade" end="60" condition="true">Conditional</animation>
 				</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>-70</posy>
+						<height>30</height>
+						<width>1180</width>
+						<align>left</align>
+						<font>Font_32</font>
+						<textcolor>FFFFFAF0</textcolor>
+						<scroll>true</scroll>
+						<visible>Player.ShowInfo</visible>
+						<label>$INFO[MusicPlayer.Property(Role.Composer),$LOCALIZE[29903]: , | ]$INFO[MusicPlayer.Property(Role.Orchestra),$LOCALIZE[38034]: , | ]$INFO[MusicPlayer.Property(Role.Conductor),$LOCALIZE[29905]: , | ]$INFO[MusicPlayer.Property(Role.Arranger),$LOCALIZE[38037]: ]</label>
+					</control>
 				<control type="label">
 					<posx>415</posx>
 					<posy>-20</posy>
