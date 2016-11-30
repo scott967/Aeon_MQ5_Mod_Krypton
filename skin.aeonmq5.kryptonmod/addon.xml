@@ -13,6 +13,7 @@
 		<import addon="script.globalsearch" version="1.1.1"/>
 		<import addon="script.toolbox" version="1.0.1"/>
 		<import addon="script.image.resource.select" version="0.0.5"/>
+		<import addon="script.playalbum" version="0.0.2"/>
 	</requires>
 	<extension point="xbmc.gui.skin"  effectslowdown="0.75" debugging="false">
 		<res width="1280" height="720" aspect="16:9" default="true" folder="720p"/>
@@ -69,6 +70,7 @@ New:  Provide new "styles" resource
 New:  Support video playback speeds 0.8-1.5
 New:  Remove support for TVTunes add-on
 New:  Add CMS settings from Video OSD menu
+New:  Requires script.playalbum and allow album/track play from album info dialog
 		</news>
 	</extension>
 
