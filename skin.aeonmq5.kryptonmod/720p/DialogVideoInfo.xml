@@ -306,13 +306,13 @@
 					<item>
 						<label>$LOCALIZE[20339]/$LOCALIZE[20417]</label><!-- Director/Written -->
 						<label2>$INFO[ListItem.Director]/$INFO[ListItem.Writer]</label2>
-						<onclick>SendClick(2003,13)</onclick>
+						<onclick>SendClick(movieinformation,13)</onclick>
 						<visible>!Container.Content(musicvideos)</visible>
 					</item>
 					<item>
 						<label>$LOCALIZE[20339]</label><!-- Director for MV -->
 						<label2>$INFO[ListItem.Director]</label2>
-						<onclick>SendClick(2003,13)</onclick>
+						<onclick>SendClick(movieinformation,13)</onclick>
 						<visible>Container.Content(musicvideos)</visible>
 					</item>
 					<item>
@@ -789,16 +789,16 @@
 					<content>
 						<item id="2"><!-- Resume -->
 							<label>13404</label>
-							<onclick>SendClick(2003,9)</onclick>
+							<onclick>SendClick(movieinformation,9)</onclick>
 						</item>
 						<item id="1"><!-- Refresh -->
 							<label>31695</label>
-							<onclick>SendClick(2003,6)</onclick>
+							<onclick>SendClick(movieinformation,6)</onclick>
 							<visible>!Skin.HasSetting(kioskininfo)</visible>
 						</item>
 						<item id="3"><!-- Start -->
 							<label>31700</label>
-							<onclick>SendClick(2003,8)</onclick>
+							<onclick>SendClick(movieinformation,8)</onclick>
 						</item>
 						<item id="4"><!-- Cinema Ex -->
 							<label>31066</label>
@@ -819,17 +819,17 @@
 						</item>
 						<item id="5"><!-- Trailer Window -->
 							<label>31701</label>
-							<onclick>SendClick(2003,11)</onclick>
+							<onclick>SendClick(movieinformation,11)</onclick>
 							<visible>!IsEmpty(ListItem.Trailer)</visible>
 						</item>
 						<item id="7"><!-- Get Art -->
 							<label>31702</label>
-							<onclick>SendClick(2003,10)</onclick>
+							<onclick>SendClick(movieinformation,10)</onclick>
 							<visible>!Skin.HasSetting(kioskininfo)</visible>
 						</item>
 						<item id="8"><!-- Set user rating -->
 							<label>38023</label>
-							<onclick>SendClick(2003,7)</onclick>
+							<onclick>SendClick(movieinformation,7)</onclick>
 							<!-- <visible>![Container.Content(episodes) | Container.Content(seasons) | Skin.HasSetting(kioskininfo)]</visible> -->
 						</item>
 						<!-- <item id="21"></item>
@@ -850,7 +850,7 @@
 						</item>
 						<item id="13"><!-- Director Movies -->
 							<label>31906</label>
-							<onclick>SendClick(2003,13)</onclick>
+							<onclick>SendClick(movieinformation,13)</onclick>
 							<visible>!IsEmpty(ListItem.Director)</visible>
 						</item>
 						<item id="10"><!-- Director Info -->
