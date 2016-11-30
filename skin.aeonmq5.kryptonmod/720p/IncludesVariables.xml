@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.2.2 Kryptonmod[COLOR=80FFFFFF] | [/COLOR]10/31/2016</value>
+		<value>9.2.2 Kryptonmod[COLOR=80FFFFFF] | [/COLOR]11/30/2016</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3813,7 +3813,7 @@
 	</variable>
 	<variable name="value_albumsong_items">
 		<value condition="Container.Content(artists)">$LOCALIZE[21888]: $INFO[Container(50).NumItems] $LOCALIZE[31040]</value>
-		<value condition="Container.Content(albums)">$LOCALIZE[31340]: $INFO[Container(50).NumItems]</value>
+		<value condition="Container.Content(albums) + !IsEmpty(Container(50).ListItem.Label)">$LOCALIZE[31340]: $INFO[Container(50).NumItems]</value>
 	</variable>
 
 	<variable name="value_seconds">
@@ -4161,12 +4161,16 @@
 		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding]">$LOCALIZE[31997][COLOR=$VAR[value_headercolor]] $INFO[Player.SeekOffset][/COLOR]</value>
 		<value condition="!Player.DisplayAfterSeek + Player.Seeking">$LOCALIZE[31997]</value>
 	</variable>
-	<variable name="User_Rating_Stars">
+	<!-- <variable name="User_Rating_Stars">
 		<value condition="[String.IsEqual(ListItem.UserRating,0) | String.IsEqual(ListItem.UserRating,1)]">rating0.png</value>
 		<value condition="[String.IsEqual(ListItem.UserRating,2) | String.IsEqual(ListItem.UserRating,3)]">rating1.png</value>
 		<value condition="[String.IsEqual(ListItem.UserRating,4) | String.IsEqual(ListItem.UserRating,5)]">rating2.png</value>
 		<value condition="[String.IsEqual(ListItem.UserRating,6) | String.IsEqual(ListItem.UserRating,7)]">rating3.png</value>
 		<value condition="[String.IsEqual(ListItem.UserRating,8) | String.IsEqual(ListItem.UserRating,9)]">rating4.png</value>
 		<value condition="String.IsEqual(ListItem.UserRating,10)">rating5.png</value>
-	</variable>
+	</variable> -->
+		<variable name="User_Rating_Stars">
+			<value condition="String.IsEmpty(ListItem.UserRating)">hrating0.png</value>
+			<value>$INFO[ListItem.UserRating,hrating,.png]</value>
+		</variable>
 </includes>
