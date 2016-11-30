@@ -2104,6 +2104,7 @@
 				<control type="button" id="9364">
 					<include>TopMenuButton</include>
 					<label>$VAR[value_musiclogopath]</label>
+					<onclick>Skin.SetString(CustomMusicLogoPath,)</onclick>
 					<onclick>Skin.SetPath(CustomMusicLogoPath)</onclick>
 					<visible>[Skin.HasSetting(musiclogo) | SubString(skin.string(musicfanart),extra)] + ![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
