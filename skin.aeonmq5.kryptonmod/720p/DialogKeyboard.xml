@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/Orby/6.1.4 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.2.1 window IDs 103 -->
+<!-- Krypton 9.2.1 window IDs 103/9.2.3 -->
 
 <window id="103">
 	<defaultcontrol always="true">300</defaultcontrol>
@@ -61,14 +61,14 @@
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 			</control>
-			<control type="image">
+			<!-- <control type="image">
 				<left>130</left>
 				<top>110</top>
 				<width>600</width>
 				<height>30</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>DialogHeader.png</texture>
-			</control>
+			</control> -->
 			<control type="group">
 				<left>30</left>
 				<top>140</top>
