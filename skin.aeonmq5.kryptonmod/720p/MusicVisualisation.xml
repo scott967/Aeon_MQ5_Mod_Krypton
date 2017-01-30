@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
-<!--  Krypton 9.1.16/9.1.19/9.2.1 window IDs 2006 -->
+<!--  Krypton 9.1.16/9.1.19/9.2.1 window IDs 2006/9.2.3 -->
 
 <window>
 	<!-- <allowoverlay>no</allowoverlay> -->
@@ -236,7 +236,7 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[MusicPlayer.Artist]</label>
 					<scroll>true</scroll>
-					<scrollout>false</scrollout>
+					<!-- <scrollout>false</scrollout> -->
 				</control>
 				<control type="label">
 					<posx>415</posx>
@@ -248,7 +248,8 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[MusicPlayer.Album][COLOR=50FFFAF0] | [/COLOR]$INFO[MusicPlayer.TrackNumber,, : ]$INFO[MusicPlayer.Title][COLOR=50FFFAF0] | [/COLOR]$INFO[MusicPlayer.Year][COLOR=50FFFAF0] | [/COLOR]$INFO[MusicPlayer.Genre]</label>
 					<scroll>true</scroll>
-					<scrollout>false</scrollout>
+					<scrollspeed>20</scrollspeed>
+					<!-- <scrollout>false</scrollout> -->
 				</control>
 				<control type="image">
 					<posx>415</posx>

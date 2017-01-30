@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2 -->
+<!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
@@ -481,7 +481,7 @@
 							<visible>Control.HasFocus(50) + !IsEmpty(ListItem.Label)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="Player.HasAudio + system.hasaddon(script.artistslideshow)">AlbumContent</include>
+					<include condition="Player.HasAudio + system.hasaddon(script.artistslideshow) + String.IsEqual(MusicPlayer.Artist,ListItem.Label)">AlbumContent</include>
 				</control>
 			</control>  <!-- end of old albuminfo (musicinformation) -->
 						
@@ -557,6 +557,7 @@
 					<label>$VAR[value_songinfo_filepath]</label>
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
+					<scrollspeed>20</scrollspeed>
 				</control>
 				<control type="label"><!-- Data -->
 					<posx>190</posx>
@@ -581,6 +582,7 @@
 					<label>$LOCALIZE[31333] $INFO[MusicPlayer.Channels][COLOR=80ffffff] | [/COLOR]$INFO[MusicPlayer.SampleRate,,KHZ][COLOR=80ffffff] | [/COLOR]$INFO[MusicPlayer.BitRate,,Kbps][COLOR=80ffffff] | [/COLOR]$INFO[MusicPlayer.BitsPerSample,,Bits]</label>
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
+					<scrollspeed>20</scrollspeed>
 					<visible>Player.HasAudio + [String.IsEqual(Player.Filename,ListItem.FileName) | Window.IsVisible(visualisation)]</visible>
 				</control>
 				<control type="label">  <!-- mixed content MV items -->
@@ -974,7 +976,7 @@
 						<item id="4"><!--  Set UserRating -->
 							<label>31936</label>
 							<onclick>SendClick(musicinformation,7)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
+							<visible>!Skin.HasSetting(kioskininfo) + Container.Content(albums)</visible>
 						</item>
 						<item id="20"><!--  Play album  -->
 							<label>$LOCALIZE[31303] $LOCALIZE[558]</label>

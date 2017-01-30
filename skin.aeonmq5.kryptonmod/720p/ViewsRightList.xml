@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.2 by lizard/6.1.6 -->
 <!-- Isengard 7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs -->
+<!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.3 -->
 
 <includes>
 	<!--##################################################################################   VISTA RIGHT LIST - ID 59   ##################################################################################-->
@@ -133,7 +133,7 @@
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>$VAR[value_ground6_value]</label>
 					<scroll>true</scroll>
-					<scrollspeed>30</scrollspeed>
+					<scrollspeed>25</scrollspeed>
 				</control>
 
 				<control type="grouplist"><!-- Painel de info -->
@@ -143,21 +143,20 @@
 					<itemgap>4</itemgap>
 					<control type="label">
 						<include>RightListLabel</include>
+						<label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>  <!-- song title (music) -->
+						<scroll>true</scroll>
+						<scrollspeed>25</scrollspeed>
+						<!-- <visible>!Container.Content(songs)</visible> -->
+					</control>
+					<control type="label">
+						<include>RightListLabel</include>
 						<label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label>
 					</control>
 					<control type="label">
 						<include>RightListLabel</include>
 						<label>$VAR[value_ground12_label]: [COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
-					</control>
-					<control type="label">
-						<include>RightListLabel</include>
-						<label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>  <!-- song title (music) -->
-						<scroll>true</scroll>
-						<scrollspeed>30</scrollspeed>
-						<!-- <visible>!Container.Content(songs)</visible> -->
-					</control>
+					</control>					
 				</control>
-
 				<control type="image">
 					<posx>730</posx>
 					<posy>-70</posy>
@@ -189,7 +188,7 @@
 					<height>496</height>
 					<font>Font_18A</font>
 					<label>$VAR[value_plot]</label>
-					<autoscroll delay="30000" time="4000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
+					<autoscroll delay="30000" time="5000" repeat="30000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					<animation effect="slide" time="600" start="400,0" end="0,0" tween="cubic" easing="inout">Visible</animation>
 					<animation effect="slide" time="400" start="0,0" end="400,0" tween="cubic" easing="inout">Hidden</animation>
 					<visible>Control.HasFocus(9915)</visible>
@@ -270,7 +269,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -283,7 +282,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -316,7 +315,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -329,7 +328,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -343,7 +342,7 @@
 							<include>subcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$VAR[value_listinfofocus]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>!String.IsEqual(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -356,7 +355,7 @@
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
 							<label>$VAR[value_listinfofocus]</label>
-							<scrolltime>30</scrolltime>
+							<scrolltime>20</scrolltime>
 							<visible>!String.IsEqual(ListItem.Label,..) + !ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -377,7 +376,7 @@
 					<height>92</height>
 					<font>Font_18A</font>
 					<label>$VAR[value_plot]</label>
-					<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+					<autoscroll delay="8000" time="5000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					<include>Animation_Fade</include>
 					<animation effect="slide" start="0,0" end="9,0" time="200" condition="Control.HasFocus(80)">Conditional</animation>
 					<visible>!Control.HasFocus(9915) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>

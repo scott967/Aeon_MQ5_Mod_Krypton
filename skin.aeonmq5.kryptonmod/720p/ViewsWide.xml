@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 / 6.1.2 -->
 <!-- Isengardmod 7.1.11/7/1/12 -->
 <!-- Jarvis 8.1.3 -->
-<!-- Krypton 9.1.15/9.1.17/9.1.19/9.2.1 window IDs/9.2.2 -->
+<!-- Krypton 9.1.15/9.1.17/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 
 <includes>
 	<!--##################################################################################   VISTA WIDE - 51   ##################################################################################-->
@@ -149,7 +149,7 @@
 							<aligny>center</aligny>
 							<include>detailcolor</include>
 							<label>$INFO[ListItem.Year]</label>
-							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(mixed) | Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows)">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>515</posx>
@@ -172,6 +172,16 @@
 							<texture>$VAR[User_Rating_Stars]</texture>
 							<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 							<visible>![Container.Content(artists) | Container.Content(files) | Container.Content(addons) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(seasons) | Container.Content() | Container.Content(playlists) | String.IsEqual(ListItem.Label,..) | String.StartsWith(ListItem.Label,* all)]</visible>
+						</control>
+						<control type="image">
+							<posx>602</posx>
+							<posy>2</posy>
+							<width>30</width>
+							<height>30</height>
+							<texture>DefaultMusicVideos.png</texture>
+							<aspectratio>keep</aspectratio>
+							<colordiffuse>FFFFFFFF</colordiffuse>
+							<visible>Container.Content(mixed) + String.IsEqual(ListItem.DBType,musicvideo)</visible>
 						</control>
 						<control type="image">
 							<posx>602</posx>
@@ -212,7 +222,7 @@
 							<aligny>center</aligny>
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
-							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(episodes) | Container.Content(seasons | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows)">Conditional</animation>
+							<animation effect="slide" start="0,0" end="0,8" time="0" condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(mixed) | Container.Content(movies) | Container.Content(tvshows)">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>515</posx>
