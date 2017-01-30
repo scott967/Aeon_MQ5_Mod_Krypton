@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5" version="9.2.2" name="Aeon MQ 5 Kryptonmod" provider-name="MarcosQui">
+<addon id="skin.aeonmq5" version="9.2.3" name="Aeon MQ 5 Kryptonmod" provider-name="MarcosQui">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="script.favourites" version="4.0.4"/>
@@ -71,6 +71,8 @@ New:  Support video playback speeds 0.8-1.5
 New:  Remove support for TVTunes add-on
 New:  Add CMS settings from Video OSD menu
 New:  Requires script.playalbum and allow album/track play from album info dialog
+New:  Display proffile in use at startup
+New:  Display container page position in media windows
 		</news>
 	</extension>
 
