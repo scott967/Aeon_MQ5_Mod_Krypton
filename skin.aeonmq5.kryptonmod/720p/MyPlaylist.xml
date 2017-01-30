@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Aeon MQ 5 Krypton 9.1.15/9.1.16/9.2.1/9.2.2 -->
+<!-- Aeon MQ 5 Krypton 9.1.15/9.1.16/9.2.1/9.2.2/9.2.3 -->
 
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
@@ -17,5 +17,6 @@
 	<controls>
 		<include condition="Window.IsVisible(musicplaylist)">MusicPLWindow</include>
 		<include condition="Window.IsVisible(videoplaylist)">VideoPLWindow</include>
+		<include>ContainerViewPage</include>
 	</controls>
 </window>

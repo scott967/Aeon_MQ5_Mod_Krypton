@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.2/6.1.3 -->
 <!-- Isengard 7.1.9 ShelfCase/7.1.11 MidList -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 25/9.2.2 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 25/9.2.2/9.2.3 -->
 
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
@@ -302,6 +302,7 @@
 						<texture>gradient_small.png</texture>
 					</control>
 				</control>
+				<include>ContainerViewPage</include>
 			</control>
 			<control type="group"><!-- Titulo e subtitulo -->
 				<posy>-30</posy>

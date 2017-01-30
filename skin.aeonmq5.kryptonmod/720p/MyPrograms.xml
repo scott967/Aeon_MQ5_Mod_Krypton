@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.2.1 window IDs 1 -->
+<!-- Krypton 9.2.1 window IDs 1/9.2.3 -->
 
 <window>
 	<defaultcontrol>51</defaultcontrol>
@@ -125,6 +125,8 @@
 				<include condition="Skin.HasSetting(viewrightlist_programs)">ViewRightList</include><!-- 59 -->
 				<include condition="Skin.HasSetting(viewpanel_programs)">ViewPanel</include><!-- 62 -->
 				<include condition="Skin.HasSetting(viewcoverflow_programs)">ViewCoverFlowPrograms</include><!-- 58 -->
+				
+				<include>ContainerViewPage</include>
 			</control>
 			<include>TouchScreen</include>
 			<include>ScrollLabel</include>
