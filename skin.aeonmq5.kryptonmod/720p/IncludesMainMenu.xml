@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.5/6.1.7  -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.19 -->
+<!-- Krypton 9.1.19/9.2.3 -->
 
 <includes>
 	<!-- ######################################################################### Menu Principal ######################################################################### -->
@@ -301,7 +301,7 @@
 			<label>31014</label>
 			<textoffsetx>0</textoffsetx>
 			<textoffsety>5</textoffsety>
-			<texture>topmenu_button_nofocus.png</texture>
+			<!-- <texture>topmenu_button_nofocus.png</texture> -->
 			<texturefocus>topmenu_button_nofocus.png</texturefocus>
 			<texturenofocus>-</texturenofocus>
 			<textcolor>FFFFFAF0</textcolor>

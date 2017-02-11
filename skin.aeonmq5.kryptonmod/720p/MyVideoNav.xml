@@ -182,7 +182,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label fallback="NR">$INFO[ListItem.Rating]</label>
 							</control>
 							<control type="image">
@@ -252,7 +252,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label>$VAR[value_drive]</label>
 							</control>
 							<control type="image">
@@ -285,7 +285,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label>$INFO[ListItem.PercentPlayed]%</label>
 							</control>
 						</control>

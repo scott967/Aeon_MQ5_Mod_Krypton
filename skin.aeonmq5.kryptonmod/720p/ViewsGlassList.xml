@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.2 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15/9.1.19/9.2.1 window IDs -->
+<!-- Krypton 9.1.15/9.1.19/9.2.1 window IDs/9.2.3 -->
 
 <includes>
 	<!--##################################################################################   VISTA GLASS LIST - ID 57   ##################################################################################-->
@@ -76,7 +76,7 @@
 							<aligny>center</aligny>
 							<font>Font_20B</font>
 							<textcolor>$VAR[value_flagscolor]</textcolor>
-							<fadetime>FanartCrossFadeTime</fadetime>
+							<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 							<label>$INFO[ListItem.Rating]</label>
 						</control>
 						<control type="image">
@@ -154,7 +154,7 @@
 							<aligny>center</aligny>
 							<font>Font_20B</font>
 							<textcolor>$VAR[value_flagscolor]</textcolor>
-							<fadetime>FanartCrossFadeTime</fadetime>
+							<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 							<label>$INFO[ListItem.PercentPlayed]%</label>
 						</control>
 					</control>
@@ -218,7 +218,7 @@
 					<width>100</width>
 					<height>20</height>
 					<label>$INFO[ListItem.Rating]</label>
-					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+					<!-- <colordiffuse>$VAR[value_headercolor]</colordiffuse> -->
 					<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(seasons) | IsEmpty(ListItem.Title)]</visible>
 				</control>
 				<control type="image">

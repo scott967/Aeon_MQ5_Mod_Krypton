@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0/6.1.1/6.1.2/6.1.3 /6.1.4/6.1.5/6.1.6/6.1.8/6.1.9 wall audiocover-->
 <!-- Isengard 7.1.10 wall audiocover/7.1.11/MidList mod/7.1.12 -->
 <!-- Jarvis 8.1.13/8.1.14 -->
-<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2 -->
+<!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>21</posy>
@@ -1150,7 +1150,7 @@
 					<label>31495</label>
 					<altlabel>31494</altlabel>
 					<onclick>Skin.ToggleSetting(nopreferclearart)</onclick>
-					<selected>!Skin.HasSetting(nopreferclearart)</selected>
+					<!-- <selected>!Skin.HasSetting(nopreferclearart)</selected> -->
 					<visible>Control.IsVisible(51) + !Skin.HasSetting(noartwidevideo) | Control.IsVisible(54) + !Skin.HasSetting(noartpostervideo) | Control.IsVisible(55) + !Skin.HasSetting(noartlowlistvideo) | Control.IsVisible(57) + !Skin.HasSetting(noartglasslistvideo) | Control.IsVisible(59) + !Skin.HasSetting(noartrightlistvideo) | Control.IsVisible(60) | Control.IsVisible(62) + Skin.HasSetting(noviewpanelposter) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 				</control>
 			</control>

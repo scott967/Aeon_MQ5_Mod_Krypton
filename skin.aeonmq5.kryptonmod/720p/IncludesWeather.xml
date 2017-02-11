@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5  Helix 6.1.0/6.1.7 -->
 	<!-- Jarvis 8.1.14 -->
-	<!-- Krypton 9.1.19/9.2.1 window IDs -->
+	<!-- Krypton 9.1.19/9.2.1 window IDs/9.2.3 -->
 
 <includes>
 	<!-- ######################################################################### Current #########################################################################-->
@@ -131,7 +131,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>Font_23</font>
-						<scroll>false</scroll>
+						<!-- <scroll>false</scroll> -->
 						<textcolor>FFFFFAF0</textcolor>
 						<label>[UPPERCASE]$INFO[Window(Weather).Property(Location)][/UPPERCASE]</label>
 						<scrollout>false</scrollout>
@@ -6618,7 +6618,6 @@
 				<scrolltime>200</scrolltime>
 				<align>left</align>
 				<aligny>top</aligny>
-				<spinheight>-5</spinheight>
 				<info>Window.Property(Alerts)</info>
 				<autoscroll time="2000" delay="15000" repeat="15000">!Control.Hasfocus(8000)</autoscroll>
 			</control>

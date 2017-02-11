@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0  -->
 <!-- Isengard 7.1.10/7.1.11/7.1.12 -->
 <!-- Jarvis 8.1.13 -->
-<!-- Krypton 9.1.15/9.1.17/9.1.19/9.2.1 window IDs -->
+<!-- Krypton 9.1.15/9.1.17/9.1.19/9.2.1 window IDs/9.2.3 -->
 
 <includes>
 	<!--##################################################################################   VISTA LOW LIST - ID 55   ##################################################################################-->
@@ -390,7 +390,7 @@
 							<width>65</width>
 							<height>13</height>
 							<label>$INFO[ListItem.Rating]</label>
-							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+							<!-- <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse> -->
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(seasons) | IsEmpty(ListItem.Title)]</visible>
 						</control>
 						<control type="image">

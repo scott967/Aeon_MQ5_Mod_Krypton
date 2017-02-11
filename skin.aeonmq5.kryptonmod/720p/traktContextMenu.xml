@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 	<!-- Aeon MQ 5 -->
+	<!-- Krypton 9.2.3 -->
 	
 	<window>
 	<coordinates>
@@ -40,7 +42,7 @@
 	<info>ListItem.Label</info>
 	<textcolor>FFFFFAF0</textcolor>
 	<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-	<colordiffuse>F9FFFFFF</colordiffuse>
+	<!-- <colordiffuse>F9FFFFFF</colordiffuse> -->
 	</control>
 	</itemlayout>
 	<focusedlayout height="39" width="454">

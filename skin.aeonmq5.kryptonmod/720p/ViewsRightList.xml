@@ -269,7 +269,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -282,7 +282,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">
@@ -315,7 +315,7 @@
 							<include>listcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -328,7 +328,7 @@
 							<aligny>center</aligny>
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Label]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>!ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -342,7 +342,7 @@
 							<include>subcolorfocus</include>
 							<shadowcolor>FF000000</shadowcolor>
 							<label>$VAR[value_listinfofocus]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>!String.IsEqual(ListItem.Label,..) + ListItem.IsPlaying</visible>
 						</control>
 						<control type="label">
@@ -355,7 +355,7 @@
 							<aligny>center</aligny>
 							<include>subcolorfocus</include>
 							<label>$VAR[value_listinfofocus]</label>
-							<scrolltime>20</scrolltime>
+							<scrollspeed>20</scrollspeed>
 							<visible>!String.IsEqual(ListItem.Label,..) + !ListItem.IsPlaying</visible>
 						</control>
 						<control type="image">

@@ -161,7 +161,7 @@
 							<aligny>center</aligny>
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Rating]</label>
-							<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+							<!-- <colordiffuse>$VAR[value_headercolor]</colordiffuse> -->
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(seasons) | String.IsEqual(ListItem.Label,..)]</visible>
 						</control>
 						<control type="image">
@@ -234,7 +234,7 @@
 							<aligny>center</aligny>
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Rating]</label>
-							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+							<!-- <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse> -->
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(seasons) | String.IsEqual(ListItem.Label,..)]</visible>
 						</control>
 						<control type="image">
@@ -308,7 +308,7 @@
 							<aligny>center</aligny>
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Rating]</label>
-							<colordiffuse>$VAR[value_headercolorfocus]</colordiffuse>
+							<!-- <colordiffuse>$VAR[value_headercolorfocus]</colordiffuse> -->
 							<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres) | Container.Content(roles) | Container.Content(seasons) | String.IsEqual(ListItem.Label,..)]</visible>
 						</control>
 						<control type="image">
