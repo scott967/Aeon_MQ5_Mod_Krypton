@@ -194,7 +194,7 @@
 									<aligny>center</aligny>
 									<font>Font_20B</font>
 									<textcolor>$VAR[value_flagscolor]</textcolor>
-									<fadetime>FanartCrossFadeTime</fadetime>
+									<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 									<label>$VAR[value_drive]</label>
 								</control>
 								<control type="image">
@@ -212,7 +212,7 @@
 								<font>Font_20B</font>
 								<label>$INFO[ListItem.Genre]</label>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<scroll>true</scroll>
 							</control>
 							<control type="label"><!-- Role -->
@@ -225,7 +225,7 @@
 								<font>Font_20B</font>
 								<label>$INFO[ListItem.Label]</label>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<scroll>true</scroll>
 								<visible>String.StartsWith(Container.FolderName,Role)</visible>
 							</control>
@@ -239,7 +239,7 @@
 								<font>Font_20B</font>
 								<label>$VAR[value_music_roles]</label>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<scroll>true</scroll>
 								<visible>String.Contains(Container.FolderPath,role=) | String.Contains(Container.FolderPath,roleid=-1000)</visible>
 							</control>
@@ -291,7 +291,7 @@
 									<aligny>center</aligny>
 									<font>Font_20B</font>
 									<textcolor>$VAR[value_flagscolor]</textcolor>
-									<fadetime>FanartCrossFadeTime</fadetime>
+									<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 									<label fallback="NR">$INFO[ListItem.Rating]</label>
 								</control>
 								<control type="image">
@@ -361,7 +361,7 @@
 									<aligny>center</aligny>
 									<font>Font_20B</font>
 									<textcolor>$VAR[value_flagscolor]</textcolor>
-									<fadetime>FanartCrossFadeTime</fadetime>
+									<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 									<label>$VAR[value_drive]</label>
 								</control>
 								<control type="image">
@@ -394,7 +394,7 @@
 									<aligny>center</aligny>
 									<font>Font_20B</font>
 									<textcolor>$VAR[value_flagscolor]</textcolor>
-									<fadetime>FanartCrossFadeTime</fadetime>
+									<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 									<label>$INFO[ListItem.PercentPlayed]%</label>
 								</control>
 							</control>
@@ -491,6 +491,7 @@
 			<include>InvisibleButton</include>
 			<texture>$VAR[value_recordlabelsicon]</texture>
 		</control>
+		<include>LiveBG</include>
 		<control type="group"><!-- default group -->
 			<include>Animation_Window</include>
 			<control type="button" id="9900"><!-- to menu/kiosk condition -->
@@ -642,7 +643,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label>$VAR[value_drive]</label>
 							</control>
 							<control type="image">
@@ -660,7 +661,7 @@
 							<font>Font_20B</font>
 							<label>$INFO[ListItem.Genre]</label>
 							<textcolor>$VAR[value_flagscolor]</textcolor>
-							<fadetime>FanartCrossFadeTime</fadetime>
+							<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 							<scroll>true</scroll>
 						</control>
 						<control type="label"><!-- Role -->
@@ -673,7 +674,7 @@
 							<font>Font_20B</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>$VAR[value_flagscolor]</textcolor>
-							<fadetime>FanartCrossFadeTime</fadetime>
+							<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 							<scroll>true</scroll>
 							<visible>String.IsEqual(Container.FolderName,Roles)</visible>
 						</control>
@@ -725,7 +726,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label fallback="NR">$INFO[ListItem.Rating]</label>
 							</control>
 							<control type="image">
@@ -795,7 +796,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label>$VAR[value_drive]</label>
 							</control>
 							<control type="image">
@@ -828,7 +829,7 @@
 								<aligny>center</aligny>
 								<font>Font_20B</font>
 								<textcolor>$VAR[value_flagscolor]</textcolor>
-								<fadetime>FanartCrossFadeTime</fadetime>
+								<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 								<label>$INFO[ListItem.PercentPlayed]%</label>
 							</control>
 						</control>

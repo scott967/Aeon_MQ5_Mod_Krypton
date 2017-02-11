@@ -990,7 +990,7 @@
 				<height>25</height>
 				<align>center</align>
 				<font>Font_23</font>
-				<colordiffuse>d0FFFFFF</colordiffuse>
+				<!-- <colordiffuse>d0FFFFFF</colordiffuse> -->
 				<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
 				<include>Animation_Fade</include>
 				<visible>!Player.Paused</visible>
@@ -1049,7 +1049,7 @@
 			<width>1280</width>
 			<height>720</height>
 			<texture>black.png</texture>
-			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | Window.IsActive(videoplaylist) + !Skin.HasSetting(noliveplaylistbg)]</visible>
+			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | [Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)] + !Skin.HasSetting(noliveplaylistbg)]</visible>
 		</control>
 		<control type="videowindow">
 			<posx>0</posx>
@@ -1057,7 +1057,7 @@
 			<width>1280</width>
 			<height>720</height>
 			<aspectratio>keep</aspectratio>
-			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | Window.IsActive(videoplaylist) + !Skin.HasSetting(noliveplaylistbg)]</visible>
+			<visible>Player.HasVideo + [!Window.IsActive(home) + Skin.HasSetting(livebg) | Window.IsActive(home) + Skin.HasSetting(homevisvideo) | [Window.IsActive(videoplaylist) | Window.IsActive(musicplaylist)] + !Skin.HasSetting(noliveplaylistbg)]</visible>
 		</control>
 		<control type="visualisation">
 			<posx>0</posx>
@@ -1478,7 +1478,7 @@
 		<aligny>center</aligny>
 		<font>Font_20B</font>
 		<textcolor>$VAR[value_flagscolor]</textcolor>
-		<fadetime>FanartCrossFadeTime</fadetime>
+		<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 	</include>
 	<include name="FlagSeparator">
 		<posx>0</posx>
@@ -3988,7 +3988,7 @@
 			<aligny>center</aligny>
 			<font>Font_20B</font>
 			<textcolor>$VAR[value_flagscolor]</textcolor>
-			<fadetime>FanartCrossFadeTime</fadetime>
+			<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 			<label >$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
 			<visible>!String.IsEqual(Container.NumPages,1)</visible>
 		</control>
