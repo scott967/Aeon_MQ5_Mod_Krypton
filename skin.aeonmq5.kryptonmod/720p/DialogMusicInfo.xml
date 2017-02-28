@@ -23,12 +23,12 @@
 			<control type="multiimage" id="5032"><!-- Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-				<visible>[Container.Content(artists) | Container.Content(albums)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5033"><!-- Extra Fanart Song -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[Container.Content(songs) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>[String.IsEqual(ListItem.DBType,song) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -70,7 +70,7 @@
 				<aligny>center</aligny>
 				<texture>$VAR[User_Rating_Stars]</texture>
 				<colordiffuse>$VAR[value_headercolor]</colordiffuse>
-				<visible>Container.Content(albums) | Container.Content(songs)</visible>
+				<visible>String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)</visible>
 			</control>
 			<control type="image"><!-- Star -->
 				<posx>1179</posx>
@@ -81,7 +81,7 @@
 				<aligny>center</aligny>
 				<texture>star.png</texture>
 				<colordiffuse>FFFFFAF0</colordiffuse>
-				<visible>[Container.Content(albums) | Container.Content(songs)] + !String.IsEmpty(ListItem.Rating)</visible>
+				<visible>[String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)] + !String.IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="label">
 				<posx>1185</posx>
@@ -93,7 +93,7 @@
 				<font>Font_18A</font>
 				<label>[B]$INFO[ListItem.Rating][/B]</label>  <!-- scraped rating -->
 				<textcolor>FF101010</textcolor>
-				<visible>[Container.Content(albums) | Container.Content(songs)] + !String.IsEmpty(ListItem.Rating)</visible>
+				<visible>[String.IsEqual(ListItem.DBType(album)) | String.IsEqual(ListItem.DBType,song)] + !String.IsEmpty(ListItem.Rating)</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -150,7 +150,7 @@
 				<scrollout>false</scrollout>
 			</control>
 			
-			<!--   Info panel for artists and albums (musicinformation 2001) -->
+			<!--   +++++++++++++++++++++++++++++++++   Info panel for artists and albums (musicinformation 2001) -->
 			
 			<control type="group"> <!-- album and artist info -->
 				<visible>Window.Is(musicinformation)</visible>
@@ -254,7 +254,7 @@
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
 				</control>
-				<control type="label"><!-- Born/Die/Artists - Record/Albums -->
+				<control type="label"><!-- Born/Die/Artists - Record label/Albums -->
 					<left>0</left>
 					<posx>190</posx>
 					<posy>220</posy>
@@ -362,7 +362,7 @@
 					<font>Font_15</font>
 					<label>$VAR[value_albumsong_items]</label>
 					<textcolor>$VAR[value_flagscolor]</textcolor>		
-					<animation effect="slide" end="0,9" condition="Container.Content(albums)">Conditional</animation>
+					<animation effect="slide" end="0,9" condition="String.IsEqual(ListItem.DBType,album)">Conditional</animation>
 				</control>
 				<control type="label">
 					<posx>30</posx>
@@ -374,31 +374,31 @@
 					<font>Font_15</font>
 					<label>$LOCALIZE[31941]: 50 $LOCALIZE[31040]</label>
 					<textcolor>$VAR[value_flagscolor]</textcolor>	
-					<visible>Container.Content(artists)</visible>
+					<visible>String.IsEqual(ListItem.DBType,artist)</visible>
 				</control>
-				<control type="label">  <!-- List 50 label albums-->
+				<control type="label">  <!-- List 50 label (track) albums-->
 					<posx>315</posx>
-					<posy>702</posy>
+					<posy>692</posy>
 					<width>650</width>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>Font_24</font>
+					<font>Font_15</font>
 					<label>$INFO[Container(50).ListItem.TrackNumber,, - ]$INFO[Container(50).ListItem.Label]</label>	
 					<textcolor>$VAR[value_flagscolor]</textcolor>
 					<scroll>true</scroll>
-					<visible>!IsEmpty(Container(50).ListItem.Label) + Container.Content(albums) + [!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) | IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))]</visible>
+					<visible>!IsEmpty(Container(50).ListItem.Label) + String.IsEqual(ListItem.DBType,album) + [!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) | IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))]</visible>
 				</control>
-				<control type="label">  <!-- List 50 label artists-->
+				<control type="label">  <!-- List 50 label (discography) artists-->
 					<posx>315</posx>
-					<posy>702</posy>
+					<posy>692</posy>
 					<width>650</width>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>Font_24</font>
+					<font>Font_15</font>
 					<label>$INFO[Container(50).ListItem.Label]</label>	
 					<textcolor>$VAR[value_flagscolor]</textcolor>
 					<scroll>true</scroll>
-					<visible>!Container.Content(albums) + [!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) | IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))]</visible>
+					<visible>!String.IsEqual(ListItem.DBType,album) + [!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) | IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))]</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -407,7 +407,7 @@
 					<width>1280</width>
 					<texture>gradient_small.png</texture>
 				</control>
-				<control type="image"><!-- Cast -->
+				<control type="image">
 					<posx>0</posx>
 					<posy>679</posy>
 					<width>1280</width>
@@ -424,8 +424,7 @@
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 					<include>Animation_DefaultGlass2</include>
 				</control>
-				<control type="list" id="50">  <!-- items set by Kodi or artistslideshow -->
-					<viewtype label="List">List Info</viewtype>
+				<control type="panel" id="50">  <!-- items set by Kodi or artistslideshow for musicinfo -->
 					<posx>52</posx>
 					<posy>492</posy>
 					<width>1200</width>
@@ -437,7 +436,7 @@
 					<orientation>horizontal</orientation>
 					<scrolltime>400</scrolltime>
 					<focusposition>2</focusposition>
-					<itemlayout height="170" width="248">
+					<itemlayout condition="String.IsEqual(ListItem.DBType,artist)" height="170" width="248">
 						<control type="image">
 							<posx>0</posx>
 							<posy>5</posy>
@@ -452,7 +451,20 @@
 							<visible>!IsEmpty(ListItem.Label)</visible>
 						</control>
 					</itemlayout>
-					<focusedlayout height="170" width="248">
+					<itemlayout condition="String.IsEqual(ListItem.DBType,album)" height="38" width="400">
+						<control type="label">
+							<posx>0</posx>
+							<posy>5</posy>
+							<height>35</height>
+							<width>395</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_24</font>
+							<label>$INFO[ListItem.TrackNumber,, - ]$INFO[ListItem.Label]</label>
+							<textcolor>B6FFFFFF</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout condition="String.IsEqual(ListItem.DBType,artist)" height="170" width="248">
 						<control type="image">
 							<posx>0</posx>
 							<posy>5</posy>
@@ -481,11 +493,47 @@
 							<visible>Control.HasFocus(50) + !IsEmpty(ListItem.Label)</visible>
 						</control>
 					</focusedlayout>
+					<focusedlayout condition="String.IsEqual(ListItem.DBType,album)" height="38" width="400">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>397</width>
+							<height>38</height>
+							<texture>settings_button_focus.png</texture>
+							<visible>Control.Hasfocus(50)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>5</posy>
+							<height>35</height>
+							<width>395</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_24</font>
+							<label>$INFO[ListItem.TrackNumber,, - ]$INFO[ListItem.Label]</label>
+							<textcolor>B6FFFFFF</textcolor>
+							<visible>!Control.HasFocus(50) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>5</posy>
+							<height>35</height>
+							<width>395</width>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_24</font>
+							<label>$INFO[ListItem.TrackNumber,, - ]$INFO[ListItem.Label]</label>
+							<textcolor>FF101010</textcolor>
+							<include>Animation_Fade</include>
+							<visible>Control.HasFocus(50) + !IsEmpty(ListItem.Label)</visible>
+						</control>
+					</focusedlayout>
 					<include condition="Player.HasAudio + system.hasaddon(script.artistslideshow) + String.IsEqual(MusicPlayer.Artist,ListItem.Label)">AlbumContent</include>
 				</control>
-			</control>  <!-- end of old albuminfo (musicinformation) -->
+			</control>  
+			<!-- end of old albuminfo (musicinformation) -->
 						
-			<!--   Info panel for songs (songinformation 135) -->
+			<!--  +++++++++++++++++++++++++++++++++   Info panel for songs (songinformation 135) -->
 			
 			<control type="group"> <!-- song information -->
 				<visible>Window.Is(songinformation)</visible>
@@ -831,9 +879,11 @@
 						<include>AlbumContent</include>
 					</control>
 				</control>
-			</control>  <!-- end of songinformation -->
+			</control>  
+			<!-- end of songinformation -->
 			
-			<control type="group"><!-- Menu bar album/artist info (musicinformation) -->
+			<!--  +++++++++++++++++++++++++++++++++++++   Menu bar 149 album/artist info (musicinformation) -->
+			<control type="group">
 				<posx>0</posx>
 				<posy>465</posy>
 				<visible>Window.Is(musicinformation)</visible>
@@ -976,17 +1026,17 @@
 						<item id="4"><!--  Set UserRating -->
 							<label>31936</label>
 							<onclick>SendClick(musicinformation,7)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo) + Container.Content(albums)</visible>
+							<visible>!Skin.HasSetting(kioskininfo) + String.IsEqual(ListItem.DBType,album)</visible>
 						</item>
 						<item id="20"><!--  Play album  -->
 							<label>$LOCALIZE[31303] $LOCALIZE[558]</label>
 							<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
-							<visible>Container.Content(albums) + System.HasAddon(script.playalbum)</visible>
+							<visible>String.IsEqual(ListItem.DBType,album) + System.HasAddon(script.playalbum)</visible>
 						</item>
 						<item id="21"><!--  Play album  track -->
 							<label>$LOCALIZE[31303] $LOCALIZE[31799]</label>
 							<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID]&amp;tracknr=$INFO[Container(50).ListItem.TrackNumber])</onclick>
-							<visible>Container.Content(albums) + System.HasAddon(script.playalbum)</visible>
+							<visible>String.IsEqual(ListItem.DBType,album) + System.HasAddon(script.playalbum)</visible>
 						</item>
 						<item id="5"><!-- Artist Info -->
 							<label>31885</label>
@@ -1013,9 +1063,10 @@
 						</item>
 					</content>
 				</control>
-			</control> <!-- end of album info (musicinformation) -->
+			</control> 
+			<!-- end of album info (musicinformation) -->
 			
-			<!--  Songinfo dialog -->
+			<!--  +++++++++++++++++++++++++++++++++++++ Menu bar 149 Songinfo dialog -->
 			<control type="group"><!-- Menu bar songinformation-->
 				<posx>0</posx>
 				<posy>465</posy>
@@ -1184,7 +1235,9 @@
 						</item>
 					</content>
 				</control>
-			</control>  <!-- end of songinformation -->
+			</control>  
+			
+			<!-- ++++++++++++++++++++++    end of songinformation -->
 			
 			<!-- common elements songinformation musicinformation -->
 
