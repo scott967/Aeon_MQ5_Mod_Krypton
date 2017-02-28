@@ -94,6 +94,27 @@
 			</control>
 		</control>
 
+		<!-- Seek Widget + add support for player tempo-->
+		<control type="group">
+			<posx>-500</posx>
+			<posy>353</posy>
+			<width>499</width>
+			<height>28</height>
+			<animation effect="slide" end="205,0" time="200" condition="Player.IsTempo">Conditional</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>499</width>
+				<height>28</height>
+				<texture flipy="true">osd_button_reverse.png</texture>
+			</control>
+			<control type="label">
+				<include>Objects_OSDSeekForward</include>
+				<label>$VAR[value_seekforward]</label>
+			</control>
+		</control>
+
+
 		<control type="group">
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">Visible</animation>
