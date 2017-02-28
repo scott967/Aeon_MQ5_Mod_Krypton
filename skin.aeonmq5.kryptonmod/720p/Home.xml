@@ -512,7 +512,7 @@
 				</control>
 			</control>
 
-			<control type="group" id="601"><!-- Painel de detalhes -->
+			<control type="group" id="601"><!-- Painel de detalhes for skin widgets 510 -->
 				<posx>0</posx>
 				<posy>-300</posy>
 				<include condition="![Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)]">Animation_HomePanel</include>

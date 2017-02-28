@@ -231,8 +231,9 @@
 		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 	</include>
 	<include name="Animation_HomePanel">
-		<animation effect="slide" start="0,0" end="0,250" time="300" delay="700" easing="out" tween="sine">Visible</animation>
-		<animation effect="slide" start="0,250" end="0,0" time="200" easing="in" tween="sine">Hidden</animation>
+	<!-- test change 205 to 270 to move lower -->
+		<animation effect="slide" start="0,0" end="0,270" time="300" delay="700" easing="out" tween="sine">Visible</animation>
+		<animation effect="slide" start="0,270" end="0,0" time="200" easing="in" tween="sine">Hidden</animation>
 	</include>
 	<include name="Animation_HomeNowPlaying">
 		<animation effect="slide" start="0,-350" end="0,0" time="400" delay="2000" easing="out" tween="sine">WindowOpen</animation>
@@ -3980,13 +3981,13 @@
 
 	<include name="ContainerViewPage">
 		<control type="label">
-			<posx>1190</posx>
-			<posy>650</posy>
-			<width>89</width>
+			<posx>1205</posx>
+			<posy>645</posy>
+			<width>75</width>
 			<height>50</height>
 			<align>center</align>
 			<aligny>center</aligny>
-			<font>Font_20B</font>
+			<font>Font_18B</font>
 			<textcolor>$VAR[value_flagscolor]</textcolor>
 			<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 			<label >$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>

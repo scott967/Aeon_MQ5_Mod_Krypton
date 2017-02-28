@@ -3873,7 +3873,7 @@
 	</include>
 	<!-- ################################################################################ System ################################################################################ -->
 	<include name="mf_contentsystem">
-		<control type="group"><!-- Default group -->
+		<control type="group"><!-- Default group used for settings menu details  -->
 			<posx>0</posx>
 			<posy>-50</posy>
 			<animation effect="fade" start="0" end="100" time="400" delay="1000" condition="!Window.Previous(Startup)">WindowOpen</animation>
@@ -3891,7 +3891,7 @@
 			</control>
 			<control type="image">
 				<posx>0</posx>
-				<posy>385</posy>
+				<posy>385</posy> <!-- was 385 -->
 				<width>1280</width>
 				<height>30</height>
 				<texture flipy="true">shadow_h.png</texture>
@@ -3902,7 +3902,7 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1280</width>
-				<height>385</height>
+				<height>385</height> <!-- was 385 -->
 				<texture>details_back.png</texture>
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_HomeGlass2</include>
@@ -3922,18 +3922,29 @@
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 				<visible>String.IsEqual(Container(9000).ListItem.Property(id),settings)</visible>
 				<control type="label">
-					<posx>270</posx>
+					<posx>40</posx> <!-- was 270 -->
 					<posy>20</posy>
-					<width>600</width>
+					<width>380</width> <!-- was 600 -->
 					<height>330</height>
 					<align>right</align>
 					<aligny>top</aligny>
 					<font>Font_17A</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
-					<label>[UPPERCASE]$LOCALIZE[31443] by MarcosQui:[CR]$LOCALIZE[9]:[CR]$LOCALIZE[31748]:[CR]$LOCALIZE[31749]:[CR]$LOCALIZE[31750]:[CR]$LOCALIZE[31751]:[CR]$LOCALIZE[31691]:[CR]$LOCALIZE[20093]:[CR]$LOCALIZE[13287][CR]$LOCALIZE[13284][CR]$LOCALIZE[158]:[CR]$LOCALIZE[12395]:[CR]$LOCALIZE[20089]:[CR]$LOCALIZE[150]:[CR]$LOCALIZE[13295][CR]$LOCALIZE[12390]:[/UPPERCASE]</label>
+					<label>[UPPERCASE]$LOCALIZE[31443] by MarcosQui:[CR]$LOCALIZE[9]:[CR]$LOCALIZE[31748]:[CR]$LOCALIZE[31749]:[CR]$LOCALIZE[31750]:[CR]$LOCALIZE[31751]:[CR]$LOCALIZE[31691]:[CR]$LOCALIZE[20093]:[CR]$LOCALIZE[13287][CR]$LOCALIZE[13284][/UPPERCASE]</label>
 				</control>
 				<control type="label">
-					<posx>280</posx>
+					<posx>520</posx> <!-- was 270 -->
+					<posy>145</posy>
+					<width>380</width> <!-- was 600 -->
+					<height>330</height>
+					<align>right</align>
+					<aligny>top</aligny>
+					<font>Font_17A</font>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+					<label>[UPPERCASE]$LOCALIZE[158]:[CR]$LOCALIZE[12395]:[CR]$LOCALIZE[20089]:[CR]$LOCALIZE[150]:[CR]$LOCALIZE[13295][CR]$LOCALIZE[12390]:[/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>40</posx> <!-- was 320 -->
 					<posy>20</posy>
 					<width>600</width>
 					<height>330</height>
@@ -3941,7 +3952,18 @@
 					<aligny>top</aligny>
 					<font>Font_17A</font>
 					<textcolor>FFFFFAF0</textcolor>
-					<label>[LOWERCASE]$VAR[SkinVersion][CR]$INFO[System.BuildVersion][COLOR=80FFFFFF] | [/COLOR]$INFO[System.BuildDate][CR]$VAR[value_skinstatus_theme][CR]$VAR[value_skinstatus_style][CR]$VAR[value_skinstatus_texturecolor][CR]$VAR[value_skinstatus_headercolor][CR]$VAR[value_skinstatus_homeglass][CR]$INFO[System.ProfileName][CR]$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] pxl[CR]$INFO[System.CpuFrequency][CR]$INFO[System.FreeMemory][CR]$INFO[System.BatteryLevel][CR]$INFO[System.FreeSpace][COLOR=80FFFFFF] | [/COLOR]$INFO[System.FreeSpacePercent][CR]$INFO[Network.IPAddress][CR]$INFO[System.InternetState][CR]$INFO[System.Uptime][/LOWERCASE]</label>
+					<label>[LOWERCASE]$VAR[SkinVersion][CR]$INFO[System.BuildVersion][COLOR=80FFFFFF] | [/COLOR]$INFO[System.BuildDate][CR]$VAR[value_skinstatus_theme][CR]$VAR[value_skinstatus_style][CR]$VAR[value_skinstatus_texturecolor][CR]$VAR[value_skinstatus_headercolor][CR]$VAR[value_skinstatus_homeglass][CR]$INFO[System.ProfileName][CR]$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] pxl[CR]$INFO[System.CpuFrequency][/LOWERCASE]</label>
+				</control>
+				<control type="label">
+					<posx>525</posx> <!-- was 320 -->
+					<posy>145</posy>
+					<width>600</width>
+					<height>330</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>Font_17A</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>[LOWERCASE]$INFO[System.FreeMemory][CR]$INFO[System.BatteryLevel][CR]$INFO[System.FreeSpace][COLOR=80FFFFFF] | [/COLOR]$INFO[System.FreeSpacePercent][CR]$INFO[Network.IPAddress][CR]$INFO[System.InternetState][CR]$INFO[System.Uptime][/LOWERCASE]</label>
 				</control>
 			</control>
 		</control>
