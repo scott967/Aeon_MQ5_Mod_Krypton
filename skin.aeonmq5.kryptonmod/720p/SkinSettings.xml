@@ -343,7 +343,7 @@
 					<selected>!Skin.HasSetting(noweatherwidget)</selected>
 					<visible>!IsEmpty(skin.string(weatherwidget))</visible>
 				</control>
-				<control type="radiobutton" id="1107"><!-- Sistema -->
+				<control type="radiobutton" id="1107"><!-- Sistema  (Settings menu) -->
 					<label>$LOCALIZE[31011]</label>
 					<onclick>Skin.ToggleSetting(nosystemwidget)</onclick>
 					<selected>!Skin.HasSetting(nosystemwidget)</selected>
