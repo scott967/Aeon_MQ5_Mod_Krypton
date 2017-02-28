@@ -145,7 +145,7 @@
 						<posx>20</posx>
 						<posy>645</posy>
 						<orientation>horizontal</orientation>
-						<itemgap>17</itemgap>
+						<itemgap>15</itemgap> <!-- was 17 -->
 						<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(637)">Conditional</animation> <!-- customdelayRCB -->
 						<control type="image"><!-- studio -->
 							<include>FlagImage</include>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.0 massive fonts-->
+<!-- Krypton 9.2.3 -->
 
 <fonts>
 	<fontset id="Default">
@@ -39,6 +40,11 @@
 			<filename>aeon_common.ttf</filename>
 			<size>18</size>
 			<linespacing>0.94</linespacing>
+		</font>
+		<font>
+			<name>Font_18B</name><!-- Mpaa -->
+			<filename>aeon_flags.ttf</filename>
+			<size>18</size>
 		</font>
 		<font>
 			<name>Font_20</name>

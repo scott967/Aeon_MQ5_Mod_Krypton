@@ -3813,8 +3813,8 @@
 		<value>$INFO[Listitem.Icon]</value>
 	</variable>
 	<variable name="value_albumsong_items">
-		<value condition="Container.Content(artists)">$LOCALIZE[21888]: $INFO[Container(50).NumItems] $LOCALIZE[31040]</value>
-		<value condition="Container.Content(albums) + !IsEmpty(Container(50).ListItem.Label)">$LOCALIZE[31340]: $INFO[Container(50).NumItems]</value>
+		<value condition="String.IsEqual(ListItem.DBType,artist)">$LOCALIZE[21888]: $INFO[Container(50).NumItems] $LOCALIZE[31040]</value>
+		<value condition="String.IsEqual(ListItem.DBType,album) + !IsEmpty(Container(50).ListItem.Label)">$LOCALIZE[31340]: $INFO[Container(50).NumItems]</value>
 	</variable>
 
 	<variable name="value_seconds">
