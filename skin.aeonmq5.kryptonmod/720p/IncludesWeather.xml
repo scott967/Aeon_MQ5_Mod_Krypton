@@ -212,7 +212,7 @@
 					<description>current UV Index label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[403] :</label>
-					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind label</description>
@@ -229,25 +229,25 @@
 					<description>barometric pressure</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[31859] :</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>visibility</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[31860] :</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[33027] :</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunset label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[33028] :</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) |SubString(Window.Property(WeatherProvider),Yahoo) </visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) |String.Contains(Window.Property(WeatherProvider),Yahoo) </visible>
 				</control>
 			</control>
 			<control type="grouplist">
@@ -270,7 +270,7 @@
 					<description>current UV Index Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.HeatIndex)]</label>
-					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind Value</description>
@@ -281,7 +281,7 @@
 					<description>current Precip Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(36Hour.1.ChancePrecipitation)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + ![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + ![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
 				</control>
 				<control type="label">
 					<description>current Precip Value</description>
@@ -293,32 +293,32 @@
 					<description>current Pressure Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Pressure)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Visibilty Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Visibility)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Today.Sunrise)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunset Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Today.Sunset)]</label>
-					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+					<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				</control>
 			</control>
 			<control type="label">
 				<description>Loading label</description>
 				<posy>400</posy>
 				<include>TWC.LoadingLabelCommon</include>
-				<visible>[[IsEmpty(Window.Property(Daily.IsFetched)) + !Skin.HasSetting(TWC.ShowCurrentHourly)] | [IsEmpty(Window.Property(Hourly.IsFetched)) + Skin.HasSetting(TWC.ShowCurrentHourly)]] + !SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>[[IsEmpty(Window.Property(Daily.IsFetched)) + !Skin.HasSetting(TWC.ShowCurrentHourly)] | [IsEmpty(Window.Property(Hourly.IsFetched)) + Skin.HasSetting(TWC.ShowCurrentHourly)]] + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 			</control>
 			<!-- Daily forecast -->
 			<control type="grouplist">
@@ -3769,15 +3769,15 @@
 		<control type="group">
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + !SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
 				<include>TWC.LoadingLabelCommon</include>
-				<visible>IsEmpty(Window.Property(36Hour.IsFetched)) + !SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>IsEmpty(Window.Property(36Hour.IsFetched)) + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 			</control>
 			<control type="grouplist">
-				<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>!IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 				<posx>0</posx>
 				<posy>40</posy>
 				<width>920</width>
@@ -3981,7 +3981,7 @@
 		<control type="group">  <!-- Yahoo -->
 			<posx>290</posx>
 			<posy>60</posy>
-			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + SubString(Window.Property(WeatherProvider),Yahoo)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="grouplist">
 				<posx>0</posx>
