@@ -4,11 +4,11 @@
 
 <window id="638" type="dialog"> <!-- safe id -->
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="SubString(skin.string(panel_seconds),1)">SetFocus(9061)</onload>
-	<onload condition="SubString(skin.string(panel_seconds),2)">SetFocus(9062)</onload>
-	<onload condition="SubString(skin.string(panel_seconds),3)">SetFocus(9063)</onload>
-	<onload condition="SubString(skin.string(panel_seconds),4)">SetFocus(9064)</onload>
-	<onload condition="SubString(skin.string(panel_seconds),5)">SetFocus(9065)</onload>
+	<onload condition="String.Contains(skin.string(panel_seconds),1)">SetFocus(9061)</onload>
+	<onload condition="String.Contains(skin.string(panel_seconds),2)">SetFocus(9062)</onload>
+	<onload condition="String.Contains(skin.string(panel_seconds),3)">SetFocus(9063)</onload>
+	<onload condition="String.Contains(skin.string(panel_seconds),4)">SetFocus(9064)</onload>
+	<onload condition="String.Contains(skin.string(panel_seconds),5)">SetFocus(9065)</onload>
 	<!-- <zorder>3</zorder> -->
 	<coordinates>
 		<system>1</system>

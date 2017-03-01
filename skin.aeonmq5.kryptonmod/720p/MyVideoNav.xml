@@ -38,33 +38,36 @@
 		<control type="multiimage" id="5020"><!-- Extra Fanart Movies/TvShows/MusicVideos/Sets -->
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-			<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra) | Container.Content(sets) + SubString(skin.string(setsfanart),extra)] + !ListItem.IsParentFolder</visible>
+			<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + String.Contains(skin.string(moviesfanart),extra) | Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra) | Container.Content(sets) + String.Contains(skin.string(setsfanart),extra)] + !ListItem.IsParentFolder</visible>
 		</control>
 		<control type="multiimage" id="5021"><!-- Extra Fanart Seasons -->
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-			<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
+			<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
 		</control>
 		<control type="multiimage" id="5022"><!-- Extra Fanart Episodes -->
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
-			<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
+			<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
 		</control>
 		<!-- <control type="multiimage" id="5025"> Extra Fanart Episodes - no season folders 
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-			<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra)</visible>
+			<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra)</visible>
 		</control> -->
 		<control type="image" id="5023"><!-- Season Fanart -->
 			<include>InvisibleButton</include>
 			<texture background="true">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</texture>
-			<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),seasons)</visible>
+			<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),seasons)</visible>
 		</control>
 		<control type="image" id="5024"><!-- Season Fanart/episodes -->
 			<include>InvisibleButton</include>
 			<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
-			<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),seasons)</visible>
+			<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),seasons)</visible>
 		</control>
+		<!-- end background fanart display control -->
+
+		<!-- currently playing video in background -->
 		<include>LiveBG</include>
 		<control type="image">
 			<posx>0</posx>
@@ -76,12 +79,15 @@
 			<include>Animation_Fade</include>
 			<visible>Player.HasVideo + !Skin.HasSetting(fullscreentrailer)</visible>
 		</control>
+
+
 		<control type="group"><!-- default group -->
 			<include>Animation_Window</include>
+			<!-- default group animation control buttons -->
 			<control type="button" id="9900"><!-- to menu/kiosk condition -->
 				<include>InvisibleButton</include>
-				<onfocus condition="![Skin.HasSetting(kiosk) | Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)]">SetFocus(9300)</onfocus>
-				<onfocus condition="Skin.HasSetting(kiosksmart) + !SubString(skin.string(codestep),step3)">SetFocus(9100)</onfocus>
+				<onfocus condition="![Skin.HasSetting(kiosk) | Skin.HasSetting(kiosksmart) + !String.Contains(skin.string(codestep),step3)]">SetFocus(9300)</onfocus>
+				<onfocus condition="Skin.HasSetting(kiosksmart) + !String.Contains(skin.string(codestep),step3)">SetFocus(9100)</onfocus>
 				<onfocus condition="Skin.HasSetting(kiosk)">SetFocus(51)</onfocus>
 			</control>
 			<control type="button" id="9920"><!-- hidden colection/view fanart -->
@@ -93,11 +99,11 @@
 			</control>
 			<control type="image" id="9921"><!-- painel de info auto -->
 				<include>InvisibleButton</include>
-				<animation effect="fade" start="0" end="100" time="150" delay="1000" condition="SubString(skin.string(panel_seconds),1)">Visible</animation>
-				<animation effect="fade" start="0" end="100" time="150" delay="2000" condition="SubString(skin.string(panel_seconds),2)">Visible</animation>
-				<animation effect="fade" start="0" end="100" time="150" delay="3000" condition="SubString(skin.string(panel_seconds),3)">Visible</animation>
-				<animation effect="fade" start="0" end="100" time="150" delay="4000" condition="SubString(skin.string(panel_seconds),4)">Visible</animation>
-				<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="SubString(skin.string(panel_seconds),5)">Visible</animation>
+				<animation effect="fade" start="0" end="100" time="150" delay="1000" condition="String.Contains(skin.string(panel_seconds),1)">Visible</animation>
+				<animation effect="fade" start="0" end="100" time="150" delay="2000" condition="String.Contains(skin.string(panel_seconds),2)">Visible</animation>
+				<animation effect="fade" start="0" end="100" time="150" delay="3000" condition="String.Contains(skin.string(panel_seconds),3)">Visible</animation>
+				<animation effect="fade" start="0" end="100" time="150" delay="4000" condition="String.Contains(skin.string(panel_seconds),4)">Visible</animation>
+				<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(panel_seconds),5)">Visible</animation>
 				<visible>![Container.OnNext | Container.OnPrevious]</visible>
 			</control>
 			<control type="button" id="9922"><!-- refresh das vistas/refresh view -->
@@ -114,6 +120,11 @@
 				<include>InvisibleButton</include>
 				<texture>$VAR[value_studiosicon]</texture>
 			</control>
+			<!-- end default group animation control buttons -->
+
+			<!-- Flags bar 540-720 -->
+			
+			
 			<control type="group"><!-- Grupo ocultar flags ou fanart -->
 				<posy>30</posy>
 				<include condition="Skin.HasSetting(view3dwall_video)">View3DWall</include><!-- 67,68 -->
@@ -140,7 +151,7 @@
 					<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">WindowOpen</animation>
 					<animation effect="slide" start="0,300" end="0,0"  time="500" tween="sine" easing="out">Visible</animation>
 					<animation effect="slide" start="0,0" end="0,300"  time="500" tween="sine" easing="out">Hidden</animation>
-					<visible>!Control.IsVisible(57) + [SubString(skin.string(mediaflags),on) | SubString(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
+					<visible>!Control.IsVisible(57) + [String.Contains(skin.string(mediaflags),on) | String.Contains(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
 					<control type="grouplist"><!-- Etiquetas/tags -->
 						<posx>20</posx>
 						<posy>645</posy>
@@ -304,6 +315,11 @@
 				</control>
 				<include>ContainerViewPage</include>
 			</control>
+
+			<!-- end flags bar -->
+
+			<!-- title bar 0-270 -->
+			<!-- NOT for wide, lowlist, glasslist, rightlist, midlist -->
 			<control type="group"><!-- Titulo e subtitulo -->
 				<posy>-30</posy>
 				<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
@@ -456,7 +472,10 @@
 					</control>
 				</control>
 			</control>
+			<!-- end title bar 0-270 -->
 
+			<!-- TV Show next aired bar  0-270 -->
+			<!-- ONLY for wide, lowlist, rightlist -->
 			<control type="group"><!-- Somente subtitulo/only subtitle -->
 				<posy>-30</posy>
 				<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
@@ -490,6 +509,9 @@
 				</control>
 			</control>	
 
+			<!-- end subtitle only bar 0-270 -->
+
+			<!-- audio language and subitle langauge bar -->
 			<control type="group"><!-- Linguagem de audio e legendas/Language for audio and subtitles -->
 				<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
@@ -504,6 +526,8 @@
 				<posy>35</posy>
 				<include>AudioandSub</include>
 			</control>
+
+			<!--  all views included here -->
 			<control type="group"><!-- Grupo vistas -->
 				<posy>30</posy>
 				<include>Animation_HiddenView</include>
@@ -527,6 +551,8 @@
 				<include condition="Skin.HasSetting(viewshowcase_video)">ViewShowCaseVideo</include><!-- 66 -->
 				<include condition="Skin.HasSetting(viewmidlist_video)">ViewMidList</include><!-- 70 --> <!-- Midlist Mod -->
 			</control>
+
+			<!-- additional includes for multidata and date/weather, and top pull down menu --> 
 			<include>TouchScreen</include>
 			<include>ScrollLabel</include>
 			<include condition="Skin.HasSetting(videoinfobar)">MultiData</include>

@@ -23,12 +23,12 @@
 			<control type="multiimage" id="5032"><!-- Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-				<visible>[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album)] + String.Contains(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5033"><!-- Extra Fanart Song -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[String.IsEqual(ListItem.DBType,song) | Container.Content(playlists)] + SubString(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>[String.IsEqual(ListItem.DBType,song) | Container.Content(playlists)] + String.Contains(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -671,7 +671,7 @@
 					<width>563</width>
 					<aspectratio align="left">keep</aspectratio>
 					<texture background="true">$VAR[value_songinfo_thumb]</texture>
-					<visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | SubString(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
+					<visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
 				</control>
 				<control type="multiimage"><!-- Artist fanart AS -->
 					<posx>687</posx>

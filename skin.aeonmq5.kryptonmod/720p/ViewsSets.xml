@@ -268,7 +268,7 @@
 	<colordiffuse>E4101010</colordiffuse>
 	<include>Animation_Fade</include>
 	<animation effect="fade" start="20" end="80" time="700" condition="true" pulse="true">Conditional</animation>
-	<visible>SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+	<visible>String.Contains(ListItem.Path,videodb://movies/sets,left)</visible>
 	</control>
 	<control type="label">
 	<posx>20</posx>
@@ -652,7 +652,7 @@
 	</control>
 	<control type="group">
 	<posy>-30</posy>
-	<animation effect="slide" end="0,-40" condition="SubString(skin.string(mediaflags),off)">Conditional</animation>
+	<animation effect="slide" end="0,-40" condition="String.Contains(skin.string(mediaflags),off)">Conditional</animation>
 	<control type="button" id="160">
 	<include>InvisibleButton</include>
 	<onup condition="Skin.HasSetting(moviezoom)">SetFocus(5801)</onup>

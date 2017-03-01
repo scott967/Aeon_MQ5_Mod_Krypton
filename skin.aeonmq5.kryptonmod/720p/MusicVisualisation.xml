@@ -35,13 +35,13 @@
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
-			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra)</visible>
+			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + String.Contains(skin.string(musicfanart),extra)</visible>
 		</control>
 		<control type="multiimage" id="5044"><!-- Extra Fanart Artist -->
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
 			<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
-			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + SubString(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5043))</visible>
+			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + String.Contains(skin.string(musicfanart),extra) + IsEmpty(Control.GetLabel(5043))</visible>
 		</control>
 		<control type="multiimage" id="5045"><!-- Artist SlideShow -->
 			<aspectratio>keep</aspectratio>

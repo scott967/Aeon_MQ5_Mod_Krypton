@@ -86,12 +86,12 @@
 					<focusedlayout height="63" width="640">
 						<control type="button">
 							<include>InvisibleButton</include>
-							<animation effect="fade" start="100" end="100" time="0" delay="0" condition="SubString(skin.string(gamevideo_seconds),0)">Focus</animation>
-							<animation effect="fade" start="100" end="100" time="0" delay="1000" condition="SubString(skin.string(gamevideo_seconds),1)">Focus</animation>
-							<animation effect="fade" start="100" end="100" time="0" delay="2000" condition="SubString(skin.string(gamevideo_seconds),2)">Focus</animation>
-							<animation effect="fade" start="100" end="100" time="0" delay="3000" condition="SubString(skin.string(gamevideo_seconds),3)">Focus</animation>
-							<animation effect="fade" start="100" end="100" time="0" delay="4000" condition="SubString(skin.string(gamevideo_seconds),4)">Focus</animation>
-							<animation effect="fade" start="100" end="100" time="0" delay="5000" condition="SubString(skin.string(gamevideo_seconds),5)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="0" condition="String.Contains(skin.string(gamevideo_seconds),0)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="1000" condition="String.Contains(skin.string(gamevideo_seconds),1)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="2000" condition="String.Contains(skin.string(gamevideo_seconds),2)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="3000" condition="String.Contains(skin.string(gamevideo_seconds),3)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="4000" condition="String.Contains(skin.string(gamevideo_seconds),4)">Focus</animation>
+							<animation effect="fade" start="100" end="100" time="0" delay="5000" condition="String.Contains(skin.string(gamevideo_seconds),5)">Focus</animation>
 							<onfocus condition="!Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)],1)</onfocus>
 							<onfocus condition="Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)])</onfocus>
 							<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))]</visible>
@@ -136,7 +136,7 @@
 							<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 						</control>
 						<control type="group">
-							<visible>SubString(skin.string(games_video),trigger)</visible>
+							<visible>String.Contains(skin.string(games_video),trigger)</visible>
 							<control type="button">
 								<include>InvisibleButton</include>
 								<animation effect="fade" start="100" end="100" time="150" delay="500" condition="true">Focus</animation>
@@ -1302,11 +1302,11 @@
 					</control>
 					<control type="button">
 						<include>InvisibleButton</include>
-						<animation effect="fade" start="100" end="100" time="0" delay="1000" condition="SubString(skin.string(panel_seconds),1)">Focus</animation>
-						<animation effect="fade" start="100" end="100" time="0" delay="2000" condition="SubString(skin.string(panel_seconds),2)">Focus</animation>
-						<animation effect="fade" start="100" end="100" time="0" delay="3000" condition="SubString(skin.string(panel_seconds),3)">Focus</animation>
-						<animation effect="fade" start="100" end="100" time="0" delay="4000" condition="SubString(skin.string(panel_seconds),4)">Focus</animation>
-						<animation effect="fade" start="100" end="100" time="0" delay="5000" condition="SubString(skin.string(panel_seconds),5)">Focus</animation>
+						<animation effect="fade" start="100" end="100" time="0" delay="1000" condition="String.Contains(skin.string(panel_seconds),1)">Focus</animation>
+						<animation effect="fade" start="100" end="100" time="0" delay="2000" condition="String.Contains(skin.string(panel_seconds),2)">Focus</animation>
+						<animation effect="fade" start="100" end="100" time="0" delay="3000" condition="String.Contains(skin.string(panel_seconds),3)">Focus</animation>
+						<animation effect="fade" start="100" end="100" time="0" delay="4000" condition="String.Contains(skin.string(panel_seconds),4)">Focus</animation>
+						<animation effect="fade" start="100" end="100" time="0" delay="5000" condition="String.Contains(skin.string(panel_seconds),5)">Focus</animation>
 						<onfocus condition="!Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)],1)</onfocus>
 						<onfocus condition="Skin.HasSetting(fullscreengamevideo)">PlayMedia($ESCINFO[ListItem.Property(gameplaymain)])</onfocus>
 						<visible>![IsEmpty(ListItem.Property(autoplayvideomain)) | IsEmpty(ListItem.Property(gameplaymain))] + String.IsEqual(skin.string(multiplexgamespanel),auto)</visible>
@@ -1349,7 +1349,7 @@
 				<ondown>9920</ondown>
 				<orientation>vertical</orientation>
 				<pagecontrol>-</pagecontrol>
-				<itemlayout condition="SubString(skin.string(wallgamesgrid),default)" width="98.5" height="138"><!-- tamanho normal -->
+				<itemlayout condition="String.Contains(skin.string(wallgamesgrid),default)" width="98.5" height="138"><!-- tamanho normal -->
 					<control type="image">
 						<posx>2</posx>
 						<posy>2</posy>
@@ -1369,7 +1369,7 @@
 						<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 					</control>
 				</itemlayout>
-				<itemlayout condition="SubString(skin.string(wallgamesgrid),mid)" width="128" height="184"><!-- tamanho medio -->
+				<itemlayout condition="String.Contains(skin.string(wallgamesgrid),mid)" width="128" height="184"><!-- tamanho medio -->
 					<control type="image">
 						<posx>2</posx>
 						<posy>2</posy>
@@ -1389,7 +1389,7 @@
 						<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 					</control>
 				</itemlayout>
-				<itemlayout condition="SubString(skin.string(wallgamesgrid),big)" width="210" height="276"><!-- tamanho grande -->
+				<itemlayout condition="String.Contains(skin.string(wallgamesgrid),big)" width="210" height="276"><!-- tamanho grande -->
 					<control type="image">
 						<posx>18</posx>
 						<posy>2</posy>
@@ -1409,7 +1409,7 @@
 						<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="SubString(skin.string(wallgamesgrid),default)" width="98.5" height="138"><!-- tamanho normal -->
+				<focusedlayout condition="String.Contains(skin.string(wallgamesgrid),default)" width="98.5" height="138"><!-- tamanho normal -->
 					<control type="image">
 						<posx>2</posx>
 						<posy>2</posy>
@@ -1437,7 +1437,7 @@
 						<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 					</control>
 				</focusedlayout>
-				<focusedlayout condition="SubString(skin.string(wallgamesgrid),mid)" width="128" height="184"><!-- tamanho medio -->
+				<focusedlayout condition="String.Contains(skin.string(wallgamesgrid),mid)" width="128" height="184"><!-- tamanho medio -->
 					<control type="image">
 						<posx>2</posx>
 						<posy>2</posy>
@@ -1465,7 +1465,7 @@
 						<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 					</control>
 				</focusedlayout>
-				<focusedlayout condition="SubString(skin.string(wallgamesgrid),big)" width="210" height="276"><!-- tamanho grande -->
+				<focusedlayout condition="String.Contains(skin.string(wallgamesgrid),big)" width="210" height="276"><!-- tamanho grande -->
 					<control type="image">
 						<posx>18</posx>
 						<posy>2</posy>

@@ -26,27 +26,27 @@
 			<control type="multiimage" id="5020"><!-- Extra Fanart Movies/TvShows/MusicVideos -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + SubString(skin.string(moviesfanart),extra) | Container.Content(tvshows) + SubString(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + SubString(skin.string(musicvideosfanart),extra)] + !ListItem.IsParentFolder</visible>
+				<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + String.Contains(skin.string(moviesfanart),extra) | Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)] + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5021"><!-- Extra Fanart Seasons -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-				<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage" id="5022"><!-- Extra Fanart Episodes -->
 				<include>InvisibleButton</include>
 				<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
-				<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image" id="5023"><!-- Season Fanart -->
 				<include>InvisibleButton</include>
 				<texture background="true">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</texture>
-				<visible>Container.Content(seasons) + SubString(skin.string(seasonsfanart),seasons)</visible>
+				<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),seasons)</visible>
 			</control>
 			<control type="image" id="5024"><!-- Season Fanart/episodes -->
 				<include>InvisibleButton</include>
 				<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
-				<visible>Container.Content(episodes) + SubString(skin.string(episodesfanart),seasons)</visible>
+				<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),seasons)</visible>
 			</control>
 			<control type="image" id="9925"><!-- Studio icons -->
 				<include>InvisibleButton</include>

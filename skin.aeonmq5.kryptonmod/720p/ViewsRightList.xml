@@ -414,7 +414,7 @@
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
 					<animation effect="slide" time="200" start="0,0" end="0,-20" tween="cubic" easing="out" condition="!Skin.HasSetting(norightlistvideocase)">Conditional</animation>
-					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(norightlistdiscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+					<visible>![IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(norightlistdiscart) | String.Contains(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
 					<control type="image">
 						<posx>112</posx>
 						<posy>70</posy>
@@ -446,7 +446,7 @@
 						<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
-					<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(norightlistdiscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+					<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | Skin.HasSetting(norightlistdiscart)] + Window.IsActive(videos) + String.Contains(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
 					<control type="image">
 						<include>RightListDisc</include>
 						<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
@@ -533,7 +533,7 @@
 						<label>$INFO[Player.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<visible>Player.HasMedia + !SubString(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
+						<visible>Player.HasMedia + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 					<control type="label">
 						<width>245</width>
@@ -545,7 +545,7 @@
 						<label>($INFO[Player.Time] / $INFO[Player.Duration,])</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<visible>Player.HasMedia + !SubString(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
+						<visible>Player.HasMedia + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 				</control>
 

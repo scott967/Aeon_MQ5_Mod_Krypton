@@ -91,7 +91,7 @@
 					<onfocus>SetProperty(Weather.CurrentView,hourly)</onfocus>
 					<onfocus>SetProperty(Weather.CurrentViewMenu,$LOCALIZE[31840])</onfocus>
 					<onfocus>Skin.Reset(TWC.ZoomWeatherMap)</onfocus>
-					<visible>!SubString(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+					<visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="button" id="103"><!-- Weekend -->
 					<label>31841</label>
@@ -99,7 +99,7 @@
 					<onfocus>SetProperty(Weather.CurrentView,weekend)</onfocus>
 					<onfocus>SetProperty(Weather.CurrentViewMenu,$LOCALIZE[31841])</onfocus>
 					<onfocus>Skin.Reset(TWC.ZoomWeatherMap)</onfocus>
-					<visible>!SubString(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+					<visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="button" id="104"><!-- 10 Days -->
 					<label>31842</label>
@@ -108,7 +108,7 @@
 					<onfocus>SetProperty(Weather.CurrentView,10days)</onfocus>
 					<onfocus>SetProperty(Weather.CurrentViewMenu,$LOCALIZE[31842])</onfocus>
 					<onfocus>Skin.Reset(TWC.ZoomWeatherMap)</onfocus>
-					<visible>!SubString(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+					<visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="button" id="105"><!-- Maps -->
 					<label>31844</label>
@@ -116,7 +116,7 @@
 					<onfocus>SetProperty(Weather.CurrentView,maps)</onfocus>
 					<onfocus>SetProperty(Weather.CurrentViewMenu,$LOCALIZE[31844])</onfocus>
 					<onfocus>Skin.Reset(TWC.ZoomWeatherMap)</onfocus>
-					<visible>!SubString(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+					<visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
 				</control>
 				<control type="button" id="106"><!-- Alerts -->
 					<label>31054</label>

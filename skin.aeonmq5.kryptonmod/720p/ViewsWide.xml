@@ -408,8 +408,8 @@
 							<effect type="slide" start="0,0" end="-100,0" time="300" tween="cubic" easing="out"/>
 							<effect type="fade" start="100" end="0" time="200"/>
 						</animation>
-						<!-- <visible>![IsEmpty(ListItem.Art(discart)) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible> -->
-						<visible>![[IsEmpty(ListItem.Art(discart)) + [IsEmpty(ListItem.Art(poster)) | [Skin.HasSetting(nodisctvshow) + [Container.content(tvshows) | Container.Content(seasons)]]]] | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart) | SubString(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
+						<!-- <visible>![IsEmpty(ListItem.Art(discart)) | String.Contains(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart) | String.Contains(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible> -->
+						<visible>![[IsEmpty(ListItem.Art(discart)) + [IsEmpty(ListItem.Art(poster)) | [Skin.HasSetting(nodisctvshow) + [Container.content(tvshows) | Container.Content(seasons)]]]] | String.Contains(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart) | String.Contains(ListItem.Path,videodb://movies/sets,left)] + Window.IsActive(videos) + Control.IsVisible(9923)</visible>
 						<control type="image">
 							<posx>270</posx>
 							<posy>50</posy>
@@ -455,7 +455,7 @@
 							<effect type="fade" start="100" end="0" time="200"/>
 						</animation>
 						<animation effect="slide" start="0,0" end="-9,0" time="400" easing="inout" tween="cubic" condition="Skin.HasSetting(nowidevideocase)">Conditional</animation>
-						<visible>![IsEmpty(Window(home).Property(Set.Movie.6.Art(discart))) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+						<visible>![IsEmpty(Window(home).Property(Set.Movie.6.Art(discart))) | String.Contains(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + String.Contains(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
 						<control type="image">
 							<include>WideDisc</include>
 							<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
@@ -502,7 +502,7 @@
 							<effect type="fade" start="100" end="0" time="200"/>
 						</animation>
 						<animation effect="slide" start="0,0" end="15,0" time="400" easing="inout" tween="cubic" condition="Skin.HasSetting(nowidevideocase)">Conditional</animation>
-						<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | SubString(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + SubString(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
+						<visible>![IsEmpty(Window(home).Property(Set.Movie.1.Art(discart))) | String.Contains(skin.string(widemovies.art),banner) | Skin.HasSetting(nowidediscart)] + Window.IsActive(videos) + String.Contains(ListItem.Path,videodb://movies/sets,left) + Control.IsVisible(9923)</visible>
 						<control type="image">
 							<include>WideDisc</include>
 							<texture diffuse="cdart_diffuse.png" background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
@@ -532,7 +532,7 @@
 
 					<control type="group"><!-- BANNER -->
 						<include>Animation_Fade</include>
-						<visible>Container.Content(movies) + SubString(skin.string(widemovies.art),banner) | Container.Content(tvshows) + SubString(skin.string(widetvshows.art),banner)</visible>
+						<visible>Container.Content(movies) + String.Contains(skin.string(widemovies.art),banner) | Container.Content(tvshows) + String.Contains(skin.string(widetvshows.art),banner)</visible>
 						<control type="image"><!-- banner reflexo -->
 							<posx>20</posx>
 							<posy>401</posy>
@@ -583,7 +583,7 @@
 					<control type="group"><!-- VIDEO SEM ESTOJO -->
 						<include>Animation_Fade</include>
 						<animation effect="slide" start="0,0" end="-45,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
-						<visible>Skin.HasSetting(nowidevideocase) + [Container.Content(movies) + SubString(skin.string(widemovies.art),poster) | Container.Content(musicvideos)  | Container.Content(sets)] | Container.Content(tvshows) + SubString(skin.string(widetvshows.art),poster) | Container.Content(seasons) | Container.Content(genres) | Container.Content(roles)</visible>
+						<visible>Skin.HasSetting(nowidevideocase) + [Container.Content(movies) + String.Contains(skin.string(widemovies.art),poster) | Container.Content(musicvideos)  | Container.Content(sets)] | Container.Content(tvshows) + String.Contains(skin.string(widetvshows.art),poster) | Container.Content(seasons) | Container.Content(genres) | Container.Content(roles)</visible>
 						<control type="image"><!-- Filmes/Fotos/Arquivos reflexo -->
 							<posx>20</posx>
 							<posy>401</posy>
@@ -609,7 +609,7 @@
 					<control type="group"><!-- FILMES ESTOJO -->
 						<include>Animation_Fade</include>
 						<animation effect="slide" start="0,0" end="-33,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
-						<visible>!Skin.HasSetting(nowidevideocase) + Container.Content(movies) + SubString(skin.string(widemovies.art),poster) | !Skin.HasSetting(nowidevideocase) + [Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+						<visible>!Skin.HasSetting(nowidevideocase) + Container.Content(movies) + String.Contains(skin.string(widemovies.art),poster) | !Skin.HasSetting(nowidevideocase) + [Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 						<control type="image"><!-- Poster reflexo -->
 							<posx>205</posx>
 							<posy>416</posy>
