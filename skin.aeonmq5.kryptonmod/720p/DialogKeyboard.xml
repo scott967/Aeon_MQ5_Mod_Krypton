@@ -175,9 +175,9 @@
 						<ondown>303</ondown>
 						<texturenofocus>darkgrey.png</texturenofocus>
 						<texturefocus>grey.png</texturefocus>
-						<textureradioonnofocus>grey.png</textureradioonnofocus>
-						<textureradioonfocus>grey.png</textureradioonfocus>
-						<radioposy>5</radioposy>
+						<textureradioon>radiobutton_on.png</textureradioon>
+						<textureradiooff></textureradiooff>
+						<radioposy>-10</radioposy>
 						<radioposx>120</radioposx>
 						<radiowidth>30</radiowidth>
 						<radioheight>30</radioheight>
@@ -273,11 +273,11 @@
 						<ondown>307</ondown>
 						<texturenofocus>darkgrey.png</texturenofocus>
 						<texturefocus>grey.png</texturefocus>
-						<textureradioonnofocus>black.png</textureradioonnofocus>
-						<textureradioonfocus>grey.png</textureradioonfocus>
+						<textureradioon>radiobutton_on.png</textureradioon>
+						<textureradiooff>radiobutton.png</textureradiooff>
 						<align>center</align>
 						<aligny>center</aligny>
-						<radioposy>5</radioposy>
+						<radioposy>-10</radioposy>
 						<radioposx>120</radioposx>
 						<radiowidth>30</radiowidth>
 						<radioheight>30</radioheight>
@@ -384,11 +384,13 @@
 						<ondown>300</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<radioposy>-5</radioposy>
+						<radioposy>-10</radioposy>
 						<radioposx>45</radioposx>
 						<radiowidth>30</radiowidth>
 						<radioheight>30</radioheight>
 						<textoffsetx>0</textoffsetx>
+						<textureradioon>radiobutton_on.png</textureradioon>
+						<textureradiooff>radiobutton.png</textureradiooff>
 					</control>
 					<control type="button" id="160">
 						<description>(3,0) key button</description>
@@ -486,7 +488,7 @@
 					<control type="button" id="300">
 						<description>DONE button</description>
 						<include>Objects_KeyboardDouble</include>
-						<width>150</width>
+						<width>170</width>
 						<height>50</height>
 						<label>20177</label>
 						<font>font13</font>
@@ -511,7 +513,7 @@
 					<control type="button" id="8">
 						<description>BACKSPACE button</description>
 						<include>Objects_KeyboardDouble</include>
-						<width>200</width>
+						<width>230</width>
 						<height>50</height>
 						<label>20181</label>
 						<onup>165</onup>
