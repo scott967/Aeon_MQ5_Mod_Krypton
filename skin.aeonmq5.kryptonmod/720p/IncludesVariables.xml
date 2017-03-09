@@ -6,7 +6,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>9.2.3 Kryptonmod[COLOR=80FFFFFF] | [/COLOR]02/15/2017</value>
+		<value>9.2.3 Kryptonmod[COLOR=80FFFFFF] | [/COLOR]03/10/2017</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3404,8 +3404,8 @@
 		<value condition="Window.IsActive(videoplaylist) + !MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[559] $LOCALIZE[31582]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Window.IsActive(settings)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31445][/COLOR]</value>
 		<value condition="Window.IsActive(loginscreen)">[COLOR=$VAR[value_headercolor]]Aeon MQ 5 - [/COLOR]$VAR[SkinVersion]</value>
-		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(3)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(3).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages]</value>
-		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(6)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(6).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages]</value>
+		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(3) | Control.HasFocus(61) + Control.IsVisible(3)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(3).CurrentItem]/$INFO[Container(3).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages]</value>
+		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(6) | Control.HasFocus(61) + Control.IsVisible(6)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(6).CurrentItem]/$INFO[Container(6).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages]</value>
 		<value condition="Window.IsActive(favourites)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(450).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages]</value>
 		<value condition="Skin.HasSetting(games)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31088]: [/COLOR]$INFO[Container.NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</value>
 	</variable>
