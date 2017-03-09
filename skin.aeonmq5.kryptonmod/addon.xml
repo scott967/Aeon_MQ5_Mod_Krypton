@@ -60,7 +60,7 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/31/2016 for Kodi KRYPTON BETA5+[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.3 - RELEASE DATE 03/10/2017 for Kodi KRYPTON 17.0+[/COLOR][/B]
 This is a MOD of Aeon MQ5 by user Scott967
 New:  Various Krypton compliance changes
 New:  Remove videolaguage script
@@ -71,7 +71,7 @@ New:  Support video playback speeds 0.8-1.5
 New:  Remove support for TVTunes add-on
 New:  Add CMS settings from Video OSD menu
 New:  Requires script.playalbum and allow album/track play from album info dialog
-New:  Display proffile in use at startup
+New:  Display profile in use at startup
 New:  Display container page position in media windows
 		</news>
 	</extension>
