@@ -699,7 +699,8 @@
 							<width>120</width>
 							<include>HomeFlagLabel</include>
 							<label>$VAR[value_runtime]</label>
-							<scroll>true</scroll>
+							<scroll>false</scroll>
+							<scrollspeed>50</scrollspeed>
 							<visible>!IsEmpty(Container(510).ListItem.Property(Runtime))</visible>
 						</control>
 					</control>
