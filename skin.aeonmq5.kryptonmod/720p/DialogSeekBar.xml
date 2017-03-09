@@ -6,7 +6,7 @@
 	<defaultcontrol>23</defaultcontrol>
 	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(SubtitleSearch)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo]</visible>
 	<controls>
-		<control type="group">
+		<control type="group">  <!-- Upper bar furniture full and partial -->
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
@@ -42,7 +42,30 @@
 				<scroll>true</scroll>
 				<scrollout>false</scrollout>
 			</control>
-			<control type="image"><!-- Star -->
+			<control type="image"><!-- User Star -->
+				<posx>1100</posx>
+				<posy>10</posy>
+				<width>73</width>
+				<height>73</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texture>star.png</texture>
+				<colordiffuse>FFFFFF40</colordiffuse>
+				<visible>!IsEmpty(VideoPlayer.UserRating) + !VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="label">
+				<posx>1106</posx>
+				<posy>20</posy>
+				<width>60</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font_18A</font>
+				<label>[B]$INFO[VideoPlayer.UserRating][/B]</label>
+				<textcolor>FF101010</textcolor>
+				<visible>!IsEmpty(VideoPlayer.UserRating) + !VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="image"><!-- Scraped Star -->
 				<posx>1179</posx>
 				<posy>10</posy>
 				<width>73</width>
@@ -67,10 +90,10 @@
 			</control>
 		</control>
 
-		<control type="group">
+		<control type="group"> <!-- Lower bar all furniture except hidden if tempo changes -->
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic">WindowClose</animation>
-			<visible>![String.Contains(skin.string(videofurniture),hide) | Player.IsTempo]</visible>
+			<visible>!Player.IsTempo + [Player.Seeking | Player.DisplayAfterSeek]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>550</posy>
@@ -79,7 +102,8 @@
 				<texture>shadow_mask.png</texture>
 				<colordiffuse>E4000000</colordiffuse>
 			</control>
-			<control type="group">
+			
+			<control type="group">  <!-- bottom left bar group slide up for ffwd --> 
 				<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Forwarding">Conditional</animation>
 				<control type="progress" id="23">
 					<posx>20</posx>
@@ -122,20 +146,23 @@
 					<visible>Player.Seeking | Player.DisplayAfterSeek</visible>
 				</control>
 			</control>
-			<control type="group">
+			
+			<control type="group"> <!-- bottom right bar group Furniture full partial slide up for rwd -->
 				<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Rewinding">Conditional</animation>
+				<visible>!String.Contains(skin.string(videofurniture),hide)</visible>
 				<control type="label"><!-- Hora atual -->
-					<posx>1000</posx>
+					<posx>995</posx>
 					<posy>664</posy>
 					<width>120</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31310</label>
 				</control>
 				<control type="label">
-					<posx>1000</posx>
+					<posx>995</posx>
 					<posy>680</posy>
 					<width>120</width>
 					<height>25</height>
@@ -145,26 +172,27 @@
 					<label>$INFO[System.Time]</label>
 				</control>
 				<control type="image">
-					<posx>1014</posx>
+					<posx>998</posx>
 					<posy>665</posy>
 					<height>40</height>
 					<width>1</width>
 					<texture>line_v.png</texture>
 				</control>
 				<control type="label"><!-- Tempo restante -->
-					<posx>1125</posx>
+					<posx>1135</posx>
 					<posy>664</posy>
-					<width>120</width>
+					<width>135</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31991</label>
 				</control>
 				<control type="label">
-					<posx>1125</posx>
+					<posx>1135</posx>
 					<posy>680</posy>
-					<width>120</width>
+					<width>135</width>
 					<height>25</height>
 					<align>right</align>
 					<font>Font_23</font>
@@ -172,7 +200,7 @@
 					<label>$INFO[Player.TimeRemaining]</label>
 				</control>
 				<control type="image">
-					<posx>1139</posx>
+					<posx>1138</posx>
 					<posy>665</posy>
 					<height>40</height>
 					<width>1</width>
@@ -184,6 +212,7 @@
 					<width>120</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31311</label>
@@ -202,7 +231,7 @@
 			</control>
 		</control>
 
-		<control type="group">
+		<control type="group"> <!-- paused flags -->
 			<visible>Player.Paused</visible>
 			<posy>-35</posy>
 			<animation effect="slide" time="800" start="0,800" end="0,0" easing="inout" tween="cubic" condition="System.IdleTime(3)">Conditional</animation>
@@ -356,12 +385,12 @@
 
 		<!-- Seek Widget + support for player tempo-->
 		<control type="group">
-			<animation type="WindowOpen" condition="true">
+			<!-- <animation type="WindowOpen" condition="true">
 				<effect type="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic"/>
 			</animation>
 			<animation type="WindowClose" condition="true">
 				<effect type="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic"/>
-			</animation>
+			</animation> -->
 			<control type="group">
 				<posx>-500</posx>
 				<posy>693</posy>
@@ -372,6 +401,36 @@
 				<animation effect="slide" end="350,0" time="200" condition="Player.Forwarding8x">Conditional</animation>
 				<animation effect="slide" end="425,0" time="200" condition="Player.Forwarding16x">Conditional</animation>
 				<animation effect="slide" end="499,0" time="200" condition="Player.Forwarding32x">Conditional</animation>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>499</width>
+					<height>28</height>
+					<texture flipy="true">osd_button_reverse.png</texture>
+				</control>
+				<control type="label">
+					<include>Objects_OSDSeekForward</include>
+					<label>$VAR[value_seekforward]</label>
+				</control>
+			</control>
+			<control type="group">
+				<posx>-500</posx>
+				<posy>693</posy>
+				<width>499</width>
+				<height>28</height>
+				<visible>Player.IsTempo</visible>
+				<!-- <animation type="Visible" reversible="false">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" time="3000"/>
+				</animation> -->
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,0.80)" reversible="false">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" time="3000"/>
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,0.90)" reversible="false">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" time="3000"/>
+				</animation>
 				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.10)" reversible="false">
 					<effect type="slide" end="200,0" time="200"/>
 					<effect type="fade" start="100" end="0" time="3000"/>
@@ -384,7 +443,14 @@
 					<effect type="slide" end="200,0" time="200"/>
 					<effect type="fade" start="100" end="0" time="3000"/>
 				</animation>
-				<!-- <animation effect="slide" end="200,0" time="200" condition="Player.IsTempo">Conditional</animation> -->
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.40)" reversible="false">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" time="3000"/>
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.50)" reversible="false">
+					<effect type="slide" end="200,0" time="200"/>
+					<effect type="fade" start="100" end="0" time="3000"/>
+				</animation>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>

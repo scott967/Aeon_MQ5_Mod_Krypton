@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.15 -->
-<!-- Krypton 9.1.16/9.1.19/9.2.1 Window IDs 142 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 Window IDs 142/9.2.3 -->
 
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
-		<control type="group">
+		<control type="group"> <!-- top area furniture full and partial or paused-->
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-250" end="0,0" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-250" easing="inout" tween="cubic">Hidden</animation>
-			<visible>![Skin.HasSetting(novideofurniture) | Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+			<visible>![[String.Contains(skin.string(videofurniture),hide) + !Player.Paused] | Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+			<!-- <visible>![Skin.HasSetting(novideofurniture) | Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible> -->
 			<control type="image" id="9924"><!-- Studio icons -->
 				<include>InvisibleButton</include>
 				<texture>$VAR[value_studiosicon]</texture>
@@ -46,9 +47,9 @@
 				<scroll>true</scroll>
 				<scrollout>false</scrollout>
 			</control>
-			<control type="image"><!-- Star -->
+			<control type="image"><!-- User Star -->
 				<posx>1100</posx>
-				<posy>5</posy>
+				<posy>10</posy>
 				<width>73</width>
 				<height>73</height>
 				<align>center</align>
@@ -59,7 +60,7 @@
 			</control>
 			<control type="label">
 				<posx>1106</posx>
-				<posy>15</posy>
+				<posy>20</posy>
 				<width>60</width>
 				<height>60</height>
 				<align>center</align>
@@ -69,7 +70,7 @@
 				<textcolor>FF101010</textcolor>
 				<visible>!IsEmpty(VideoPlayer.UserRating) + !VideoPlayer.Content(LiveTV)</visible>
 			</control>
-			<control type="image"><!-- Star -->
+			<control type="image"><!-- Scraped Star -->
 				<posx>1179</posx>
 				<posy>10</posy>
 				<width>73</width>
@@ -94,13 +95,14 @@
 			</control>
 		</control>
 
-		<!-- Seek Widget + add support for player tempo-->
-		<control type="group">
+		<!-- player tempo active Not required -->
+		<!-- <control type="group">
 			<posx>-500</posx>
 			<posy>353</posy>
 			<width>499</width>
 			<height>28</height>
 			<animation effect="slide" end="205,0" time="200" condition="Player.IsTempo">Conditional</animation>
+			<visible>![String.Contains(skin.string(videofurniture),hide) | Window.IsActive(SubtitleSearch) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -112,10 +114,10 @@
 				<include>Objects_OSDSeekForward</include>
 				<label>$VAR[value_seekforward]</label>
 			</control>
-		</control>
+		</control> -->
 
 
-		<control type="group">
+		<control type="group">  <!-- bottom area furniture -->
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic">WindowClose</animation>
@@ -128,9 +130,10 @@
 				<width>1280</width>
 				<texture>shadow_mask.png</texture>
 				<colordiffuse>E4000000</colordiffuse>
+				<visible>![String.Contains(skin.string(videofurniture),hide) + !Player.Paused]</visible>
 			</control>
-			<control type="group">
-				<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Forwarding">Conditional</animation>
+			<control type="group">  <!-- visible all furniture settings slide up for fwd / tempo -->
+				<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.IsTempo">Conditional</animation>
 				<control type="progress" id="23">
 					<posx>20</posx>
 					<posy>664</posy>
@@ -149,20 +152,22 @@
 					<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- only show for full and partial furniture unless paused -->
 				<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Rewinding">Conditional</animation>
+				<visible>!String.Contains(skin.string(videofurniture),hide) | Player.Paused</visible>
 				<control type="label"><!-- Hora atual -->
-					<posx>1000</posx>
+					<posx>995</posx>
 					<posy>664</posy>
 					<width>120</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31310</label>
 				</control>
 				<control type="label">
-					<posx>1000</posx>
+					<posx>995</posx>
 					<posy>680</posy>
 					<width>120</width>
 					<height>25</height>
@@ -172,26 +177,27 @@
 					<label>$INFO[System.Time]</label>
 				</control>
 				<control type="image">
-					<posx>1014</posx>
+					<posx>998</posx>
 					<posy>665</posy>
 					<height>40</height>
 					<width>1</width>
 					<texture>line_v.png</texture>
 				</control>
 				<control type="label"><!-- Tempo restante -->
-					<posx>1125</posx>
+					<posx>1135</posx>
 					<posy>664</posy>
-					<width>120</width>
+					<width>135</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31991</label>
 				</control>
 				<control type="label">
-					<posx>1125</posx>
+					<posx>1135</posx>
 					<posy>680</posy>
-					<width>120</width>
+					<width>135</width>
 					<height>25</height>
 					<align>right</align>
 					<font>Font_23</font>
@@ -199,7 +205,7 @@
 					<label>$INFO[Player.TimeRemaining]</label>
 				</control>
 				<control type="image">
-					<posx>1139</posx>
+					<posx>1138</posx>
 					<posy>665</posy>
 					<height>40</height>
 					<width>1</width>
@@ -211,6 +217,7 @@
 					<width>120</width>
 					<height>25</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_15</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31311</label>
@@ -229,15 +236,15 @@
 			</control>
 		</control>
 
-		<control type="group">
+		<control type="group">  <!-- main info panel only furniture full and partial unless paused slide up when tempo fwd rwd -->
 			<posy>-70</posy>	
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,800" easing="in" tween="cubic">Hidden</animation>	
-			<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.Rewinding">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-25" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.Rewinding | Player.IsTempo">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-67" time="400" tween="cubic" easing="inout" condition="Window.IsActive(videoosd)">Conditional</animation>
-			<visible>![Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
+			<visible>![[String.Contains(skin.string(videofurniture),hide) + !Player.Paused] | Window.IsActive(SubtitleSearch) | Window.IsActive(pvrosdguide) | Window.IsActive(pvrosdchannels) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)]</visible>
 			<control type="image"><!-- Barra de flags -->
 				<posx>220</posx>
 				<posy>682</posy>
@@ -412,7 +419,7 @@
 		</control>
 
 		<!-- Seek Widget -->
-		<control type="group">
+		<control type="group">  <!-- always visible after slide in -->
 			<animation type="WindowOpen" condition="true">
 				<effect type="slide" time="400" start="0,800" end="0,0" easing="out" tween="cubic"/>
 			</animation>
@@ -424,7 +431,7 @@
 				<posy>693</posy>
 				<width>499</width>
 				<height>28</height>
-				<animation effect="slide" end="200,0" time="200" condition="Player.Forwarding2x">Conditional</animation>
+				<animation effect="slide" end="200,0" time="200" condition="Player.Forwarding2x | Player.IsTempo">Conditional</animation>
 				<animation effect="slide" end="275,0" time="200" condition="Player.Forwarding4x">Conditional</animation>
 				<animation effect="slide" end="350,0" time="200" condition="Player.Forwarding8x">Conditional</animation>
 				<animation effect="slide" end="425,0" time="200" condition="Player.Forwarding16x">Conditional</animation>
@@ -465,7 +472,7 @@
 			</control>
 		</control>
 
-		<control type="label">
+		<control type="label"> <!-- Pause -->
 			<posx>-320</posx>
 			<posy>180</posy>
 			<width>1920</width>
