@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="resource.images.skinstyles.aeonmq5" name="Skin Styles - Aeon MQ" version="9.2.0" provider-name="MarcosQui">
+	<extension point="kodi.resource.images" compile="false" type="skinstyles" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Styles for skin Aeon MQ 5</summary>
+		<description lang="en">Compatible with skin Aeon MQ 5</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="resource.uisounds.aeonmq5" version="9.1.15" name="Aeon MQ5 Krypton UI" provider-name="Marcos Qui">
   <requires>
     <import addon="kodi.resource" version="1.0.0"/>
@@ -12,10 +24,9 @@
   </extension>
 </addon>
 
-<addon id="skin.aeonmq5" version="9.2.0" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
+<addon id="skin.aeonmq5" version="9.2.2" name="Aeon MQ 5 Krypton" provider-name="MarcosQui">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.aeonmq5.extrapack" version="1.0.1"/>
 		<import addon="script.favourites" version="4.0.4"/>
 		<import addon="script.artwork.downloader" version="12.0.11"/>
 		<import addon="script.randomandlastitems" version="2.0.3"/>
@@ -24,7 +35,6 @@
 		<import addon="script.tv.show.next.aired" version="6.0.10"/>
 		<import addon="service.skin.widgets" version="0.0.19"/>
 		<import addon="script.cu.lrclyrics" version="1.0.1"/>
-		<import addon="script.videolanguage" version="0.0.6"/>
 		<import addon="script.globalsearch" version="1.1.1"/>
 		<import addon="script.toolbox" version="1.0.1"/>
 		<import addon="script.image.resource.select" version="0.0.5"/>
@@ -74,12 +84,15 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 9.2.0 - RELEASE DATE 08/30/2016 for Kodi KRYPTON BETA1[/COLOR][/B]
-Fixed:  Top Menu and Main menu for Video Add-ons now works
-Fixed:  Obsolete System.GetBool(PVRManager.enabled) removed
+		<news>[B][COLOR=FFFF8C00]BUILD 9.2.2 - RELEASE DATE 10/26/2016 for Kodi KRYPTON BETA4[/COLOR][/B]
 New:  Various Krypton compliance changes
-New:  DialogPlayerProgressInfo (key O in video/live tv)
-New:  Support for video speedup
+New:  Remove videolaguage script
+New:  Remove "extrapack" add-on
+New:  Support Aeon MQ7 theme resource
+New:  Provide new "styles" resource
+New:  Support video playback speeds 0.8-1.5
+New:  Remove support for TVTunes add-on
+New:  Add CMS settings from Video OSD menu
 		</news>
 	</extension>
 

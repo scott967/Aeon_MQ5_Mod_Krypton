@@ -1490,7 +1490,7 @@
 		<colordiffuse>$VAR[value_flagscolor]</colordiffuse>
 	</include>
 	<include name="HomeFlagSeparator">
-		<width>15</width>
+		<width>17</width>
 		<height>40</height>
 		<align>center</align>
 		<aligny>center</aligny>
@@ -3991,7 +3991,20 @@
 			<textcolor>$VAR[value_flagscolor]</textcolor>
 			<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
 			<label >$INFO[Container.CurrentPage]/$INFO[Container.NumPages]</label>
-			<visible>!String.IsEqual(Container.NumPages,1)</visible>
+			<visible>!String.IsEqual(Container.NumPages,1) + [Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(55) | Control.IsVisible(59) | Control.IsVisible(62) | Control.IsVisible(64) | Control.IsVisible(70)]</visible>
+		</control>
+		<control type="label">
+			<posx>1205</posx>
+			<posy>645</posy>
+			<width>75</width>
+			<height>50</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_18B</font>
+			<textcolor>$VAR[value_flagscolor]</textcolor>
+			<!-- <fadetime>FanartCrossFadeTime</fadetime> -->
+			<label >$INFO[Container.CurrentItem]/$INFO[Container.NumItems]</label>
+			<visible>!String.IsEqual(Container.NumPages,1) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(60) | Control.IsVisible(61) | Control.IsVisible(63) | Control.IsVisible(66) | Control.IsVisible(67) | Control.IsVisible(69)]</visible>
 		</control>
 	</include>
 </includes>
