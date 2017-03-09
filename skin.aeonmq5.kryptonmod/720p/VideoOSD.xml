@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.15 -->
-<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2901/9.2.2 -->
+<!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2901/9.2.2/9.2.3 -->
 
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
@@ -119,7 +119,7 @@
 				<animation effect="slide" end="350,0" time="200" condition="Player.Forwarding8x">Conditional</animation>
 				<animation effect="slide" end="425,0" time="200" condition="Player.Forwarding16x">Conditional</animation>
 				<animation effect="slide" end="499,0" time="200" condition="Player.Forwarding32x">Conditional</animation>
-				<animation effect="slide" end="200,0" time="200" condition="Player.IsTempo">Conditional</animation>
+				<animation effect="slide" end="205,0" time="200" condition="Player.IsTempo">Conditional</animation>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -175,9 +175,9 @@
 			<control type="button" id="4205">
 				<include>InvisibleButton</include>
 				<onfocus>SetFocus(100)</onfocus>
-				<onfocus condition="SubString(skin.string(videofurniture),full)">Skin.SetString(videofurniture,partial)</onfocus>
-				<onfocus condition="SubString(skin.string(videofurniture),partial)">Skin.SetString(videofurniture,hide)</onfocus>
-				<onfocus condition="SubString(skin.string(videofurniture),hide)">Skin.SetString(videofurniture,full)</onfocus>
+				<onfocus condition="String.Contains(skin.string(videofurniture),full)">Skin.SetString(videofurniture,partial)</onfocus>
+				<onfocus condition="String.Contains(skin.string(videofurniture),partial)">Skin.SetString(videofurniture,hide)</onfocus>
+				<onfocus condition="String.Contains(skin.string(videofurniture),hide)">Skin.SetString(videofurniture,full)</onfocus>
 			</control>
 
 			<!-- Menu Content -->
