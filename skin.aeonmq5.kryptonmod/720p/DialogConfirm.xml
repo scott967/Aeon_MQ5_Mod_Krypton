@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.9 -->
 <!-- Isengard 7.1.10 -->
-<!-- Krypton 9.1.15 -->
+<!-- Krypton 9.1.15/9.2.3 -->
 <window>
 	<!-- <defaultcontrol>10</defaultcontrol> -->
 	<controls>
@@ -12,7 +12,8 @@
 				<include>Dialogs_Label1</include>
 				<!-- <label>$LOCALIZE[13406]</label> -->
 			</control>
-			<control type="label" id="2">
+			<!-- obsolete -->
+			<!-- <control type="label" id="2">
 				<include>Dialogs_Label2</include>
 			</control>
 			<control type="label" id="3">
@@ -20,9 +21,10 @@
 			</control>
 			<control type="label" id="4">
 				<include>Dialogs_Label3</include>
-			</control>
+			</control> -->
 			<control type="textbox" id="9">
 				<include>DialogTextBox</include>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 				<label>-</label>
 			</control>
 			<control type="button" id="10"><!-- no -->
@@ -63,7 +65,7 @@
 				<onup>10</onup>
 				<ondown>10</ondown>
 			</control>
-			<control type="progress" id="404">
+			<control type="progress" id="20">  <!-- was 404? -->
 				<posy>28</posy>
 				<include>Dialogs_Progress</include>
 				<info>System.Progressbar</info>
