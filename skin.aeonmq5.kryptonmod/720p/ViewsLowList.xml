@@ -385,8 +385,8 @@
 						</control>
 						<control type="label">
 							<description>IMDB rating</description>
-							<posx>492</posx>
-							<posy>33</posy>
+							<posx>517</posx><!-- 492 -->
+							<posy>28</posy><!-- 33 -->
 							<width>65</width>
 							<height>13</height>
 							<label>$INFO[ListItem.Rating]</label>
